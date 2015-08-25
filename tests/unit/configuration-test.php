@@ -8,6 +8,7 @@ use Nectary\Configuration;
  * Test the configuration class in the framework
  *
  * @group configuration
+ * @group singleton
  */
 class Configuration_Test extends \PHPUnit_Framework_TestCase {
   function setUp() {

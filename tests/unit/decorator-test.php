@@ -2,8 +2,8 @@
 
 namespace Nectary\Tests;
 
-use Nectary\Decorators\Decoratable;
-use Nectary\Decorators\Decorator;
+use Nectary\Decoratable;
+use Nectary\Decorator;
 
 /**
  * Test the decoratable interface in the framework
@@ -12,7 +12,7 @@ use Nectary\Decorators\Decorator;
  */
 class Decorator_Test extends \PHPUnit_Framework_TestCase {
   function test_exists() {
-    $this->assertEquals( 'Nectary\Decorators\Decorator', Decorator::class );
+    $this->assertEquals( 'Nectary\Decorator', Decorator::class );
   }
 
   function test_decorator_provides_access_to_base_class() {

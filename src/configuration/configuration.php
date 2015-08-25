@@ -2,23 +2,11 @@
 
 namespace Nectary;
 
+use Nectary\Singleton;
 use Nectary\Exceptions\Invalid_Configuration_Exception;
 
-class Configuration {
-  private static $instance;
-
+class Configuration extends Singleton {
   public $attributes;
-
-  public static function get_instance( $path = '.env' ) {
-    if ( isset( self::$instance ) ) {
-      $instance = self::$instance;
-    } else {
-      $instance = new Configuration( $path );
-      self::$instance = $instance;
-    }
-
-    return $instance;
-  }
 
   public static function set_configuration_path( $path ) {
     self::$instance = new Configuration( $path );
@@ -39,7 +27,7 @@ class Configuration {
   /**
    * Load in the configuration file and parse it
    */
-  private function __construct( $path ) {
+  protected function __construct( $path = '.env' ) {
     $this->attributes = [];
     $configuration = '';
 

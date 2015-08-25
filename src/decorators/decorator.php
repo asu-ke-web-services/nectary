@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary\Decorators;
+namespace Nectary;
 
 /**
  * Decorators provide a layer between an object that lets you
