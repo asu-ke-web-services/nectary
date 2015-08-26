@@ -13,4 +13,6 @@ class Controller_Test extends \PHPUnit_Framework_TestCase {
   function test_exists() {
     $this->assertEquals( 'Nectary\Controller', Controller::class );
   }
+
+  // No other tests to run
 }
