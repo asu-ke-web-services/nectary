@@ -43,6 +43,8 @@ class Configuration extends Singleton {
   /**
    * Parse the configuration text
    *
+   * TODO support different parsers
+   *
    * @throws \Nectary\Exceptions\Invalid_Configuration_Exception
    */
   private function parse( $configuration ) {
@@ -54,16 +56,20 @@ class Configuration extends Singleton {
     foreach ( $lines as $line ) {
       $parts = preg_split( '/[=]/', $line, 2 );
 
-      if ( count( $parts ) < 2 ) {
+      if ( $this->is_valid_line( $parts ) ) {
+        $key   = $parts[0];
+        $value = $parts[1];
+
+        $attributes[ $key ] = $value;
+      } else {
         throw new Invalid_Configuration_Exception( 'The provided configuration is invalid' );
       }
-
-      $key   = $parts[0];
-      $value = $parts[1];
-
-      $attributes[ $key ] = $value;
     }
 
     return $attributes;
+  }
+
+  private function is_valid_line( $parts ) {
+    return count( $parts ) === 2;
   }
 }
