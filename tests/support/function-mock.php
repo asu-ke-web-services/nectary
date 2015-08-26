@@ -26,7 +26,7 @@ function create_function_mock( $unit_reference, $name, $times = 1 ) {
   return $method;
 }
 
-function __perform( $name, $callback ) {
+function __perform( $name, $callback, $original_callback = false ) {
   global $mock_dictionary;
   global $mock_counts;
 
@@ -40,6 +40,10 @@ function __perform( $name, $callback ) {
     }
 
     return $value;
+  } else {
+    if ( false !== $original_callback ) {
+      return $original_callback();
+    }
   }
 }
 
@@ -50,23 +54,31 @@ function __perform( $name, $callback ) {
 function dispatch( $command ) {
   __perform( 'dispatch', function( $mock ) use ( $command ) {
       $mock->dispatch( $command );
+  }, function() use ( $command ) {
+      return \dispatch( $command );
   } );
 }
 
 function mail( $to, $subject, $body, $header ) {
   __perform( 'mail', function( $mock ) use ( $to, $subject, $body, $header ) {
       $mock->mail( $to, $subject, $body, $header );
+  }, function () use ( $to, $subject, $body, $header ) {
+      return \mail( $to, $subject, $body, $header );
   } );
 }
 
 function file_exists( $file_path ) {
   return __perform( 'file_exists', function ( $mock ) use ( $file_path ) {
       return $mock->file_exists( $file_path );
+  }, function () use ( $file_path ) {
+      return \file_exists( $file_path );
   } );
 }
 
 function file_get_contents( $file_path ) {
   return __perform( 'file_get_contents', function( $mock ) use ( $file_path ) {
       return $mock->file_get_contents( $file_path );
+  }, function () use ( $file_path ) {
+      return \file_get_contents( $file_path );
   } );
 }
