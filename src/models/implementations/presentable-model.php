@@ -17,7 +17,7 @@ abstract class Presentable_Model extends Model {
    * @return array
    */
   public function present( $options = [] ) {
-    $class_reference = $this->get_presenter();
+    $class_reference = $this->get_presenter_class_name();
 
     if ( ! is_null( $class_reference ) ) {
       $instance = new $class_reference( $this, $options );
@@ -38,5 +38,5 @@ abstract class Presentable_Model extends Model {
    *
    * @return String The name of the class that knows how to present the model
    */
-  abstract protected function get_presenter();
+  abstract protected function get_presenter_class_name();
 }
