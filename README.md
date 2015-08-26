@@ -23,6 +23,12 @@ Nectary is currently only available through GitHub, to install, add the followin
 }
 ```
 
+If you wish to generate excerpts, you will need to install Tidy:
+
+```
+sudo apt-get install php5-tidy
+```
+
 ## Developing
 
 If you add a class or change a namespace, remember to

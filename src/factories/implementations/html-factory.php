@@ -3,6 +3,7 @@
 namespace Nectary\Factories;
 
 use Nectary\Factory;
+use Nectary\Services\Tidy;
 
 class Html_Factory extends Factory {
   protected $html;
@@ -59,7 +60,7 @@ class Html_Factory extends Factory {
     ensure_default( $options, 'class', '' );
 
     $classes = $options['class'];
-    $excerpt = Feed_Helper::content_excerpt(
+    $excerpt = ( new Tidy() )->excerpt(
         $inner_html,
         $options['character_limit']
     );
