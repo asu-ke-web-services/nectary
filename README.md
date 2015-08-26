@@ -25,3 +25,5 @@ Nectary is currently only available through GitHub, to install, add the followin
 
 If you add a class or change a namespace, remember to
 run `composer update` in order to add the class to the autoloader.
+
+Check your code coverage with `vendor/bin/phpunit --coverage-html ./coverage`.
