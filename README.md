@@ -3,7 +3,7 @@ Nectary
 
 [![Build Status](https://travis-ci.org/gios-asu/nectary.svg)](https://travis-ci.org/gios-asu/nectary)
 
-![Nectary](documentation/images/nectary-with-text.png)]
+![Nectary](documentation/images/nectary-with-text.png)
 
 A simple PHP framework that is not tied to a web interface
 
