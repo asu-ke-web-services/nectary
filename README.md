@@ -3,6 +3,8 @@ Nectary
 
 [![Build Status](https://travis-ci.org/gios-asu/nectary.svg)](https://travis-ci.org/gios-asu/nectary)
 
+![Nectary](documentation/images/nectary-with-text.png)]
+
 A simple PHP framework that is not tied to a web interface
 
 Nectary is currently only available through GitHub, to install, add the following configuration to your `composer.json`:
