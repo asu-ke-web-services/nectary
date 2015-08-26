@@ -1,5 +1,5 @@
 {
-    "name": "gios/nectary",
+    "name": "gios-asu/nectary",
     "description": "A simple PHP framework that is not tied to a web interface",
     "license": "MIT",
     "authors": [
