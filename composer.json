@@ -11,7 +11,8 @@
     "autoload": {
         "files": [
             "src/utilities/command-utilities.php",
-            "src/utilities/configuration-utilities.php"
+            "src/utilities/configuration-utilities.php",
+            "src/utilities/ensure_default.php"
         ],
         "classmap" : [ "src/" ]
     },
