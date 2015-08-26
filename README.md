@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/gios-asu/nectary.svg)](https://travis-ci.org/gios-asu/nectary)
 
 
-A simple PHP framework that is not tied to a web interface
+A simple PHP framework that is not tied to a web interface.
 
 ## Installation
 
