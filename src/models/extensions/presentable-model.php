@@ -2,13 +2,13 @@
 
 namespace Nectary\Models;
 
-use Nectary\Model;
+use Nectary\Data_Model;
 
 /**
  * A Viewable model is one that can present itself so that all of its
  * properties and calculated properties are useable within a template
  */
-abstract class Presentable_Model extends Model {
+abstract class Presentable_Model extends Data_Model {
   /**
    * Present the model using the class provided
    * by presents(). Present knows how to build

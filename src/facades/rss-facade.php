@@ -2,7 +2,7 @@
 
 namespace Nectary\Facades;
 
-use Nectary\Services\Rss_Feed;
+use Nectary\Models\Rss_Feed;
 
 abstract class Rss_Facade {
   private $feed_callback;

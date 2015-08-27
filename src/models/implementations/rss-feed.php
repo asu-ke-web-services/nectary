@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary\Services;
+namespace Nectary\Models;
 
 class Rss_Feed {
   private $url;

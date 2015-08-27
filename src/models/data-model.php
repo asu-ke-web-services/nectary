@@ -5,7 +5,7 @@ namespace Nectary;
 /**
  * Data model
  */
-abstract class Model {
+abstract class Data_Model {
   public static $primary_key;
   public static $table_name;
 
