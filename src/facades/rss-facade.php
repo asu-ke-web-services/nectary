@@ -53,9 +53,12 @@ abstract class Rss_Facade {
       for ( $j = 0; $j < count( $feed ); $j++ ) {
         if ( $i !== $j ) {
           if ( $feed[ $i ]->$look_at() === $feed[ $j ]->$look_at() ) {
-            // Duplicate found
-            $duplicate = true;
-            break;
+            // Only count a duplicate if it is BEHIND the current index
+            if ( $j < $i ) {
+              // Duplicate found
+              $duplicate = true;
+              break;
+            }
           }
         }
       }
