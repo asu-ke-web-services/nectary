@@ -8,15 +8,19 @@ namespace Nectary;
  * A request can also be used to take in options and
  * pull in the data required to fulfill a request.
  */
-abstract class Request {
+abstract class Fail_Fast_Request {
   public function validate( $error_callback ) {
     $rules = $this->validation_rules();
 
-    if ( is_array( $error_callback ) ) {
-      return call_user_func_array( $error_callback, [ $rules, $this ] );
-    }
+    foreach ( $rules as $name => $check ) {
+      if ( true !== $check ) {
+        if ( is_array( $error_callback ) ) {
+          return call_user_func_array( $error_callback, [ $check, $this ] );
+        }
 
-    return $error_callback( $rules, $this );
+        return $error_callback( $check, $this );
+      }
+    }
   }
 
   abstract public function validation_rules();
