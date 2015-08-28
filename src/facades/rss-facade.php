@@ -15,7 +15,7 @@ abstract class Rss_Facade {
     return new Rss_Feed( $url, $this->feed_callback );
   }
 
-  public function merge_feeds( $feeds, $options ) {
+  public function merge_feeds( $feeds, $options = []) {
     $merged_feed = [];
 
     foreach ( $feeds as $feed ) {
@@ -39,7 +39,7 @@ abstract class Rss_Facade {
   /**
    * @param $feed Array<SimplePie>
    */
-  public function unique_feed( $feed, $options ) {
+  public function unique_feed( $feed, $options = [] ) {
     $unique = [];
 
     $look_at = 'get_title';
@@ -48,7 +48,7 @@ abstract class Rss_Facade {
       $look_at = 'get_' . $options['look_at'];
     }
 
-    for ( $i = 1; $i < count( $feed ); $i++ ) {
+    for ( $i = 0; $i < count( $feed ); $i++ ) {
       $duplicate = false;
       for ( $j = 0; $j < count( $feed ); $j++ ) {
         if ( $i !== $j ) {
