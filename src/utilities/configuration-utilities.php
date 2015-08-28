@@ -8,6 +8,7 @@
 
 use Nectary\Configuration;
 
+if ( ! function_exists( 'config' ) ) {
 /**
  * Handle configuration call without knowing about how
  * the Configuration object works
