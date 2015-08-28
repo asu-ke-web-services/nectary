@@ -1,0 +1,25 @@
+{
+    "name": "gios-asu/nectary",
+    "description": "A simple PHP framework that is not tied to a web interface",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "The Global Institute of Sustainability",
+            "email": "giosweb@asu.edu"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/utilities/command-utilities.php",
+            "src/utilities/configuration-utilities.php",
+            "src/utilities/ensure_default.php"
+        ],
+        "classmap" : [ "src/" ]
+    },
+    "require": {
+        "xamin/handlebars.php": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*"
+    }
+}
