@@ -1,6 +1,6 @@
 <?php
 
-if ( ! function_exists('ensure_default')) {
+if ( ! function_exists( 'ensure_default' ) ) {
   /**
    * this ensures that the index of the array is defined but
    * if its not it gets set to the default value
