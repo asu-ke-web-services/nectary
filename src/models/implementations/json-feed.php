@@ -41,6 +41,7 @@ class Json_Feed implements Feed {
   }
 
   private function parse_feed( $json ) {
+    $json = json_decode( $json, true );
     if ( empty( $json ) ) {
       error_log( 'Json was empty' );
       throw new \Exception( 'Feed could not be loaded' );
@@ -50,7 +51,7 @@ class Json_Feed implements Feed {
       error_log( 'Json Errored with: ' . $error );
     }
 
-    return json_decode( $json, true );
+    return $json;
   }
 
   private function get_error( $json ) {
