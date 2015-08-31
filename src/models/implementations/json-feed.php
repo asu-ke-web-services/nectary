@@ -56,7 +56,7 @@ class Json_Feed implements Feed {
   private function get_error( $json ) {
     $has_error = array_key_exists( 'errors' , $json )
               && array_key_exists( 0 , $json['errors'] )
-              && array_key_exists( 'message' , $json['errors'][0];
+              && array_key_exists( 'message' , $json['errors'][0] );
 
     if ( $has_error ) {
       return $json['errors'][0]['message'];
