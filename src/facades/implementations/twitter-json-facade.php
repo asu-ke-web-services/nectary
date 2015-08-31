@@ -116,8 +116,6 @@ class Twitter_Json_Facade extends Rss_Facade {
   private function get_curl_feed_data() {
     $query_options = $this->create_query_options( $this->options );
 
-    $json = $this->get_curl_feed_data( $query_options );
-
     $curl_options             = array(
       CURLOPT_HTTPHEADER      => $query_options['http_header'],
       CURLOPT_HEADER          => false,
