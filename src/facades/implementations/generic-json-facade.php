@@ -18,7 +18,7 @@ class Generic_Json_Facade extends Rss_Facade {
     return new Json_Feed( $url, array( $this, 'get_curl_feed_data' ) );
   }
 
-  private function get_curl_feed_data() {
+  public function get_curl_feed_data() {
     $session = curl_init( $url );
 
     curl_setopt( $session, CURLOPT_RETURNTRANSFER, true );

@@ -25,6 +25,33 @@ class Twitter_Json_Facade extends Rss_Facade {
     return new Json_Feed( 'https://api.twitter.com/1.1/', array( $this, 'get_curl_feed_data' ) );
   }
 
+  public function get_curl_feed_data() {
+    $query_options = $this->create_query_options( $this->options );
+
+    $curl_options             = array(
+      CURLOPT_HTTPHEADER      => $query_options['http_header'],
+      CURLOPT_HEADER          => false,
+      CURLOPT_URL             => $query_options['url'],
+      CURLOPT_RETURNTRANSFER  => true,
+      CURLOPT_SSL_VERIFYPEER  => false,
+    );
+
+    $feed = curl_init();
+
+    curl_setopt_array( $feed, $curl_options );
+
+    $json = curl_exec( $feed );
+
+    if ( curl_error( $feed ) ) {
+      $json   = '';
+      error_log( 'Twitter Facade could not curl! ' . curl_strerror( curl_errno( $feed ) ) );
+    }
+
+    curl_close( $feed );
+
+    return $json;
+  }
+
   private function create_query_options( $options ) {
     $query   = $options['query'];
     $limit   = $options['limit'];
@@ -111,32 +138,5 @@ class Twitter_Json_Facade extends Rss_Facade {
     $query .= '&include_rts=1';
 
     return $query;
-  }
-
-  private function get_curl_feed_data() {
-    $query_options = $this->create_query_options( $this->options );
-
-    $curl_options             = array(
-      CURLOPT_HTTPHEADER      => $query_options['http_header'],
-      CURLOPT_HEADER          => false,
-      CURLOPT_URL             => $query_options['url'],
-      CURLOPT_RETURNTRANSFER  => true,
-      CURLOPT_SSL_VERIFYPEER  => false,
-    );
-
-    $feed = curl_init();
-
-    curl_setopt_array( $feed, $curl_options );
-
-    $json = curl_exec( $feed );
-
-    if ( curl_error( $feed ) ) {
-      $json   = '';
-      error_log( 'Twitter Facade could not curl! ' . curl_strerror( curl_errno( $feed ) ) );
-    }
-
-    curl_close( $feed );
-
-    return $json;
   }
 }
