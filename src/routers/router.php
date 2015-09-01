@@ -121,7 +121,13 @@ abstract class Router {
    * the class and method to route to
    */
   private function get_route_parts() {
-    $to_parts  = explode( '@', $this->routes[ $this->__method_name ]['to'] );
+    $to = $this->routes[ $this->__method_name ]['to'];
+    if ( is_array( $to ) ) {
+      $to_parts = $to;
+    } else {
+      $to_parts  = explode( '@', $to );  
+    }
+
     $to_class  = $to_parts[0];
     $to_method = $to_parts[1];
 
@@ -144,6 +150,16 @@ abstract class Router {
    * @param $on_error Function Callback if a validator fails
    */
   private function do_route( $class_name, $method_name, $named_arguments, $on_error ) {
+    if ( is_object( $class_name ) ) {
+      return $this->call(
+          array(
+            $class_name,
+            $method_name
+          ),
+          $named_arguments
+      );
+    }
+
     $injector_factory = new Dependency_Injection_Factory(
         $class_name,
         $method_name,
