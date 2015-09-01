@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7987bbc1f0ed4e66d0a73fbf39d8d8de",
+    "hash": "e9c0d1521edf20a327ee0bbaf81bb2a2",
     "packages": [
         {
             "name": "xamin/handlebars.php",

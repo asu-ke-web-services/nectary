@@ -12,7 +12,8 @@
         "files": [
             "src/utilities/command-utilities.php",
             "src/utilities/configuration-utilities.php",
-            "src/utilities/ensure_default.php"
+            "src/utilities/ensure-default.php",
+            "src/utilities/string-utilities.php"
         ],
         "classmap" : [ "src/" ]
     },
