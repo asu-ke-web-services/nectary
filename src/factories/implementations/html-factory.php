@@ -3,13 +3,13 @@
 namespace Nectary\Factories;
 
 use Nectary\Factory;
-use Nectary\Services\Tidy;
+use Nectary\Services\Tidy_Service;
 
 class Html_Factory extends Factory {
   protected $html;
 
   public function __construct() {
-
+    $this->html = '';
   }
 
   public function add_heading( $inner_html, $options = [] ) {
@@ -60,7 +60,7 @@ class Html_Factory extends Factory {
     ensure_default( $options, 'class', '' );
 
     $classes = $options['class'];
-    $excerpt = ( new Tidy() )->excerpt(
+    $excerpt = ( new Tidy_Service() )->excerpt(
         $inner_html,
         $options['character_limit']
     );
@@ -74,10 +74,12 @@ class Html_Factory extends Factory {
 
   public function with_image( $src, $options = [] ) {
     ensure_default( $options, 'class', '' );
+    ensure_default( $options, 'src', '#' );
 
     $classes = $options['class'];
+    $src     = $options['src'];
 
-    return "<img src='{$src}' class='{$classes}'/>";
+    return "<img src='{$src}' class='{$classes}' />";
   }
 
   public function add_div( $inner_html, $options = [] ) {
@@ -93,6 +95,6 @@ class Html_Factory extends Factory {
   }
 
   public function build() {
-    return $html;
+    return $this->html;
   }
 }

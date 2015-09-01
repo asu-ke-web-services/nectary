@@ -2,7 +2,7 @@
 
 namespace Nectary\Services;
 
-class Tidy {
+class Tidy_Service {
   public function excerpt( $content_excerpt, $words = 50 ) {
     $content = self::normalize_html_string( $content_excerpt );
     $content = trim( $content );
