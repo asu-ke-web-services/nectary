@@ -14,12 +14,65 @@ class Router_Test extends \PHPUnit_Framework_TestCase {
     $this->assertEquals( 'Nectary\Router', Router::class );
   }
 
-  function test_simple_route() {
-    // TODO
+  function test_routes_data_to_function() {
+    $router = $this->getMockBuilder( 'Nectary\Router' )
+    ->getMockForAbstractClass();
+
+    $mock = $this->getMockBuilder( 'Object' )
+    ->setMethods( [ 'get_view' ] )
+    ->getMock();
+
+    $mock->expects( $this->once() )
+    ->method( 'get_view' )
+    ->with( $this->equalTo( 1 ), $this->equalTo( 2 ), $this->equalTo( 3 ) );
+
+    $router->routes = array(
+      'get_view' => array(
+        'to'       => array( $mock, 'get_view' ),
+        'expects'  => [ 'value1', 'value2', 'value3' ]
+      ),
+    );
+
+    $router->get_view( 1, 2, 3 );
   }
 
-  function test_named_arguments_are_mapped() {
-    // TODO
+  function test_invalid_route_returns_empty() {
+    $router = $this->getMockBuilder( 'Nectary\Router' )
+    ->getMockForAbstractClass();
+
+    $mock = $this->getMockBuilder( 'Object' )
+    ->setMethods( [ 'get_view' ] )
+    ->getMock();
+
+    $mock->expects( $this->exactly( 0 ) )
+    ->method( 'get_view' );
+
+    $router->routes = array(
+      'get_view' => array(
+        'to'       => array( $mock, 'get_view' ),
+        'expects'  => [ 'value1', 'value2', 'value3' ]
+      ),
+    );
+
+    $value = $router->get_view_wrong( 1, 2, 3 );
+
+    $this->assertEmpty( $value );
+  }
+
+  function test_routes_not_set_returns_empty() {
+    $router = $this->getMockBuilder( 'Nectary\Router' )
+    ->getMockForAbstractClass();
+
+    $mock = $this->getMockBuilder( 'Object' )
+    ->setMethods( [ 'get_view' ] )
+    ->getMock();
+
+    $mock->expects( $this->exactly( 0 ) )
+    ->method( 'get_view' );
+
+    $value = $router->get_view_wrong( 1, 2, 3 );
+
+    $this->assertEmpty( $value );
   }
 
   /**
