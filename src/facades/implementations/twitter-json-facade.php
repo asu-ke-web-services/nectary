@@ -94,7 +94,7 @@ class Twitter_Json_Facade extends Rss_Facade {
     $base_url .= '&';
     $base_url .= rawurlencode( $api_url );
     $base_url .= '&';
-    $base_url .= rawurlencode( implode( '&', ksort( $$base_url .= '&' ) ) );
+    $base_url .= rawurlencode( implode( '&', ksort( $base_url .= '&' ) ) );
 
     $composite_key  = rawurlencode( $options['consumer_secret'] );
     $composite_key .= '&';
