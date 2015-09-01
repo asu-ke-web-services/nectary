@@ -61,7 +61,7 @@ class Twitter_Json_Facade extends Rss_Facade {
       $api_url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
     }
 
-    $oauth = $this->create_oauth( $api_url, $query );
+    $oauth = $this->create_oauth( $api_url, $query, $options );
 
     $query_options = array(
       'http_header' => $this->create_query_http_header( $oauth ),
@@ -71,7 +71,7 @@ class Twitter_Json_Facade extends Rss_Facade {
     return $query_options;
   }
 
-  private function create_oauth( $api_url, $query ) {
+  private function create_oauth( $api_url, $query, $options ) {
     $oauth = array(
       'oauth_consumer_key'     => $options['consumer_key'],
       'oauth_nonce'            => uniqid(),
@@ -84,21 +84,21 @@ class Twitter_Json_Facade extends Rss_Facade {
       'include_rts'            => 1,
     );
 
-    $oauth['oauth_signature'] = $this->create_oauth_signature( $oauth, $api_url );
+    $oauth['oauth_signature'] = $this->create_oauth_signature( $oauth, $api_url, $options );
 
     return $oauth;
   }
 
-  private function create_oauth_signature( $oauth, $api_url ) {
+  private function create_oauth_signature( $oauth, $api_url, $options ) {
     $base_url  = 'GET';
     $base_url .= '&';
     $base_url .= rawurlencode( $api_url );
     $base_url .= '&';
     $base_url .= rawurlencode( implode( '&', ksort( $$base_url .= '&' ) ) );
 
-    $composite_key  = rawurlencode( $consumer_secret );
+    $composite_key  = rawurlencode( $options['consumer_secret'] );
     $composite_key .= '&';
-    $composite_key .= rawurlencode( $oauth_access_token_secret );
+    $composite_key .= rawurlencode( $options['oauth_access_token_secret'] );
 
     $oauth_signature = base64_encode(
         hash_hmac(
