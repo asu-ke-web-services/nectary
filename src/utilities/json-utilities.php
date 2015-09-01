@@ -23,7 +23,7 @@ class Json_Utilities {
     return $current;
   }
 
-  public static function getOrDefault( $json, $path, $default ) {
+  public static function get_or_default( $json, $path, $default ) {
     $path_parts = explode( '.', $path );
 
     $current = $json;

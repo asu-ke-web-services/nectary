@@ -71,7 +71,7 @@ class Json_Utilities_Test extends \PHPUnit_Framework_TestCase {
 
     $json = json_decode( $raw, true );
 
-    $value = Json_Utilities::getOrDefault( $json, 'key1.key2.key3', '???' );
+    $value = Json_Utilities::get_or_default( $json, 'key1.key2.key3', '???' );
     $this->assertEquals( 'value', $value );
   }
 
@@ -88,7 +88,7 @@ class Json_Utilities_Test extends \PHPUnit_Framework_TestCase {
 
     $json = json_decode( $raw, true );
 
-    $value = Json_Utilities::getOrDefault( $json, 'key1.key2.keyNope', '???' );
+    $value = Json_Utilities::get_or_default( $json, 'key1.key2.keyNope', '???' );
     $this->assertEquals( '???', $value );
   }
 }
