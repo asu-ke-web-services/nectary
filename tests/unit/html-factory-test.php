@@ -95,32 +95,24 @@ class Html_Factory_Test extends \PHPUnit_Framework_TestCase {
     $this->assertEquals( "<a class='' href='red'>Test</a>", $html );
   }
 
-  function test_image() {
-    $factory = new Html_Factory();
-    $factory->add_image( 'Test' );
-    $html = $factory->build();
-
-    $this->assertEquals( "<img src='#' class='' />", $html );
-  }
-
   function test_image_with_classes() {
     $factory = new Html_Factory();
-    $factory->add_image( 'Test', [ 'class' => 'red' ] );
+    $factory->add_image( 'red', [ 'class' => 'red' ] );
     $html = $factory->build();
 
-    $this->assertEquals( "<img src='#' class='red' />", $html );
+    $this->assertEquals( "<img src='red' class='red' />", $html );
   }
 
   function test_with_image_returns_html() {
     $factory = new Html_Factory();
-    $html = $factory->with_image( 'Test', [ 'class' => 'red' ] );
+    $html = $factory->with_image( 'red', [ 'class' => 'red' ] );
 
-    $this->assertEquals( "<img src='#' class='red' />", $html );
+    $this->assertEquals( "<img src='red' class='red' />", $html );
   }
 
   function test_image_with_src() {
     $factory = new Html_Factory();
-    $factory->add_image( 'Test', [ 'src' => 'red' ] );
+    $factory->add_image( 'red' );
     $html = $factory->build();
 
     $this->assertEquals( "<img src='red' class='' />", $html );
