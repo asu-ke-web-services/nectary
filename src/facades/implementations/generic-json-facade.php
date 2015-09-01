@@ -22,7 +22,15 @@ class Generic_Json_Facade extends Rss_Facade {
     $json = curl_exec( $session );
 
     if ( curl_error( $session ) ) {
-      throw new \Exception( 'JSON Call failed ' . curl_strerror( curl_errno( $session ) ) );
+      $error_message = 'JSON Call failed ';
+
+      if ( function_exists( 'curl_strerror' ) ) {
+        $error_message .= curl_strerror( curl_errno( $session ) ) );
+      } else {
+        $error_message .= curl_errno( $session );
+      }
+
+      throw new \Exception( $error_message );
     }
     curl_close( $session );
 
