@@ -18,6 +18,13 @@ class Generic_Json_Facade_Test extends \PHPUnit_Framework_TestCase {
       'select+woeid+from+geo.places%281%29+where+text%3D%22tempe%2C+az',
       '%22%29&format=json'
     ]);
+
+    $this->bad_url = implode( '', [
+      'invalid://yahooapis.com/v0/public/yql',
+      '?q=select+%2A+from+weather.forecast+where+woeid+in+%28',
+      'select+woeid+from+geo.places%281%29+where+text%3D%22tempe%2C+az',
+      '%22%29&format=json'
+    ]);
   }
 
   function test_returns_json_feed() {
@@ -38,5 +45,16 @@ class Generic_Json_Facade_Test extends \PHPUnit_Framework_TestCase {
 
     $this->assertCount( 1, $items );
     $this->assertTrue( array_key_exists( 'results', $items['query'] ) );
+  }
+
+   /**
+   * @expectedException \Exception
+   */
+  function test_throws_error_when_invalid() {
+
+    $facade = new Generic_Json_Facade();
+    $json_feed = $facade->get_feed( $this->bad_url );
+
+    $json_feed->retrieve_items();
   }
 }

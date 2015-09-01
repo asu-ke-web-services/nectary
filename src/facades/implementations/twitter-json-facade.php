@@ -57,10 +57,6 @@ class Twitter_Json_Facade extends Rss_Facade {
     $limit   = $options['limit'];
     $api_url = 'https://api.twitter.com/1.1/search/tweets.json';
 
-    if ( starts_with( $query, '@' ) ) {
-      $api_url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-    }
-
     $oauth = $this->create_oauth( $api_url, $query, $options );
 
     $query_options = array(
@@ -96,7 +92,7 @@ class Twitter_Json_Facade extends Rss_Facade {
     $base_url .= '&';
     $base_url .= rawurlencode( $api_url );
     $base_url .= '&';
-    $base_url .= rawurlencode( implode( '&', $oauth ) );
+    $base_url .= rawurlencode( implode( '&', $this->get_encoded_values( $oauth ) ) );
 
     $composite_key  = rawurlencode( $options['consumer_secret'] );
     $composite_key .= '&';
@@ -126,19 +122,22 @@ class Twitter_Json_Facade extends Rss_Facade {
   }
 
   private function get_encoded_values( $oauth ) {
+    $encode_params = [];
+
     foreach ( $oauth as $key => $value ) {
-      yield "$key=\"" . rawurlencode( $value ) . '"';
+      $encode_params[]  = "$key=" . rawurlencode( $value );
     }
+
+    return $encode_params;
   }
 
   private function create_query_url( $api_url, $query, $limit ) {
-    $query  = $api_url;
-    $query .= '?q=';
-    $query .= rawurlencode( $query );
-    $query .= '&count=';
-    $query .= $limit;
-    $query .= '&include_rts=1';
-
-    return $query;
+    $query_url  = $api_url;
+    $query_url .= '?q=';
+    $query_url .= rawurlencode( $query );
+    $query_url .= '&count=';
+    $query_url .= $limit;
+    $query_url .= '&include_rts=1';
+    return $query_url;
   }
 }
