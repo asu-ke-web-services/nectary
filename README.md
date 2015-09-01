@@ -1,6 +1,6 @@
 ![Nectary](documentation/images/nectary-with-text.png)
 
-[![Build Status](https://travis-ci.org/gios-asu/nectary.svg)](https://travis-ci.org/gios-asu/nectary)
+[![Build Status](https://travis-ci.org/gios-asu/nectary.svg)](https://travis-ci.org/gios-asu/nectary) [![Coverage Status](https://coveralls.io/repos/gios-asu/nectary/badge.svg?branch=develop&service=github)](https://coveralls.io/github/gios-asu/nectary?branch=develop)
 
 
 A simple PHP framework that is not tied to a web interface.

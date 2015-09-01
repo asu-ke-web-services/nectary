@@ -12,7 +12,8 @@
         "files": [
             "src/utilities/command-utilities.php",
             "src/utilities/configuration-utilities.php",
-            "src/utilities/ensure_default.php"
+            "src/utilities/ensure-default.php",
+            "src/utilities/string-utilities.php"
         ],
         "classmap" : [ "src/" ]
     },
@@ -20,6 +21,7 @@
         "xamin/handlebars.php": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.8.*"
+        "phpunit/phpunit": "4.8.*",
+        "satooshi/php-coveralls": ">=0.6"
     }
 }

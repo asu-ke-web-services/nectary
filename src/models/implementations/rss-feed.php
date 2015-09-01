@@ -2,7 +2,9 @@
 
 namespace Nectary\Models;
 
-class Rss_Feed {
+use Nectary\Feed;
+
+class Rss_Feed implements Feed {
   private $url;
   private $items;
   private $feed_callback;
