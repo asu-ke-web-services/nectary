@@ -11,6 +11,9 @@ php:
 install:
   - composer install --no-interaction --prefer-source
 
+before_script:
+  - mkdir coverage
+
 script:
   - vendor/bin/phpunit --coverage-clover coverage/clover.xml
 
