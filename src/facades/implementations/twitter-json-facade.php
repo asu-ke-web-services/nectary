@@ -90,11 +90,13 @@ class Twitter_Json_Facade extends Rss_Facade {
   }
 
   private function create_oauth_signature( $oauth, $api_url, $options ) {
+    ksort( $oauth )
+
     $base_url  = 'GET';
     $base_url .= '&';
     $base_url .= rawurlencode( $api_url );
     $base_url .= '&';
-    $base_url .= rawurlencode( implode( '&', ksort( $oauth ) ) );
+    $base_url .= rawurlencode( implode( '&', $oauth ) );
 
     $composite_key  = rawurlencode( $options['consumer_secret'] );
     $composite_key .= '&';
