@@ -11,5 +11,11 @@ php:
 install:
   - composer install --no-interaction --prefer-source
 
+before_script:
+  - mkdir coverage
+
 script:
-  - vendor/bin/phpunit
+  - vendor/bin/phpunit --coverage-clover coverage/clover.xml
+
+after_script:
+  - php vendor/bin/coveralls -v
