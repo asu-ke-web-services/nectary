@@ -90,7 +90,7 @@ class Twitter_Json_Facade extends Rss_Facade {
   }
 
   private function create_oauth_signature( $oauth, $api_url, $options ) {
-    ksort( $oauth )
+    ksort( $oauth );
 
     $base_url  = 'GET';
     $base_url .= '&';
