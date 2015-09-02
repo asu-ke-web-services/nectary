@@ -17,6 +17,32 @@ class Json_Utilities {
    * able to go
    */
   public static function get( $json, $path ) {
+    if ( self::check_path( $json, $path ) ) {
+      $path_parts = explode( '.', $path );
+
+      $current = $json;
+
+      foreach ( $path_parts as $part ) {
+        $current = $current[ $part ];
+      }
+
+      return $current;
+    } else {
+      return null;
+    }
+  }
+
+  public static function get_or_default( $json, $path, $default = null ) {
+    $ref = self::get( $json, $path );
+    
+    if ( $ref === null && ! self::check_path( $json, $path ) ) {
+      return $default;
+    } else {
+      return $ref;
+    }
+  }
+
+  public static function check_path( $json, $path ) {
     $path_parts = explode( '.', $path );
 
     $current = $json;
@@ -26,20 +52,10 @@ class Json_Utilities {
            array_key_exists( $part, $current ) ) {
         $current = $current[ $part ];  
       } else {
-        return null;
+        return false;
       }
     }
 
-    return $current;
-  }
-
-  public static function get_or_default( $json, $path, $default = null ) {
-    $ref = self::get( $json, $path );
-    
-    if ( $ref === null ) {
-      return $default;
-    } else {
-      return $ref;
-    }
+    return true;
   }
 }

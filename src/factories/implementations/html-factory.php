@@ -74,10 +74,8 @@ class Html_Factory extends Factory {
 
   public function with_image( $src, $options = [] ) {
     ensure_default( $options, 'class', '' );
-    ensure_default( $options, 'src', '#' );
 
     $classes = $options['class'];
-    $src     = $options['src'];
 
     return "<img src='{$src}' class='{$classes}' />";
   }

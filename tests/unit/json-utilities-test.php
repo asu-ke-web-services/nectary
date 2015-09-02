@@ -63,7 +63,7 @@ class Json_Utilities_Test extends \PHPUnit_Framework_TestCase {
       {
         \"key1\" : {
           \"key2\" : {
-            \"key3\" : \"null\"
+            \"key3\" : null
           }
         }
       }
@@ -72,7 +72,24 @@ class Json_Utilities_Test extends \PHPUnit_Framework_TestCase {
     $json = json_decode( $raw, true );
 
     $value = Json_Utilities::get( $json, 'key1.key2.key3' );
-    $this->assertEquals( 'null', $value );
+    $this->assertEquals( null, $value );
+  }
+
+  function test_will_return_null_value_given_a_default() {
+    $raw = "
+      {
+        \"key1\" : {
+          \"key2\" : {
+            \"key3\" : null
+          }
+        }
+      }
+    ";
+
+    $json = json_decode( $raw, true );
+
+    $value = Json_Utilities::get_or_default( $json, 'key1.key2.key3', '???' );
+    $this->assertEquals( null, $value );
   }
 
   function test_will_return_real_value_when_providing_a_default() {
