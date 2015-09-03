@@ -1,15 +1,14 @@
 <?php
 
-namespace Nectary\Facades;
+namespace Nectary\Services;
 
 use Nectary\Models\Json_Feed;
-use Nectary\Facades\Rss_Facade;
+use Nectary\Services\Feed_Service;
 
-class Generic_Json_Facade extends Rss_Facade {
-  public function load_dependencies() {
-    return array( $this, 'get_feed' );
-  }
-
+class Json_Feed_Service extends Feed_Service {
+  /**
+   * @return Json_Feed
+   */
   public function get_feed( $url ) {
     return new Json_Feed( $url, array( $this, 'get_curl_feed_data' ) );
   }

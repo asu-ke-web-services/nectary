@@ -40,6 +40,32 @@ class Json_Feed implements Feed {
     $this->items = $items;
   }
 
+  public function get_unique_items() {
+    $unique = [];
+
+    for ( $i = 0; $i < count( $this->items ); $i++ ) {
+      $duplicate = false;
+      for ( $j = 0; $j < count( $this->items ); $j++ ) {
+        if ( $i !== $j ) {
+          // Loose equality on purpose
+          if ( $this->items[ $i ] == $this->items[ $j ] ) {
+            // Only count a duplicate if it is BEHIND the current index
+            if ( $j < $i ) {
+              // Duplicate found
+              $duplicate = true;
+              break;
+            }
+          }
+        }
+      }
+      if ( ! $duplicate ) {
+        $unique[] = $this->items[ $i ];
+      }
+    }
+
+    return $unique;
+  }
+
   private function parse_feed( $json ) {
     $json = json_decode( $json, true );
     if ( empty( $json ) ) {

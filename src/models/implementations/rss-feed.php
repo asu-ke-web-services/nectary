@@ -47,4 +47,8 @@ class Rss_Feed implements Feed {
   public function set_items( $items ) {
     $this->items = $items;
   }
+
+  public function get_unique_items() {
+    // TODO
+  }
 }

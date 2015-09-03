@@ -27,4 +27,16 @@ class Json_Feed_Test extends \PHPUnit_Framework_TestCase {
 
     $this->assertEquals( [ 'key' => 'value' ], $items );
   }
+
+  function test_json_feed_can_sort_by_date() {
+    // TODO
+  }
+
+  function test_json_feed_can_set_items() {
+    // TODO
+  }
+
+  function test_json_feed_can_get_unique_items() {
+    // TODO
+  }
 }

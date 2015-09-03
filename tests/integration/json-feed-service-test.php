@@ -2,15 +2,15 @@
 
 namespace Nectary\Tests\Integration;
 
-use Nectary\Facades\Generic_Json_Facade;
+use Nectary\Services\Json_Feed_Service;
 
 /**
- * Test the Generic JSON Facade in the framework
+ * Test the Generic JSON Service in the framework
  *
- * @group facade
+ * @group service
  * @group integration
  */
-class Generic_Json_Facade_Test extends \PHPUnit_Framework_TestCase {
+class Json_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
   function setUp() {
     $this->yahoo_weather = implode( '', [
       'http://query.yahooapis.com/v1/public/yql',
@@ -28,7 +28,7 @@ class Generic_Json_Facade_Test extends \PHPUnit_Framework_TestCase {
   }
 
   function test_returns_json_feed() {
-    $facade = new Generic_Json_Facade();
+    $facade = new Json_Feed_Service();
 
     $json_feed = $facade->get_feed( $this->yahoo_weather );
 
@@ -36,7 +36,7 @@ class Generic_Json_Facade_Test extends \PHPUnit_Framework_TestCase {
   }
 
   function test_returns_json_data() {
-    $facade = new Generic_Json_Facade();
+    $facade = new Json_Feed_Service();
 
     $json_feed = $facade->get_feed( $this->yahoo_weather );
 
@@ -52,7 +52,7 @@ class Generic_Json_Facade_Test extends \PHPUnit_Framework_TestCase {
    */
   function test_throws_error_when_invalid() {
 
-    $facade = new Generic_Json_Facade();
+    $facade = new Json_Feed_Service();
     $json_feed = $facade->get_feed( $this->bad_url );
 
     $json_feed->retrieve_items();

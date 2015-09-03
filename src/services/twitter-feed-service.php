@@ -1,16 +1,12 @@
 <?php
 
-namespace Nectary\Facades;
+namespace Nectary\Services;
 
 use Nectary\Models\Json_Feed;
-use Nectary\Facades\Rss_Facade;
+use Nectary\Services\Feed_Service;
 
-class Twitter_Json_Facade extends Rss_Facade {
+class Twitter_Feed_Service extends Feed_Service {
   private $options;
-
-  public function load_dependencies() {
-    return array( $this, 'get_feed' );
-  }
 
   public function get_feed( $options ) {
     ensure_default( $options, 'query', '@asugreen' );

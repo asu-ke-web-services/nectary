@@ -2,16 +2,16 @@
 
 namespace Nectary\Tests\Integration;
 
-use Nectary\Facades\Twitter_Json_Facade;
+use Nectary\Services\Twitter_Feed_Service;
 
 /**
  * Test the Twitter JSON Facade in the framework
  * This will ACTUALLY ping Twitter
  *
- * @group facade
+ * @group service
  * @group integration
  */
-class Twitter_Json_Facade_Test extends \PHPUnit_Framework_TestCase {
+class Twitter_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
   /**
    * Random Twitter API keys pulled from the Internet
    */
@@ -21,7 +21,7 @@ class Twitter_Json_Facade_Test extends \PHPUnit_Framework_TestCase {
   const OAUTH_ACCESS_TOKEN_SECRET = 'EYrFp0lfNajBslYV3WgAGmpHqYZvvNxP5uxxSq8Dbs1wa';
 
   function test_returns_tweets() {
-    $facade = new Twitter_Json_Facade();
+    $facade = new Twitter_Feed_Service();
 
     $json_feed = $facade->get_feed(
         array(
