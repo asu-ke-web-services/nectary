@@ -10,7 +10,7 @@ use Nectary\Models\Json_Feed;
 class Json_Feed_Test extends \PHPUnit_Framework_TestCase {
   function test_json_feed_parses_json() {
     $obj = $this->getMockBuilder( 'Object' )
-    ->setMethods( ['get_curl_feed_data' ] )
+    ->setMethods( [ 'get_curl_feed_data' ] )
     ->getMock();
 
     $obj->expects( $this->once() )

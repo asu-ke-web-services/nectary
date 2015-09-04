@@ -17,11 +17,13 @@ class Rss_Feed implements Feed {
   public function retrieve_items() {
     $feed = call_user_func( $this->feed_callback, $this->url );
 
-    if ( is_wp_error( $feed ) ) {
-      throw new \Exception( 'Feed could not be loaded' );
-    } else {
-      $this->items = $feed->get_items( 0 );
+    if ( function_exists( 'is_wp_error' ) ) {
+      if ( is_wp_error( $feed ) ) {
+        throw new \Exception( 'Feed could not be loaded' );
+      }
     }
+
+    $this->items = $feed->get_items( 0 );
   }
 
   public function sort_by_date( $order = 'asc' ) {

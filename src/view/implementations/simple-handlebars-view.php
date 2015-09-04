@@ -12,7 +12,7 @@ class Simple_Handlebars_View extends Handlebars_View {
   protected $callback;
 
   public function __construct( $view_root, $template_name, $callback ) {
-    parent::__construct( null, $view_root );
+    parent::__construct( $view_root );
     $this->template_name = $template_name;
     $this->callback      = $callback;
   }

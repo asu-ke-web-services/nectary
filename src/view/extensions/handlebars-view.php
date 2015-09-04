@@ -23,7 +23,7 @@ abstract class Handlebars_View extends View {
    * @param $view_root String|Boolean Use false if you are not using views
    * @param $path_to_view String|Boolean Use to override the path to the views
    */
-  protected function __construct( $unused, $view_root = '' ) {
+  protected function __construct( $view_root = '' ) {
     if ( false === $view_root ) {
       // False means we are not loading from a template!
       $loader = new \Handlebars\Loader\StringLoader();

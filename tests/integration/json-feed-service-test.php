@@ -28,17 +28,17 @@ class Json_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
   }
 
   function test_returns_json_feed() {
-    $facade = new Json_Feed_Service();
+    $service = new Json_Feed_Service();
 
-    $json_feed = $facade->get_feed( $this->yahoo_weather );
+    $json_feed = $service->get_feed( $this->yahoo_weather );
 
     $this->assertInstanceOf( 'Nectary\Models\Json_Feed', $json_feed );
   }
 
   function test_returns_json_data() {
-    $facade = new Json_Feed_Service();
+    $service = new Json_Feed_Service();
 
-    $json_feed = $facade->get_feed( $this->yahoo_weather );
+    $json_feed = $service->get_feed( $this->yahoo_weather );
 
     $json_feed->retrieve_items();
     $items = $json_feed->get_items();
@@ -52,8 +52,8 @@ class Json_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
    */
   function test_throws_error_when_invalid() {
 
-    $facade = new Json_Feed_Service();
-    $json_feed = $facade->get_feed( $this->bad_url );
+    $service = new Json_Feed_Service();
+    $json_feed = $service->get_feed( $this->bad_url );
 
     $json_feed->retrieve_items();
   }
