@@ -162,7 +162,7 @@ abstract class Handlebars_View extends View {
 
   private function get_real_value( $value, $context ) {
     if ( $value instanceof \Handlebars\StringWrapper ) {
-      return '' . $value;
+      return $this->get_real_value( '' . $value, $context );
     } else if ( array_key_exists( $value, $context ) ) {
       return $context[ $value ];
     } else {
