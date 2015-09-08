@@ -1,6 +1,6 @@
 ![Nectary](documentation/images/nectary-with-text.png)
 
-[![Build Status](https://travis-ci.org/gios-asu/nectary.svg)](https://travis-ci.org/gios-asu/nectary) [![Coverage Status](https://coveralls.io/repos/gios-asu/nectary/badge.svg?branch=develop&service=github)](https://coveralls.io/github/gios-asu/nectary?branch=develop)
+[![Build Status](https://travis-ci.org/gios-asu/nectary.svg)](https://travis-ci.org/gios-asu/nectary) [![Coverage Status](https://coveralls.io/repos/gios-asu/nectary/badge.svg?branch=develop&service=github)](https://coveralls.io/github/gios-asu/nectary?branch=develop) [![Code Climate](https://codeclimate.com/github/gios-asu/nectary/badges/gpa.svg)](https://codeclimate.com/github/gios-asu/nectary) [![GitHub issues](https://img.shields.io/github/issues/gios-asu/nectary.svg)]() [![GitHub license](https://img.shields.io/github/license/gios-asu/nectary.svg)]()
 
 
 A simple PHP framework that is not tied to a web interface.
@@ -18,7 +18,7 @@ Nectary is currently only available through GitHub, to install, add the followin
         }
     ],
     "require": {
-        "gios-asu/nectary": "^0.0.1"
+        "gios-asu/nectary": "dev-develop"
     }
 }
 ```
