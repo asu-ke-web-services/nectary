@@ -16,4 +16,3 @@ if ( ! function_exists( 'ensure_default' ) ) {
     }
   }
 }
-
