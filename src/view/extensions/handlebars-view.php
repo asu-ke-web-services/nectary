@@ -33,7 +33,7 @@ abstract class Handlebars_View extends View {
         $this->view_root = $view_root . '/';
       }
 
-      $dir = Configuration::get_instance()->path_to_views;
+      $dir = Configuration::get_instance()->get( 'path_to_views' );
 
       $this->engine = new \Handlebars\Handlebars(
           array(

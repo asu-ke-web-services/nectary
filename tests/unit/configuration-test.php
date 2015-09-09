@@ -115,4 +115,9 @@ class Configuration_Test extends \PHPUnit_Framework_TestCase {
     $value = $instance->get( 'another' );
     $this->assertEquals( '1234', $value );
   }
+
+  function test_configuration_can_set_value() {
+    Configuration::get_instance()->set( 'newkey', 'newvalue' );
+    $this->assertEquals( 'newvalue', Configuration::get_instance()->get( 'newkey' ) );
+  }
 }

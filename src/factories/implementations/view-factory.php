@@ -195,7 +195,7 @@ class View_Factory extends Factory {
   }
 
   private function get_file_extension( $view_root, $template_name ) {
-    $path = Configuration::get_instance()->path_to_views;
+    $path = Configuration::get_instance()->get( 'path_to_views' );
 
     if ( ! empty( $view_root ) ) {
       $path .= '/' . $view_root;
