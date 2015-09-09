@@ -3,6 +3,8 @@
 namespace Nectary\Factories;
 
 use Nectary\Factory;
+use Nectary\Configuration;
+use Nectary\Models\View_Model;
 
 /**
  * This factory is slightly different because
@@ -125,6 +127,7 @@ class View_Factory extends Factory {
     $template_name  = $this->get_template_name();
     $file_extension = $this->get_file_extension( $view_root, $template_name );
     $view_data      = $this->view_data;
+    $content        = '';
 
     switch ( $file_extension ) {
       case 'handlebars':
@@ -138,15 +141,15 @@ class View_Factory extends Factory {
               );
             }
         );
+        $content = $view->output();
         break;
       default:
-        $view = null;
         break;
     }
 
     return new View_Model(
         array(
-          'content' => $view->output(),
+          'content' => $content,
           'head' => $this->head_data,
         )
     );
@@ -159,10 +162,16 @@ class View_Factory extends Factory {
   private function get_view_root() {
     $parts = explode( '.', $this->view_name );
 
-    if ( count( $parts ) < 1 ) {
+    if ( count( $parts ) <= 1 ) {
       return '';
     } else {
-      return $parts[0];
+      // There may be more than one dot!
+
+      $dot_position = strrpos( $this->view_name, '.' );
+      $suffix = substr( $this->view_name, 0, $dot_position );
+      $suffix = str_replace( '.', '/', $suffix );
+
+      return $suffix;
     }
   }
 
@@ -173,19 +182,30 @@ class View_Factory extends Factory {
   private function get_template_name() {
     $parts = explode( '.', $this->view_name );
 
-    if ( count( $parts ) < 1 ) {
+    if ( count( $parts ) <= 1 ) {
       return $parts[0];
     } else {
-      return $parts[1];
+      // There may be more than one dot!
+
+      $dot_position = strrpos( $this->view_name, '.' );
+      $suffix = substr( $this->view_name, $dot_position + 1 );
+
+      return $suffix;
     }
   }
 
   private function get_file_extension( $view_root, $template_name ) {
     $path = Configuration::get_instance()->path_to_views;
 
-    $path .= '/' . $view_root . '/' . $template_name;
+    if ( ! empty( $view_root ) ) {
+      $path .= '/' . $view_root;
+    }
 
-    foreach ( glob( $path . '.*' ) as $filename ) {
+    $path .= '/' . $template_name;
+
+    $files = glob( $path . '.*' );
+
+    foreach ( $files as $filename ) {
       return pathinfo( $filename, PATHINFO_EXTENSION );
     }
 
