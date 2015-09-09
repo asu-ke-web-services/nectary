@@ -12,4 +12,8 @@ class Date_Utilities_Test extends \PHPUnit_Framework_TestCase {
 
     $this->assertEquals( $expected_date, date_to_cal( $timestamp ) );
   }
+
+  function test_date_to_calendar_can_accept_no_arguments() {
+    $this->assertNotEmpty( date_to_cal() );
+  }
 }
