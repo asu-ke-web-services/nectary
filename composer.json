@@ -15,7 +15,8 @@
             "src/utilities/configuration-utilities.php",
             "src/utilities/date-utilities.php",
             "src/utilities/ensure-default.php",
-            "src/utilities/string-utilities.php"
+            "src/utilities/string-utilities.php",
+            "src/utilities/view-utilities.php"
         ],
         "classmap" : [ "src/" ]
     },
