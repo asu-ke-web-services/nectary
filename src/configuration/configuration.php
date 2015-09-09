@@ -24,6 +24,10 @@ class Configuration extends Singleton {
     }
   }
 
+  public function set( $key, $value ) {
+    $this->attributes[ $key ] = $value;
+  }
+
   /**
    * Load in the configuration file and parse it
    */

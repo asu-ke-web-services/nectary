@@ -33,7 +33,7 @@ class View_Factory_Test extends \PHPUnit_Framework_TestCase {
   }
 
   function test_build_uses_given_configuration() {
-    Configuration::get_instance()->path_to_views = 'test_path';
+    Configuration::get_instance()->set( 'path_to_views', 'test_path' );
 
     $mock = create_function_mock( $this, 'glob', 1 );
     $mock->with( 'test_path/na.*' )
@@ -43,7 +43,7 @@ class View_Factory_Test extends \PHPUnit_Framework_TestCase {
   }
 
   function test_build_uses_dot_notation_for_paths() {
-    Configuration::get_instance()->path_to_views = 'test_path';
+    Configuration::get_instance()->set( 'path_to_views', 'test_path' );
 
     $mock = create_function_mock( $this, 'glob', 2 );
     $mock->withConsecutive(
