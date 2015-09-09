@@ -5,6 +5,7 @@ namespace Nectary\Factories;
 use Nectary\Factory;
 use Nectary\Configuration;
 use Nectary\Models\View_Model;
+use Nectary\Views\Simple_Handlebars_View;
 
 /**
  * This factory is slightly different because
