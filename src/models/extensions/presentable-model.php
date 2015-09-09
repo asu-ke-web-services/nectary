@@ -3,6 +3,7 @@
 namespace Nectary\Models;
 
 use Nectary\Data_Model;
+use Nectary\Factory;
 
 /**
  * A Viewable model is one that can present itself so that all of its
