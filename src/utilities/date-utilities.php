@@ -11,7 +11,11 @@ if ( ! function_exists( 'date_to_cal' ) ) {
    * @param string $timestamp 
    * @return string
    */
-  function date_to_cal( $timestamp ) {
+  function date_to_cal( $timestamp = '' ) {
+    if ( empty( $timestamp ) ) {
+      return date( 'Ymd\THis' );
+    }
+
     return date( 'Ymd\THis', $timestamp );
   }
 }
