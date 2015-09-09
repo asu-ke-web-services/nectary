@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary;
+namespace Nectary {
 
 $mock_dictionary = [];
 $mock_counts = [];
@@ -81,4 +81,15 @@ function file_get_contents( $file_path ) {
   }, function () use ( $file_path ) {
       return \file_get_contents( $file_path );
   } );
+}
+}
+
+namespace Nectary\Factories {
+  function glob( $file_path ) {
+    return \Nectary\__perform( 'glob', function ( $mock ) use ( $file_path ) {
+      return $mock->glob( $file_path );
+    }, function () use ( $file_path ) {
+      return \glob( $file_path );
+    } );
+  }
 }
