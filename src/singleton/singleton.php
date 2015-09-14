@@ -8,7 +8,7 @@ abstract class Singleton {
 
   protected function __clone() { }
 
-  public static function get_instance(){
+  public static function get_instance() {
     if ( ! isset( static::$instance ) ) {
       static::$instance = new static;
     }

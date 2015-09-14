@@ -120,7 +120,7 @@ class Dependency_Injection_Factory extends Factory {
     $constructor = $reflector->getConstructor();
 
     if ( is_subclass_of( $class_name, Singleton::class ) ) {
-      return $class_name::$get_instance();
+      return $class_name::get_instance();
     } else if ( is_null( $constructor ) ) {
       return new $class_name;
     }
