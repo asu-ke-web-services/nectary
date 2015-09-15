@@ -13,6 +13,7 @@
             "src/utilities/array-utilities.php",
             "src/utilities/command-utilities.php",
             "src/utilities/configuration-utilities.php",
+            "src/utilities/dao-utilities.php",
             "src/utilities/date-utilities.php",
             "src/utilities/ensure-default.php",
             "src/utilities/string-utilities.php",
