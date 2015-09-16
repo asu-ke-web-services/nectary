@@ -3,6 +3,7 @@
 namespace Nectary\Tests;
 
 use Nectary\Views\Simple_Handlebars_View;
+use Nectary\Configuration;
 
 /**
  * @group handlebars
@@ -186,4 +187,45 @@ class Simple_Handlebars_View_Test extends \PHPUnit_Framework_TestCase {
     $this->assertEquals( '', $output );
   }
 
+  function test_config_will_return_configuration_value() {
+    $template = "{{#config myKey}}";
+
+    Configuration::get_instance()->set( 'myKey', 'myValue' );
+
+    $view = new Simple_Handlebars_View(
+        false,
+        'template_name',
+        function( $engine ) use ( $template ) {
+          return $engine->render(
+              $template,
+              [
+              ]
+          );
+        }
+    );
+
+    $output = $view->output();
+
+    $this->assertEquals( 'myValue', $output );
+  }
+
+  function test_config_will_return_default() {
+    $template = "{{#config myKeyInvalid myDefault}}";
+
+    $view = new Simple_Handlebars_View(
+        false,
+        'template_name',
+        function( $engine ) use ( $template ) {
+          return $engine->render(
+              $template,
+              [
+              ]
+          );
+        }
+    );
+
+    $output = $view->output();
+
+    $this->assertEquals( 'myDefault', $output );
+  }
 }

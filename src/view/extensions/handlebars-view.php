@@ -63,6 +63,28 @@ abstract class Handlebars_View extends View {
     self::add_html_special_chars_handler();
     self::add_conditional_operators();
     self::add_strip_tags();
+    self::add_config();
+  }
+
+  private function add_config() {
+    $this->engine->addHelper(
+        'config',
+        function ( $template, $context, $args ) {
+          $handlebars_arguments = new \Handlebars\Arguments( $args );
+          $arguments            = $handlebars_arguments->getPositionalArguments();
+
+          $key = $arguments[0];
+
+          if ( count( $arguments ) > 1 ) {
+            $default = $arguments[1];
+            $value = Configuration::get_instance()->get( $key, $default );
+          } else {
+            $value = Configuration::get_instance()->get( $key );
+          }
+
+          return $value;
+        }
+    );
   }
 
   /**
