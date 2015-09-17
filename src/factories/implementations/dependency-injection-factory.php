@@ -4,6 +4,7 @@ namespace Nectary\Factories;
 
 use Nectary\Factory;
 use Nectary\Singleton;
+use Nectary\Request;
 
 /**
  * Given a class name and method for the class
