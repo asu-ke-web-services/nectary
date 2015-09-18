@@ -2,13 +2,15 @@
 
 namespace Nectary;
 
+use Nectary\Request;
+
 /**
  * A request will validate based on a set of rules
  *
  * A request can also be used to take in options and
  * pull in the data required to fulfill a request.
  */
-abstract class Fail_Fast_Request {
+abstract class Fail_Fast_Request extends Request {
   public function validate( $error_callback ) {
     $rules = $this->validation_rules();
 
