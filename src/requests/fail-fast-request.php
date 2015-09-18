@@ -24,6 +24,4 @@ abstract class Fail_Fast_Request extends Request {
       }
     }
   }
-
-  abstract public function validation_rules();
 }
