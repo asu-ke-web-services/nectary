@@ -9,11 +9,11 @@ class Configuration extends Singleton {
   public $attributes;
 
   public static function set_configuration_path( $path ) {
-    self::$instance = new Configuration( $path );
+    self::set_instance( new self( $path ) );
   }
 
   public static function reset() {
-    self::$instance = null;
+    self::$instances[ self::class ] = null;
   }
 
   public function get( $key, $default = null ) {
@@ -36,7 +36,7 @@ class Configuration extends Singleton {
     $configuration = '';
 
     if ( file_exists( $path ) ) {
-      $configuration = @file_get_contents( $path );  
+      $configuration = @file_get_contents( $path );
     }
 
     if ( ! empty( $configuration ) ) {
