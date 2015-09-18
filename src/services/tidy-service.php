@@ -7,8 +7,8 @@ class Tidy_Service {
     $content = self::normalize_html_string( $content_excerpt );
     $content = trim( $content );
     // If we only have 1 paragraph and less than $words words, reset the content
-    // to the full event content
-    if ( count( explode( ' ', $content ) ) < $words ) {
+    // to the full content
+    if ( count( explode( ' ', $content ) ) <= $words ) {
         return $content;
     } else {
       // We have some trimming to do
