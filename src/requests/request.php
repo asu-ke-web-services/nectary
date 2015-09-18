@@ -18,14 +18,14 @@ abstract class Request {
       if ( true !== $check ) {
         if ( is_array( $error_callback ) ) {
           $results[] = call_user_func_array( $error_callback, [ $check, $this ] );
+        } else {
+          $results[] = $error_callback( $check, $this );
         }
-
-        $results[] = $error_callback( $check, $this );
       }
     }
 
     if ( count( $results ) > 0 ) {
-      return $error_callback( $results, $this );
+      return $results;
     }
   }
 
