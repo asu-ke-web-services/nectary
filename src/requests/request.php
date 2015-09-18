@@ -12,11 +12,21 @@ abstract class Request {
   public function validate( $error_callback ) {
     $rules = $this->validation_rules();
 
-    if ( is_array( $error_callback ) ) {
-      return call_user_func_array( $error_callback, [ $rules, $this ] );
+    $results = [];
+
+    foreach ( $rules as $name => $check ) {
+      if ( true !== $check ) {
+        if ( is_array( $error_callback ) ) {
+          $results[] = call_user_func_array( $error_callback, [ $check, $this ] );
+        }
+
+        $results[] = $error_callback( $check, $this );
+      }
     }
 
-    return $error_callback( $rules, $this );
+    if ( count( $results ) > 0 ) {
+      return $error_callback( $results, $this );
+    }
   }
 
   abstract public function validation_rules();
