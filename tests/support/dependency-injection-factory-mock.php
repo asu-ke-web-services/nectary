@@ -17,3 +17,14 @@ class Dif_Nested_Test_Object {
     return $this->d->exclaim() . '!';
   }
 }
+
+class Dif_Has_Abstract_Dependency_Test_Object {
+  public $abstract_instance = false;
+  public function __construct( Dif_Abstract_Test_Object $d = null ) {
+    $this->abstract_instance = $d;
+  }
+}
+
+abstract class Dif_Abstract_Test_Object {
+
+}
