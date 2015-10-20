@@ -9,6 +9,7 @@ class Twitter_Feed_Service extends Feed_Service {
   private $options;
 
   public function get_feed( $options ) {
+    ensure_default( $options, 'query_type', 'search' );
     ensure_default( $options, 'query', '@asugreen' );
     ensure_default( $options, 'limit', 20 );
     ensure_default( $options, 'oauth_access_token', '' );
@@ -45,25 +46,46 @@ class Twitter_Feed_Service extends Feed_Service {
 
     curl_close( $feed );
 
+    switch ( $this->options['query_type'] ) {
+      case 'search':
+        return $json;
+        break;
+      case 'screenname':
+        return json_encode( array( 'statuses' => json_decode($json) ) );
+        break;
+    }
+
     return $json;
   }
 
   private function create_query_options( $options ) {
-    $query   = $options['query'];
-    $limit   = $options['limit'];
-    $api_url = 'https://api.twitter.com/1.1/search/tweets.json';
+    $query = $options['query'];
+    $type  = $options['query_type'];
+    $limit = $options['limit'];
+    $api_url = '';
+    $query_type = '';
+    switch ( $type ) {
+      case 'search':
+        $api_url    = 'https://api.twitter.com/1.1/search/tweets.json';
+        $query_type = 'q';
+        break;
+      case 'screenname':
+        $api_url    = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+        $query_type = 'screen_name';
+        break;
+    }
 
-    $oauth = $this->create_oauth( $api_url, $query, $options );
+    $oauth = $this->create_oauth( $api_url, $query, $query_type, $options );
 
     $query_options = array(
       'http_header' => $this->create_query_http_header( $oauth ),
-      'url'         => $this->create_query_url( $api_url, $query, $limit ),
+      'url'         => $this->create_query_url( $api_url, $query, $query_type, $limit ),
     );
 
     return $query_options;
   }
 
-  private function create_oauth( $api_url, $query, $options ) {
+  private function create_oauth( $api_url, $query, $query_type, $options ) {
     $oauth = array(
       'oauth_consumer_key'     => $options['consumer_key'],
       'oauth_nonce'            => uniqid(),
@@ -71,10 +93,11 @@ class Twitter_Feed_Service extends Feed_Service {
       'oauth_token'            => $options['oauth_access_token'],
       'oauth_timestamp'        => time(),
       'oauth_version'          => '1.0',
-      'q'                      => $query,
       'count'                  => $options['limit'],
       'include_rts'            => 1,
     );
+
+    $oauth[ $query_type ] = $query;
 
     $oauth['oauth_signature'] = $this->create_oauth_signature( $oauth, $api_url, $options );
 
@@ -127,9 +150,9 @@ class Twitter_Feed_Service extends Feed_Service {
     return $encode_params;
   }
 
-  private function create_query_url( $api_url, $query, $limit ) {
+  private function create_query_url( $api_url, $query, $query_type, $limit ) {
     $query_url  = $api_url;
-    $query_url .= '?q=';
+    $query_url .= '?' . $query_type . '=';
     $query_url .= rawurlencode( $query );
     $query_url .= '&count=';
     $query_url .= $limit;
