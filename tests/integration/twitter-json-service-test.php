@@ -39,4 +39,25 @@ class Twitter_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
     $items = $json_feed->get_items();
     $this->assertCount( 15, $items['statuses'] );
   }
+
+  function test_returns_user_tweets() {
+    $facade = new Twitter_Feed_Service();
+
+    $json_feed = $facade->get_feed(
+        array(
+          'query' => 'asugreen',
+          'query_type' => 'screenname',
+          'limit' => '15',
+          'oauth_access_token'        => self::OAUTH_ACCESS_TOKEN,
+          'oauth_access_token_secret' => self::OAUTH_ACCESS_TOKEN_SECRET,
+          'consumer_key'              => self::CONSUMER_KEY,
+          'consumer_secret'           => self::CONSUMER_SECRET,
+        )
+    );
+
+    $json_feed->retrieve_items();
+
+    $items = $json_feed->get_items();
+    $this->assertCount( 15, $items['statuses'] );
+  }
 }
