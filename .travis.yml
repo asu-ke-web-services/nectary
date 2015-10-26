@@ -16,8 +16,8 @@ before_script:
   - mkdir coverage
 
 script:
-  - vendor/bin/phpcs --standard=GIOS ./src
-  - vendor/bin/phpunit -n --coverage-clover coverage/clover.xml
+  - vendor/bin/phpcs -n --standard=GIOS ./src
+  - vendor/bin/phpunit --coverage-clover coverage/clover.xml
 
 after_script:
   - php vendor/bin/coveralls -v
