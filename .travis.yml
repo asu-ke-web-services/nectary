@@ -5,17 +5,19 @@ php:
   - 5.5
   - 5.6
   - 7.0
-  - nightly
   - hhvm
 
 install:
   - composer install --no-interaction --prefer-source
+  - composer create-project wp-coding-standards/wpcs:dev-master --no-dev -n standards/wpcs
+  - ./vendor/bin/phpcs -vvv -w --config-set installed_paths '../../../standards/gios/,../../../standards/wpcs/'
 
 before_script:
   - mkdir coverage
 
 script:
-  - vendor/bin/phpunit --coverage-clover coverage/clover.xml
+  - vendor/bin/phpcs --standard=GIOS ./src
+  - vendor/bin/phpunit -n --coverage-clover coverage/clover.xml
 
 after_script:
   - php vendor/bin/coveralls -v

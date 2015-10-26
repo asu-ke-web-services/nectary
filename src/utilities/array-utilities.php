@@ -1,12 +1,13 @@
 <?php
 
 if ( ! function_exists( 'array_peak' ) ) {
-  function array_peak( $array ) { 
+  function array_peak( $array ) {
     if ( is_array( $array ) ) {
-      foreach( $array as $value ) {
+      foreach ( $array as $value ) {
         return $value;
       }
     }
+
     return null;
   }
 }

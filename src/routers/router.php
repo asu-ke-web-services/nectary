@@ -125,7 +125,7 @@ abstract class Router {
     if ( is_array( $to ) ) {
       $to_parts = $to;
     } else {
-      $to_parts  = explode( '@', $to );  
+      $to_parts  = explode( '@', $to );
     }
 
     $to_class  = $to_parts[0];
@@ -154,7 +154,7 @@ abstract class Router {
       return $this->call(
           array(
             $class_name,
-            $method_name
+            $method_name,
           ),
           $named_arguments
       );

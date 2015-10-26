@@ -16,8 +16,10 @@ if ( ! function_exists( 'ends_with' ) ) {
   function ends_with( $haystack, $needle ) {
     $haystack_length = strlen( $haystack );
     $needle_length   = strlen( $needle );
-    if ( $needle_length > $haystack_length )
+    if ( $needle_length > $haystack_length ) {
       return false;
+    }
+
     return substr_compare( $haystack, $needle, -$needle_length ) === 0;
   }
 }
@@ -26,10 +28,10 @@ if ( ! function_exists( 'is_json' ) ) {
   /**
    * Check if a string is a valid json object
    */
-  function is_json ( $string ) {
+  function is_json( $string ) {
     if ( is_string( $string ) ) {
       json_decode( $string );
-      return ( json_last_error() == JSON_ERROR_NONE );  
+      return ( json_last_error() == JSON_ERROR_NONE );
     } else {
       return false;
     }
@@ -120,29 +122,32 @@ if ( ! function_exists( 'to_title_case' ) ) {
 
 if ( ! function_exists( 'br2nl' ) ) {
   /**
-  * Convert BR tags to nl
-  *
-  *  from: http://php.net/manual/en/function.nl2br.php
-  * @param string The string to convert
-  * @return string The converted string
-  */
-  function br2nl($string) {
-      return preg_replace( '/\<br(\s*)?\/?\>/i', "\n", $string );
+   * Convert BR tags to nl
+   *
+   * @see http://php.net/manual/en/function.nl2br.php
+   * @param string The string to convert
+   * @return string The converted string
+   */
+  function br2nl( $string ) {
+    return preg_replace( '/\<br(\s*)?\/?\>/i', "\n", $string );
   }
 }
 
 if ( ! function_exists( 'first_char' ) ) {
   function first_char( $string ) {
-    if ( strlen( $string ) == 0) return '';
-    return substr( $string, 0, 1 ) ;
+    if ( strlen( $string ) == 0 ) {
+      return '';
+    }
+    return substr( $string, 0, 1 );
   }
 }
 
 if ( ! function_exists( 'xssafe' ) ) {
- /**
-  * xss mitigation functions  (this requires php 5.4+)
-  * @see https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#XSS_Cheat_Sheet
-  */
+  /**
+   * Xss mitigation functions (this requires php 5.4+)
+   *
+   * @see https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#XSS_Cheat_Sheet
+   */
   function xssafe( $data, $encoding = 'UTF-8' ) {
     return htmlspecialchars( $data,ENT_QUOTES | ENT_HTML401, $encoding );
   }
@@ -156,4 +161,3 @@ if ( ! function_exists( 'valid_email' ) ) {
     return filter_var( $email, FILTER_VALIDATE_EMAIL );
   }
 }
-

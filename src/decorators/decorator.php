@@ -11,7 +11,7 @@ namespace Nectary;
 abstract class Decorator {
   protected $object;
 
-  public function __construct ( $object ) {
+  public function __construct( $object ) {
     $this->object = $object;
   }
 

@@ -8,11 +8,11 @@ namespace Nectary\Utilities;
 class Json_Utilities {
   /**
    * Provide a path to the given json array:
-   * 
+   *
    * ```
    * self::get( $json, 'key1.key2.key3' );
    * ```
-   * 
+   *
    * This will return the value of however far it was
    * able to go
    */
@@ -34,7 +34,7 @@ class Json_Utilities {
 
   public static function get_or_default( $json, $path, $default = null ) {
     $ref = self::get( $json, $path );
-    
+
     if ( $ref === null && ! self::check_path( $json, $path ) ) {
       return $default;
     } else {
@@ -50,7 +50,7 @@ class Json_Utilities {
     foreach ( $path_parts as $part ) {
       if ( is_array( $current ) &&
            array_key_exists( $part, $current ) ) {
-        $current = $current[ $part ];  
+        $current = $current[ $part ];
       } else {
         return false;
       }

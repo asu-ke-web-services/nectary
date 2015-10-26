@@ -5,6 +5,12 @@ namespace Nectary\Services;
 use Nectary\Models\Json_Feed;
 use Nectary\Services\Feed_Service;
 
+/**
+ * Feed Service for Twitter. Defaults
+ * to using curl.
+ *
+ * @extends Feed_Service
+ */
 class Twitter_Feed_Service extends Feed_Service {
   private $options;
 
@@ -49,10 +55,10 @@ class Twitter_Feed_Service extends Feed_Service {
     switch ( $this->options['query_type'] ) {
       case 'search':
         return $json;
-        break;
+      break;
       case 'screenname':
-        return json_encode( array( 'statuses' => json_decode($json) ) );
-        break;
+        return json_encode( array( 'statuses' => json_decode( $json ) ) );
+      break;
     }
 
     return $json;
@@ -122,7 +128,7 @@ class Twitter_Feed_Service extends Feed_Service {
             'sha1',
             $base_url,
             $composite_key,
-            true 
+            true
         )
     );
 
