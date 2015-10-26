@@ -5,6 +5,15 @@ namespace Nectary;
 use Nectary\Singleton;
 use Nectary\Exceptions\Invalid_Configuration_Exception;
 
+/**
+ * Configuration Singleton
+ *
+ * House global configuration settings here. The Configuration
+ * object can load in a configuration .env file, or have
+ * attributes added to it programmatically.
+ *
+ * @extends Singleton
+ */
 class Configuration extends Singleton {
   public $attributes;
 
@@ -49,12 +58,12 @@ class Configuration extends Singleton {
    *
    * TODO support different parsers
    *
-   * @throws \Nectary\Exceptions\Invalid_Configuration_Exception
+   * @throws Invalid_Configuration_Exception
    */
   private function parse( $configuration ) {
     $attributes = [];
     // Split on new line
-    $lines = preg_split ('/$\R?^/m', $configuration );
+    $lines = preg_split( '/$\R?^/m', $configuration );
 
     // Split each line by the first equal sign
     foreach ( $lines as $line ) {

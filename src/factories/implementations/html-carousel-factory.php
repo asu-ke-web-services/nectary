@@ -4,6 +4,13 @@ namespace Nectary\Factories;
 
 use Nectary\Factories\Html_Factory;
 
+/**
+ * Lazily create HTML Bootstrap based Carousels
+ *
+ * Allows you to add slides, classes, and indicators
+ *
+ * @extends Html_Factory
+ */
 class Html_Carousel_Factory extends Html_Factory {
   private $slides;
   private $indicators;
@@ -42,7 +49,7 @@ class Html_Carousel_Factory extends Html_Factory {
       $indicators = '';
     }
 
-    return 
+    return
     "<div id='{$this->id}' class='carousel slide {$this->classes}' data-ride='carousel'>
       {$this->indicators}
       <div class='carousel-inner {$this->inner_classes}' role='listbox'>
