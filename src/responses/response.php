@@ -1,13 +1,16 @@
 <?php
 
-namespace Nectary\Models;
+namespace Nectary;
 
 use Nectary\Data_Model;
 
 /**
  * View Model for head, content, and footer data
+ *
+ * Extends Data_Model for the magic setters and
+ * getters.
  */
-class View_Model extends Data_Model {
+class Response extends Data_Model {
   public static $error_404;
 
   public $http_header;
@@ -31,7 +34,7 @@ class View_Model extends Data_Model {
   public $is_singular;
 }
 
-View_Model::$error_404 = new View_Model(
+Response::$error_404 = new Response(
     array(
       'http_header' => array( 'HTTP/1.0 404 Not Found - Archive Empty' ),
       'content' => 'Not Found',

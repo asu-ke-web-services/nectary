@@ -4,7 +4,7 @@ namespace Nectary\Factories;
 
 use Nectary\Factory;
 use Nectary\Configuration;
-use Nectary\Models\View_Model;
+use Nectary\Response;
 use Nectary\Views\Simple_Handlebars_View;
 
 /**
@@ -118,7 +118,7 @@ class View_Factory extends Factory {
 
   /**
    * By default, this will create a View instance
-   * and will generate a View_Model from that View
+   * and will generate a Response from that View
    * using the data and head that has been provided.
    *
    * @override
@@ -148,7 +148,7 @@ class View_Factory extends Factory {
         break;
     }
 
-    return new View_Model(
+    return new Response(
         array(
           'content' => $content,
           'head' => $this->head_data,
