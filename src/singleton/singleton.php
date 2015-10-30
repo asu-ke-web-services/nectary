@@ -2,6 +2,9 @@
 
 namespace Nectary;
 
+/**
+ * Support singletons in PHP
+ */
 abstract class Singleton {
   protected static $instances = array();
   protected function __construct() {}

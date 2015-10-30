@@ -4,6 +4,12 @@ namespace Nectary\Models;
 
 use Nectary\Feed;
 
+/**
+ * Json Feed class for pulling and parsing
+ * JSON feeds from the web
+ *
+ * @implements Feed
+ */
 class Json_Feed implements Feed {
   private $url;
   private $items;
@@ -15,6 +21,9 @@ class Json_Feed implements Feed {
   }
 
   /**
+   * Pull the items from the web and store them
+   * in this object
+   *
    * @param $look_at String|Boolean use to grab items from a section of the json
    */
   public function retrieve_items( $look_at = false ) {
@@ -82,8 +91,8 @@ class Json_Feed implements Feed {
 
   private function get_error( $json ) {
     $has_error = array_key_exists( 'errors' , $json )
-              && array_key_exists( 0 , $json['errors'] )
-              && array_key_exists( 'message' , $json['errors'][0] );
+    && array_key_exists( 0 , $json['errors'] )
+    && array_key_exists( 'message' , $json['errors'][0] );
 
     if ( $has_error ) {
       return $json['errors'][0]['message'];

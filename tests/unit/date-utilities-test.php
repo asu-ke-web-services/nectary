@@ -6,6 +6,12 @@ namespace Nectary\Tests;
  * @group utility
  */
 class Date_Utilities_Test extends \PHPUnit_Framework_TestCase {
+
+  protected function setUp() {
+    // Our test cases assume a UTC timezone is defined
+    date_default_timezone_set( 'UTC' );
+  }
+
   function test_date_turns_into_correct_calendar_representation() {
     $timestamp     = '1441746685';
     $expected_date = '20150908T211125';

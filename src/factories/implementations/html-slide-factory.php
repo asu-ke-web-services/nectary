@@ -4,6 +4,14 @@ namespace Nectary\Factories;
 
 use Nectary\Factories\Html_Factory;
 
+/**
+ * Create Html Slides for Html Carousels
+ *
+ * Allows you to set the inner html, classes
+ * and whether the slide is active or not
+ *
+ * @extends Html_Factory
+ */
 class Html_Slide_Factory extends Html_Factory {
   private $active;
   private $classes;

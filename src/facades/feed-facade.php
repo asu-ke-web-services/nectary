@@ -5,6 +5,10 @@ namespace Nectary\Facades;
 use Nectary\Feed;
 use Nectary\Services\Feed_Service;
 
+/**
+ * Provide an interface for interacting with
+ * Feed Services and Feeds
+ */
 class Feed_Facade {
   private $service;
 
@@ -17,6 +21,10 @@ class Feed_Facade {
   }
 
   /**
+   * Merge different Feed_Services together.
+   * Feeds passed in should have already had
+   * retrieve_items called on them.
+   *
    * @param $feeds array<Feed>
    */
   public function merge_feeds( array $feeds ) {

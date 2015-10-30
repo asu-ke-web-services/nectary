@@ -5,6 +5,13 @@ namespace Nectary\Factories;
 use Nectary\Factory;
 use Nectary\Services\Tidy_Service;
 
+/**
+ * Factory that provides a programmatic approach to
+ * building html. Provides basic building blocks, such
+ * as links, headings, text, images, and divs
+ *
+ * @extends Factory
+ */
 class Html_Factory extends Factory {
   protected $html;
 

@@ -4,6 +4,12 @@ namespace Nectary\Models;
 
 use Nectary\Feed;
 
+/**
+ * Rss Feed class for pulling and parsing
+ * RSS feeds from the web
+ *
+ * @implements Feed
+ */
 class Rss_Feed implements Feed {
   private $url;
   private $items;
@@ -26,21 +32,24 @@ class Rss_Feed implements Feed {
     $this->items = $feed->get_items( 0 );
   }
 
+  // @codingStandardsIgnoreStart
   public function sort_by_date( $order = 'asc' ) {
-    usort( $this->items, function( $a, $b ) use ( $order ) {
-      $a_start_date = strtotime( $a->get_date() );
-      $b_start_date = strtotime( $b->get_date() );
-      if ( $a_start_date == $b_start_date ) {
-        return 0;
-      }
+    usort( $this->items, function ( $a, $b ) use ( $order ) {
+        $a_start_date = strtotime( $a->get_date() );
+        $b_start_date = strtotime( $b->get_date() );
 
-      if ( $order === 'asc' ) {
-        return ( $a_start_date > $b_start_date ) ? 1 : -1;
-      } else {
-        return ( $a_start_date < $b_start_date ) ? 1 : -1;  
-      }
+        if ( $a_start_date == $b_start_date ) {
+          return 0;
+        }
+
+        if ( $order === 'asc' ) {
+          return ( $a_start_date > $b_start_date ) ? 1 : -1;
+        } else {
+          return ( $a_start_date < $b_start_date ) ? 1 : -1;
+        }
     } );
   }
+  // @codingStandardsIgnoreEnd
 
   public function get_items() {
     return $this->items;

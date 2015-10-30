@@ -5,8 +5,16 @@ namespace Nectary\Services;
 use Nectary\Models\Json_Feed;
 use Nectary\Services\Feed_Service;
 
+/**
+ * Service for the Json Feed. Defaults to using
+ * get_curl_feed_data
+ *
+ * @extends Feed_Service
+ */
 class Json_Feed_Service extends Feed_Service {
   /**
+   * Get a Json_Feed for the given $url.
+   *
    * @return Json_Feed
    */
   public function get_feed( $url ) {
