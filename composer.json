@@ -2,7 +2,7 @@
     "name": "gios-asu/nectary",
     "description": "A simple PHP framework that is not tied to a web interface",
     "license": "MIT",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "authors": [
         {
             "name": "The Global Institute of Sustainability",
