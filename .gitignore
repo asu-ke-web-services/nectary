@@ -1,0 +1,13 @@
+projecthealth-output
+npm_debug.log
+composer.phar
+
+/node_modules/
+/vendor/
+/coverage/
+/wpcs/
+/standards/wpcs/
+
+.DS_Store
+.*.swp
+*~
