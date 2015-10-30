@@ -6,7 +6,7 @@ use Nectary\Data_Model;
 
 /**
  * View Model for head, content, and footer data
- * 
+ *
  * Extends Data_Model for the magic setters and
  * getters.
  */
