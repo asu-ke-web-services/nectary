@@ -5,6 +5,7 @@ namespace Nectary\Factories;
 use Nectary\Factory;
 use Nectary\Configuration;
 use Nectary\Response;
+use Nectary\Models\Presentable_Model;
 use Nectary\Views\Simple_Handlebars_View;
 
 /**
@@ -79,7 +80,7 @@ class View_Factory extends Factory {
     if ( is_array( $data ) ) {
       foreach ( $data as $key => $value ) {
         $data_to_add = null;
-        if ( $value instanceof Viewable_Model ) {
+        if ( $value instanceof Presentable_Model ) {
           $data_to_add = $value->present();
         } else if ( is_object( $value ) ) {
           $data_to_add = json_decode( json_encode( $value ), true );
@@ -135,7 +136,7 @@ class View_Factory extends Factory {
         $view          = new Simple_Handlebars_View(
             $view_root,
             $template_name,
-            function( $engine ) use ( $view_root, $template_name, $view_data ) {
+            function( $engine ) use ($template_name, $view_data ) {
               return $engine->render(
                   $template_name,
                   $view_data
