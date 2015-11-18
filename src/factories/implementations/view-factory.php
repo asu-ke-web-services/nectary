@@ -136,7 +136,7 @@ class View_Factory extends Factory {
         $view          = new Simple_Handlebars_View(
             $view_root,
             $template_name,
-            function( $engine ) use ($template_name, $view_data ) {
+            function( $engine ) use ( $template_name, $view_data ) {
               return $engine->render(
                   $template_name,
                   $view_data
