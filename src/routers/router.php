@@ -54,7 +54,6 @@ use \Nectary\Factories\Dependency_Injection_Factory;
 abstract class Router {
   private $__method_name;
   private $__arguments;
-  private $__validators;
 
   /**
    * Route calls to undefined methods if the method
@@ -67,7 +66,6 @@ abstract class Router {
   public function __call( $method_name, $arguments ) {
     $this->__method_name = $method_name;
     $this->__arguments   = $arguments;
-    $this->__validators  = [];
 
     if ( $this->route_exists() ) {
       return $this->route_request();
