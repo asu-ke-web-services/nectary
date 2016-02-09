@@ -25,7 +25,7 @@ class Excerpt_Service {
           ' ',
           array_slice( explode( ' ', $content ), 0, $words )
       );
-      
+
       $length = strlen( $content );
 
       $content = Truncate::truncateHtml( $content_excerpt, $length );
@@ -36,7 +36,6 @@ class Excerpt_Service {
         $content .= '...';
       }
     }
-
 
     return $content;
   }
