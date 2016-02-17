@@ -60,10 +60,10 @@ abstract class Handlebars_View extends View {
   }
 
   private function add_engine_helpers() {
-    self::add_html_special_chars_handler();
-    self::add_conditional_operators();
-    self::add_strip_tags();
-    self::add_config();
+    $this->add_html_special_chars_handler();
+    $this->add_conditional_operators();
+    $this->add_strip_tags();
+    $this->add_config();
   }
 
   private function add_config() {

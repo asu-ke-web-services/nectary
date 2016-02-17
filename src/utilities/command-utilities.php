@@ -12,6 +12,6 @@ if ( ! function_exists( 'dispatch' ) ) {
    * details
    */
   function dispatch( \Nectary\Command $command ) {
-    $command->handle();
+    return $command->handle();
   }
 }
