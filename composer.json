@@ -22,7 +22,7 @@
         "classmap" : [ "src/" ]
     },
     "require": {
-        "xamin/handlebars.php": "dev-master"
+        "xamin/handlebars.php": ">=0.10.3"
     },
     "require-dev": {
         "phpunit/phpunit": "4.8.*",
