@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Router" namespace="Nectary" name="Router" abstract="true" final="false" start="54" end="200">
+  <file path="/var/www/html/nectary/src/routers" file="router.php" realpath="/var/www/html/nectary/src/routers/router.php" size="5145" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="e71841b4220e5c0afdee64bb2c45859ee713e105" relative="routers/router.php"/>
+  <docblock>
+    <description compact="The base presenter has functionality to route undefined methods to other class methods.">In order to make use of this functionality, simply
+define a `protected $route` in your class that
+implements this abstract class.
+
+Routes are expected to have:
+- to : The Class and Method to route to.
+- expects : The arguments expected by this route.
+            Order is important, incoming arguments
+            are named in this order.
+- on_error : If a Request has a validation error
+             it will call this function with a $message,
+             and $this.
+
+Example:
+
+```
+$present = new Events_Presenter();
+$present-&gt;get_blurb_list( [ 'slug' ], 2005 );
+```
+
+Will get mapped to:
+
+```
+array(
+  'category_slugs' =&gt; [ 'slugs' ],
+  'year' =&gt; 2005
+)
+```
+
+When given the following route:
+
+```
+protected $routes = [
+  'get_blurb_list' =&gt; [
+   'to'       =&gt; '\Gios_Api\Events_Controller@get_blurb_list',
+    'expects'  =&gt; [ 'category_slugs', 'year', 'base_path' ],
+    'on_error' =&gt; [ 'Events_Presenter', 'error_callback' ],
+  ],
+];
+```
+
+Purposefully not in the Gios_Api namespace.</description>
+  </docblock>
+  <member name="__method_name" visibility="private" static="false" line="55"/>
+  <member name="__arguments" visibility="private" static="false" line="56"/>
+  <method name="__call" start="66" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Route calls to undefined methods if the method has been told to route to a different method"/>
+      <param description="The method that was asked to be called" variable="$method_name" type="object">
+        <type full="Nectary\String" namespace="Nectary" name="String"/>
+      </param>
+      <param description="An array of the arguments passed to the method" variable="$arguments" type="object">
+        <type full="Nectary\Array" namespace="Nectary" name="Array"/>
+      </param>
+      <return description="Can return anything" type="object">
+        <type full="Nectary\Mixed" namespace="Nectary" name="Mixed"/>
+      </return>
+    </docblock>
+    <parameter name="method_name" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="route_exists" start="78" end="83" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Check if the route has been defined"/>
+    </docblock>
+  </method>
+  <method name="route_request" start="88" end="94" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Build and do the route"/>
+    </docblock>
+  </method>
+  <method name="get_named_arguments" start="100" end="115" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Map the arguments passed into the method to the expected arguments defined by the route"/>
+    </docblock>
+    <inline>
+      <comment value="name the parameters" line="101"/>
+    </inline>
+  </method>
+  <method name="get_route_parts" start="121" end="139" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Get the individual parts of the route, including the class and method to route to"/>
+    </docblock>
+  </method>
+  <method name="do_route" start="150" end="189" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Resolve dependencies for dependency injection and call the given route"/>
+      <param description="The class to route to" variable="$class_name" type="object">
+        <type full="Nectary\String" namespace="Nectary" name="String"/>
+      </param>
+      <param description="The method name to call in the give class" variable="$method_name" type="object">
+        <type full="Nectary\String" namespace="Nectary" name="String"/>
+      </param>
+      <param description="Associative array of suggested arguments" variable="$named_arguments" type="object">
+        <type full="Nectary\Array" namespace="Nectary" name="Array"/>
+      </param>
+      <param description="Callback if a validator fails" variable="$on_error" type="object">
+        <type full="Nectary\Function" namespace="Nectary" name="Function"/>
+      </param>
+    </docblock>
+    <parameter name="class_name" byreference="false" type="{unknown}"/>
+    <parameter name="method_name" byreference="false" type="{unknown}"/>
+    <parameter name="named_arguments" byreference="false" type="{unknown}"/>
+    <parameter name="on_error" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Check all validators" line="173"/>
+    </inline>
+  </method>
+  <method name="call" start="197" end="199" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Call the given function with arguments"/>
+      <param description="Function to call" variable="$callback" type="object">
+        <type full="Nectary\Array|String" namespace="Nectary" name="Array|String"/>
+      </param>
+      <param description="Arguments to pass to the function" variable="$arguments" type="object">
+        <type full="Nectary\Array|Mixed" namespace="Nectary" name="Array|Mixed"/>
+      </param>
+    </docblock>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="{unknown}"/>
+  </method>
+</class>

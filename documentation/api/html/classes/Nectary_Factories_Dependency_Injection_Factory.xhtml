@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Nectary\Factories\Dependency_Injection_Factory</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Nectary_Factories">Nectary\Factories</a>
+          </li>
+          <li class="separator">Dependency_Injection_Factory</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/factories/implementations/dependency-injection-factory.php.xhtml#line18">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Nectary\Factories\</small>Dependency_Injection_Factory</h1>
+        <h4>Given a class name and method for the class (the constructor is an allowed method), this factory will automatically build the given object and provide the dependencies for the given method using the given arguments as suggestions.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Dependency_Injection_Factory
+                extends <a title="Nectary\Factory" href="../classes/Nectary_Factory.xhtml">Factory</a>
+            {<br/><ul class="none"><li>// members</li><li>private  <a href="#members">$class_name</a>;
+                    </li><li>private  <a href="#members">$method_name</a>;
+                    </li><li>private  <a href="#members">$arguments</a>;
+                    </li><li>private  <a href="#members">$validators</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Nectary\Factories\Dependency_Injection_Factory" href="../classes/Nectary_Factories_Dependency_Injection_Factory/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Nectary\Factories\Dependency_Injection_Factory" href="../classes/Nectary_Factories_Dependency_Injection_Factory/build.xhtml">build</a>()
+                    </li><li>private void <a title="Nectary\Factories\Dependency_Injection_Factory" href="../classes/Nectary_Factories_Dependency_Injection_Factory/get_dependencies.xhtml">get_dependencies</a>()
+                    </li><li>private void <a title="Nectary\Factories\Dependency_Injection_Factory" href="../classes/Nectary_Factories_Dependency_Injection_Factory/resolve_dependencies.xhtml">resolve_dependencies</a>()
+                    </li><li>private Mixed <a title="Nectary\Factories\Dependency_Injection_Factory" href="../classes/Nectary_Factories_Dependency_Injection_Factory/make.xhtml">make</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Nectary\Factory">Factory</span></li><li>public abstract void <a title="Nectary\Factory" href="../classes/Nectary_Factory/build.xhtml">build</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Nectary\Factory" href="../classes/Nectary_Factory.xhtml">Nectary\Factory</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="arguments">
+              <strong>$arguments</strong>
+            </li>
+            <li id="class_name">
+              <strong>$class_name</strong>
+            </li>
+            <li id="method_name">
+              <strong>$method_name</strong>
+            </li>
+            <li id="validators">
+              <strong>$validators</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="get_dependencies"><a title="Nectary\Factories\Dependency_Injection_Factory" href="../classes/Nectary_Factories_Dependency_Injection_Factory/get_dependencies.xhtml">get_dependencies()</a>
+                — Get the dependencies for a given reflection object</li>
+            <li id="make"><a title="Nectary\Factories\Dependency_Injection_Factory" href="../classes/Nectary_Factories_Dependency_Injection_Factory/make.xhtml">make()</a>
+                — Given a class and arguments to inject into that class, this will create an instance of the given object.</li>
+            <li id="resolve_dependencies"><a title="Nectary\Factories\Dependency_Injection_Factory" href="../classes/Nectary_Factories_Dependency_Injection_Factory/resolve_dependencies.xhtml">resolve_dependencies()</a>
+                — Resolve all dependencies recursively. Untyped parameters will have the $named_arguments injected into them</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Nectary\Factories\Dependency_Injection_Factory" href="../classes/Nectary_Factories_Dependency_Injection_Factory/__construct.xhtml">__construct()</a>
+                — Setup object variables</li>
+            <li id="build"><a title="Nectary\Factories\Dependency_Injection_Factory" href="../classes/Nectary_Factories_Dependency_Injection_Factory/build.xhtml">build()</a>
+                — Build the object, its dependencies, and list any validators that should be checked</li>
+          </ul>
+          <h3>Inherited from <a title="Nectary\Factory" href="../classes/Nectary_Factory.xhtml">Nectary\Factory</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="build"><a title="Nectary\Factory" href="../classes/Nectary_Factory/build.xhtml">build()</a>
+                — Build an object from the Factory</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.8.1.1 - Copyright (C) 2010 - 2016 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

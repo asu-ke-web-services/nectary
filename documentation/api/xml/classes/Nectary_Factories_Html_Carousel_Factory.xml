@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\Html_Carousel_Factory" namespace="Nectary\Factories" name="Html_Carousel_Factory" abstract="false" final="false" start="14" end="79">
+  <file path="/var/www/html/nectary/src/factories/implementations" file="html-carousel-factory.php" realpath="/var/www/html/nectary/src/factories/implementations/html-carousel-factory.php" size="1758" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="8f0d63e16a08427cf098ef100da5759010265efd" relative="factories/implementations/html-carousel-factory.php"/>
+  <docblock>
+    <description compact="Lazily create HTML Bootstrap based Carousels">Allows you to add slides, classes, and indicators</description>
+    <extends value="Html_Factory"/>
+  </docblock>
+  <extends full="Nectary\Factories\Html_Factory" namespace="Nectary\Factories" name="Html_Factory"/>
+  <member name="slides" visibility="private" static="false" line="15"/>
+  <member name="indicators" visibility="private" static="false" line="16"/>
+  <member name="id" visibility="private" static="false" line="17"/>
+  <constructor name="__construct" start="19" end="25" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="add_slide" start="27" end="29" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="html" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="add_class" start="31" end="33" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="classes" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="add_inner_class" start="35" end="37" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="classes" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="turn_on_indicators" start="39" end="41" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="build" start="43" end="60" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="build_indicators" start="62" end="78" abstract="false" final="false" static="false" visibility="private"/>
+  <parent full="Nectary\Factories\Html_Factory" namespace="Nectary\Factories" name="Html_Factory">
+    <extends full="Nectary\Factory" namespace="Nectary" name="Factory"/>
+    <member name="html" visibility="protected" static="false" line="16"/>
+    <constructor name="__construct" start="18" end="20" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="add_heading" start="22" end="24" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="inner_html" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="with_heading" start="26" end="34" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="inner_html" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="add_link" start="36" end="38" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="inner_html" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="with_link" start="40" end="48" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="inner_html" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="add_text" start="50" end="52" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="inner_html" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="with_text" start="54" end="59" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="inner_html" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="add_text_excerpt" start="61" end="63" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="inner_html" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="with_text_excerpt" start="65" end="76" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="inner_html" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="add_image" start="78" end="80" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="src" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="with_image" start="82" end="88" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="src" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="add_div" start="90" end="92" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="inner_html" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="with_div" start="94" end="100" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="inner_html" byreference="false" type="{unknown}"/>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </method>
+    <method name="build" start="102" end="104" abstract="false" final="false" static="false" visibility="public"/>
+  </parent>
+  <parent full="Nectary\Factory" namespace="Nectary" name="Factory">
+    <method name="build" start="16" end="16" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Build an object from the Factory"/>
+      </docblock>
+    </method>
+  </parent>
+</class>
