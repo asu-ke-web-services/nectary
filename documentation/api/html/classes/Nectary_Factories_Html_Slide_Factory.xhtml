@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Nectary\Factories\Html_Slide_Factory</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Nectary_Factories">Nectary\Factories</a>
+          </li>
+          <li class="separator">Html_Slide_Factory</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/factories/implementations/html-slide-factory.php.xhtml#line15">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Nectary\Factories\</small>Html_Slide_Factory</h1>
+        <h4>Create Html Slides for Html Carousels</h4>
+        <p>Allows you to set the inner html, classes<br/>and whether the slide is active or not</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Html_Slide_Factory
+                extends <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory.xhtml">Html_Factory</a>
+            {<br/><ul class="none"><li>// members</li><li>private  <a href="#members">$active</a>;
+                    </li><li>private  <a href="#members">$classes</a>;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Nectary\Factories\Html_Factory">Html_Factory</span></li><li>protected  <a href="#members">$html</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Nectary\Factories\Html_Slide_Factory" href="../classes/Nectary_Factories_Html_Slide_Factory/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Nectary\Factories\Html_Slide_Factory" href="../classes/Nectary_Factories_Html_Slide_Factory/is_active.xhtml">is_active</a>()
+                    </li><li>public void <a title="Nectary\Factories\Html_Slide_Factory" href="../classes/Nectary_Factories_Html_Slide_Factory/add_class.xhtml">add_class</a>()
+                    </li><li>public void <a title="Nectary\Factories\Html_Slide_Factory" href="../classes/Nectary_Factories_Html_Slide_Factory/build.xhtml">build</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Nectary\Factories\Html_Factory">Html_Factory</span></li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/__construct.xhtml">__construct</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_heading.xhtml">add_heading</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_heading.xhtml">with_heading</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_link.xhtml">add_link</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_link.xhtml">with_link</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_text.xhtml">add_text</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_text.xhtml">with_text</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_text_excerpt.xhtml">add_text_excerpt</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_text_excerpt.xhtml">with_text_excerpt</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_image.xhtml">add_image</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_image.xhtml">with_image</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_div.xhtml">add_div</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_div.xhtml">with_div</a>()
+                        </li><li>public void <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/build.xhtml">build</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Nectary\Factory">Factory</span></li><li>public abstract void <a title="Nectary\Factory" href="../classes/Nectary_Factory/build.xhtml">build</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory.xhtml">Nectary\Factories\Html_Factory</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="active">
+              <strong>$active</strong>
+            </li>
+            <li id="classes">
+              <strong>$classes</strong>
+            </li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="html">
+              <strong>$html</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Nectary\Factories\Html_Slide_Factory" href="../classes/Nectary_Factories_Html_Slide_Factory/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="add_class">
+              <a title="Nectary\Factories\Html_Slide_Factory" href="../classes/Nectary_Factories_Html_Slide_Factory/add_class.xhtml">add_class()</a>
+            </li>
+            <li id="build">
+              <a title="Nectary\Factories\Html_Slide_Factory" href="../classes/Nectary_Factories_Html_Slide_Factory/build.xhtml">build()</a>
+            </li>
+            <li id="is_active">
+              <a title="Nectary\Factories\Html_Slide_Factory" href="../classes/Nectary_Factories_Html_Slide_Factory/is_active.xhtml">is_active()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory.xhtml">Nectary\Factories\Html_Factory</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="add_div">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_div.xhtml">add_div()</a>
+            </li>
+            <li id="add_heading">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_heading.xhtml">add_heading()</a>
+            </li>
+            <li id="add_image">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_image.xhtml">add_image()</a>
+            </li>
+            <li id="add_link">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_link.xhtml">add_link()</a>
+            </li>
+            <li id="add_text">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_text.xhtml">add_text()</a>
+            </li>
+            <li id="add_text_excerpt">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/add_text_excerpt.xhtml">add_text_excerpt()</a>
+            </li>
+            <li id="build">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/build.xhtml">build()</a>
+            </li>
+            <li id="with_div">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_div.xhtml">with_div()</a>
+            </li>
+            <li id="with_heading">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_heading.xhtml">with_heading()</a>
+            </li>
+            <li id="with_image">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_image.xhtml">with_image()</a>
+            </li>
+            <li id="with_link">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_link.xhtml">with_link()</a>
+            </li>
+            <li id="with_text">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_text.xhtml">with_text()</a>
+            </li>
+            <li id="with_text_excerpt">
+              <a title="Nectary\Factories\Html_Factory" href="../classes/Nectary_Factories_Html_Factory/with_text_excerpt.xhtml">with_text_excerpt()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="Nectary\Factory" href="../classes/Nectary_Factory.xhtml">Nectary\Factory</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="build"><a title="Nectary\Factory" href="../classes/Nectary_Factory/build.xhtml">build()</a>
+                — Build an object from the Factory</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.8.1.1 - Copyright (C) 2010 - 2016 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

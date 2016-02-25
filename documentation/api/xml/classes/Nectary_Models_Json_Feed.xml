@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Models\Json_Feed" namespace="Nectary\Models" name="Json_Feed" abstract="false" final="false" start="13" end="101">
+  <file path="/var/www/html/nectary/src/models/implementations" file="json-feed.php" realpath="/var/www/html/nectary/src/models/implementations/json-feed.php" size="2316" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="29b0e0dac8a6965a1fc2ba7443659e76c6c124ff" relative="models/implementations/json-feed.php"/>
+  <docblock>
+    <description compact="Json Feed class for pulling and parsing JSON feeds from the web"/>
+    <implements value="Feed"/>
+  </docblock>
+  <implements full="Nectary\Feed" namespace="Nectary" name="Feed"/>
+  <member name="url" visibility="private" static="false" line="14"/>
+  <member name="items" visibility="private" static="false" line="15"/>
+  <member name="feed_callback" visibility="private" static="false" line="16"/>
+  <constructor name="__construct" start="18" end="21" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="feed_callback" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="retrieve_items" start="29" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Pull the items from the web and store them in this object"/>
+      <param description="use to grab items from a section of the json" variable="$look_at" type="object">
+        <type full="Nectary\Models\String|Boolean" namespace="Nectary\Models" name="String|Boolean"/>
+      </param>
+    </docblock>
+    <parameter name="look_at" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="sort_by_date" start="40" end="42" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="order" byreference="false" type="string" default="'asc'"/>
+  </method>
+  <method name="get_items" start="44" end="46" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="set_items" start="48" end="50" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="items" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get_unique_items" start="52" end="76" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="parse_feed" start="78" end="90" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="json" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get_error" start="92" end="100" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="json" byreference="false" type="{unknown}"/>
+  </method>
+  <interface full="Nectary\Feed" namespace="Nectary" name="Feed">
+    <method name="retrieve_items" start="6" end="6" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="sort_by_date" start="7" end="7" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="order" byreference="false" type="string" default="'asc'"/>
+    </method>
+    <method name="get_items" start="8" end="8" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="set_items" start="9" end="9" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="items" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="get_unique_items" start="10" end="10" abstract="false" final="false" static="false" visibility="public"/>
+  </interface>
+</class>

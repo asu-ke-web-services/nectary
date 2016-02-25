@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Nectary\Daos\Select_SQL_Query_Builder</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Nectary_Daos">Nectary\Daos</a>
+          </li>
+          <li class="separator">Select_SQL_Query_Builder</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/daos/sql-query-builder.php.xhtml#line10">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Nectary\Daos\</small>Select_SQL_Query_Builder</h1>
+        <h4>Select_SQL_Query_Builder - Helper class for building PDO select statements</h4>
+        <p/>
+        <ul>
+          <li>Author: Ryan Raub</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Select_SQL_Query_Builder
+            {<br/><ul class="none"><li>// members</li><li>private  <a href="#members">$columns_to_select</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/add_columns.xhtml">add_columns</a>()
+                    </li><li>public the <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_columns.xhtml">get_columns</a>()
+                    </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/from.xhtml">from</a>()
+                    </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/joins.xhtml">joins</a>()
+                    </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/limit.xhtml">limit</a>()
+                    </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/order_by.xhtml">order_by</a>()
+                    </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/group_by.xhtml">group_by</a>()
+                    </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/where.xhtml">where</a>()
+                    </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/and_where.xhtml">and_where</a>()
+                    </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/or_where.xhtml">or_where</a>()
+                    </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/bind_value.xhtml">bind_value</a>()
+                    </li><li>public the <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_sql.xhtml">get_sql</a>()
+                    </li><li>public pdo::Statement <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_statement.xhtml">get_statement</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="columns_to_select">
+              <strong>$columns_to_select</strong>
+              <br/>
+              <span class="indent">Internal state for this object</span>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/__construct.xhtml">__construct()</a>
+                — Sets up default state</li>
+            <li id="add_columns"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/add_columns.xhtml">add_columns()</a>
+                — This function takes either a string or an one dimensional array.</li>
+            <li id="and_where"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/and_where.xhtml">and_where()</a>
+                — Adds a string to the where clause with an 'AND'</li>
+            <li id="bind_value"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/bind_value.xhtml">bind_value()</a>
+                — Adds a variable to be bound to in the prepared statement</li>
+            <li id="from"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/from.xhtml">from()</a>
+                — For setting what table to select from, can only be one table. For joins see joins()</li>
+            <li id="get_columns"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_columns.xhtml">get_columns()</a>
+                — Mainly for debugging, probably wont need this</li>
+            <li id="get_sql"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_sql.xhtml">get_sql()</a>
+                — Uses the current state of the object to build the sql statement</li>
+            <li id="get_statement"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_statement.xhtml">get_statement()</a>
+                — Calls get_sql() to generate the sql and then creates the prepared statement and binds its values.</li>
+            <li id="group_by"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/group_by.xhtml">group_by()</a>
+                — For setting an group by on the query other than the default.</li>
+            <li id="joins"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/joins.xhtml">joins()</a>
+                — For adding a join, can be called multiple times for multiple joins.</li>
+            <li id="limit"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/limit.xhtml">limit()</a>
+                — For setting a limit on the query other than the default</li>
+            <li id="or_where"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/or_where.xhtml">or_where()</a>
+                — Adds a string to the where clause with an 'AND'</li>
+            <li id="order_by"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/order_by.xhtml">order_by()</a>
+                — For setting an order on the query other than the default. Currently Can't have multiple.</li>
+            <li id="where"><a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/where.xhtml">where()</a>
+                — Adds a string to the where clause, it must start with an 'AND' or 'OR' to chain together criteria.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.8.1.1 - Copyright (C) 2010 - 2016 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

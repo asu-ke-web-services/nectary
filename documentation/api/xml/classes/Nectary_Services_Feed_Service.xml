@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Services\Feed_Service" namespace="Nectary\Services" name="Feed_Service" abstract="true" final="false" start="10" end="12">
+  <file path="/var/www/html/nectary/src/services" file="feed-service.php" realpath="/var/www/html/nectary/src/services/feed-service.php" size="240" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="5c431a93c649b086e0e795cbe18f3fa10f9423d8" relative="services/feed-service.php"/>
+  <docblock>
+    <description compact="Feed Services should implement a public get_feed( $url ) to abstract away how a particular feed is retreived."/>
+  </docblock>
+  <method name="get_feed" start="11" end="11" abstract="true" final="false" static="false" visibility="public">
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <extenders>
+    <extender full="Nectary\Services\Json_Feed_Service" namespace="Nectary\Services" name="Json_Feed_Service"/>
+    <extender full="Nectary\Services\Twitter_Feed_Service" namespace="Nectary\Services" name="Twitter_Feed_Service"/>
+  </extenders>
+</class>

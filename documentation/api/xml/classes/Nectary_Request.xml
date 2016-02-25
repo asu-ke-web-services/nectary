@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Request" namespace="Nectary" name="Request" abstract="true" final="false" start="11" end="33">
+  <file path="/var/www/html/nectary/src/requests" file="request.php" realpath="/var/www/html/nectary/src/requests/request.php" size="747" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="03c5450ed472f55d010f8e19c862e598bad75114" relative="requests/request.php"/>
+  <docblock>
+    <description compact="A request will validate based on a set of rules">A request can also be used to take in options and
+pull in the data required to fulfill a request.</description>
+  </docblock>
+  <method name="validate" start="12" end="30" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="error_callback" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validation_rules" start="32" end="32" abstract="true" final="false" static="false" visibility="public"/>
+  <extenders>
+    <extender full="Nectary\Fail_Fast_Request" namespace="Nectary" name="Fail_Fast_Request"/>
+  </extenders>
+</class>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Nectary\Models\Presentable_Model</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Nectary_Models">Nectary\Models</a>
+          </li>
+          <li class="separator">Presentable_Model</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/models/extensions/presentable-model.php.xhtml#line12">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Nectary\Models\</small>Presentable_Model</h1>
+        <h4>A Viewable model is one that can present itself so that all of its properties and calculated properties are useable within a template</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Presentable_Model
+                extends <a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model.xhtml">Data_Model</a>
+            {<br/><ul class="none"><li>// Inherited members from <span title="Nectary\Data_Model">Data_Model</span></li><li>public static  <a href="#members">$primary_key</a>;
+                        </li><li>public static  <a href="#members">$table_name</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public array <a title="Nectary\Models\Presentable_Model" href="../classes/Nectary_Models_Presentable_Model/present.xhtml">present</a>()
+                    </li><li>protected abstract String <a title="Nectary\Models\Presentable_Model" href="../classes/Nectary_Models_Presentable_Model/get_presenter_class_name.xhtml">get_presenter_class_name</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Nectary\Data_Model">Data_Model</span></li><li>public void <a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model/__construct.xhtml">__construct</a>()
+                        </li><li>public void <a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model/__get.xhtml">__get</a>()
+                        </li><li>public void <a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model/__set.xhtml">__set</a>()
+                        </li><li>public static void <a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model/get_minimal_columns.xhtml">get_minimal_columns</a>()
+                        </li><li>public static void <a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model/get_all_columns.xhtml">get_all_columns</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model.xhtml">Nectary\Data_Model</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="primary_key">
+              <strong>$primary_key</strong>
+            </li>
+            <li id="table_name">
+              <strong>$table_name</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="get_presenter_class_name"><a title="Nectary\Models\Presentable_Model" href="../classes/Nectary_Models_Presentable_Model/get_presenter_class_name.xhtml">get_presenter_class_name()</a>
+                — Called to determine which class knows how to present the model.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="present"><a title="Nectary\Models\Presentable_Model" href="../classes/Nectary_Models_Presentable_Model/present.xhtml">present()</a>
+                — Present the model using the class provided by presents(). Present knows how to build factories.</li>
+          </ul>
+          <h3>Inherited from <a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model.xhtml">Nectary\Data_Model</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="__get"><a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model/__get.xhtml">__get()</a>
+                — Getter</li>
+            <li id="__set"><a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model/__set.xhtml">__set()</a>
+                — Setter - only allow properties that exist to be set</li>
+            <li id="get_all_columns"><a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model/get_all_columns.xhtml">get_all_columns()</a>
+                — Models should implement get_all_columns</li>
+            <li id="get_minimal_columns"><a title="Nectary\Data_Model" href="../classes/Nectary_Data_Model/get_minimal_columns.xhtml">get_minimal_columns()</a>
+                — Models should implement get_minimal_columns</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.8.1.1 - Copyright (C) 2010 - 2016 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

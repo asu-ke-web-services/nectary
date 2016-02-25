@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Singleton" namespace="Nectary" name="Singleton" abstract="true" final="false" start="8" end="27">
+  <file path="/var/www/html/nectary/src/singleton" file="singleton.php" realpath="/var/www/html/nectary/src/singleton/singleton.php" size="586" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="45894f73c150e48ff3ab5b8820ab5fe5f842f892" relative="singleton/singleton.php"/>
+  <docblock>
+    <description compact="Support singletons in PHP"/>
+  </docblock>
+  <member name="instances" type="array" default="" visibility="protected" static="true" line="9"/>
+  <constructor name="__construct" start="10" end="10" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="__clone" start="11" end="11" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="get_instance" start="13" end="20" abstract="false" final="false" static="true" visibility="public">
+    <inline>
+      <comment value="late-static-bound class name" line="14"/>
+    </inline>
+  </method>
+  <method name="set_instance" start="22" end="26" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="instance" byreference="false" type="{unknown}"/>
+  </method>
+  <extenders>
+    <extender full="Nectary\Configuration" namespace="Nectary" name="Configuration"/>
+  </extenders>
+</class>

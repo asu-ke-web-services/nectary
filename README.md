@@ -35,3 +35,11 @@ If you add a class or change a namespace, remember to
 run `composer update` in order to add the class to the autoloader.
 
 Check your code coverage with `vendor/bin/phpunit --coverage-html ./coverage`.
+
+## Documentation
+
+Documentation can be found on [the Github IO pages for this repo](https://gios-asu.github.io/nectary).
+
+To generate the documentation, use [phpDox](http://phpdox.de/getting-started.html).
+
+Once installed, simply run `phpdox` in the root of the project.

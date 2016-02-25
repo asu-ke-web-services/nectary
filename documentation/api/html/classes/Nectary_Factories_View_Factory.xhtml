@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Nectary\Factories\View_Factory</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Nectary_Factories">Nectary\Factories</a>
+          </li>
+          <li class="separator">View_Factory</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/factories/implementations/view-factory.php.xhtml#line26">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Nectary\Factories\</small>View_Factory</h1>
+        <h4>This factory is slightly different because it has chainable methods.</h4>
+        <p>View Names should be 'object'-like 'paths' to the<br/>view that you wish to display. For example, if there<br/>is a handlebars view in `src/views/events/blurb.handlebars`,<br/>then the $view_name would be `events.blurb`.<br/><br/>Given the path to the views, this factory<br/>will create the appropriate view implemention<br/>render the file</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class View_Factory
+                extends <a title="Nectary\Factory" href="../classes/Nectary_Factory.xhtml">Factory</a>
+            {<br/><ul class="none"><li>// members</li><li>protected  <a href="#members">$view_name</a>;
+                    </li><li>protected  <a href="#members">$view_data</a>;
+                    </li><li>protected  <a href="#members">$head_data</a>;
+                    </li><li>protected  <a href="#members">$path_to_views</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/__construct.xhtml">__construct</a>()
+                    </li><li>public $this <a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/add_data.xhtml">add_data</a>()
+                    </li><li>public $this <a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/add_head.xhtml">add_head</a>()
+                    </li><li>public void <a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/build.xhtml">build</a>()
+                    </li><li>private void <a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/get_view_root.xhtml">get_view_root</a>()
+                    </li><li>private void <a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/get_template_name.xhtml">get_template_name</a>()
+                    </li><li>private void <a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/get_file_extension.xhtml">get_file_extension</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Nectary\Factory">Factory</span></li><li>public abstract void <a title="Nectary\Factory" href="../classes/Nectary_Factory/build.xhtml">build</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Nectary\Factory" href="../classes/Nectary_Factory.xhtml">Nectary\Factory</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="head_data">
+              <strong>$head_data</strong>
+            </li>
+            <li id="path_to_views">
+              <strong>$path_to_views</strong>
+            </li>
+            <li id="view_data">
+              <strong>$view_data</strong>
+            </li>
+            <li id="view_name">
+              <strong>$view_name</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="get_file_extension">
+              <a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/get_file_extension.xhtml">get_file_extension()</a>
+            </li>
+            <li id="get_template_name"><a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/get_template_name.xhtml">get_template_name()</a>
+                — Given the 'object'-like path, determine the template name for the view</li>
+            <li id="get_view_root"><a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/get_view_root.xhtml">get_view_root()</a>
+                — Given the 'object'-like path, determine the root directory for the view</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/__construct.xhtml">__construct()</a>
+                — Set up Factory data</li>
+            <li id="add_data"><a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/add_data.xhtml">add_data()</a>
+                — Chainable</li>
+            <li id="add_head"><a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/add_head.xhtml">add_head()</a>
+                — Chainable</li>
+            <li id="build"><a title="Nectary\Factories\View_Factory" href="../classes/Nectary_Factories_View_Factory/build.xhtml">build()</a>
+                — By default, this will create a View instance and will generate a Response from that View using the data and head that has been provided.</li>
+          </ul>
+          <h3>Inherited from <a title="Nectary\Factory" href="../classes/Nectary_Factory.xhtml">Nectary\Factory</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="build"><a title="Nectary\Factory" href="../classes/Nectary_Factory/build.xhtml">build()</a>
+                — Build an object from the Factory</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.8.1.1 - Copyright (C) 2010 - 2016 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

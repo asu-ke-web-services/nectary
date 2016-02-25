@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Services\Json_Feed_Service" namespace="Nectary\Services" name="Json_Feed_Service" abstract="false" final="false" start="14" end="46">
+  <file path="/var/www/html/nectary/src/services" file="json-feed-service.php" realpath="/var/www/html/nectary/src/services/json-feed-service.php" size="1005" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="ae9bbc705c2daf77eafc557bf8f680c0e7938603" relative="services/json-feed-service.php"/>
+  <docblock>
+    <description compact="Service for the Json Feed. Defaults to using get_curl_feed_data"/>
+    <extends value="Feed_Service"/>
+  </docblock>
+  <extends full="Nectary\Services\Feed_Service" namespace="Nectary\Services" name="Feed_Service"/>
+  <method name="get_feed" start="20" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a Json_Feed for the given $url."/>
+      <return type="object">
+        <type full="Nectary\Models\Json_Feed" namespace="Nectary\Models" name="Json_Feed"/>
+      </return>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get_curl_feed_data" start="24" end="45" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="Nectary\Services\Feed_Service" namespace="Nectary\Services" name="Feed_Service">
+    <method name="get_feed" start="11" end="11" abstract="true" final="false" static="false" visibility="public">
+      <parameter name="url" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>
