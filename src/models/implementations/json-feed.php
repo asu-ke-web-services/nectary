@@ -52,12 +52,12 @@ class Json_Feed implements Feed {
   public function get_unique_items() {
     $unique = [];
 
-    for ( $i = 0; $i < count( $this->items ); $i++ ) {
+    foreach ( $this->items as $i => $item_a ) {
       $duplicate = false;
-      for ( $j = 0; $j < count( $this->items ); $j++ ) {
+      foreach( $this->items as $j => $item_b ) {
         if ( $i !== $j ) {
           // Loose equality on purpose
-          if ( $this->items[ $i ] == $this->items[ $j ] ) {
+          if ( $item_a == $item_b ) {
             // Only count a duplicate if it is BEHIND the current index
             if ( $j < $i ) {
               // Duplicate found
