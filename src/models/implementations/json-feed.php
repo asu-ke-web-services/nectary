@@ -54,7 +54,7 @@ class Json_Feed implements Feed {
 
     foreach ( $this->items as $i => $item_a ) {
       $duplicate = false;
-      foreach( $this->items as $j => $item_b ) {
+      foreach ( $this->items as $j => $item_b ) {
         if ( $i !== $j ) {
           // Loose equality on purpose
           if ( $item_a == $item_b ) {
