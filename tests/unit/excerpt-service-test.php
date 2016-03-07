@@ -61,8 +61,4 @@ class Excerpt_Service_Test extends \PHPUnit_Framework_TestCase {
   function test_excerpt_doesnt_return_too_many_periods() {
     $this->assertEquals( 'more than...', $this->excerpt_service->excerpt( '<p>more than. two words', 2 ) );
   }
-
-  function test_fallback_on_tidy_parse_string_library_missing() {
-    // TODO: test the behavior when the global function tidy_parse_string isn't defined
-  }
 }
