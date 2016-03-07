@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/nectary/src/decorators" file="decoratable.php" realpath="/var/www/html/nectary/src/decorators/decoratable.php" size="252" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="160c4a71c6a612f3baa8aba822e0b3fae1ad0424" relative="decorators/decoratable.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_NAMESPACE">namespace</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Nectary</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="6">
+    <token name="T_DOC_COMMENT"> * Objects that wish to return a</token>
+  </line>
+  <line no="7">
+    <token name="T_DOC_COMMENT"> * default decorate should implement</token>
+  </line>
+  <line no="8">
+    <token name="T_DOC_COMMENT"> * this interface</token>
+  </line>
+  <line no="9">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="10">
+    <token name="T_INTERFACE">interface</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Decoratable</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="11">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="12">
+    <token name="T_DOC_COMMENT">   * Return a created decorator.</token>
+  </line>
+  <line no="13">
+    <token name="T_DOC_COMMENT">   *</token>
+  </line>
+  <line no="14">
+    <token name="T_DOC_COMMENT">   * @return Decorator</token>
+  </line>
+  <line no="15">
+    <token name="T_DOC_COMMENT">   */</token>
+  </line>
+  <line no="16">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_PUBLIC">public</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">decorate</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="17">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="18"/>
+</source>

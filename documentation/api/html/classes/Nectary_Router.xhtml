@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Nectary\Router</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Nectary">Nectary</a>
+          </li>
+          <li class="separator">Router</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/routers/router.php.xhtml#line54">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Nectary\</small>Router</h1>
+        <h4>The base presenter has functionality to route undefined methods to other class methods.</h4>
+        <p>In order to make use of this functionality, simply<br/>define a `protected $route` in your class that<br/>implements this abstract class.<br/><br/>Routes are expected to have:<br/>- to : The Class and Method to route to.<br/>- expects : The arguments expected by this route.<br/>Order is important, incoming arguments<br/>are named in this order.<br/>- on_error : If a Request has a validation error<br/>it will call this function with a $message,<br/>and $this.<br/><br/>Example:<br/><br/>```<br/>$present = new Events_Presenter();<br/>$present-&gt;get_blurb_list( [ 'slug' ], 2005 );<br/>```<br/><br/>Will get mapped to:<br/><br/>```<br/>array(<br/>'category_slugs' =&gt; [ 'slugs' ],<br/>'year' =&gt; 2005<br/>)<br/>```<br/><br/>When given the following route:<br/><br/>```<br/>protected $routes = [<br/>'get_blurb_list' =&gt; [<br/>'to' =&gt; '\Gios_Api\Events_Controller@get_blurb_list',<br/>'expects' =&gt; [ 'category_slugs', 'year', 'base_path' ],<br/>'on_error' =&gt; [ 'Events_Presenter', 'error_callback' ],<br/>],<br/>];<br/>```<br/><br/>Purposefully not in the Gios_Api namespace.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Router
+            {<br/><ul class="none"><li>// members</li><li>private  <a href="#members">$__method_name</a>;
+                    </li><li>private  <a href="#members">$__arguments</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public Mixed <a title="Nectary\Router" href="../classes/Nectary_Router/__call.xhtml">__call</a>()
+                    </li><li>private void <a title="Nectary\Router" href="../classes/Nectary_Router/route_exists.xhtml">route_exists</a>()
+                    </li><li>private void <a title="Nectary\Router" href="../classes/Nectary_Router/route_request.xhtml">route_request</a>()
+                    </li><li>private void <a title="Nectary\Router" href="../classes/Nectary_Router/get_named_arguments.xhtml">get_named_arguments</a>()
+                    </li><li>private void <a title="Nectary\Router" href="../classes/Nectary_Router/get_route_parts.xhtml">get_route_parts</a>()
+                    </li><li>private void <a title="Nectary\Router" href="../classes/Nectary_Router/do_route.xhtml">do_route</a>()
+                    </li><li>private void <a title="Nectary\Router" href="../classes/Nectary_Router/call.xhtml">call</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="__arguments">
+              <strong>$__arguments</strong>
+            </li>
+            <li id="__method_name">
+              <strong>$__method_name</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="call"><a title="Nectary\Router" href="../classes/Nectary_Router/call.xhtml">call()</a>
+                — Call the given function with arguments</li>
+            <li id="do_route"><a title="Nectary\Router" href="../classes/Nectary_Router/do_route.xhtml">do_route()</a>
+                — Resolve dependencies for dependency injection and call the given route</li>
+            <li id="get_named_arguments"><a title="Nectary\Router" href="../classes/Nectary_Router/get_named_arguments.xhtml">get_named_arguments()</a>
+                — Map the arguments passed into the method to the expected arguments defined by the route</li>
+            <li id="get_route_parts"><a title="Nectary\Router" href="../classes/Nectary_Router/get_route_parts.xhtml">get_route_parts()</a>
+                — Get the individual parts of the route, including the class and method to route to</li>
+            <li id="route_exists"><a title="Nectary\Router" href="../classes/Nectary_Router/route_exists.xhtml">route_exists()</a>
+                — Check if the route has been defined</li>
+            <li id="route_request"><a title="Nectary\Router" href="../classes/Nectary_Router/route_request.xhtml">route_request()</a>
+                — Build and do the route</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__call"><a title="Nectary\Router" href="../classes/Nectary_Router/__call.xhtml">__call()</a>
+                — Route calls to undefined methods if the method has been told to route to a different method</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.8.1.1 - Copyright (C) 2010 - 2016 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

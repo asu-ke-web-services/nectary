@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Data_Model" namespace="Nectary" name="Data_Model" abstract="true" final="false" start="8" end="56">
+  <file path="/var/www/html/nectary/src/models" file="data-model.php" realpath="/var/www/html/nectary/src/models/data-model.php" size="1106" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="0e53eb4d8a54cddc68d11a3076217e8c80cd50b7" relative="models/data-model.php"/>
+  <docblock>
+    <description compact="Data model"/>
+  </docblock>
+  <member name="primary_key" visibility="public" static="true" line="9"/>
+  <member name="table_name" visibility="public" static="true" line="10"/>
+  <constructor name="__construct" start="16" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This is a helpful method for constructing objects from an associated array of values"/>
+    </docblock>
+    <parameter name="array_of_values" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="__get" start="27" end="31" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Getter"/>
+    </docblock>
+    <parameter name="property" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__set" start="36" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setter - only allow properties that exist to be set"/>
+    </docblock>
+    <parameter name="property" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get_minimal_columns" start="46" end="48" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Models should implement get_minimal_columns"/>
+    </docblock>
+  </method>
+  <method name="get_all_columns" start="53" end="55" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Models should implement get_all_columns"/>
+    </docblock>
+  </method>
+  <extenders>
+    <extender full="Nectary\Models\Presentable_Model" namespace="Nectary\Models" name="Presentable_Model"/>
+    <extender full="Nectary\Response" namespace="Nectary" name="Response"/>
+  </extenders>
+</class>

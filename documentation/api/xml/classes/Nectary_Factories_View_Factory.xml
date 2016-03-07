@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\View_Factory" namespace="Nectary\Factories" name="View_Factory" abstract="false" final="false" start="26" end="216">
+  <file path="/var/www/html/nectary/src/factories/implementations" file="view-factory.php" realpath="/var/www/html/nectary/src/factories/implementations/view-factory.php" size="5125" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="296b7b974fc85e8ed96b31f8cdc13533c40e8db3" relative="factories/implementations/view-factory.php"/>
+  <docblock>
+    <description compact="This factory is slightly different because it has chainable methods.">View Names should be 'object'-like 'paths' to the
+view that you wish to display. For example, if there
+is a handlebars view in `src/views/events/blurb.handlebars`,
+then the $view_name would be `events.blurb`.
+
+Given the path to the views, this factory
+will create the appropriate view implemention
+render the file</description>
+    <extends value="Factory"/>
+  </docblock>
+  <extends full="Nectary\Factory" namespace="Nectary" name="Factory"/>
+  <member name="view_name" visibility="protected" static="false" line="27"/>
+  <member name="view_data" visibility="protected" static="false" line="28"/>
+  <member name="head_data" visibility="protected" static="false" line="29"/>
+  <member name="path_to_views" visibility="protected" static="false" line="30"/>
+  <constructor name="__construct" start="38" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set up Factory data"/>
+      <constructor/>
+      <param description="The 'path'-like string to the view." variable="$view_name" type="object">
+        <type full="Nectary\Factories\String" namespace="Nectary\Factories" name="String"/>
+      </param>
+    </docblock>
+    <parameter name="view_name" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="add_data" start="79" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Chainable">Inject data into the view. You can pass an array, or
+named array. This data will be added to
+the view's data model.
+
+All of the following are valid data:
+
+Inject the $event into the 'event' context:
+```
+$view-&gt;add_data(
+   array(
+    'event' =&gt; $event-&gt;present()
+   )
+);
+```
+
+Inject the $event into the global context:
+```
+$view-&gt;add_data(
+   array(
+    '_event' =&gt; $event-&gt;present()
+   )
+);
+```
+
+Inject the $event into the global context:
+```
+$view-&gt;add_data( $event-&gt;present() );
+```</description>
+      <param variable="$data" type="object">
+        <type full="Nectary\Factories\Mixed" namespace="Nectary\Factories" name="Mixed"/>
+      </param>
+      <return type="object">
+        <type full="Nectary\Factories\$this" namespace="Nectary\Factories" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="add_head" start="110" end="118" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Chainable">Add data that should be in the head (aka add_header).</description>
+      <param variable="$data" type="object">
+        <type full="Nectary\Factories\Mixed" namespace="Nectary\Factories" name="Mixed"/>
+      </param>
+      <return type="object">
+        <type full="Nectary\Factories\$this" namespace="Nectary\Factories" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="build" start="127" end="158" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="By default, this will create a View instance and will generate a Response from that View using the data and head that has been provided."/>
+      <override/>
+    </docblock>
+  </method>
+  <method name="get_view_root" start="164" end="178" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Given the 'object'-like path, determine the root directory for the view"/>
+    </docblock>
+  </method>
+  <method name="get_template_name" start="184" end="197" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Given the 'object'-like path, determine the template name for the view"/>
+    </docblock>
+  </method>
+  <method name="get_file_extension" start="199" end="215" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="view_root" byreference="false" type="{unknown}"/>
+    <parameter name="template_name" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="Nectary\Factory" namespace="Nectary" name="Factory">
+    <method name="build" start="16" end="16" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Build an object from the Factory"/>
+      </docblock>
+    </method>
+  </parent>
+</class>

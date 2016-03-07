@@ -9,7 +9,7 @@ use \Nectary\Factories\Dependency_Injection_Factory;
  * undefined methods to other class methods.
  *
  * In order to make use of this functionality, simply
- * define a `protected $route` in your class that
+ * define a `protected $routes` in your class that
  * implements this abstract class.
  *
  * Routes are expected to have:

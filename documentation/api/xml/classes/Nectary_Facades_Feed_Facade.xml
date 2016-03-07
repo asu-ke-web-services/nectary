@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Facades\Feed_Facade" namespace="Nectary\Facades" name="Feed_Facade" abstract="false" final="false" start="12" end="52">
+  <file path="/var/www/html/nectary/src/facades" file="feed-facade.php" realpath="/var/www/html/nectary/src/facades/feed-facade.php" size="1068" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="9df59287750ba8ddffe458350f6a659180127d10" relative="facades/feed-facade.php"/>
+  <docblock>
+    <description compact="Provide an interface for interacting with Feed Services and Feeds"/>
+  </docblock>
+  <member name="service" visibility="private" static="false" line="13"/>
+  <constructor name="__construct" start="15" end="17" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="service" byreference="false" type="object">
+      <type full="Nectary\Services\Feed_Service" namespace="Nectary\Services" name="Feed_Service"/>
+    </parameter>
+  </constructor>
+  <method name="get_feed" start="19" end="21" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="merge_feeds" start="30" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Merge different Feed_Services together.">Feeds passed in should have already had
+retrieve_items called on them.</description>
+      <param variable="$feeds" type="object">
+        <type full="Nectary\Facades\array&lt;Feed&gt;" namespace="Nectary\Facades" name="array&lt;Feed&gt;"/>
+      </param>
+    </docblock>
+    <parameter name="feeds" byreference="false" type="array"/>
+  </method>
+  <method name="unique_feed" start="45" end="51" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="feed" byreference="false" type="object">
+      <type full="Nectary\Feed" namespace="Nectary" name="Feed"/>
+    </parameter>
+  </method>
+</class>

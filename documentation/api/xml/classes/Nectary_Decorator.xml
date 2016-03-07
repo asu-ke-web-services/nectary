@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Decorator" namespace="Nectary" name="Decorator" abstract="true" final="false" start="11" end="74">
+  <file path="/var/www/html/nectary/src/decorators" file="decorator.php" realpath="/var/www/html/nectary/src/decorators/decorator.php" size="1643" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="8879fc0fa73db72f244de8d55376c6785be7bea6" relative="decorators/decorator.php"/>
+  <docblock>
+    <description compact="Decorators provide a layer between an object that lets you attach properties and methods to that object ar runtime."/>
+    <todo value="support nested Decorators!"/>
+  </docblock>
+  <member name="object" visibility="protected" static="false" line="12"/>
+  <constructor name="__construct" start="14" end="16" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="object" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="__get" start="18" end="28" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__isset" start="30" end="40" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__call" start="50" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Pass any unknown methods through to the inject object."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$arguments"/>
+      <throws type="object">
+        <type full="\BadMethodCallException" namespace="" name="BadMethodCallException"/>
+      </throws>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="decorator_has_method" start="65" end="73" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+</class>
