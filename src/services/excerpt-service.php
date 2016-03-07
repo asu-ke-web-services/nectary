@@ -2,13 +2,13 @@
 
 namespace Nectary\Services;
 
-use Coduo\PHPHumanizer\String as Truncate;
+use Coduo\PHPHumanizer\StringHumanizer as Truncate;
 
 /**
- * Service for using Tidy
+ * Service for using PHP Humanizer
  *
  * Use to abstract away how to get excerpts using
- * the Tidy library.
+ * the Humanizer library.
  */
 class Excerpt_Service {
   public function excerpt( $content_excerpt, $words = 50 ) {
