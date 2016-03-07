@@ -22,7 +22,8 @@
         "classmap" : [ "src/" ]
     },
     "require": {
-        "xamin/handlebars.php": ">=0.10.3"
+        "xamin/handlebars.php": ">=0.10.3",
+        "coduo/php-humanizer": ">=2.0.0-beta"
     },
     "require-dev": {
         "phpunit/phpunit": "4.8.*",
