@@ -21,8 +21,6 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->from( 'people' );
     $statement = $builder->get_sql();
 
-    $statement = preg_replace( '/\s+/', ' ', $statement );
-
     $this->assertContains( 'SELECT people.person_id FROM people WHERE 1=1 LIMIT 100', $statement );
   }
 
@@ -30,8 +28,6 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder = new Select_SQL_Query_Builder();
     $builder->from( 'people' );
     $statement = $builder->get_sql();
-
-    $statement = preg_replace( '/\s+/', ' ', $statement );
 
     $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 100', $statement );
   }
@@ -43,8 +39,6 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->where( 'AND 1<>1' );
     $statement = $builder->get_sql();
 
-    $statement = preg_replace( '/\s+/', ' ', $statement );
-
     $this->assertEquals( 'SELECT * FROM people WHERE 1=1 AND 1<>1 LIMIT 100', $statement );
   }
 
@@ -54,8 +48,6 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->from( 'people' );
     $builder->and_where( '1=1' );
     $statement = $builder->get_sql();
-
-    $statement = preg_replace( '/\s+/', ' ', $statement );
 
     $this->assertEquals( 'SELECT * FROM people WHERE 1=1 AND 1=1 LIMIT 100', $statement );
   }
@@ -67,8 +59,6 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->or_where( '1=1' );
     $statement = $builder->get_sql();
 
-    $statement = preg_replace( '/\s+/', ' ', $statement );
-
     $this->assertEquals( 'SELECT * FROM people WHERE 1=1 OR 1=1 LIMIT 100', $statement );
   }
 
@@ -79,8 +69,6 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->add_columns( 'people.last_name, people.middle_name' );
     $builder->from( 'people' );
     $statement = $builder->get_sql();
-
-    $statement = preg_replace( '/\s+/', ' ', $statement );
 
     $this->assertEquals( 'SELECT people.person_id, people.first_name, people.last_name, people.middle_name FROM people WHERE 1=1 LIMIT 100', $statement );
   }
@@ -96,8 +84,6 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->where( 'AND people.person_id <> 1' );
     $statement = $builder->get_sql();
 
-    $statement = preg_replace( '/\s+/', ' ', $statement );
-
     $this->assertEquals( 'SELECT people.*, groups_people.* FROM people LEFT JOIN groups_people ON (groups_people.person_id = people.person_id) WHERE 1=1 AND people.person_id <> 1 ORDER BY people.person_id DESC LIMIT 1', $statement );
   }
 
@@ -105,8 +91,6 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder = new Select_SQL_Query_Builder();
     $builder->group_by( 'column-to-group-by' );
     $sql = $builder->get_sql();
-
-    $sql = preg_replace( '/\s+/', ' ', $sql );
 
     $this->assertContains( ' GROUP BY column-to-group-by ', $sql );
   }
@@ -117,8 +101,28 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->group_by( 'second-column-to-group-by' );
     $sql = $builder->get_sql();
 
-    $sql = preg_replace( '/\s+/', ' ', $sql );
-
     $this->assertContains( ' GROUP BY first-column-to-group-by, second-column-to-group-by', $sql );
+  }
+
+   public function test_or_where_clauses_has_proper_white_spaces() {
+    $builder = new Select_SQL_Query_Builder();
+    $builder->from( 'people' );
+    $builder->and_where( '1=1' );
+    $builder->or_where( '1=1' );
+    $statement = $builder->get_sql();
+
+    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 AND 1=1 OR 1=1 LIMIT 100', $statement );
+  }
+
+  public function test_or_multiple_joins_has_proper_white_spaces() {
+    $builder = new Select_SQL_Query_Builder();
+    $builder->from( 'people' );
+    $builder->and_where( '1=1' );
+    $builder->or_where( '1=1' );
+    $builder->joins( 'LEFT JOIN groups_people ON (groups_people.person_id = people.person_id)' );
+    $builder->joins( 'LEFT JOIN groups_people ON (groups_people.person_id = people.person_id)' );
+    $statement = $builder->get_sql();
+
+    $this->assertEquals( 'SELECT * FROM people LEFT JOIN groups_people ON (groups_people.person_id = people.person_id) LEFT JOIN groups_people ON (groups_people.person_id = people.person_id) WHERE 1=1 AND 1=1 OR 1=1 LIMIT 100', $statement );
   }
 }
