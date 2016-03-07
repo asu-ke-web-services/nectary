@@ -25,7 +25,7 @@ class Select_SQL_Query_Builder {
     $this->values_to_bind    = array();
     $this->group_by          = array();
     $this->order_by          = '';
-    $this->limit             = 100;
+    $this->limit             = 500;
   }
 
   /**
@@ -58,7 +58,7 @@ class Select_SQL_Query_Builder {
    * @param $join_statement : string - sql fragment of the join statement
    */
   public function joins( $join_statement ) {
-    $this->joins .= $join_statement;
+    $this->joins .= ' '.$join_statement . ' ';
   }
 
   /**
@@ -99,7 +99,7 @@ class Select_SQL_Query_Builder {
    * @param $string : eg: "blah = foo"
    */
   public function and_where( $string ) {
-    $this->where( 'AND ' . $string );
+    $this->where( ' AND ' . $string . ' ' );
   }
 
   /**
@@ -107,7 +107,7 @@ class Select_SQL_Query_Builder {
    * @param $string : eg: "blah = foo"
    */
   public function or_where( $string ) {
-    $this->where( 'OR ' . $string );
+    $this->where( ' OR ' . $string . ' ' );
   }
 
   /**

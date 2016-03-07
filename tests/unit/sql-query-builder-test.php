@@ -23,7 +23,7 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
 
     $statement = preg_replace( '/\s+/', ' ', $statement );
 
-    $this->assertContains( 'SELECT people.person_id FROM people WHERE 1=1 LIMIT 100', $statement );
+    $this->assertContains( 'SELECT people.person_id FROM people WHERE 1=1 LIMIT 500', $statement );
   }
 
   public function test_that_a_bare_query_is_executeable() {
@@ -33,7 +33,7 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
 
     $statement = preg_replace( '/\s+/', ' ', $statement );
 
-    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 100', $statement );
+    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 500', $statement );
   }
 
   public function test_where_clauses_incorrectly() {
@@ -45,7 +45,7 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
 
     $statement = preg_replace( '/\s+/', ' ', $statement );
 
-    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 AND 1<>1 LIMIT 100', $statement );
+    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 AND 1<>1 LIMIT 500', $statement );
   }
 
   public function test_and_where_clauses_correctly() {
@@ -57,7 +57,7 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
 
     $statement = preg_replace( '/\s+/', ' ', $statement );
 
-    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 AND 1=1 LIMIT 100', $statement );
+    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 AND 1=1 LIMIT 500', $statement );
   }
 
   public function test_or_where_clauses_correctly() {
@@ -69,7 +69,7 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
 
     $statement = preg_replace( '/\s+/', ' ', $statement );
 
-    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 OR 1=1 LIMIT 100', $statement );
+    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 OR 1=1 LIMIT 500', $statement );
   }
 
   public function test_add_columns_can_take_multiple_types_and_maintain_array() {
@@ -82,7 +82,7 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
 
     $statement = preg_replace( '/\s+/', ' ', $statement );
 
-    $this->assertEquals( 'SELECT people.person_id, people.first_name, people.last_name, people.middle_name FROM people WHERE 1=1 LIMIT 100', $statement );
+    $this->assertEquals( 'SELECT people.person_id, people.first_name, people.last_name, people.middle_name FROM people WHERE 1=1 LIMIT 500', $statement );
   }
 
   public function test_that_a_more_complicated_query_is_executeable() {
