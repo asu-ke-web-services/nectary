@@ -20,8 +20,8 @@ class Select_SQL_Query_Builder {
   public function __construct() {
     $this->columns_to_select = array();
     $this->from              = 'TABLE_NAME';
-    $this->joins             = '';
-    $this->where_clause      = ' 1=1 ';
+    $this->joins             = ' ';
+    $this->where_clause      = '1=1 ';
     $this->values_to_bind    = array();
     $this->group_by          = array();
     $this->order_by          = '';
@@ -58,7 +58,7 @@ class Select_SQL_Query_Builder {
    * @param $join_statement : string - sql fragment of the join statement
    */
   public function joins( $join_statement ) {
-    $this->joins .= ' ' . $join_statement . ' ';
+    $this->joins .= $join_statement . ' ';
   }
 
   /**
@@ -91,7 +91,7 @@ class Select_SQL_Query_Builder {
    * @param $string : eg: "AND blah = foo"
    */
   public function where( $string ) {
-    $this->where_clause .= ' ' . $string . ' ';
+    $this->where_clause .= $string . ' ';
   }
 
   /**
@@ -99,7 +99,7 @@ class Select_SQL_Query_Builder {
    * @param $string : eg: "blah = foo"
    */
   public function and_where( $string ) {
-    $this->where( ' AND ' . $string . ' ' );
+    $this->where( 'AND ' . $string );
   }
 
   /**
@@ -107,7 +107,7 @@ class Select_SQL_Query_Builder {
    * @param $string : eg: "blah = foo"
    */
   public function or_where( $string ) {
-    $this->where( ' OR ' . $string . ' ' );
+    $this->where( 'OR ' . $string );
   }
 
   /**
@@ -130,19 +130,23 @@ class Select_SQL_Query_Builder {
     }
 
     $from   = ' FROM ' . $this->from . ' ';
-    $from  .= $this->joins;
-    $from  .= ' WHERE ' . $this->where_clause;
+
+    if ( ! empty( ltrim( $this->joins ) ) ) {
+      $from  .= ltrim( $this->joins );
+    }
+
+    $from  .= 'WHERE ' . $this->where_clause;
     $select = 'SELECT ' . implode( ', ', $this->columns_to_select ) . $from;
 
     if ( ! empty( $this->group_by ) ) {
-      $select .= ' GROUP BY '.implode( ', ', $this->group_by ).' ';
+      $select .= 'GROUP BY ' . implode( ', ', $this->group_by ) . ' ';
     }
 
     if ( $this->order_by !== '' ) {
-      $select .= ' ORDER BY ' . $this->order_by . ' ';
+      $select .= 'ORDER BY ' . $this->order_by . ' ';
     }
 
-    $select .= ' LIMIT ' . $this->limit;
+    $select .= 'LIMIT ' . $this->limit;
     return $select;
   }
 
