@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/nectary/src/factories/implementations" file="html-factory.php" realpath="/var/www/html/nectary/src/factories/implementations/html-factory.php" size="2774" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="68f82044ac804f132cea3e092d51ee2c233831cf" relative="factories/implementations/html-factory.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/nectary/src/factories/implementations" file="html-factory.php" realpath="/var/www/html/nectary/src/factories/implementations/html-factory.php" size="2780" time="2016-03-09T19:33:34+00:00" unixtime="1457552014" sha1="4a0587dc1d7a46222700d5d6d09afccf43fb15f5" relative="factories/implementations/html-factory.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -29,7 +29,7 @@
     <token name="T_NS_SEPARATOR">\</token>
     <token name="T_STRING">Services</token>
     <token name="T_NS_SEPARATOR">\</token>
-    <token name="T_STRING">Tidy_Service</token>
+    <token name="T_STRING">Excerpt_Service</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="7"/>
@@ -667,7 +667,7 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_NEW">new</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_STRING">Tidy_Service</token>
+    <token name="T_STRING">Excerpt_Service</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_WHITESPACE"> </token>
