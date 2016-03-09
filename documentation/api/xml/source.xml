@@ -8,7 +8,7 @@
         <file name="html-carousel-factory.php" size="1758" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="8f0d63e16a08427cf098ef100da5759010265efd" xml="tokens/factories/implementations/html-carousel-factory.php.xml"/>
         <file name="dependency-injection-factory.php" size="4286" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="27b5966d19ac28192e285ab82e3308fc7c9d222a" xml="tokens/factories/implementations/dependency-injection-factory.php.xml"/>
         <file name="view-factory.php" size="5125" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="296b7b974fc85e8ed96b31f8cdc13533c40e8db3" xml="tokens/factories/implementations/view-factory.php.xml"/>
-        <file name="html-factory.php" size="2774" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="68f82044ac804f132cea3e092d51ee2c233831cf" xml="tokens/factories/implementations/html-factory.php.xml"/>
+        <file name="html-factory.php" size="2780" time="2016-03-09T19:33:34+00:00" unixtime="1457552014" sha1="4a0587dc1d7a46222700d5d6d09afccf43fb15f5" xml="tokens/factories/implementations/html-factory.php.xml"/>
       </dir>
     </dir>
     <dir name="facades">
@@ -49,8 +49,8 @@
     </dir>
     <dir name="services">
       <file name="json-feed-service.php" size="1005" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="ae9bbc705c2daf77eafc557bf8f680c0e7938603" xml="tokens/services/json-feed-service.php.xml"/>
+      <file name="excerpt-service.php" size="1476" time="2016-03-07T22:26:34+00:00" unixtime="1457389594" sha1="28340a20ec687f2dea4b7f592ccc9d73431adb5a" xml="tokens/services/excerpt-service.php.xml"/>
       <file name="twitter-feed-service.php" size="4709" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="29d8a499ccec42fb6f09fdb74123a5a642decca8" xml="tokens/services/twitter-feed-service.php.xml"/>
-      <file name="tidy-service.php" size="1820" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="a1a2e30ccee9858a3dec4cfd529ad5441c8409d5" xml="tokens/services/tidy-service.php.xml"/>
       <file name="feed-service.php" size="240" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="5c431a93c649b086e0e795cbe18f3fa10f9423d8" xml="tokens/services/feed-service.php.xml"/>
     </dir>
     <dir name="decorators">
