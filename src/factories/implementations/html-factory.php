@@ -3,7 +3,7 @@
 namespace Nectary\Factories;
 
 use Nectary\Factory;
-use Nectary\Services\Tidy_Service;
+use Nectary\Services\Excerpt_Service;
 
 /**
  * Factory that provides a programmatic approach to
@@ -67,7 +67,7 @@ class Html_Factory extends Factory {
     ensure_default( $options, 'class', '' );
 
     $classes = $options['class'];
-    $excerpt = ( new Tidy_Service() )->excerpt(
+    $excerpt = ( new Excerpt_Service() )->excerpt(
         $inner_html,
         $options['character_limit']
     );

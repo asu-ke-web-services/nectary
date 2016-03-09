@@ -22,8 +22,8 @@
     <class name="Html_Carousel_Factory" src="factories/implementations/html-carousel-factory.php" description="Lazily create HTML Bootstrap based Carousels" xml="classes/Nectary_Factories_Html_Carousel_Factory.xml"/>
     <class name="Dependency_Injection_Factory" src="factories/implementations/dependency-injection-factory.php" description="Given a class name and method for the class (the constructor is an allowed method), this factory will automatically build the given object and provide the dependencies for the given method using the given arguments as suggestions." xml="classes/Nectary_Factories_Dependency_Injection_Factory.xml"/>
     <class name="View_Factory" src="factories/implementations/view-factory.php" description="This factory is slightly different because it has chainable methods." xml="classes/Nectary_Factories_View_Factory.xml"/>
-    <class name="Html_Factory" src="factories/implementations/html-factory.php" description="Factory that provides a programmatic approach to building html. Provides basic building blocks, such as links, headings, text, images, and divs" xml="classes/Nectary_Factories_Html_Factory.xml"/>
-  </namespace>
+    
+  <class name="Html_Factory" src="factories/implementations/html-factory.php" description="Factory that provides a programmatic approach to building html. Provides basic building blocks, such as links, headings, text, images, and divs" xml="classes/Nectary_Factories_Html_Factory.xml"/></namespace>
   <namespace name="Nectary\Facades">
     <class name="Feed_Facade" src="facades/feed-facade.php" description="Provide an interface for interacting with Feed Services and Feeds" xml="classes/Nectary_Facades_Feed_Facade.xml"/>
   </namespace>
@@ -42,9 +42,9 @@
   <namespace name="Nectary\Services">
     <class name="Json_Feed_Service" src="services/json-feed-service.php" description="Service for the Json Feed. Defaults to using get_curl_feed_data" xml="classes/Nectary_Services_Json_Feed_Service.xml"/>
     <class name="Twitter_Feed_Service" src="services/twitter-feed-service.php" description="Feed Service for Twitter. Defaults to using curl." xml="classes/Nectary_Services_Twitter_Feed_Service.xml"/>
-    <class name="Tidy_Service" src="services/tidy-service.php" description="Service for using Tidy" xml="classes/Nectary_Services_Tidy_Service.xml"/>
+    
     <class name="Feed_Service" src="services/feed-service.php" description="Feed Services should implement a public get_feed( $url ) to abstract away how a particular feed is retreived." xml="classes/Nectary_Services_Feed_Service.xml"/>
-  </namespace>
+  <class name="Excerpt_Service" src="services/excerpt-service.php" description="Service for using PHP Humanizer" xml="classes/Nectary_Services_Excerpt_Service.xml"/></namespace>
   <namespace name="Nectary\Daos">
     <class name="Select_SQL_Query_Builder" src="daos/sql-query-builder.php" description="Select_SQL_Query_Builder - Helper class for building PDO select statements" xml="classes/Nectary_Daos_Select_SQL_Query_Builder.xml"/>
   </namespace>
