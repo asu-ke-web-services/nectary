@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1566566f2a76c9094ca5e2933efab7d9",
-    "content-hash": "65cc09086cfd963412e56bb6bce88d0d",
+    "hash": "7c218b48da6a2c4ee79547acba17a473",
+    "content-hash": "5744feedb6db264c26321947a4f385dd",
     "packages": [
         {
             "name": "coduo/php-humanizer",
