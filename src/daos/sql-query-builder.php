@@ -130,7 +130,7 @@ class Select_SQL_Query_Builder {
    * @param $name : string
    * @param $value : object
    */
-  public function bind_value( $name, $value, $data_type = \PDO::PARAM_STR ) {
+  public function bind_value( $name, $value, $data_type = false ) {
     $this->values_to_bind[ $name ] = array( $value, $data_type );
   }
 
@@ -176,7 +176,11 @@ class Select_SQL_Query_Builder {
   public function get_statement( $db ) {
     $statement = $db->prepare( $this->get_sql() );
     foreach ( $this->values_to_bind as $name => $value ) {
-      $statement->bindValue( $name, $value[0], $value[1] );
+      if ( false === $value[1] ) {
+        $statement->bindValue( $name, $value[0] );
+      } else {
+        $statement->bindValue( $name, $value[0], $value[1] );
+      }
     }
     return $statement;
   }
