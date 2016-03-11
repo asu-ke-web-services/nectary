@@ -130,7 +130,7 @@ class Select_SQL_Query_Builder {
    * @param $name : string
    * @param $value : object
    */
-  public function bind_value( $name, $value, $data_type = PDO::PARAM_STR ) {
+  public function bind_value( $name, $value, $data_type = \PDO::PARAM_STR ) {
     $this->values_to_bind[ $name ] = array( $value, $data_type );
   }
 
