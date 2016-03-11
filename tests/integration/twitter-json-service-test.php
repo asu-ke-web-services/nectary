@@ -56,8 +56,8 @@ class Twitter_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
     );
 
     $json_feed->retrieve_items();
-
     $items = $json_feed->get_items();
+    var_dump( $items['statuses'] );
     $this->assertCount( 15, $items['statuses'] );
   }
 }
