@@ -56,7 +56,6 @@ class Twitter_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
     );
 
     $json_feed->retrieve_items();
-
     $items = $json_feed->get_items();
     $this->assertGreaterThan( 0, count( $items['statuses'] ), 'There should be at least 1 tweet' );
   }
