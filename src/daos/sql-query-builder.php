@@ -63,10 +63,12 @@ class Select_SQL_Query_Builder {
 
   /**
    * For setting a limit on the query other than the default
-   * @param $new_limit : integer
+   * To bind limit as int if passed as string use PDO binding parameter
+   * Example: select->bind_value( ':limit_to', array(intval( $options['limit'] ), \PDO::PARAM_INT ) )
+   * @param $new_limit
    */
   public function limit( $new_limit ) {
-    $this->limit = intval( $new_limit );
+    $this->limit = $new_limit;
   }
 
   /**
@@ -159,7 +161,11 @@ class Select_SQL_Query_Builder {
   public function get_statement( $db ) {
     $statement = $db->prepare( $this->get_sql() );
     foreach ( $this->values_to_bind as $name => $value ) {
-      $statement->bindValue( $name, $value );
+      if ( is_array( $value ) && 2 === count( $value ) ) {
+        $statement->bindValue( $name, $value[0], $value[1] );
+      } else {
+        $statement->bindValue( $name, $value );
+      };
     }
     return $statement;
   }
