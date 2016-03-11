@@ -176,11 +176,7 @@ class Select_SQL_Query_Builder {
   public function get_statement( $db ) {
     $statement = $db->prepare( $this->get_sql() );
     foreach ( $this->values_to_bind as $name => $value ) {
-      if ( is_array( $value ) && 2 === count( $value ) ) {
-        $statement->bindValue( $name, $value[0], $value[1] );
-      } else {
-        $statement->bindValue( $name, $value );
-      };
+      $statement->bindValue( $name, $value[0], $value[1] );
     }
     return $statement;
   }
