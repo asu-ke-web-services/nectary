@@ -31,6 +31,7 @@ class Select_SQL_Query_Builder {
   /**
    * This function takes either a string or an one dimensional array.
    * the string can be a single column name or multiple columns comma seperated.
+   *
    * @param $new_columns : string or array of column names to select
    */
   public function add_columns( $new_columns ) {
@@ -39,6 +40,7 @@ class Select_SQL_Query_Builder {
 
   /**
    * Mainly for debugging, probably wont need this
+   *
    * @return the current colums this query will select from
    */
   public function get_columns() {
@@ -47,6 +49,7 @@ class Select_SQL_Query_Builder {
 
   /**
    * For setting what table to select from, can only be one table. For joins see joins()
+   *
    * @param $table : string - name of table to select
    */
   public function from( $table ) {
@@ -55,6 +58,7 @@ class Select_SQL_Query_Builder {
 
   /**
    * For adding a join, can be called multiple times for multiple joins.
+   *
    * @param $join_statement : string - sql fragment of the join statement
    */
   public function joins( $join_statement ) {
@@ -63,14 +67,18 @@ class Select_SQL_Query_Builder {
 
   /**
    * For setting a limit on the query other than the default
-   * @param $new_limit : integer
+   * To bind limit as int if passed as string use PDO binding parameter
+   * Example: select->bind_value( ':limit_to', array(intval( $options['limit'] ), \PDO::PARAM_INT ) )
+   *
+   * @param $new_limit
    */
   public function limit( $new_limit ) {
-    $this->limit = intval( $new_limit );
+    $this->limit = $new_limit;
   }
 
   /**
    * For setting an order on the query other than the default. Currently Can't have multiple.
+   *
    * @param $order : string : eg: "first_name ASC"
    */
   public function order_by( $order ) {
@@ -79,6 +87,7 @@ class Select_SQL_Query_Builder {
 
   /**
    * For setting an group by on the query other than the default.
+   *
    * @param $order : string : eg: "first_name"
    */
   public function group_by( $group ) {
@@ -88,6 +97,7 @@ class Select_SQL_Query_Builder {
   /**
    * Adds a string to the where clause, it must start with an 'AND' or 'OR' to chain together
    * criteria.
+   *
    * @param $string : eg: "AND blah = foo"
    */
   public function where( $string ) {
@@ -96,6 +106,7 @@ class Select_SQL_Query_Builder {
 
   /**
    * Adds a string to the where clause with an 'AND'
+   *
    * @param $string : eg: "blah = foo"
    */
   public function and_where( $string ) {
@@ -104,6 +115,7 @@ class Select_SQL_Query_Builder {
 
   /**
    * Adds a string to the where clause with an 'AND'
+   *
    * @param $string : eg: "blah = foo"
    */
   public function or_where( $string ) {
@@ -112,6 +124,7 @@ class Select_SQL_Query_Builder {
 
   /**
    * Adds a variable to be bound to in the prepared statement
+   *
    * @param $name : string
    * @param $value : object
    */
@@ -121,6 +134,7 @@ class Select_SQL_Query_Builder {
 
   /**
    * Uses the current state of the object to build the sql statement
+   *
    * @return the sql select statement as a string
    */
   public function get_sql() {
@@ -153,13 +167,18 @@ class Select_SQL_Query_Builder {
   /**
    * Calls get_sql() to generate the sql and then creates the prepared statement
    * and binds its values.
+   *
    * @param $db : a pdo database connection
    * @return pdo::Statement object with the query and values bound
    */
   public function get_statement( $db ) {
     $statement = $db->prepare( $this->get_sql() );
     foreach ( $this->values_to_bind as $name => $value ) {
-      $statement->bindValue( $name, $value );
+      if ( is_array( $value ) && 2 === count( $value ) ) {
+        $statement->bindValue( $name, $value[0], $value[1] );
+      } else {
+        $statement->bindValue( $name, $value );
+      };
     }
     return $statement;
   }
