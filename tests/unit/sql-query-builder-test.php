@@ -87,6 +87,33 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $this->assertEquals( 'SELECT people.*, groups_people.* FROM people LEFT JOIN groups_people ON (groups_people.person_id = people.person_id) WHERE 1=1 AND people.person_id <> 1 ORDER BY people.person_id DESC LIMIT 1', $statement );
   }
 
+  public function test_that_a_limit_integer_can_be_set() {
+    $builder = new Select_SQL_Query_Builder();
+    $builder->add_columns( '*' );
+    $builder->from( 'people' );
+    $builder->limit( 1 );
+    $statement = $builder->get_sql();
+    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 1', $statement );
+  }
+
+  public function test_that_a_limit_can_be_set_as_bind_value() {
+    $builder = new Select_SQL_Query_Builder();
+    $builder->add_columns( '*' );
+    $builder->from( 'people' );
+    $builder->limit( ':limit_to' );
+    $statement = $builder->get_sql();
+    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT :limit_to', $statement );
+  }
+
+  public function test_that_a_limit_defaults_to_zero_if_input_is_not_integer() {
+    $builder = new Select_SQL_Query_Builder();
+    $builder->add_columns( '*' );
+    $builder->from( 'people' );
+    $builder->limit( 'limit' );
+    $statement = $builder->get_sql();
+    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 0', $statement );
+  }
+
   public function test_group_by() {
     $builder = new Select_SQL_Query_Builder();
     $builder->group_by( 'column-to-group-by' );

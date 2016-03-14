@@ -19,8 +19,8 @@ class Select_SQL_Query_Builder {
    */
   public function __construct() {
     $this->columns_to_select = array();
-    $this->from              = 'TABLE_NAME';
-    $this->joins             = ' ';
+    $this->from              = array();
+    $this->joins             = '';
     $this->where_clause      = '1=1 ';
     $this->values_to_bind    = array();
     $this->group_by          = array();
@@ -53,7 +53,7 @@ class Select_SQL_Query_Builder {
    * @param $table : string - name of table to select
    */
   public function from( $table ) {
-    $this->from = $table;
+    $this->from[] = $table;
   }
 
   /**
@@ -71,7 +71,7 @@ class Select_SQL_Query_Builder {
    * @param $new_limit : intger | string
    */
   public function limit( $new_limit ) {
-    if ( false === stripos( $new_limit . '', ':' ) ) {
+    if ( false === starts_with( $new_limit . '', ':' ) ) {
       $this->limit = intval( $new_limit );
     } else {
       $this->limit = $new_limit;
@@ -131,7 +131,10 @@ class Select_SQL_Query_Builder {
    * @param $value : object
    */
   public function bind_value( $name, $value, $data_type = false ) {
-    $this->values_to_bind[ $name ] = array( $value, $data_type );
+    $this->values_to_bind[ $name ] = array(
+      'value' => $value,
+      'data_type' => $data_type,
+    );
   }
 
   /**
@@ -145,10 +148,10 @@ class Select_SQL_Query_Builder {
       $this->columns_to_select = [ '*' ];
     }
 
-    $from   = ' FROM ' . $this->from . ' ';
+    $from   = ' FROM ' . implode( ', ', $this->from ) . ' ';
 
-    if ( ! empty( ltrim( $this->joins ) ) ) {
-      $from  .= ltrim( $this->joins );
+    if ( ! empty( $this->joins ) ) {
+      $from  .= $this->joins;
     }
 
     $from  .= 'WHERE ' . $this->where_clause;
@@ -176,10 +179,10 @@ class Select_SQL_Query_Builder {
   public function get_statement( $db ) {
     $statement = $db->prepare( $this->get_sql() );
     foreach ( $this->values_to_bind as $name => $value ) {
-      if ( false === $value[1] ) {
-        $statement->bindValue( $name, $value[0] );
+      if ( false === $value['data_type'] ) {
+        $statement->bindValue( $name, $value['value'] );
       } else {
-        $statement->bindValue( $name, $value[0], $value[1] );
+        $statement->bindValue( $name, $value['value'], $value['data_type'] );
       }
     }
     return $statement;
