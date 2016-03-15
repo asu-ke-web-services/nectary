@@ -152,4 +152,13 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
 
     $this->assertEquals( 'SELECT * FROM people LEFT JOIN groups_people ON (groups_people.person_id = people.person_id) LEFT JOIN groups_people ON (groups_people.person_id = people.person_id) WHERE 1=1 AND 1=1 OR 1=1 LIMIT 100', $statement );
   }
+
+  public function test_that_a_offest_can_be_set_as_bind_value() {
+    $builder = new Select_SQL_Query_Builder();
+    $builder->add_columns( '*' );
+    $builder->from( 'people' );
+    $builder->offset( ':offset' );
+    $statement = $builder->get_sql();
+    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 100 OFFSET :offset', $statement );
+  }
 }

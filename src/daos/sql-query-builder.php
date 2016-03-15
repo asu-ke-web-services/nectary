@@ -12,7 +12,7 @@ class Select_SQL_Query_Builder {
   /**
    * Internal state for this object
    */
-  private $columns_to_select, $from, $joins, $where_clause, $values_to_bind, $order_by, $limit;
+  private $columns_to_select, $from, $joins, $where_clause, $values_to_bind, $order_by, $limit, $offset;
 
   /**
    * Sets up default state
@@ -26,6 +26,7 @@ class Select_SQL_Query_Builder {
     $this->group_by          = array();
     $this->order_by          = '';
     $this->limit             = 100;
+    $this->offset            = '';
   }
 
   /**
@@ -75,6 +76,19 @@ class Select_SQL_Query_Builder {
       $this->limit = intval( $new_limit );
     } else {
       $this->limit = $new_limit;
+    }
+  }
+
+  /**
+   * For setting a offset on the query other than the default
+   *
+   * @param $offset : intger | string
+   */
+  public function offset( $offset ) {
+    if ( false === starts_with( $offset . '', ':' ) ) {
+      $this->offset = intval( $offset );
+    } else {
+      $this->offset = $offset;
     }
   }
 
@@ -166,6 +180,11 @@ class Select_SQL_Query_Builder {
     }
 
     $select .= 'LIMIT ' . $this->limit;
+
+    if ( $this->offset !== '' ) {
+      $select .= ' OFFSET ' . $this->offset;
+    }
+
     return $select;
   }
 
