@@ -93,6 +93,7 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->from( 'people' );
     $builder->limit( 1 );
     $statement = $builder->get_sql();
+    
     $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 1', $statement );
   }
 
@@ -102,6 +103,7 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->from( 'people' );
     $builder->limit( ':limit_to' );
     $statement = $builder->get_sql();
+
     $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT :limit_to', $statement );
   }
 
@@ -111,6 +113,7 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->from( 'people' );
     $builder->limit( 'limit' );
     $statement = $builder->get_sql();
+
     $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 0', $statement );
   }
 
@@ -159,6 +162,7 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder->from( 'people' );
     $builder->offset( ':offset' );
     $statement = $builder->get_sql();
+
     $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 100 OFFSET :offset', $statement );
   }
 
@@ -166,8 +170,9 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $builder = new Select_SQL_Query_Builder();
     $builder->add_columns( '*' );
     $builder->from( 'people' );
-    $builder->offset( "33" );
+    $builder->offset( 33 );
     $statement = $builder->get_sql();
+
     $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 100 OFFSET 33', $statement );
   }
 }
