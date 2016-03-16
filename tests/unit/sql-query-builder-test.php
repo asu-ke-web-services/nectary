@@ -161,4 +161,13 @@ class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
     $statement = $builder->get_sql();
     $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 100 OFFSET :offset', $statement );
   }
+
+  public function test_that_a_offest_can_be_set_with_an_integer_value() {
+    $builder = new Select_SQL_Query_Builder();
+    $builder->add_columns( '*' );
+    $builder->from( 'people' );
+    $builder->offset( "33" );
+    $statement = $builder->get_sql();
+    $this->assertEquals( 'SELECT * FROM people WHERE 1=1 LIMIT 100 OFFSET 33', $statement );
+  }
 }
