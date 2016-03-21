@@ -5,7 +5,7 @@ namespace Nectary\Helpers;
 use Nectary\Response;
 
 trait Callbacks {
-  public static function error() {
+  public static function not_found_error() {
     return Response::$error_404;
   }
 
