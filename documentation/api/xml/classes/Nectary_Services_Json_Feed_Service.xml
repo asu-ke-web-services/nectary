@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Services\Json_Feed_Service" namespace="Nectary\Services" name="Json_Feed_Service" abstract="false" final="false" start="14" end="46">
-  <file path="/var/www/html/nectary/src/services" file="json-feed-service.php" realpath="/var/www/html/nectary/src/services/json-feed-service.php" size="1005" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="ae9bbc705c2daf77eafc557bf8f680c0e7938603" relative="services/json-feed-service.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/services" file="json-feed-service.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/services/json-feed-service.php" size="1005" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="ae9bbc705c2daf77eafc557bf8f680c0e7938603" relative="services/json-feed-service.php"/>
   <docblock>
     <description compact="Service for the Json Feed. Defaults to using get_curl_feed_data"/>
     <extends value="Feed_Service"/>

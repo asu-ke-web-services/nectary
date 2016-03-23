@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <index xmlns="http://xml.phpdox.net/src" basedir="/var/www/html/nectary/src">
   <namespace name="Nectary">
-    <class name="Factory" src="factories/factory.php" description="Factories should be used to build an object." xml="classes/Nectary_Factory.xml"/>
-    <interface name="Feed" src="models/feed.php" xml="interfaces/Nectary_Feed.xml"/>
-    <class name="Data_Model" src="models/data-model.php" description="Data model" xml="classes/Nectary_Data_Model.xml"/>
-    <class name="Controller" src="controllers/controller.php" description="Controllers should be used to take in requests and return data, either through views or raw data" xml="classes/Nectary_Controller.xml"/>
-    <class name="Response" src="responses/response.php" description="View Model for head, content, and footer data" xml="classes/Nectary_Response.xml"/>
-    <class name="Request" src="requests/request.php" description="A request will validate based on a set of rules" xml="classes/Nectary_Request.xml"/>
-    <class name="Fail_Fast_Request" src="requests/fail-fast-request.php" description="A request will validate based on a set of rules" xml="classes/Nectary_Fail_Fast_Request.xml"/>
-    <class name="View" src="view/view.php" description="This abstract view contains functionality for rendering views." xml="classes/Nectary_View.xml"/>
-    <interface name="Decoratable" src="decorators/decoratable.php" description="Objects that wish to return a default decorate should implement this interface" xml="interfaces/Nectary_Decoratable.xml"/>
-    <class name="Decorator" src="decorators/decorator.php" description="Decorators provide a layer between an object that lets you attach properties and methods to that object ar runtime." xml="classes/Nectary_Decorator.xml"/>
-    <class name="Dao" src="daos/dao.php" description="Just a common class for all daos to extend" xml="classes/Nectary_Dao.xml"/>
-    <class name="Command" src="commands/command.php" description="Commands are used as general task runners, specifically, they differ from sevices and other types of actions in that they should not communicate back to the caller." xml="classes/Nectary_Command.xml"/>
-    <class name="Configuration" src="configuration/configuration.php" description="Configuration Singleton" xml="classes/Nectary_Configuration.xml"/>
-    <class name="Singleton" src="singleton/singleton.php" description="Support singletons in PHP" xml="classes/Nectary_Singleton.xml"/>
-    <class name="Router" src="routers/router.php" description="The base presenter has functionality to route undefined methods to other class methods." xml="classes/Nectary_Router.xml"/>
-  </namespace>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <class name="Command" src="commands/command.php" description="Commands are used as general task runners, specifically, they differ from sevices and other types of actions in that they should not communicate back to the caller." xml="classes/Nectary_Command.xml"/><class name="Configuration" src="configuration/configuration.php" description="Configuration Singleton" xml="classes/Nectary_Configuration.xml"/><class name="Controller" src="controllers/controller.php" description="Controllers should be used to take in requests and return data, either through views or raw data" xml="classes/Nectary_Controller.xml"/><class name="Dao" src="daos/dao.php" description="Just a common class for all daos to extend" xml="classes/Nectary_Dao.xml"/><interface name="Decoratable" src="decorators/decoratable.php" description="Objects that wish to return a default decorate should implement this interface" xml="interfaces/Nectary_Decoratable.xml"/><class name="Decorator" src="decorators/decorator.php" description="Decorators provide a layer between an object that lets you attach properties and methods to that object ar runtime." xml="classes/Nectary_Decorator.xml"/><class name="Factory" src="factories/factory.php" description="Factories should be used to build an object." xml="classes/Nectary_Factory.xml"/><class name="Data_Model" src="models/data-model.php" description="Data model" xml="classes/Nectary_Data_Model.xml"/><interface name="Feed" src="models/feed.php" xml="interfaces/Nectary_Feed.xml"/><class name="Fail_Fast_Request" src="requests/fail-fast-request.php" description="A request will validate based on a set of rules" xml="classes/Nectary_Fail_Fast_Request.xml"/><class name="Request" src="requests/request.php" description="A request will validate based on a set of rules" xml="classes/Nectary_Request.xml"/><class name="Response" src="responses/response.php" description="View Model for head, content, and footer data" xml="classes/Nectary_Response.xml"/><class name="Router" src="routers/router.php" description="The base presenter has functionality to route undefined methods to other class methods." xml="classes/Nectary_Router.xml"/><class name="Singleton" src="singleton/singleton.php" description="Support singletons in PHP" xml="classes/Nectary_Singleton.xml"/><class name="View" src="view/view.php" description="This abstract view contains functionality for rendering views." xml="classes/Nectary_View.xml"/></namespace>
   <namespace name="Nectary\Factories">
-    <class name="Html_Slide_Factory" src="factories/implementations/html-slide-factory.php" description="Create Html Slides for Html Carousels" xml="classes/Nectary_Factories_Html_Slide_Factory.xml"/>
-    <class name="Html_Carousel_Factory" src="factories/implementations/html-carousel-factory.php" description="Lazily create HTML Bootstrap based Carousels" xml="classes/Nectary_Factories_Html_Carousel_Factory.xml"/>
-    <class name="Dependency_Injection_Factory" src="factories/implementations/dependency-injection-factory.php" description="Given a class name and method for the class (the constructor is an allowed method), this factory will automatically build the given object and provide the dependencies for the given method using the given arguments as suggestions." xml="classes/Nectary_Factories_Dependency_Injection_Factory.xml"/>
-    <class name="View_Factory" src="factories/implementations/view-factory.php" description="This factory is slightly different because it has chainable methods." xml="classes/Nectary_Factories_View_Factory.xml"/>
     
-  <class name="Html_Factory" src="factories/implementations/html-factory.php" description="Factory that provides a programmatic approach to building html. Provides basic building blocks, such as links, headings, text, images, and divs" xml="classes/Nectary_Factories_Html_Factory.xml"/></namespace>
+    
+    
+    
+    
+  <class name="Dependency_Injection_Factory" src="factories/implementations/dependency-injection-factory.php" description="Given a class name and method for the class (the constructor is an allowed method), this factory will automatically build the given object and provide the dependencies for the given method using the given arguments as suggestions." xml="classes/Nectary_Factories_Dependency_Injection_Factory.xml"/><class name="Html_Carousel_Factory" src="factories/implementations/html-carousel-factory.php" description="Lazily create HTML Bootstrap based Carousels" xml="classes/Nectary_Factories_Html_Carousel_Factory.xml"/><class name="Html_Factory" src="factories/implementations/html-factory.php" description="Factory that provides a programmatic approach to building html. Provides basic building blocks, such as links, headings, text, images, and divs" xml="classes/Nectary_Factories_Html_Factory.xml"/><class name="Html_Slide_Factory" src="factories/implementations/html-slide-factory.php" description="Create Html Slides for Html Carousels" xml="classes/Nectary_Factories_Html_Slide_Factory.xml"/><class name="View_Factory" src="factories/implementations/view-factory.php" description="This factory is slightly different because it has chainable methods." xml="classes/Nectary_Factories_View_Factory.xml"/></namespace>
   <namespace name="Nectary\Facades">
-    <class name="Feed_Facade" src="facades/feed-facade.php" description="Provide an interface for interacting with Feed Services and Feeds" xml="classes/Nectary_Facades_Feed_Facade.xml"/>
-  </namespace>
-  <namespace name="Nectary\Models">
-    <class name="Rss_Feed" src="models/implementations/rss-feed.php" description="Rss Feed class for pulling and parsing RSS feeds from the web" xml="classes/Nectary_Models_Rss_Feed.xml"/>
-    <class name="Json_Feed" src="models/implementations/json-feed.php" description="Json Feed class for pulling and parsing JSON feeds from the web" xml="classes/Nectary_Models_Json_Feed.xml"/>
-    <class name="Presentable_Model" src="models/extensions/presentable-model.php" description="A Viewable model is one that can present itself so that all of its properties and calculated properties are useable within a template" xml="classes/Nectary_Models_Presentable_Model.xml"/>
-  </namespace>
-  <namespace name="Nectary\Views">
-    <class name="Simple_Handlebars_View" src="view/implementations/simple-handlebars-view.php" description="Simple implementation of the Handlebars_View" xml="classes/Nectary_Views_Simple_Handlebars_View.xml"/>
-    <class name="Handlebars_View" src="view/extensions/handlebars-view.php" description="View Handlebars" xml="classes/Nectary_Views_Handlebars_View.xml"/>
-  </namespace>
-  <namespace name="Nectary\Exceptions">
-    <class name="Invalid_Configuration_Exception" src="exceptions/invalid-configuration-exception.php" description="Exception to throw when the configuration file that is loaded is invalid, for whatever reason." xml="classes/Nectary_Exceptions_Invalid_Configuration_Exception.xml"/>
-  </namespace>
-  <namespace name="Nectary\Services">
-    <class name="Json_Feed_Service" src="services/json-feed-service.php" description="Service for the Json Feed. Defaults to using get_curl_feed_data" xml="classes/Nectary_Services_Json_Feed_Service.xml"/>
-    <class name="Twitter_Feed_Service" src="services/twitter-feed-service.php" description="Feed Service for Twitter. Defaults to using curl." xml="classes/Nectary_Services_Twitter_Feed_Service.xml"/>
     
-    <class name="Feed_Service" src="services/feed-service.php" description="Feed Services should implement a public get_feed( $url ) to abstract away how a particular feed is retreived." xml="classes/Nectary_Services_Feed_Service.xml"/>
-  <class name="Excerpt_Service" src="services/excerpt-service.php" description="Service for using PHP Humanizer" xml="classes/Nectary_Services_Excerpt_Service.xml"/></namespace>
+  <class name="Feed_Facade" src="facades/feed-facade.php" description="Provide an interface for interacting with Feed Services and Feeds" xml="classes/Nectary_Facades_Feed_Facade.xml"/></namespace>
+  <namespace name="Nectary\Models">
+    
+    
+    
+  <class name="Presentable_Model" src="models/extensions/presentable-model.php" description="A Viewable model is one that can present itself so that all of its properties and calculated properties are useable within a template" xml="classes/Nectary_Models_Presentable_Model.xml"/><class name="Json_Feed" src="models/implementations/json-feed.php" description="Json Feed class for pulling and parsing JSON feeds from the web" xml="classes/Nectary_Models_Json_Feed.xml"/><class name="Rss_Feed" src="models/implementations/rss-feed.php" description="Rss Feed class for pulling and parsing RSS feeds from the web" xml="classes/Nectary_Models_Rss_Feed.xml"/></namespace>
+  <namespace name="Nectary\Views">
+    
+    
+  <class name="Handlebars_View" src="view/extensions/handlebars-view.php" description="View Handlebars" xml="classes/Nectary_Views_Handlebars_View.xml"/><class name="Simple_Handlebars_View" src="view/implementations/simple-handlebars-view.php" description="Simple implementation of the Handlebars_View" xml="classes/Nectary_Views_Simple_Handlebars_View.xml"/></namespace>
+  <namespace name="Nectary\Exceptions">
+    
+  <class name="Invalid_Configuration_Exception" src="exceptions/invalid-configuration-exception.php" description="Exception to throw when the configuration file that is loaded is invalid, for whatever reason." xml="classes/Nectary_Exceptions_Invalid_Configuration_Exception.xml"/></namespace>
+  <namespace name="Nectary\Services">
+    
+    
+    
+    
+  <class name="Excerpt_Service" src="services/excerpt-service.php" description="Service for using PHP Humanizer" xml="classes/Nectary_Services_Excerpt_Service.xml"/><class name="Feed_Service" src="services/feed-service.php" description="Feed Services should implement a public get_feed( $url ) to abstract away how a particular feed is retreived." xml="classes/Nectary_Services_Feed_Service.xml"/><class name="Json_Feed_Service" src="services/json-feed-service.php" description="Service for the Json Feed. Defaults to using get_curl_feed_data" xml="classes/Nectary_Services_Json_Feed_Service.xml"/><class name="Twitter_Feed_Service" src="services/twitter-feed-service.php" description="Feed Service for Twitter. Defaults to using curl." xml="classes/Nectary_Services_Twitter_Feed_Service.xml"/></namespace>
   <namespace name="Nectary\Daos">
-    <class name="Select_SQL_Query_Builder" src="daos/sql-query-builder.php" description="Select_SQL_Query_Builder - Helper class for building PDO select statements" xml="classes/Nectary_Daos_Select_SQL_Query_Builder.xml"/>
-  </namespace>
+    
+  <class name="Select_SQL_Query_Builder" src="daos/sql-query-builder.php" description="Select_SQL_Query_Builder - Helper class for building PDO select statements" xml="classes/Nectary_Daos_Select_SQL_Query_Builder.xml"/></namespace>
   <namespace name="Nectary\Utilities">
-    <class name="Json_Utilities" src="utilities/json-utilities.php" description="Helper utility functions for dealing with JSON" xml="classes/Nectary_Utilities_Json_Utilities.xml"/>
-  </namespace>
+    
+  <class name="Json_Utilities" src="utilities/json-utilities.php" description="Helper utility functions for dealing with JSON" xml="classes/Nectary_Utilities_Json_Utilities.xml"/></namespace>
   <namespace name="">
     <class name="Exception" xml="classes/Exception.xml"/>
   </namespace>
-</index>
+<namespace name="Nectary\Helpers"><trait name="Callbacks" src="helpers/callbacks.php" description="Trait Callbacks - Common place for list of all reusable callbacks" xml="traits/Nectary_Helpers_Callbacks.xml"/></namespace></index>

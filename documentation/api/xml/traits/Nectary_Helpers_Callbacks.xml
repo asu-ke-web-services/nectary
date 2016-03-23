@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Nectary\Helpers\Callbacks" namespace="Nectary\Helpers" name="Callbacks" abstract="false" final="false" start="10" end="48">
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/helpers" file="callbacks.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/helpers/callbacks.php" size="783" time="2016-03-23T07:59:06-07:00" unixtime="1458745146" sha1="451a5fa65f428b1e71e4f6cac1dcc2fbaee71808" relative="helpers/callbacks.php"/>
+  <docblock>
+    <description compact="Trait Callbacks - Common place for list of all reusable callbacks"/>
+  </docblock>
+  <method name="not_found_error" start="17" end="19" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="To respond client with 404 error"/>
+      <return type="object">
+        <type full="Nectary\Helpers\Response::$error_404" namespace="Nectary\Helpers" name="Response::$error_404"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="false" start="26" end="28" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Always return false"/>
+      <return type="object">
+        <type full="Nectary\Helpers\false" namespace="Nectary\Helpers" name="false"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="rss_error" start="35" end="38" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Any errors while parsind rss currently just returns empty string always"/>
+      <return description="''" type="object">
+        <type full="Nectary\Helpers\String" namespace="Nectary\Helpers" name="String"/>
+      </return>
+    </docblock>
+    <inline>
+      <todo value="rss xml error" line="36"/>
+    </inline>
+  </method>
+  <method name="empty_string" start="45" end="47" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Always returns empty string"/>
+      <return description="''" type="object">
+        <type full="Nectary\Helpers\String" namespace="Nectary\Helpers" name="String"/>
+      </return>
+    </docblock>
+  </method>
+</trait>

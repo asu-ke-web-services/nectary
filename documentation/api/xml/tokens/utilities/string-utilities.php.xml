@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/nectary/src/utilities" file="string-utilities.php" realpath="/var/www/html/nectary/src/utilities/string-utilities.php" size="3559" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="301b1c1a1ca186fc82cac903efe4132832d5ff7b" relative="utilities/string-utilities.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities" file="string-utilities.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities/string-utilities.php" size="3559" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="301b1c1a1ca186fc82cac903efe4132832d5ff7b" relative="utilities/string-utilities.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>

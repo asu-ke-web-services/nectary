@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface xmlns="http://xml.phpdox.net/src" full="Nectary\Decoratable" namespace="Nectary" name="Decoratable" abstract="false" final="false" start="10" end="17">
-  <file path="/var/www/html/nectary/src/decorators" file="decoratable.php" realpath="/var/www/html/nectary/src/decorators/decoratable.php" size="252" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="160c4a71c6a612f3baa8aba822e0b3fae1ad0424" relative="decorators/decoratable.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/decorators" file="decoratable.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/decorators/decoratable.php" size="252" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="160c4a71c6a612f3baa8aba822e0b3fae1ad0424" relative="decorators/decoratable.php"/>
   <docblock>
     <description compact="Objects that wish to return a default decorate should implement this interface"/>
   </docblock>

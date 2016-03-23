@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Utilities\Json_Utilities" namespace="Nectary\Utilities" name="Json_Utilities" abstract="false" final="false" start="8" end="61">
-  <file path="/var/www/html/nectary/src/utilities" file="json-utilities.php" realpath="/var/www/html/nectary/src/utilities/json-utilities.php" size="1234" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="df1882fcb7f0d672ec6018f05a1e84c2f2c5306b" relative="utilities/json-utilities.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities" file="json-utilities.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities/json-utilities.php" size="1234" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="df1882fcb7f0d672ec6018f05a1e84c2f2c5306b" relative="utilities/json-utilities.php"/>
   <docblock>
     <description compact="Helper utility functions for dealing with JSON"/>
   </docblock>
