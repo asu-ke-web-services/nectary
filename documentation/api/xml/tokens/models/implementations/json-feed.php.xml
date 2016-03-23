@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/nectary/src/models/implementations" file="json-feed.php" realpath="/var/www/html/nectary/src/models/implementations/json-feed.php" size="2316" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="29b0e0dac8a6965a1fc2ba7443659e76c6c124ff" relative="models/implementations/json-feed.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/implementations" file="json-feed.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/implementations/json-feed.php" size="2280" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="c5df2b1ac16963ee85d53fb4f4baa7dad8d90f85" relative="models/implementations/json-feed.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -369,33 +369,21 @@
   <line no="54"/>
   <line no="55">
     <token name="T_WHITESPACE">    </token>
-    <token name="T_FOR">for</token>
+    <token name="T_FOREACH">foreach</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$i</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_EQUAL">=</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_LNUMBER">0</token>
-    <token name="T_PHPDOX_SEMICOLON">;</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$i</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_LT">&lt;</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_STRING">count</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$this</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">items</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
-    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_AS">as</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$i</token>
-    <token name="T_INC">++</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$item_a</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_WHITESPACE"> </token>
@@ -412,33 +400,21 @@
   </line>
   <line no="57">
     <token name="T_WHITESPACE">      </token>
-    <token name="T_FOR">for</token>
+    <token name="T_FOREACH">foreach</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$j</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_EQUAL">=</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_LNUMBER">0</token>
-    <token name="T_PHPDOX_SEMICOLON">;</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$j</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_LT">&lt;</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_STRING">count</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$this</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">items</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
-    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_AS">as</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$j</token>
-    <token name="T_INC">++</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$item_b</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_WHITESPACE"> </token>
@@ -470,25 +446,11 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$this</token>
-    <token name="T_OBJECT_OPERATOR">-&gt;</token>
-    <token name="T_STRING">items</token>
-    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$i</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_VARIABLE">$item_a</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_IS_EQUAL">==</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$this</token>
-    <token name="T_OBJECT_OPERATOR">-&gt;</token>
-    <token name="T_STRING">items</token>
-    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$j</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_VARIABLE">$item_b</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_WHITESPACE"> </token>

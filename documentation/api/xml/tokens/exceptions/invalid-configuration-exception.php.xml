@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/nectary/src/exceptions" file="invalid-configuration-exception.php" realpath="/var/www/html/nectary/src/exceptions/invalid-configuration-exception.php" size="234" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="9776257fc241bdcdf0b168b663d277e69f4a8c21" relative="exceptions/invalid-configuration-exception.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/exceptions" file="invalid-configuration-exception.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/exceptions/invalid-configuration-exception.php" size="234" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="9776257fc241bdcdf0b168b663d277e69f4a8c21" relative="exceptions/invalid-configuration-exception.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>

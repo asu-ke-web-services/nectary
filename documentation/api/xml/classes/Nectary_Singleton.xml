@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Singleton" namespace="Nectary" name="Singleton" abstract="true" final="false" start="8" end="27">
-  <file path="/var/www/html/nectary/src/singleton" file="singleton.php" realpath="/var/www/html/nectary/src/singleton/singleton.php" size="586" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="45894f73c150e48ff3ab5b8820ab5fe5f842f892" relative="singleton/singleton.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/singleton" file="singleton.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/singleton/singleton.php" size="586" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="45894f73c150e48ff3ab5b8820ab5fe5f842f892" relative="singleton/singleton.php"/>
   <docblock>
     <description compact="Support singletons in PHP"/>
   </docblock>

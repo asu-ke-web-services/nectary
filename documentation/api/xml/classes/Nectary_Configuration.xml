@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Configuration" namespace="Nectary" name="Configuration" abstract="false" final="false" start="17" end="88">
-  <file path="/var/www/html/nectary/src/configuration" file="configuration.php" realpath="/var/www/html/nectary/src/configuration/configuration.php" size="2031" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="f1d7c856c850a03ac1251ce6f6b9c4c76ecabb94" relative="configuration/configuration.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/configuration" file="configuration.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/configuration/configuration.php" size="2031" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="f1d7c856c850a03ac1251ce6f6b9c4c76ecabb94" relative="configuration/configuration.php"/>
   <docblock>
     <description compact="Configuration Singleton">House global configuration settings here. The Configuration
 object can load in a configuration .env file, or have

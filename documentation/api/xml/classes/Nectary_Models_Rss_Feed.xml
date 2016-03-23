@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Models\Rss_Feed" namespace="Nectary\Models" name="Rss_Feed" abstract="false" final="false" start="13" end="65">
-  <file path="/var/www/html/nectary/src/models/implementations" file="rss-feed.php" realpath="/var/www/html/nectary/src/models/implementations/rss-feed.php" size="1442" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="6616d3dafaa7d7abecf45d60affcc0b74f374216" relative="models/implementations/rss-feed.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/implementations" file="rss-feed.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/implementations/rss-feed.php" size="1442" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="6616d3dafaa7d7abecf45d60affcc0b74f374216" relative="models/implementations/rss-feed.php"/>
   <docblock>
     <description compact="Rss Feed class for pulling and parsing RSS feeds from the web"/>
     <implements value="Feed"/>

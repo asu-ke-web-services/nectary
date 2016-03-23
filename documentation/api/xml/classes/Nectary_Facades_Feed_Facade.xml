@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Facades\Feed_Facade" namespace="Nectary\Facades" name="Feed_Facade" abstract="false" final="false" start="12" end="52">
-  <file path="/var/www/html/nectary/src/facades" file="feed-facade.php" realpath="/var/www/html/nectary/src/facades/feed-facade.php" size="1068" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="9df59287750ba8ddffe458350f6a659180127d10" relative="facades/feed-facade.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/facades" file="feed-facade.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/facades/feed-facade.php" size="1068" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="9df59287750ba8ddffe458350f6a659180127d10" relative="facades/feed-facade.php"/>
   <docblock>
     <description compact="Provide an interface for interacting with Feed Services and Feeds"/>
   </docblock>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/nectary/src/utilities" file="array-utilities.php" realpath="/var/www/html/nectary/src/utilities/array-utilities.php" size="704" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="0de0dbc7b15d84989bc591474b9a613c048b5f84" relative="utilities/array-utilities.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities" file="array-utilities.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities/array-utilities.php" size="709" time="2016-03-16T10:01:02-07:00" unixtime="1458147662" sha1="629adeab5bdb49bdc0bd3c7ab69611c911696bf9" relative="utilities/array-utilities.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -127,15 +127,18 @@
     <token name="T_DOC_COMMENT">   * Wraps whatever argument its passed in an array unless it is an array, always returns an array. always.</token>
   </line>
   <line no="19">
-    <token name="T_DOC_COMMENT">   * @param $something Mixed gets wrapped in an array</token>
+    <token name="T_DOC_COMMENT">   *</token>
   </line>
   <line no="20">
-    <token name="T_DOC_COMMENT">   * @return array always returns an array</token>
+    <token name="T_DOC_COMMENT">   * @param $something Mixed gets wrapped in an array</token>
   </line>
   <line no="21">
-    <token name="T_DOC_COMMENT">   */</token>
+    <token name="T_DOC_COMMENT">   * @return array always returns an array</token>
   </line>
   <line no="22">
+    <token name="T_DOC_COMMENT">   */</token>
+  </line>
+  <line no="23">
     <token name="T_WHITESPACE">  </token>
     <token name="T_FUNCTION">function</token>
     <token name="T_WHITESPACE"> </token>
@@ -154,7 +157,7 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="23">
+  <line no="24">
     <token name="T_WHITESPACE">    </token>
     <token name="T_IF">if</token>
     <token name="T_WHITESPACE"> </token>
@@ -171,14 +174,14 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="24">
+  <line no="25">
     <token name="T_WHITESPACE">      </token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$something</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="25">
+  <line no="26">
     <token name="T_WHITESPACE">    </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
     <token name="T_WHITESPACE"> </token>
@@ -199,7 +202,7 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="26">
+  <line no="27">
     <token name="T_WHITESPACE">      </token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
@@ -208,7 +211,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="27">
+  <line no="28">
     <token name="T_WHITESPACE">    </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
     <token name="T_WHITESPACE"> </token>
@@ -216,7 +219,7 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="28">
+  <line no="29">
     <token name="T_WHITESPACE">      </token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
@@ -228,16 +231,16 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="29">
+  <line no="30">
     <token name="T_WHITESPACE">    </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="30">
+  <line no="31">
     <token name="T_WHITESPACE">  </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="31">
+  <line no="32">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="32"/>
+  <line no="33"/>
 </source>

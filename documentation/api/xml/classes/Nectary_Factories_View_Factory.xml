@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\View_Factory" namespace="Nectary\Factories" name="View_Factory" abstract="false" final="false" start="26" end="216">
-  <file path="/var/www/html/nectary/src/factories/implementations" file="view-factory.php" realpath="/var/www/html/nectary/src/factories/implementations/view-factory.php" size="5125" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="296b7b974fc85e8ed96b31f8cdc13533c40e8db3" relative="factories/implementations/view-factory.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations" file="view-factory.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations/view-factory.php" size="5125" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="296b7b974fc85e8ed96b31f8cdc13533c40e8db3" relative="factories/implementations/view-factory.php"/>
   <docblock>
     <description compact="This factory is slightly different because it has chainable methods.">View Names should be 'object'-like 'paths' to the
 view that you wish to display. For example, if there
