@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Services\Excerpt_Service" namespace="Nectary\Services" name="Excerpt_Service" abstract="false" final="false" start="13" end="56">
-  <file path="/var/www/html/nectary/src/services" file="excerpt-service.php" realpath="/var/www/html/nectary/src/services/excerpt-service.php" size="1476" time="2016-03-07T22:26:34+00:00" unixtime="1457389594" sha1="28340a20ec687f2dea4b7f592ccc9d73431adb5a" relative="services/excerpt-service.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/services" file="excerpt-service.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/services/excerpt-service.php" size="1476" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="28340a20ec687f2dea4b7f592ccc9d73431adb5a" relative="services/excerpt-service.php"/>
   <docblock>
     <description compact="Service for using PHP Humanizer">Use to abstract away how to get excerpts using
 the Humanizer library.</description>

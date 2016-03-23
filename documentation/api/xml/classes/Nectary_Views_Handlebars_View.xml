@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Views\Handlebars_View" namespace="Nectary\Views" name="Handlebars_View" abstract="true" final="false" start="12" end="201">
-  <file path="/var/www/html/nectary/src/view/extensions" file="handlebars-view.php" realpath="/var/www/html/nectary/src/view/extensions/handlebars-view.php" size="5845" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="22c2826437af596b1f2116ead66c9e6e678beaa7" relative="view/extensions/handlebars-view.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/extensions" file="handlebars-view.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/extensions/handlebars-view.php" size="5845" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="22c2826437af596b1f2116ead66c9e6e678beaa7" relative="view/extensions/handlebars-view.php"/>
   <docblock>
     <description compact="View Handlebars"/>
   </docblock>
@@ -57,10 +57,10 @@ context.</description>
     <parameter name="value" byreference="false" type="{unknown}"/>
     <parameter name="context" byreference="false" type="{unknown}"/>
   </method>
-  <extenders>
-    <extender full="Nectary\Views\Simple_Handlebars_View" namespace="Nectary\Views" name="Simple_Handlebars_View"/>
-  </extenders>
   <parent full="Nectary\View" namespace="Nectary" name="View">
     <method name="output" start="10" end="10" abstract="true" final="false" static="false" visibility="public"/>
   </parent>
+  <extenders>
+    <extender full="Nectary\Views\Simple_Handlebars_View" namespace="Nectary\Views" name="Simple_Handlebars_View"/>
+  </extenders>
 </class>

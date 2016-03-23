@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Models\Presentable_Model" namespace="Nectary\Models" name="Presentable_Model" abstract="true" final="false" start="12" end="43">
-  <file path="/var/www/html/nectary/src/models/extensions" file="presentable-model.php" realpath="/var/www/html/nectary/src/models/extensions/presentable-model.php" size="1114" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="440c1274be7b7024a013c59f0dec5dbc29d0467e" relative="models/extensions/presentable-model.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/extensions" file="presentable-model.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/extensions/presentable-model.php" size="1114" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="440c1274be7b7024a013c59f0dec5dbc29d0467e" relative="models/extensions/presentable-model.php"/>
   <docblock>
     <description compact="A Viewable model is one that can present itself so that all of its properties and calculated properties are useable within a template"/>
   </docblock>

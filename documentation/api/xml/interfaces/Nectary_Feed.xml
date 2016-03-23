@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface xmlns="http://xml.phpdox.net/src" full="Nectary\Feed" namespace="Nectary" name="Feed" abstract="false" final="false" start="5" end="11">
-  <file path="/var/www/html/nectary/src/models" file="feed.php" realpath="/var/www/html/nectary/src/models/feed.php" size="240" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="d0d28691b46a3dbe58cb0e758922aa558f9d90be" relative="models/feed.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models" file="feed.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/feed.php" size="240" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="d0d28691b46a3dbe58cb0e758922aa558f9d90be" relative="models/feed.php"/>
   <method name="retrieve_items" start="6" end="6" abstract="false" final="false" static="false" visibility="public"/>
   <method name="sort_by_date" start="7" end="7" abstract="false" final="false" static="false" visibility="public">
     <parameter name="order" byreference="false" type="string" default="'asc'"/>
@@ -11,7 +11,7 @@
   </method>
   <method name="get_unique_items" start="10" end="10" abstract="false" final="false" static="false" visibility="public"/>
   <implementors>
-    <class full="Nectary\Models\Rss_Feed" namespace="Nectary\Models" name="Rss_Feed"/>
     <class full="Nectary\Models\Json_Feed" namespace="Nectary\Models" name="Json_Feed"/>
+    <class full="Nectary\Models\Rss_Feed" namespace="Nectary\Models" name="Rss_Feed"/>
   </implementors>
 </interface>

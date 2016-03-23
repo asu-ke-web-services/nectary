@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\Html_Carousel_Factory" namespace="Nectary\Factories" name="Html_Carousel_Factory" abstract="false" final="false" start="14" end="79">
-  <file path="/var/www/html/nectary/src/factories/implementations" file="html-carousel-factory.php" realpath="/var/www/html/nectary/src/factories/implementations/html-carousel-factory.php" size="1758" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="8f0d63e16a08427cf098ef100da5759010265efd" relative="factories/implementations/html-carousel-factory.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations" file="html-carousel-factory.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations/html-carousel-factory.php" size="1758" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="8f0d63e16a08427cf098ef100da5759010265efd" relative="factories/implementations/html-carousel-factory.php"/>
   <docblock>
     <description compact="Lazily create HTML Bootstrap based Carousels">Allows you to add slides, classes, and indicators</description>
     <extends value="Html_Factory"/>
