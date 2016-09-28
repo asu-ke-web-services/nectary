@@ -37,8 +37,8 @@ abstract class Handlebars_View extends View {
 
       $this->engine = new \Handlebars\Handlebars(
           array(
-            'loader' => new \Handlebars\Loader\FilesystemLoader( $dir .'/' . $this->view_root ),
-            'partials_loader' => new \Handlebars\Loader\FilesystemLoader( $dir . '/'. $this->view_root ),
+            'loader' => new \Handlebars\Loader\FilesystemLoader( $dir . '/' . $this->view_root ),
+            'partials_loader' => new \Handlebars\Loader\FilesystemLoader( $dir . '/' . $this->view_root ),
           )
       );
     }
