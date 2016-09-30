@@ -59,6 +59,18 @@ class Html_Carousel_Factory_Test extends \PHPUnit_Framework_TestCase {
     $this->assertNotContains( 'gioswow', $html );
   }
 
+  function test_carousel_has_custom_data_attributes() {
+    $factory = new Html_Carousel_Factory();
+    $factory->add_data_attributes( 'wow' );
+    $factory->add_data_attributes( 'gios' );
+    $html = $factory->build();
+
+    $this->assertContains( 'wow', $html );
+    $this->assertContains( 'gios', $html );
+    $this->assertNotContains( 'wowgios', $html );
+    $this->assertNotContains( 'gioswow', $html );
+  }
+
   function test_carousel_can_have_indicators() {
     $factory = new Html_Carousel_Factory();
     $factory->turn_on_indicators();
