@@ -196,13 +196,13 @@ class View_Factory extends Factory {
     }
   }
 
-  /** 
+  /**
    * Find the first file extention that matches the for this view template
    */
   private function get_file_extension( $view_root, $template_name ) {
     $paths = to_array( Configuration::get_instance()->get( 'path_to_views' ) );
 
-    foreach($paths as $path ) {
+    foreach ( $paths as $path ) {
       if ( ! empty( $view_root ) ) {
         $path .= '/' . $view_root;
       }

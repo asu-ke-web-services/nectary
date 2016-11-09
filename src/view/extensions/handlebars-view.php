@@ -33,13 +33,13 @@ abstract class Handlebars_View extends View {
         $this->view_root = $view_root . '/';
       }
 
-      if( null == $path_to_views ) {
+      if ( null == $path_to_views ) {
         $dir = Configuration::get_instance()->get( 'path_to_views' );
       } else {
         $dir = $path_to_views;
       }
 
-      if( is_array( $dir ) ) {
+      if ( is_array( $dir ) ) {
         $paths_to_load_views = array_map( function( $item ) {
             return $item . '/' . $this->view_root;
         }, $dir );
