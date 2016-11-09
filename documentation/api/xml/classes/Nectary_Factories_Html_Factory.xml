@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\Html_Factory" namespace="Nectary\Factories" name="Html_Factory" abstract="false" final="false" start="15" end="105">
-  <file path="/var/www/html/nectary/src/factories/implementations" file="html-factory.php" realpath="/var/www/html/nectary/src/factories/implementations/html-factory.php" size="2780" time="2016-03-09T19:33:34+00:00" unixtime="1457552014" sha1="4a0587dc1d7a46222700d5d6d09afccf43fb15f5" relative="factories/implementations/html-factory.php"/>
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations" file="html-factory.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations/html-factory.php" size="2780" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="4a0587dc1d7a46222700d5d6d09afccf43fb15f5" relative="factories/implementations/html-factory.php"/>
   <docblock>
     <description compact="Factory that provides a programmatic approach to building html. Provides basic building blocks, such as links, headings, text, images, and divs"/>
     <extends value="Factory"/>
@@ -57,11 +57,15 @@
     <parameter name="options" byreference="false" type="array" default=""/>
   </method>
   <method name="build" start="102" end="104" abstract="false" final="false" static="false" visibility="public"/>
+  <extenders>
+    <extender full="Nectary\Factories\Html_Carousel_Factory" namespace="Nectary\Factories" name="Html_Carousel_Factory"/>
+    <extender full="Nectary\Factories\Html_Slide_Factory" namespace="Nectary\Factories" name="Html_Slide_Factory"/>
+  </extenders>
   <parent full="Nectary\Factory" namespace="Nectary" name="Factory">
     <method name="build" start="16" end="16" abstract="true" final="false" static="false" visibility="public">
-    <docblock>
-      <description compact="Build an object from the Factory"/>
-    </docblock>
-  </method>
+      <docblock>
+        <description compact="Build an object from the Factory"/>
+      </docblock>
+    </method>
   </parent>
 </class>

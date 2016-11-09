@@ -17,11 +17,12 @@ class Html_Carousel_Factory extends Html_Factory {
   private $id;
 
   public function __construct() {
-    $this->id            = uniqid( 'carousel-' );
-    $this->indicators    = false;
-    $this->slides        = [];
-    $this->classes       = '';
-    $this->inner_classes = '';
+    $this->id              = uniqid( 'carousel-' );
+    $this->indicators      = false;
+    $this->slides          = [];
+    $this->classes         = '';
+    $this->inner_classes   = '';
+    $this->data_attributes = '';
   }
 
   public function add_slide( $html ) {
@@ -30,6 +31,10 @@ class Html_Carousel_Factory extends Html_Factory {
 
   public function add_class( $classes ) {
     $this->classes .= ' ' . $classes;
+  }
+
+  public function add_data_attributes( $attributes ) {
+    $this->data_attributes .= ' ' . $attributes;
   }
 
   public function add_inner_class( $classes ) {
@@ -50,7 +55,7 @@ class Html_Carousel_Factory extends Html_Factory {
     }
 
     return
-    "<div id='{$this->id}' class='carousel slide {$this->classes}' data-ride='carousel'>
+    "<div id='{$this->id}' class='carousel slide {$this->classes}' {$this->data_attributes} data-ride='carousel'>
       {$this->indicators}
       <div class='carousel-inner {$this->inner_classes}' role='listbox'>
         {$html}

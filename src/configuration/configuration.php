@@ -38,6 +38,22 @@ class Configuration extends Singleton {
   }
 
   /**
+   * Add to an new or existing value.
+   * This will promote scalor values into an array to contain multiple values.
+   */
+  public function add( $key, $value ) {
+    if ( ! array_key_exists( $key, $this->attributes ) ) {
+      $this->attributes[ $key ] = $value;
+    } else {
+      if ( ! is_array( $this->attributes[ $key ] ) ) {
+        $this->attributes[ $key ] = array( $this->attributes[ $key ], $value );
+      } else {
+        array_push( $this->attributes[ $key ], $value );
+      }
+    }
+  }
+
+  /**
    * Load in the configuration file and parse it
    */
   protected function __construct( $path = '.env' ) {

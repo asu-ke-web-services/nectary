@@ -16,6 +16,7 @@ if ( ! function_exists( 'array_peak' ) ) {
 if ( ! function_exists( 'to_array' ) ) {
   /**
    * Wraps whatever argument its passed in an array unless it is an array, always returns an array. always.
+   *
    * @param $something Mixed gets wrapped in an array
    * @return array always returns an array
    */

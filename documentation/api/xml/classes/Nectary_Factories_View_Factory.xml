@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\View_Factory" namespace="Nectary\Factories" name="View_Factory" abstract="false" final="false" start="26" end="216">
-  <file path="/var/www/html/nectary/src/factories/implementations" file="view-factory.php" realpath="/var/www/html/nectary/src/factories/implementations/view-factory.php" size="5125" time="2016-02-17T19:13:17+00:00" unixtime="1455736397" sha1="296b7b974fc85e8ed96b31f8cdc13533c40e8db3" relative="factories/implementations/view-factory.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\View_Factory" namespace="Nectary\Factories" name="View_Factory" abstract="false" final="false" start="26" end="220">
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations" file="view-factory.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations/view-factory.php" size="5280" time="2016-11-09T10:36:51-07:00" unixtime="1478713011" sha1="ffd5582b16a3dc2d8d9f165f38ab2cdf7d93c950" relative="factories/implementations/view-factory.php"/>
   <docblock>
     <description compact="This factory is slightly different because it has chainable methods.">View Names should be 'object'-like 'paths' to the
 view that you wish to display. For example, if there
@@ -94,15 +94,18 @@ $view-&gt;add_data( $event-&gt;present() );
       <description compact="Given the 'object'-like path, determine the template name for the view"/>
     </docblock>
   </method>
-  <method name="get_file_extension" start="199" end="215" abstract="false" final="false" static="false" visibility="private">
+  <method name="get_file_extension" start="202" end="219" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Find the first file extention that matches the for this view template"/>
+    </docblock>
     <parameter name="view_root" byreference="false" type="{unknown}"/>
     <parameter name="template_name" byreference="false" type="{unknown}"/>
   </method>
   <parent full="Nectary\Factory" namespace="Nectary" name="Factory">
     <method name="build" start="16" end="16" abstract="true" final="false" static="false" visibility="public">
-      <docblock>
-        <description compact="Build an object from the Factory"/>
-      </docblock>
-    </method>
+    <docblock>
+      <description compact="Build an object from the Factory"/>
+    </docblock>
+  </method>
   </parent>
 </class>

@@ -35,5 +35,4 @@ Check your code coverage with `vendor/bin/phpunit --coverage-html ./coverage`.
 Documentation can be found on [the Github IO pages for this repo](https://gios-asu.github.io/nectary).
 
 To generate the documentation, use [phpDox](http://phpdox.de/getting-started.html).
-
-Once installed, simply run `phpdox` in the root of the project.
+After running `composer install`, simply run `./vendor/bin/phpdox` in the root of the project.
