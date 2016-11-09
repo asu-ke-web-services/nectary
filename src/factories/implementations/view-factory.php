@@ -34,11 +34,14 @@ class View_Factory extends Factory {
    *
    * @constructor
    * @param $view_name String The 'path'-like string to the view.
+   * @param $path_to_views String An actual directory path that will override 
+   *  the global nectary configuration.
    */
-  public function __construct( $view_name ) {
+  public function __construct( $view_name, $path_to_views = null ) {
     $this->view_name = $view_name;
     $this->view_data = [];
     $this->head_data = [];
+    $this->path_to_views = $path_to_views;
   }
 
   /**
@@ -141,7 +144,8 @@ class View_Factory extends Factory {
                   $template_name,
                   $view_data
               );
-            }
+            },
+            $this->path_to_views
         );
         $content = $view->output();
         break;
@@ -197,10 +201,21 @@ class View_Factory extends Factory {
   }
 
   /**
+   * Get the path to the views, either the configuration path or the overridden path
+   */
+  private function get_path_to_views() {
+    if( null !== $this->path_to_views ) {
+      return $this->path_to_views;
+    } else {
+      return Configuration::get_instance()->get( 'path_to_views' );
+    }
+  }
+
+  /**
    * Find the first file extention that matches the for this view template
    */
   private function get_file_extension( $view_root, $template_name ) {
-    $paths = to_array( Configuration::get_instance()->get( 'path_to_views' ) );
+    $paths = to_array( $this->get_path_to_views() );
 
     foreach ( $paths as $path ) {
       if ( ! empty( $view_root ) ) {

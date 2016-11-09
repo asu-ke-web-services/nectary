@@ -34,17 +34,15 @@ abstract class Handlebars_View extends View {
       }
 
       if ( null == $path_to_views ) {
-        $dir = Configuration::get_instance()->get( 'path_to_views' );
-      } else {
-        $dir = $path_to_views;
+        $path_to_views = Configuration::get_instance()->get( 'path_to_views' );
       }
 
-      if ( is_array( $dir ) ) {
+      if ( is_array( $path_to_views ) ) {
         $paths_to_load_views = array_map( function( $item ) {
             return $item . '/' . $this->view_root;
-        }, $dir );
+        }, $path_to_views );
       } else {
-        $paths_to_load_views = $dir . '/' . $this->view_root;
+        $paths_to_load_views = $path_to_views . '/' . $this->view_root;
       }
 
       $this->engine = new \Handlebars\Handlebars(
