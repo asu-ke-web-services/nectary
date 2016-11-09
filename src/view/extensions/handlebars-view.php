@@ -21,9 +21,9 @@ abstract class Handlebars_View extends View {
    *
    * @constructor
    * @param $view_root String|Boolean Use false if you are not using views
-   * @param $path_to_view String|Boolean Use to override the path to the views
+   * @param $path_to_view String|Array Use to override the path to the views
    */
-  protected function __construct( $view_root = '' ) {
+  protected function __construct( $view_root = '', $path_to_views = null ) {
     if ( false === $view_root ) {
       // False means we are not loading from a template!
       $loader = new \Handlebars\Loader\StringLoader();
@@ -33,12 +33,24 @@ abstract class Handlebars_View extends View {
         $this->view_root = $view_root . '/';
       }
 
-      $dir = Configuration::get_instance()->get( 'path_to_views' );
+      if ( null == $path_to_views ) {
+        $dir = Configuration::get_instance()->get( 'path_to_views' );
+      } else {
+        $dir = $path_to_views;
+      }
+
+      if ( is_array( $dir ) ) {
+        $paths_to_load_views = array_map( function( $item ) {
+            return $item . '/' . $this->view_root;
+        }, $dir );
+      } else {
+        $paths_to_load_views = $dir . '/' . $this->view_root;
+      }
 
       $this->engine = new \Handlebars\Handlebars(
           array(
-            'loader' => new \Handlebars\Loader\FilesystemLoader( $dir .'/' . $this->view_root ),
-            'partials_loader' => new \Handlebars\Loader\FilesystemLoader( $dir . '/'. $this->view_root ),
+            'loader' => new \Handlebars\Loader\FilesystemLoader( $paths_to_load_views ),
+            'partials_loader' => new \Handlebars\Loader\FilesystemLoader( $paths_to_load_views ),
           )
       );
     }

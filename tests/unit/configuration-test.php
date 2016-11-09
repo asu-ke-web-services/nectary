@@ -120,4 +120,18 @@ class Configuration_Test extends \PHPUnit_Framework_TestCase {
     Configuration::get_instance()->set( 'newkey', 'newvalue' );
     $this->assertEquals( 'newvalue', Configuration::get_instance()->get( 'newkey' ) );
   }
+
+  function test_configuration_can_add_single_value() {
+    Configuration::get_instance()->add( 'newkey', 'newvalue' );
+    $this->assertEquals( 'newvalue', Configuration::get_instance()->get( 'newkey' ) );
+  }
+
+  function test_configuration_can_add_multiple_values() {
+    Configuration::get_instance()->add( 'newkey', 'newvalue' );
+    Configuration::get_instance()->add( 'newkey', 'anothervalue' );
+    Configuration::get_instance()->add( 'newkey', 'andanother' );
+    $this->assertEquals( array( 'newvalue', 'anothervalue', 'andanother' ), 
+      Configuration::get_instance()->get( 'newkey' ) );
+  }
+
 }

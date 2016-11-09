@@ -5,37 +5,37 @@
       <file name="command.php" size="638" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="735a5b36bd3c74521814e2f2434eb164717f1f31" xml="tokens/commands/command.php.xml"/>
     </dir>
     <dir name="configuration">
-      <file name="configuration.php" size="2031" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="f1d7c856c850a03ac1251ce6f6b9c4c76ecabb94" xml="tokens/configuration/configuration.php.xml"/>
+      <file name="configuration.php" size="2540" time="2016-11-09T10:36:51-07:00" unixtime="1478713011" sha1="81508a7e08719a980f76892175572886993c9149" xml="tokens/configuration/configuration.php.xml"/>
     </dir>
     <dir name="controllers">
       <file name="controller.php" size="172" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="576f29931f10168dbb7f6a5d34f82e84bfa33a4c" xml="tokens/controllers/controller.php.xml"/>
     </dir>
     <dir name="daos">
       <file name="dao.php" size="591" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="17b95fb2bc125c8a24e505eb8c5059b7016b76b2" xml="tokens/daos/dao.php.xml"/>
-      <file name="sql-query-builder.php" size="5403" time="2016-03-16T12:58:14-07:00" unixtime="1458158294" sha1="733642894f63f0f7a5f2176c36e4a8b28d68a5e3" xml="tokens/daos/sql-query-builder.php.xml"/>
+      <file name="sql-query-builder.php" size="5403" time="2016-11-09T10:18:39-07:00" unixtime="1478711919" sha1="733642894f63f0f7a5f2176c36e4a8b28d68a5e3" xml="tokens/daos/sql-query-builder.php.xml"/>
     </dir>
     <dir name="decorators">
       <file name="decoratable.php" size="252" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="160c4a71c6a612f3baa8aba822e0b3fae1ad0424" xml="tokens/decorators/decoratable.php.xml"/>
-      <file name="decorator.php" size="1643" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="8879fc0fa73db72f244de8d55376c6785be7bea6" xml="tokens/decorators/decorator.php.xml"/>
+      <file name="decorator.php" size="1643" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="8879fc0fa73db72f244de8d55376c6785be7bea6" xml="tokens/decorators/decorator.php.xml"/>
     </dir>
     <dir name="exceptions">
-      <file name="invalid-configuration-exception.php" size="234" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="9776257fc241bdcdf0b168b663d277e69f4a8c21" xml="tokens/exceptions/invalid-configuration-exception.php.xml"/>
+      <file name="invalid-configuration-exception.php" size="234" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="9776257fc241bdcdf0b168b663d277e69f4a8c21" xml="tokens/exceptions/invalid-configuration-exception.php.xml"/>
     </dir>
     <dir name="facades">
-      <file name="feed-facade.php" size="1068" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="9df59287750ba8ddffe458350f6a659180127d10" xml="tokens/facades/feed-facade.php.xml"/>
+      <file name="feed-facade.php" size="1068" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="9df59287750ba8ddffe458350f6a659180127d10" xml="tokens/facades/feed-facade.php.xml"/>
     </dir>
     <dir name="factories">
       <file name="factory.php" size="325" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="758f16030bdc353fc28acb3d18ede09577c68d89" xml="tokens/factories/factory.php.xml"/>
       <dir name="implementations">
-        <file name="dependency-injection-factory.php" size="4286" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="27b5966d19ac28192e285ab82e3308fc7c9d222a" xml="tokens/factories/implementations/dependency-injection-factory.php.xml"/>
-        <file name="html-carousel-factory.php" size="1758" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="8f0d63e16a08427cf098ef100da5759010265efd" xml="tokens/factories/implementations/html-carousel-factory.php.xml"/>
-        <file name="html-factory.php" size="2780" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="4a0587dc1d7a46222700d5d6d09afccf43fb15f5" xml="tokens/factories/implementations/html-factory.php.xml"/>
-        <file name="html-slide-factory.php" size="761" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="28c2e32d1ca473a9dd4764dbdc34fe790263bfd0" xml="tokens/factories/implementations/html-slide-factory.php.xml"/>
-        <file name="view-factory.php" size="5125" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="296b7b974fc85e8ed96b31f8cdc13533c40e8db3" xml="tokens/factories/implementations/view-factory.php.xml"/>
+        <file name="dependency-injection-factory.php" size="4286" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="27b5966d19ac28192e285ab82e3308fc7c9d222a" xml="tokens/factories/implementations/dependency-injection-factory.php.xml"/>
+        <file name="html-carousel-factory.php" size="1935" time="2016-11-09T10:36:51-07:00" unixtime="1478713011" sha1="6bdf00d118841baaf59bce4a6884f26ad2f97ab9" xml="tokens/factories/implementations/html-carousel-factory.php.xml"/>
+        <file name="html-factory.php" size="2780" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="4a0587dc1d7a46222700d5d6d09afccf43fb15f5" xml="tokens/factories/implementations/html-factory.php.xml"/>
+        <file name="html-slide-factory.php" size="761" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="28c2e32d1ca473a9dd4764dbdc34fe790263bfd0" xml="tokens/factories/implementations/html-slide-factory.php.xml"/>
+        <file name="view-factory.php" size="5280" time="2016-11-09T10:36:51-07:00" unixtime="1478713011" sha1="ffd5582b16a3dc2d8d9f165f38ab2cdf7d93c950" xml="tokens/factories/implementations/view-factory.php.xml"/>
       </dir>
     </dir>
     <dir name="helpers">
-      <file name="callbacks.php" size="783" time="2016-03-23T07:59:06-07:00" unixtime="1458745146" sha1="451a5fa65f428b1e71e4f6cac1dcc2fbaee71808" xml="tokens/helpers/callbacks.php.xml"/>
+      <file name="callbacks.php" size="783" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="451a5fa65f428b1e71e4f6cac1dcc2fbaee71808" xml="tokens/helpers/callbacks.php.xml"/>
     </dir>
     <dir name="models">
       <file name="data-model.php" size="1106" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="0e53eb4d8a54cddc68d11a3076217e8c80cd50b7" xml="tokens/models/data-model.php.xml"/>
@@ -44,43 +44,43 @@
       </dir>
       <file name="feed.php" size="240" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="d0d28691b46a3dbe58cb0e758922aa558f9d90be" xml="tokens/models/feed.php.xml"/>
       <dir name="implementations">
-        <file name="json-feed.php" size="2280" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="c5df2b1ac16963ee85d53fb4f4baa7dad8d90f85" xml="tokens/models/implementations/json-feed.php.xml"/>
-        <file name="rss-feed.php" size="1442" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="6616d3dafaa7d7abecf45d60affcc0b74f374216" xml="tokens/models/implementations/rss-feed.php.xml"/>
+        <file name="json-feed.php" size="2280" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="c5df2b1ac16963ee85d53fb4f4baa7dad8d90f85" xml="tokens/models/implementations/json-feed.php.xml"/>
+        <file name="rss-feed.php" size="1442" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="6616d3dafaa7d7abecf45d60affcc0b74f374216" xml="tokens/models/implementations/rss-feed.php.xml"/>
       </dir>
     </dir>
     <dir name="requests">
-      <file name="fail-fast-request.php" size="632" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="a15a5b69517e38984ad8684851a702fa796515f8" xml="tokens/requests/fail-fast-request.php.xml"/>
+      <file name="fail-fast-request.php" size="632" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="a15a5b69517e38984ad8684851a702fa796515f8" xml="tokens/requests/fail-fast-request.php.xml"/>
       <file name="request.php" size="747" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="03c5450ed472f55d010f8e19c862e598bad75114" xml="tokens/requests/request.php.xml"/>
     </dir>
     <dir name="responses">
-      <file name="response.php" size="826" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="124ffaf9f0f7e1739a41c063ce95fff2d6091f18" xml="tokens/responses/response.php.xml"/>
+      <file name="response.php" size="826" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="124ffaf9f0f7e1739a41c063ce95fff2d6091f18" xml="tokens/responses/response.php.xml"/>
     </dir>
     <dir name="routers">
-      <file name="router.php" size="5146" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="abe1a52c4b879ecf12725b325b75bcd59148ae9c" xml="tokens/routers/router.php.xml"/>
+      <file name="router.php" size="5146" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="abe1a52c4b879ecf12725b325b75bcd59148ae9c" xml="tokens/routers/router.php.xml"/>
     </dir>
     <dir name="services">
-      <file name="excerpt-service.php" size="1476" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="28340a20ec687f2dea4b7f592ccc9d73431adb5a" xml="tokens/services/excerpt-service.php.xml"/>
-      <file name="feed-service.php" size="240" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="5c431a93c649b086e0e795cbe18f3fa10f9423d8" xml="tokens/services/feed-service.php.xml"/>
-      <file name="json-feed-service.php" size="1005" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="ae9bbc705c2daf77eafc557bf8f680c0e7938603" xml="tokens/services/json-feed-service.php.xml"/>
-      <file name="twitter-feed-service.php" size="4709" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="29d8a499ccec42fb6f09fdb74123a5a642decca8" xml="tokens/services/twitter-feed-service.php.xml"/>
+      <file name="excerpt-service.php" size="1476" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="28340a20ec687f2dea4b7f592ccc9d73431adb5a" xml="tokens/services/excerpt-service.php.xml"/>
+      <file name="feed-service.php" size="240" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="5c431a93c649b086e0e795cbe18f3fa10f9423d8" xml="tokens/services/feed-service.php.xml"/>
+      <file name="json-feed-service.php" size="1005" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="ae9bbc705c2daf77eafc557bf8f680c0e7938603" xml="tokens/services/json-feed-service.php.xml"/>
+      <file name="twitter-feed-service.php" size="4709" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="29d8a499ccec42fb6f09fdb74123a5a642decca8" xml="tokens/services/twitter-feed-service.php.xml"/>
     </dir>
     <dir name="singleton">
-      <file name="singleton.php" size="586" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="45894f73c150e48ff3ab5b8820ab5fe5f842f892" xml="tokens/singleton/singleton.php.xml"/>
+      <file name="singleton.php" size="586" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="45894f73c150e48ff3ab5b8820ab5fe5f842f892" xml="tokens/singleton/singleton.php.xml"/>
     </dir>
     <dir name="utilities">
-      <file name="array-utilities.php" size="709" time="2016-03-16T10:01:02-07:00" unixtime="1458147662" sha1="629adeab5bdb49bdc0bd3c7ab69611c911696bf9" xml="tokens/utilities/array-utilities.php.xml"/>
-      <file name="command-utilities.php" size="281" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="4b42fa1b6b16cfc81cbbd2372bab08843ee9d2b8" xml="tokens/utilities/command-utilities.php.xml"/>
+      <file name="array-utilities.php" size="709" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="629adeab5bdb49bdc0bd3c7ab69611c911696bf9" xml="tokens/utilities/array-utilities.php.xml"/>
+      <file name="command-utilities.php" size="281" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="4b42fa1b6b16cfc81cbbd2372bab08843ee9d2b8" xml="tokens/utilities/command-utilities.php.xml"/>
       <file name="configuration-utilities.php" size="362" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="06e65af6b402d08734230c1fb532acf4ba8cc5ad" xml="tokens/utilities/configuration-utilities.php.xml"/>
-      <file name="dao-utilities.php" size="1131" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="24896f45fb7b0195e064fe81ba7760a45ebb12d8" xml="tokens/utilities/dao-utilities.php.xml"/>
-      <file name="date-utilities.php" size="381" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="293631ca33c63b72e60e9ead407e47f43c26a2ec" xml="tokens/utilities/date-utilities.php.xml"/>
+      <file name="dao-utilities.php" size="1131" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="24896f45fb7b0195e064fe81ba7760a45ebb12d8" xml="tokens/utilities/dao-utilities.php.xml"/>
+      <file name="date-utilities.php" size="381" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="293631ca33c63b72e60e9ead407e47f43c26a2ec" xml="tokens/utilities/date-utilities.php.xml"/>
       <file name="ensure-default.php" size="497" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="fc0ee15f4c13bce1ffad87b110539d7075fcdb3b" xml="tokens/utilities/ensure-default.php.xml"/>
-      <file name="json-utilities.php" size="1234" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="df1882fcb7f0d672ec6018f05a1e84c2f2c5306b" xml="tokens/utilities/json-utilities.php.xml"/>
-      <file name="string-utilities.php" size="3559" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="301b1c1a1ca186fc82cac903efe4132832d5ff7b" xml="tokens/utilities/string-utilities.php.xml"/>
+      <file name="json-utilities.php" size="1234" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="df1882fcb7f0d672ec6018f05a1e84c2f2c5306b" xml="tokens/utilities/json-utilities.php.xml"/>
+      <file name="string-utilities.php" size="3559" time="2016-09-27T15:06:27-07:00" unixtime="1475013987" sha1="301b1c1a1ca186fc82cac903efe4132832d5ff7b" xml="tokens/utilities/string-utilities.php.xml"/>
       <file name="view-utilities.php" size="1147" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="c33f6aba9ec22e12fef7dcfec5253e88a9292077" xml="tokens/utilities/view-utilities.php.xml"/>
     </dir>
     <dir name="view">
       <dir name="extensions">
-        <file name="handlebars-view.php" size="5845" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="22c2826437af596b1f2116ead66c9e6e678beaa7" xml="tokens/view/extensions/handlebars-view.php.xml"/>
+        <file name="handlebars-view.php" size="6194" time="2016-11-09T10:36:51-07:00" unixtime="1478713011" sha1="70c8d9f1ce3a3564840dad64fd3e77fccc00886c" xml="tokens/view/extensions/handlebars-view.php.xml"/>
       </dir>
       <dir name="implementations">
         <file name="simple-handlebars-view.php" size="538" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="421eb07d4c367f0a34c79a975bc09a5c61aba8c1" xml="tokens/view/implementations/simple-handlebars-view.php.xml"/>
