@@ -196,19 +196,23 @@ class View_Factory extends Factory {
     }
   }
 
+  /** 
+   * Find the first file extention that matches the for this view template
+   */
   private function get_file_extension( $view_root, $template_name ) {
-    $path = Configuration::get_instance()->get( 'path_to_views' );
+    $paths = to_array( Configuration::get_instance()->get( 'path_to_views' ) );
 
-    if ( ! empty( $view_root ) ) {
-      $path .= '/' . $view_root;
-    }
+    foreach($paths as $path ) {
+      if ( ! empty( $view_root ) ) {
+        $path .= '/' . $view_root;
+      }
 
-    $path .= '/' . $template_name;
+      $path .= '/' . $template_name;
 
-    $files = glob( $path . '.*' );
-
-    foreach ( $files as $filename ) {
-      return pathinfo( $filename, PATHINFO_EXTENSION );
+      $files = glob( $path . '.*' );
+      foreach ( $files as $filename ) {
+        return pathinfo( $filename, PATHINFO_EXTENSION );
+      }
     }
 
     return '';
