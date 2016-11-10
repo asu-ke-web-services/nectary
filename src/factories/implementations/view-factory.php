@@ -128,7 +128,7 @@ class View_Factory extends Factory {
    * @override
    */
   public function build() {
-    $view_root      = $this->get_view_root();
+    $view_root      = '';
     $template_name  = $this->get_template_name();
     $file_extension = $this->get_file_extension( $view_root, $template_name );
     $view_data      = $this->view_data;
@@ -161,43 +161,15 @@ class View_Factory extends Factory {
     );
   }
 
-  /**
-   * Given the 'object'-like path, determine the root
-   * directory for the view
-   */
-  private function get_view_root() {
-    $parts = explode( '.', $this->view_name );
-
-    if ( count( $parts ) <= 1 ) {
-      return '';
-    } else {
-      // There may be more than one dot!
-
-      $dot_position = strrpos( $this->view_name, '.' );
-      $suffix = substr( $this->view_name, 0, $dot_position );
-      $suffix = str_replace( '.', '/', $suffix );
-
-      return $suffix;
-    }
-  }
 
   /**
    * Given the 'object'-like path, determine the template
-   * name for the view
+   * name for the view.
+   * eg: $this->view_name = 'blah.foo'
+   *   get_template_name() returns 'blah/foo'
    */
   private function get_template_name() {
-    $parts = explode( '.', $this->view_name );
-
-    if ( count( $parts ) <= 1 ) {
-      return $parts[0];
-    } else {
-      // There may be more than one dot!
-
-      $dot_position = strrpos( $this->view_name, '.' );
-      $suffix = substr( $this->view_name, $dot_position + 1 );
-
-      return $suffix;
-    }
+    return str_replace('.', '/' , $this->view_name );
   }
 
   /**

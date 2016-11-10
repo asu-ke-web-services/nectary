@@ -37,18 +37,10 @@ abstract class Handlebars_View extends View {
         $path_to_views = Configuration::get_instance()->get( 'path_to_views' );
       }
 
-      if ( is_array( $path_to_views ) ) {
-        $paths_to_load_views = array_map( function( $item ) {
-            return $item . '/' . $this->view_root;
-        }, $path_to_views );
-      } else {
-        $paths_to_load_views = $path_to_views . '/' . $this->view_root;
-      }
-
       $this->engine = new \Handlebars\Handlebars(
           array(
-            'loader' => new \Handlebars\Loader\FilesystemLoader( $paths_to_load_views ),
-            'partials_loader' => new \Handlebars\Loader\FilesystemLoader( $paths_to_load_views ),
+            'loader' => new \Handlebars\Loader\FilesystemLoader( $path_to_views ),
+            'partials_loader' => new \Handlebars\Loader\FilesystemLoader( $path_to_views ),
           )
       );
     }
