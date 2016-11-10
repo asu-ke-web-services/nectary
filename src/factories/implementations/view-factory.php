@@ -34,7 +34,7 @@ class View_Factory extends Factory {
    *
    * @constructor
    * @param $view_name String The 'path'-like string to the view.
-   * @param $path_to_views String An actual directory path that will override 
+   * @param $path_to_views String An actual directory path that will override
    *  the global nectary configuration.
    */
   public function __construct( $view_name, $path_to_views = null ) {
@@ -169,14 +169,14 @@ class View_Factory extends Factory {
    *   get_template_name() returns 'blah/foo'
    */
   private function get_template_name() {
-    return str_replace('.', '/' , $this->view_name );
+    return str_replace( '.', '/' , $this->view_name );
   }
 
   /**
    * Get the path to the views, either the configuration path or the overridden path
    */
   private function get_path_to_views() {
-    if( null !== $this->path_to_views ) {
+    if ( null !== $this->path_to_views ) {
       return $this->path_to_views;
     } else {
       return Configuration::get_instance()->get( 'path_to_views' );
