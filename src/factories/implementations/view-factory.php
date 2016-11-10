@@ -34,11 +34,14 @@ class View_Factory extends Factory {
    *
    * @constructor
    * @param $view_name String The 'path'-like string to the view.
+   * @param $path_to_views String An actual directory path that will override
+   *  the global nectary configuration.
    */
-  public function __construct( $view_name ) {
+  public function __construct( $view_name, $path_to_views = null ) {
     $this->view_name = $view_name;
     $this->view_data = [];
     $this->head_data = [];
+    $this->path_to_views = $path_to_views;
   }
 
   /**
@@ -125,7 +128,7 @@ class View_Factory extends Factory {
    * @override
    */
   public function build() {
-    $view_root      = $this->get_view_root();
+    $view_root      = '';
     $template_name  = $this->get_template_name();
     $file_extension = $this->get_file_extension( $view_root, $template_name );
     $view_data      = $this->view_data;
@@ -141,7 +144,8 @@ class View_Factory extends Factory {
                   $template_name,
                   $view_data
               );
-            }
+            },
+            $this->path_to_views
         );
         $content = $view->output();
         break;
@@ -157,42 +161,25 @@ class View_Factory extends Factory {
     );
   }
 
-  /**
-   * Given the 'object'-like path, determine the root
-   * directory for the view
-   */
-  private function get_view_root() {
-    $parts = explode( '.', $this->view_name );
-
-    if ( count( $parts ) <= 1 ) {
-      return '';
-    } else {
-      // There may be more than one dot!
-
-      $dot_position = strrpos( $this->view_name, '.' );
-      $suffix = substr( $this->view_name, 0, $dot_position );
-      $suffix = str_replace( '.', '/', $suffix );
-
-      return $suffix;
-    }
-  }
 
   /**
    * Given the 'object'-like path, determine the template
-   * name for the view
+   * name for the view.
+   * eg: $this->view_name = 'blah.foo'
+   *   get_template_name() returns 'blah/foo'
    */
   private function get_template_name() {
-    $parts = explode( '.', $this->view_name );
+    return str_replace( '.', '/' , $this->view_name );
+  }
 
-    if ( count( $parts ) <= 1 ) {
-      return $parts[0];
+  /**
+   * Get the path to the views, either the configuration path or the overridden path
+   */
+  private function get_path_to_views() {
+    if ( null !== $this->path_to_views ) {
+      return $this->path_to_views;
     } else {
-      // There may be more than one dot!
-
-      $dot_position = strrpos( $this->view_name, '.' );
-      $suffix = substr( $this->view_name, $dot_position + 1 );
-
-      return $suffix;
+      return Configuration::get_instance()->get( 'path_to_views' );
     }
   }
 
@@ -200,7 +187,7 @@ class View_Factory extends Factory {
    * Find the first file extention that matches the for this view template
    */
   private function get_file_extension( $view_root, $template_name ) {
-    $paths = to_array( Configuration::get_instance()->get( 'path_to_views' ) );
+    $paths = to_array( $this->get_path_to_views() );
 
     foreach ( $paths as $path ) {
       if ( ! empty( $view_root ) ) {
