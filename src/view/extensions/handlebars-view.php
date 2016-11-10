@@ -20,7 +20,7 @@ abstract class Handlebars_View extends View {
    * under the $path_to_views folder path.
    *
    * @constructor
-   * @param $view_root String|Boolean Use false if you are not using views
+   * @param $view_root String|Boolean Use false if you are not rendering views from files
    * @param $path_to_view String|Array Use to override the path to the views
    */
   protected function __construct( $view_root = '', $path_to_views = null ) {
