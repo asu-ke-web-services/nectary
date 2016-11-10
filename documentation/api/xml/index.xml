@@ -35,7 +35,7 @@
   <namespace name="Nectary\Views">
     
     
-  <class name="Simple_Handlebars_View" src="view/implementations/simple-handlebars-view.php" description="Simple implementation of the Handlebars_View" xml="classes/Nectary_Views_Simple_Handlebars_View.xml"/><class name="Handlebars_View" src="view/extensions/handlebars-view.php" description="View Handlebars" xml="classes/Nectary_Views_Handlebars_View.xml"/></namespace>
+  <class name="Handlebars_View" src="view/extensions/handlebars-view.php" description="View Handlebars" xml="classes/Nectary_Views_Handlebars_View.xml"/><class name="Simple_Handlebars_View" src="view/implementations/simple-handlebars-view.php" description="Simple implementation of the Handlebars_View" xml="classes/Nectary_Views_Simple_Handlebars_View.xml"/></namespace>
   <namespace name="Nectary\Exceptions">
     
   <class name="Invalid_Configuration_Exception" src="exceptions/invalid-configuration-exception.php" description="Exception to throw when the configuration file that is loaded is invalid, for whatever reason." xml="classes/Nectary_Exceptions_Invalid_Configuration_Exception.xml"/></namespace>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Views\Handlebars_View" namespace="Nectary\Views" name="Handlebars_View" abstract="true" final="false" start="12" end="213">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/extensions" file="handlebars-view.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/extensions/handlebars-view.php" size="6194" time="2016-11-09T10:36:51-07:00" unixtime="1478713011" sha1="70c8d9f1ce3a3564840dad64fd3e77fccc00886c" relative="view/extensions/handlebars-view.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Views\Handlebars_View" namespace="Nectary\Views" name="Handlebars_View" abstract="true" final="false" start="12" end="203">
+  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/extensions" file="handlebars-view.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/extensions/handlebars-view.php" size="5911" time="2016-11-10T09:50:22-07:00" unixtime="1478796622" sha1="32446048f0c2abb3497487f294b63cbb0ee44a46" relative="view/extensions/handlebars-view.php"/>
   <docblock>
     <description compact="View Handlebars"/>
   </docblock>
@@ -8,11 +8,11 @@
   <member name="model" visibility="protected" static="false" line="13"/>
   <member name="engine" visibility="protected" static="false" line="14"/>
   <member name="view_root" type="string" default="'/'" visibility="protected" static="false" line="15"/>
-  <constructor name="__construct" start="26" end="59" abstract="false" final="false" static="false" visibility="protected">
+  <constructor name="__construct" start="26" end="49" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
       <description compact="The constructor will automatically try to determine where the views are. The $view_root is the folder path under the $path_to_views folder path."/>
       <constructor/>
-      <param description="Use false if you are not using views" variable="$view_root" type="object">
+      <param description="Use false if you are not rendering views from files" variable="$view_root" type="object">
         <type full="Nectary\Views\String|Boolean" namespace="Nectary\Views" name="String|Boolean"/>
       </param>
       <param description="Use to override the path to the views" variable="$path_to_view" type="object">
@@ -22,43 +22,46 @@
     <parameter name="view_root" byreference="false" type="string" default="''"/>
     <parameter name="path_to_views" byreference="false" type="{unknown}" default="" constant="null"/>
   </constructor>
-  <method name="render" start="61" end="72" abstract="false" final="false" static="false" visibility="protected">
+  <method name="render" start="51" end="62" abstract="false" final="false" static="false" visibility="protected">
     <parameter name="template" byreference="true" type="{unknown}"/>
     <parameter name="context" byreference="true" type="{unknown}"/>
     <parameter name="additional_context" byreference="false" type="array" default=""/>
     <parameter name="include_context" byreference="false" type="boolean" default="false"/>
   </method>
-  <method name="add_engine_helpers" start="74" end="79" abstract="false" final="false" static="false" visibility="private"/>
-  <method name="add_config" start="81" end="100" abstract="false" final="false" static="false" visibility="private"/>
-  <method name="add_strip_tags" start="108" end="116" abstract="false" final="false" static="false" visibility="private">
+  <method name="add_engine_helpers" start="64" end="69" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="add_config" start="71" end="90" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="add_strip_tags" start="98" end="106" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="No Tags Formatter">If we have a alt rsvp add the link to that alternate rsvp to the
 context.</description>
     </docblock>
   </method>
-  <method name="add_html_special_chars_handler" start="123" end="134" abstract="false" final="false" static="false" visibility="private">
+  <method name="add_html_special_chars_handler" start="113" end="124" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Helper function html_special_chars">Takes in a string as a parameter.  The string is a key to the template model</description>
     </docblock>
   </method>
-  <method name="add_conditional_operators" start="139" end="170" abstract="false" final="false" static="false" visibility="private">
+  <method name="add_conditional_operators" start="129" end="160" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Helper function if_cond"/>
     </docblock>
   </method>
-  <method name="is_conditional_true" start="172" end="195" abstract="false" final="false" static="false" visibility="private">
+  <method name="is_conditional_true" start="162" end="185" abstract="false" final="false" static="false" visibility="private">
     <parameter name="value_a" byreference="false" type="{unknown}"/>
     <parameter name="value_b" byreference="false" type="{unknown}"/>
     <parameter name="operator" byreference="false" type="{unknown}"/>
     <inline>
-      <comment value="@codingStandardsIgnoreStart" line="173"/>
+      <comment value="@codingStandardsIgnoreStart" line="163"/>
     </inline>
   </method>
-  <method name="get_real_value" start="197" end="212" abstract="false" final="false" static="false" visibility="private">
+  <method name="get_real_value" start="187" end="202" abstract="false" final="false" static="false" visibility="private">
     <parameter name="value" byreference="false" type="{unknown}"/>
     <parameter name="context" byreference="false" type="{unknown}"/>
   </method>
   <parent full="Nectary\View" namespace="Nectary" name="View">
     <method name="output" start="10" end="10" abstract="true" final="false" static="false" visibility="public"/>
   </parent>
+  <extenders>
+    <extender full="Nectary\Views\Simple_Handlebars_View" namespace="Nectary\Views" name="Simple_Handlebars_View"/>
+  </extenders>
 </class>
