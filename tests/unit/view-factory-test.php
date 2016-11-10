@@ -50,6 +50,17 @@ class View_Factory_Test extends \PHPUnit_Framework_TestCase {
     $this->view_factory->build();
   }
 
+  function test_build_uses_overridden_path_configuration() {
+    Configuration::get_instance()->set( 'path_to_views', 'global_path' );
+    $this->view_factory = new View_Factory( 'view.na' , 'overridden_path');
+
+    $mock = create_function_mock( $this, 'glob', 1 );
+    $mock->with( 'overridden_path/view/na.*' )
+     ->will( $this->returnValue( [] ) );
+
+    $this->view_factory->build();
+  }
+
   function test_build_uses_dot_notation_for_paths() {
     Configuration::get_instance()->set( 'path_to_views', 'test_path' );
 

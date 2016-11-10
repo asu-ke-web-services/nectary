@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/implementations" file="simple-handlebars-view.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/implementations/simple-handlebars-view.php" size="538" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="421eb07d4c367f0a34c79a975bc09a5c61aba8c1" relative="view/implementations/simple-handlebars-view.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/implementations" file="simple-handlebars-view.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/implementations/simple-handlebars-view.php" size="577" time="2016-11-10T09:50:22-07:00" unixtime="1478796622" sha1="b8e193685149860d8d1af61b5471c667de56c836" relative="view/implementations/simple-handlebars-view.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -76,6 +76,13 @@
     <token name="T_PHPDOX_COMMA">,</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$callback</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$path_to_views</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">null</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_WHITESPACE"> </token>
@@ -89,6 +96,9 @@
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$view_root</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$path_to_views</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>

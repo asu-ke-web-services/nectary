@@ -20,7 +20,7 @@ abstract class Handlebars_View extends View {
    * under the $path_to_views folder path.
    *
    * @constructor
-   * @param $view_root String|Boolean Use false if you are not using views
+   * @param $view_root String|Boolean Use false if you are not rendering views from files
    * @param $path_to_view String|Array Use to override the path to the views
    */
   protected function __construct( $view_root = '', $path_to_views = null ) {
@@ -34,23 +34,13 @@ abstract class Handlebars_View extends View {
       }
 
       if ( null == $path_to_views ) {
-        $dir = Configuration::get_instance()->get( 'path_to_views' );
-      } else {
-        $dir = $path_to_views;
-      }
-
-      if ( is_array( $dir ) ) {
-        $paths_to_load_views = array_map( function( $item ) {
-            return $item . '/' . $this->view_root;
-        }, $dir );
-      } else {
-        $paths_to_load_views = $dir . '/' . $this->view_root;
+        $path_to_views = Configuration::get_instance()->get( 'path_to_views' );
       }
 
       $this->engine = new \Handlebars\Handlebars(
           array(
-            'loader' => new \Handlebars\Loader\FilesystemLoader( $paths_to_load_views ),
-            'partials_loader' => new \Handlebars\Loader\FilesystemLoader( $paths_to_load_views ),
+            'loader' => new \Handlebars\Loader\FilesystemLoader( $path_to_views ),
+            'partials_loader' => new \Handlebars\Loader\FilesystemLoader( $path_to_views ),
           )
       );
     }
