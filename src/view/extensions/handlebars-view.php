@@ -95,11 +95,11 @@ abstract class Handlebars_View extends View {
    */
   private function add_slugify_helper() {
     $this->engine->addHelper(
-      'slugify',
-      function ( $template, $context, $args ) {
-        $arg = $context->get( $args );
-        return slugify( $arg );
-      }
+        'slugify',
+        function ( $template, $context, $args ) {
+          $arg = $context->get( $args );
+          return slugify( $arg );
+        }
     );
   }
 
