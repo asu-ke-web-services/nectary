@@ -66,6 +66,7 @@ abstract class Handlebars_View extends View {
     $this->add_conditional_operators();
     $this->add_strip_tags();
     $this->add_config();
+    $this->add_slugify_helper();
   }
 
   private function add_config() {
@@ -85,6 +86,19 @@ abstract class Handlebars_View extends View {
           }
 
           return $value;
+        }
+    );
+  }
+
+  /**
+   * Slugify Helper - lets you slugify any string
+   */
+  private function add_slugify_helper() {
+    $this->engine->addHelper(
+        'slugify',
+        function ( $template, $context, $args ) {
+          $arg = $context->get( $args );
+          return slugify( $arg );
         }
     );
   }
