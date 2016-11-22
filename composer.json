@@ -2,9 +2,10 @@
     "name": "gios-asu/nectary",
     "description": "A simple PHP framework that is not tied to a web interface",
     "license": "MIT",
+    "version": "0.2.2",
     "authors": [
         {
-            "name": "The Global Institute of Sustainability",
+            "name": "The Julie Ann Wrigley Global Institute of Sustainability at Arizona State University",
             "email": "giosweb@asu.edu"
         }
     ],
@@ -26,9 +27,9 @@
         "coduo/php-humanizer": ">=2.0.0-beta"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.8.*",
+        "phpunit/phpunit": "~4.8.0",
         "satooshi/php-coveralls": ">=0.6",
-        "squizlabs/php_codesniffer": "2.*",
+        "squizlabs/php_codesniffer": "^2.0.0"
         "theseer/phpdox": "^0.8.1.1"
     }
 }
