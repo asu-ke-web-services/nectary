@@ -8,10 +8,10 @@ namespace Nectary\Decorators;
  * this interface
  */
 interface Decoratable {
-  /**
-   * Return a created decorator.
-   *
-   * @return Decorator
-   */
-  public function decorate();
+	/**
+	 * Return a created decorator.
+	 *
+	 * @return Decorator
+	 */
+	public function decorate();
 }

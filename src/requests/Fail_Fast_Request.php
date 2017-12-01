@@ -11,17 +11,17 @@ use Nectary\Requests\Request;
  * pull in the data required to fulfill a request.
  */
 abstract class Fail_Fast_Request extends Request {
-  public function validate( $error_callback ) {
-    $rules = $this->validation_rules();
+	public function validate( $error_callback ) {
+		$rules = $this->validation_rules();
 
-    foreach ( $rules as $name => $check ) {
-      if ( true !== $check ) {
-        if ( is_array( $error_callback ) ) {
-          return call_user_func_array( $error_callback, [ $check, $this ] );
-        }
+		foreach ( $rules as $name => $check ) {
+			if ( true !== $check ) {
+				if ( is_array( $error_callback ) ) {
+					return call_user_func_array( $error_callback, [ $check, $this ] );
+				}
 
-        return $error_callback( $check, $this );
-      }
-    }
-  }
+				return $error_callback( $check, $this );
+			}
+		}
+	}
 }

@@ -13,29 +13,29 @@ use Nectary\Factories\Implementations\Html_Factory;
  * @extends Html_Factory
  */
 class Html_Slide_Factory extends Html_Factory {
-  private $active;
-  private $classes;
+	private $active;
+	private $classes;
 
-  public function __construct() {
-    $this->active = false;
-    $this->classes = '';
-  }
+	public function __construct() {
+		$this->active  = false;
+		$this->classes = '';
+	}
 
-  public function is_active() {
-    $this->active = true;
-  }
+	public function is_active() {
+		$this->active = true;
+	}
 
-  public function add_class( $classes ) {
-    $this->classes .= $classes;
-  }
+	public function add_class( $classes ) {
+		$this->classes .= $classes;
+	}
 
-  public function build() {
-    $classes = $this->active ? 'active' : '';
+	public function build() {
+		$classes = $this->active ? 'active' : '';
 
-    $classes .= ' ' . $this->classes;
+		$classes .= ' ' . $this->classes;
 
-    return "<div class='item {$classes}'>
-      {$this->html}
-    </div>";
-  }
+		return "<div class='item {$classes}'>
+			{$this->html}
+		</div>";
+	}
 }

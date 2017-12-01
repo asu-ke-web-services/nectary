@@ -7,5 +7,5 @@ namespace Nectary\Views;
  * views.
  */
 abstract class View {
-  abstract public function output();
+	abstract public function output();
 }
