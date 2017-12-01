@@ -20,7 +20,14 @@
             "src/utilities/string-utilities.php",
             "src/utilities/view-utilities.php"
         ],
-        "classmap" : [ "src/" ]
+        "psr-4": {
+            "Nectary\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nectary\\Tests\\": "tests/"
+        }
     },
     "require" : {
         "php": ">=7.0",
