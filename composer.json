@@ -22,14 +22,19 @@
         ],
         "classmap" : [ "src/" ]
     },
-    "require": {
-        "xamin/handlebars.php": ">=0.10.3",
-        "coduo/php-humanizer": ">=2.0.0-beta"
+    "require" : {
+        "php": ">=7.0",
+        "xamin/handlebars.php": "0.10.3",
+        "coduo/php-humanizer": ">=2.0.0-beta",
+        "roave/security-advisories": "dev-master"
     },
-    "require-dev": {
-        "phpunit/phpunit": "~4.8.0",
+    "require-dev" : {
+        "squizlabs/php_codesniffer": "^2.0",
+        "phpunit/phpunit": "^6.0",
         "satooshi/php-coveralls": ">=0.6",
-        "squizlabs/php_codesniffer": "^2.0.0",
-        "theseer/phpdox": "^0.8.1.1"
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+        "theseer/phpdox": "^0.8",
+        "wp-coding-standards/wpcs": "~0.14.0",
+        "wimg/php-compatibility": "*"
     }
 }
