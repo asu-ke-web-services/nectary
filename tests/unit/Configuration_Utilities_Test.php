@@ -2,14 +2,15 @@
 
 namespace Nectary;
 
-use Nectary\Configuration;
+use Nectary\Configuration\Configuration;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the configuration utilities in the framework
  *
  * @group configuration
  */
-class Configuration_Utilities_Test extends \PHPUnit_Framework_TestCase {
+class Configuration_Utilities_Test extends TestCase {
   function setUp() {
     Configuration::reset();
   }

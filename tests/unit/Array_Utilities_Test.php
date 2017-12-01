@@ -2,10 +2,11 @@
 
 namespace Nectary\Tests;
 
+use PHPUnit\Framework\TestCase;
 /**
  * @group utility
  */
-class Array_Utilities_Test extends \PHPUnit_Framework_TestCase {
+class Array_Utilities_Test extends TestCase {
   function test_array_peak() {
     $this->assertEquals( array_peak( [ 'first', 'second' ] ), 'first' );
     $this->assertEquals( array_peak( [] ), null );

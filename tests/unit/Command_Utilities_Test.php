@@ -2,12 +2,15 @@
 
 namespace Nectary\Tests;
 
+use Nectary\Commands\Command;
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test the command utilities
  */
-class Command_Utilities_Test extends \PHPUnit_Framework_TestCase {
+class Command_Utilities_Test extends TestCase {
   function test_dispatch_calls_handle() {
-    $command = $this->getMockBuilder( 'Nectary\Command' )
+    $command = $this->getMockBuilder( Command::class )
     ->setMethods( [ 'handle' ] )
     ->getMockForAbstractClass();
 
@@ -18,7 +21,7 @@ class Command_Utilities_Test extends \PHPUnit_Framework_TestCase {
   }
 
   function test_dispatch_returns_results() {
-    $command = $this->getMockBuilder( 'Nectary\Command' )
+    $command = $this->getMockBuilder( Command::class )
     ->setMethods( [ 'handle' ] )
     ->getMockForAbstractClass();
 

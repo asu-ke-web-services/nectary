@@ -2,10 +2,12 @@
 
 namespace Nectary\Tests;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * @group utility
  */
-class Dao_Utilities_Test extends \PHPUnit_Framework_TestCase {
+class Dao_Utilities_Test extends TestCase {
   function test_returns_given_string_when_valid() {
     $this->assertEquals( 'citations.date DESC', sanitize_order_by( 'citations.date DESC' ) );
     $this->assertEquals( 'blah.id ASC, table2.id DESC', sanitize_order_by( 'blah.id ASC, table2.id DESC' ) );

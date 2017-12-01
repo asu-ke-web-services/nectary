@@ -3,11 +3,12 @@
 namespace Nectary\Tests;
 
 use Nectary\Services\Excerpt_Service;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @group service
  */
-class Excerpt_Service_Test extends \PHPUnit_Framework_TestCase {
+class Excerpt_Service_Test extends TestCase {
   private $excerpt_service;
   private $excerpt_service_mock;
 

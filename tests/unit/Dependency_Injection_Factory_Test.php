@@ -2,17 +2,18 @@
 
 namespace Nectary\Tests;
 
-use Nectary\Factories\Dependency_Injection_Factory;
+use Nectary\Factories\Implementations\Dependency_Injection_Factory;
 use Nectary\Tests\Mocks\Dif_Test_Object;
 use Nectary\Tests\Mocks\Dif_Nested_Test_Object;
 use Nectary\Tests\Mocks\Dif_Has_Abstract_Dependency_Test_Object;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the dependency injection factory class in the framework
  *
  * @group dependency-injection-factory
  */
-class Dependency_Injection_Factory_Test extends \PHPUnit_Framework_TestCase {
+class Dependency_Injection_Factory_Test extends TestCase {
   function test_exists() {
     $this->assertEquals( 'Nectary\Factories\Dependency_Injection_Factory', Dependency_Injection_Factory::class );
   }
@@ -65,7 +66,7 @@ class Dependency_Injection_Factory_Test extends \PHPUnit_Framework_TestCase {
     );
 
     list( $instance, $_, $__ ) = $factory->build();
-  
+
     $this->assertNotFalse( $instance->abstract_instance );
     $this->assertNull( $instance->abstract_instance );
   }

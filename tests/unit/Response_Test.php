@@ -2,12 +2,13 @@
 
 namespace Nectary\Tests;
 
-use Nectary\Response;
+use Nectary\Responses\Response;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @group model
  */
-class Response_Test extends \PHPUnit_Framework_TestCase {
+class Response_Test extends TestCase {
   function __construct() {
 
     parent::__construct( 'View Model Test' );

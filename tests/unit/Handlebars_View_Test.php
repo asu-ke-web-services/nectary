@@ -2,15 +2,16 @@
 
 namespace Nectary\Tests;
 
-use Nectary\Views\Handlebars_View;
+use Nectary\Views\Extensions\Handlebars_View;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the handlebars view class in the framework
  *
  * @group view
  */
-class Handlebars_View_Test extends \PHPUnit_Framework_TestCase {
+class Handlebars_View_Test extends TestCase {
   function test_exists() {
-    $this->assertEquals( 'Nectary\Views\Handlebars_View', Views\Handlebars_View::class );
+    $this->assertEquals( 'Nectary\Views\Extensions\Handlebars_View', Handlebars_View::class );
   }
 }

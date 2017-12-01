@@ -2,12 +2,13 @@
 
 namespace Nectary\Tests;
 
-use Nectary\Request;
+use Nectary\Requests\Request;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @group request
  */
-class Request_Test extends \PHPUnit_Framework_TestCase {
+class Request_Test extends TestCase {
   function test_error_callback_is_not_called_when_validation_passes() {
     $request = $this->getMockForAbstractClass( Request::class );
     $request->expects( $this->once() )
@@ -22,7 +23,7 @@ class Request_Test extends \PHPUnit_Framework_TestCase {
     $mock_function->expects( $this->exactly( 0 ) )
     ->method( 'no_call_function' )
     ->will($this->returnValue( false ) );
-    
+
     $request->validate( array( $mock_function, 'no_call_function' ) );
   }
 
@@ -40,7 +41,7 @@ class Request_Test extends \PHPUnit_Framework_TestCase {
     $mock_function->expects( $this->exactly( 1 ) )
     ->method( 'error_function' )
     ->will($this->returnValue( 'my failure object' ) );
-    
+
     $result = $request->validate( array( $mock_function, 'error_function' ) );
 
     $this->assertCount( 1, $result );
@@ -72,7 +73,7 @@ class Request_Test extends \PHPUnit_Framework_TestCase {
             'another failure object'
         )
     );
-    
+
     $result = $request->validate( array( $mock_function, 'error_function' ) );
 
     $this->assertCount( 2, $result );

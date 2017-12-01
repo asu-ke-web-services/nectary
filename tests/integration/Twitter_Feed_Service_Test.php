@@ -3,6 +3,7 @@
 namespace Nectary\Tests\Integration;
 
 use Nectary\Services\Twitter_Feed_Service;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the Twitter JSON Facade in the framework
@@ -11,7 +12,7 @@ use Nectary\Services\Twitter_Feed_Service;
  * @group service
  * @group integration
  */
-class Twitter_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
+class Twitter_Feed_Service_Test extends TestCase {
   /**
    * Random Twitter API keys pulled from the Internet
    */

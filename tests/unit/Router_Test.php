@@ -2,14 +2,15 @@
 
 namespace Nectary\Tests;
 
-use Nectary\Router;
+use Nectary\Routers\Router;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the router class in the framework
  *
  * @group router
  */
-class Router_Test extends \PHPUnit_Framework_TestCase {
+class Router_Test extends TestCase {
   function test_exists() {
     $this->assertEquals( 'Nectary\Router', Router::class );
   }

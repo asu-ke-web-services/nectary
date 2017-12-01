@@ -3,12 +3,14 @@
 namespace Nectary\Tests\Integration;
 
 use Nectary\Factories\View_Factory;
-use Nectary\Configuration;
+use Nectary\Configuration\Configuration;
+use PHPUnit\Framework\TestCase;
+
 /**
  * @group integration
  * @group view
  */
-class View_Factory_Test extends \PHPUnit_Framework_TestCase {
+class View_Factory_Test extends TestCase {
   function test_view_factory_creates_handlebars_output() {
     $view_factory = new View_Factory( 'test' );
 

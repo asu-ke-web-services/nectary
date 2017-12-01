@@ -2,8 +2,8 @@
 
 namespace Nectary\Tests\Mocks;
 
-use Nectary\Decoratable;
-use Nectary\Decorator;
+use Nectary\Decorators\Decoratable;
+use Nectary\Decorators\Decorator;
 
 class Decoratable_Test_Object implements Decoratable {
   public function decorate() {

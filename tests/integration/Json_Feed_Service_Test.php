@@ -3,6 +3,7 @@
 namespace Nectary\Tests\Integration;
 
 use Nectary\Services\Json_Feed_Service;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the Generic JSON Service in the framework
@@ -10,7 +11,7 @@ use Nectary\Services\Json_Feed_Service;
  * @group service
  * @group integration
  */
-class Json_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
+class Json_Feed_Service_Test extends TestCase {
   function setUp() {
     $this->yahoo_weather = implode( '', [
       'http://query.yahooapis.com/v1/public/yql',
