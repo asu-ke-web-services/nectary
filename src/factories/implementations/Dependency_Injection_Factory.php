@@ -25,9 +25,9 @@ class Dependency_Injection_Factory extends Factory {
    * Setup object variables
    *
    * @constructor
-   * @param $class_name String
-   * @param $method_name String
-   * @param $arguments Array
+   * @param $class_name string
+   * @param $method_name string
+   * @param $arguments array
    */
   public function __construct( $class_name, $method_name, $arguments ) {
     $this->class_name  = $class_name;
@@ -41,6 +41,7 @@ class Dependency_Injection_Factory extends Factory {
    * any validators that should be checked
    *
    * @override
+   * @throws \ReflectionException
    */
   public function build() {
     $reflector = new \ReflectionMethod(
@@ -64,8 +65,10 @@ class Dependency_Injection_Factory extends Factory {
   /**
    * Get the dependencies for a given reflection object
    *
-   * @param $reflector ReflectionMethod Reflection object to gather dependencies from
-   * @param $named_arguments Array An associative array of suggested arguments
+   * @param $reflector \ReflectionMethod Reflection object to gather dependencies from
+   * @param $named_arguments array An associative array of suggested arguments
+   * @return array
+   * @throws \ReflectionException
    */
   private function get_dependencies( \ReflectionMethod $reflector, $named_arguments ) {
     $reflector_parameters = $reflector->getParameters();
@@ -79,8 +82,10 @@ class Dependency_Injection_Factory extends Factory {
    * Resolve all dependencies recursively. Untyped parameters will
    * have the $named_arguments injected into them
    *
-   * @param $reflector_parameters Array<ReflectionParameters> Will check these for dependencies
-   * @param $named_arguments Array An associative array of suggested arguments
+   * @param $reflector_parameters array<ReflectionParameters> Will check these for dependencies
+   * @param $named_arguments array An associative array of suggested arguments
+   * @return array
+   * @throws \ReflectionException
    */
   private function resolve_dependencies( $reflector_parameters, $named_arguments = [] ) {
     // map the named_arguments to the reflector_parameters
@@ -112,9 +117,10 @@ class Dependency_Injection_Factory extends Factory {
    *
    * This will handle special cases as well.
    *
-   * @param $class_name String The name of the class to make
-   * @param $named_arguments Array The arguments to inject into the class
+   * @param $class_name string The name of the class to make
+   * @param $named_arguments array The arguments to inject into the class
    * @return Mixed An instance of the class
+   * @throws \ReflectionException
    */
   private function make( $class_name, $named_arguments ) {
     $reflector   = new \ReflectionClass( $class_name );
@@ -122,9 +128,11 @@ class Dependency_Injection_Factory extends Factory {
 
     if ( is_subclass_of( $class_name, Singleton::class ) ) {
       return $class_name::get_instance();
-    } else if ( $reflector->isAbstract() ) {
+    }
+    if ( $reflector->isAbstract() ) {
       return null;
-    } else if ( is_null( $constructor ) ) {
+    }
+    if ( null === $constructor ) {
       return new $class_name;
     }
 

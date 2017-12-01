@@ -59,9 +59,10 @@ abstract class Router {
    * Route calls to undefined methods if the method
    * has been told to route to a different method
    *
-   * @param $method_name String The method that was asked to be called
-   * @param $arguments Array An array of the arguments passed to the method
-   * @return Mixed Can return anything
+   * @param string $method_name The method that was asked to be called
+   * @param array $arguments An array of the arguments passed to the method
+   * @return mixed Can return anything
+   * @throws \ReflectionException
    */
   public function __call( $method_name, $arguments ) {
     $this->__method_name = $method_name;
@@ -84,6 +85,8 @@ abstract class Router {
 
   /**
    * Build and do the route
+   *
+   * @throws \ReflectionException
    */
   private function route_request() {
     $named_arguments = $this->get_named_arguments();
@@ -142,10 +145,12 @@ abstract class Router {
    * Resolve dependencies for dependency injection
    * and call the given route
    *
-   * @param $class_name String The class to route to
-   * @param $method_name String The method name to call in the give class
-   * @param $named_arguments Array Associative array of suggested arguments
-   * @param $on_error Function Callback if a validator fails
+   * @param string $class_name The class to route to
+   * @param string $method_name The method name to call in the give class
+   * @param array $named_arguments Associative array of suggested arguments
+   * @param callback $on_error if a validator fails
+   * @return mixed
+   * @throws \ReflectionException
    */
   private function do_route( $class_name, $method_name, $named_arguments, $on_error ) {
     if ( is_object( $class_name ) ) {
@@ -191,8 +196,9 @@ abstract class Router {
   /**
    * Call the given function with arguments
    *
-   * @param $callback Array|String Function to call
-   * @param $arguments Array|Mixed Arguments to pass to the function
+   * @param array|string $callback Function to call
+   * @param mixed $arguments Arguments to pass to the function
+   * @return mixed
    */
   private function call( $callback, $arguments ) {
     return call_user_func_array( $callback, $arguments );

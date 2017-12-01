@@ -24,7 +24,8 @@ class Json_Feed implements Feed {
    * Pull the items from the web and store them
    * in this object
    *
-   * @param $look_at String|Boolean use to grab items from a section of the json
+   * @param $look_at string|boolean use to grab items from a section of the json
+   * @throws \Exception
    */
   public function retrieve_items( $look_at = false ) {
     $json = call_user_func( $this->feed_callback, $this->url );
@@ -41,14 +42,23 @@ class Json_Feed implements Feed {
     // TODO
   }
 
+  /**
+   * @return array
+   */
   public function get_items() {
     return $this->items;
   }
 
+  /**
+   * @param $items array
+   */
   public function set_items( $items ) {
     $this->items = $items;
   }
 
+  /**
+   * @return array
+   */
   public function get_unique_items() {
     $unique = [];
 
@@ -75,7 +85,12 @@ class Json_Feed implements Feed {
     return $unique;
   }
 
-  private function parse_feed( $json ) {
+  /**
+   * @param $json
+   * @return mixed
+   * @throws \Exception
+   */
+  private function parse_feed($json ) {
     $json = json_decode( $json, true );
     if ( empty( $json ) ) {
       error_log( 'Json was empty' );

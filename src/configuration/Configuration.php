@@ -28,9 +28,8 @@ class Configuration extends Singleton {
   public function get( $key, $default = null ) {
     if ( array_key_exists( $key, $this->attributes ) ) {
       return $this->attributes[ $key ];
-    } else {
-      return $default;
     }
+    return $default;
   }
 
   public function set( $key, $value ) {
@@ -48,13 +47,16 @@ class Configuration extends Singleton {
       if ( ! is_array( $this->attributes[ $key ] ) ) {
         $this->attributes[ $key ] = array( $this->attributes[ $key ], $value );
       } else {
-        array_push( $this->attributes[ $key ], $value );
+        $this->attributes[ $key ][] = $value;
       }
     }
   }
 
   /**
    * Load in the configuration file and parse it
+   *
+   * @param string $path
+   * @throws Invalid_Configuration_Exception
    */
   protected function __construct( $path = '.env' ) {
     $this->attributes = [];
@@ -74,6 +76,8 @@ class Configuration extends Singleton {
    *
    * TODO support different parsers
    *
+   * @param $configuration
+   * @return array
    * @throws Invalid_Configuration_Exception
    */
   private function parse( $configuration ) {
@@ -83,7 +87,7 @@ class Configuration extends Singleton {
 
     // Split each line by the first equal sign
     foreach ( $lines as $line ) {
-      $parts = preg_split( '/[=]/', $line, 2 );
+      $parts = explode( '[=]', $line, 2 );
 
       if ( $this->is_valid_line( $parts ) ) {
         $key   = $parts[0];

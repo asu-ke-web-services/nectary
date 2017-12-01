@@ -24,8 +24,10 @@ abstract class Handlebars_View extends View {
    * under the $path_to_views folder path.
    *
    * @constructor
-   * @param $view_root String|Boolean Use false if you are not rendering views from files
-   * @param $path_to_view String|Array Use to override the path to the views
+   * @param string|bool $view_root Use false if you are not rendering views from files
+   * @param string|array $path_to_views Use to override the path to the views
+   * @throws \RuntimeException
+   * @throws \InvalidArgumentException
    */
   protected function __construct( $view_root = '', $path_to_views = null ) {
     if ( false === $view_root ) {
@@ -205,17 +207,21 @@ abstract class Handlebars_View extends View {
   private function get_real_value( $value, $context ) {
     if ( $value instanceof StringWrapper ) {
       return $this->get_real_value( '' . $value, $context );
-    } else if ( array_key_exists( $value, $context ) ) {
-      return $context[ $value ];
-    } else {
-      // Now string to real type
-      if ( is_numeric( $value ) ) {
-        return $value + 0;
-      } else if ( in_array( $value, [ 'true', 'false' ] ) ) {
-        return ( 'true' === $value ? true : false );
-      } else {
-        return $value;
-      }
     }
+
+    if ( array_key_exists( $value, $context ) ) {
+      return $context[ $value ];
+    }
+
+    // Now string to real type
+    if ( is_numeric( $value ) ) {
+      return $value + 0;
+    }
+
+    if ( in_array($value, [ 'true', 'false' ], false) ) {
+      return 'true' === $value;
+    }
+
+    return $value;
   }
 }

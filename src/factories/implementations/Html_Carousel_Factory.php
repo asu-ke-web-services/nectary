@@ -15,9 +15,12 @@ class Html_Carousel_Factory extends Html_Factory {
   private $slides;
   private $indicators;
   private $id;
+  private $classes;
+  private $inner_classes;
+  private $data_attributes;
 
   public function __construct() {
-    $this->id              = uniqid( 'carousel-' );
+    $this->id              = uniqid( 'carousel-', true );
     $this->indicators      = false;
     $this->slides          = [];
     $this->classes         = '';
@@ -46,7 +49,7 @@ class Html_Carousel_Factory extends Html_Factory {
   }
 
   public function build() {
-    $html = join( $this->slides, '' );
+    $html = implode( $this->slides, '' );
 
     if ( $this->indicators ) {
       $indicators = $this->build_indicators();

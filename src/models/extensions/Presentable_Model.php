@@ -15,22 +15,23 @@ abstract class Presentable_Model extends Data_Model {
    * by presents(). Present knows how to build
    * factories.
    *
+   * @param array $options
    * @return array
    */
   public function present( $options = [] ) {
     $class_reference = $this->get_presenter_class_name();
 
-    if ( ! is_null( $class_reference ) ) {
+    if ( null !== $class_reference ) {
       $instance = new $class_reference( $this, $options );
 
       if ( $instance instanceof Factory ) {
         return $instance->build();
-      } else {
-        return to_array( $instance );
       }
-    } else {
-      return to_array( $this );
+
+      return to_array( $instance );
     }
+
+    return to_array( $this );
   }
 
   /**

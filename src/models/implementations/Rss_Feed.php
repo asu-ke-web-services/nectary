@@ -20,13 +20,14 @@ class Rss_Feed implements Feed {
     $this->feed_callback = $feed_callback;
   }
 
+  /**
+   * @throws \Exception
+   */
   public function retrieve_items() {
     $feed = call_user_func( $this->feed_callback, $this->url );
 
-    if ( function_exists( 'is_wp_error' ) ) {
-      if ( is_wp_error( $feed ) ) {
-        throw new \Exception( 'Feed could not be loaded' );
-      }
+    if ( function_exists( 'is_wp_error' ) && is_wp_error( $feed ) ) {
+      throw new \Exception( 'Feed could not be loaded' );
     }
 
     $this->items = $feed->get_items( 0 );

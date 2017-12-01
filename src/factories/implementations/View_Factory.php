@@ -2,6 +2,7 @@
 
 namespace Nectary\Factories\Implementations;
 
+use Nectary\Configuration\Configuration;
 use Nectary\Factories\Factory;
 use Nectary\Responses\Response;
 use Nectary\Models\Extensions\Presentable_Model;
@@ -74,9 +75,8 @@ class View_Factory extends Factory {
    * ```
    * $view->add_data( $event->present() );
    * ```
-   *
-   * @param $data Mixed
-   * @return $this
+   * @param $data
+   * @return View_Factory
    */
   public function add_data( $data ) {
     if ( is_array( $data ) ) {
@@ -90,7 +90,7 @@ class View_Factory extends Factory {
           $data_to_add = $value;
         }
 
-        if ( '_' === substr( $key, 0, 1 ) ) {
+        if ( 0 === strpos( $key, '_' ) ) {
           $this->view_data = array_merge( $this->view_data, $data_to_add );
         } else {
           $this->view_data[ $key ] = $value;
@@ -106,8 +106,8 @@ class View_Factory extends Factory {
    *
    * Add data that should be in the head (aka add_header).
    *
-   * @param $data Mixed
-   * @return $this
+   * @param $data
+   * @return View_Factory
    */
   public function add_head( $data ) {
     if ( is_array( $data ) ) {
@@ -125,6 +125,7 @@ class View_Factory extends Factory {
    * using the data and head that has been provided.
    *
    * @override
+   * @return Response
    */
   public function build() {
     $view_root      = '';
@@ -177,13 +178,16 @@ class View_Factory extends Factory {
   private function get_path_to_views() {
     if ( null !== $this->path_to_views ) {
       return $this->path_to_views;
-    } else {
-      return Configuration::get_instance()->get( 'path_to_views' );
     }
+    return Configuration::get_instance()->get( 'path_to_views' );
   }
 
   /**
    * Find the first file extention that matches the for this view template
+   *
+   * @param $view_root
+   * @param $template_name
+   * @return mixed|string
    */
   private function get_file_extension( $view_root, $template_name ) {
     $paths = to_array( $this->get_path_to_views() );

@@ -30,7 +30,7 @@ class Html_Slide_Factory extends Html_Factory {
   }
 
   public function build() {
-    $classes = ( $this->active ) ? 'active' : '';
+    $classes = $this->active ? 'active' : '';
 
     $classes .= ' ' . $this->classes;
 

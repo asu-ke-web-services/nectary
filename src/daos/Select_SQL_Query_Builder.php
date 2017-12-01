@@ -12,7 +12,7 @@ class Select_SQL_Query_Builder {
   /**
    * Internal state for this object
    */
-  private $columns_to_select, $from, $joins, $where_clause, $values_to_bind, $order_by, $limit, $offset;
+  private $columns_to_select, $from, $joins, $where_clause, $values_to_bind, $group_by, $order_by, $limit, $offset;
 
   /**
    * Sets up default state
@@ -42,7 +42,7 @@ class Select_SQL_Query_Builder {
   /**
    * Mainly for debugging, probably wont need this
    *
-   * @return the current colums this query will select from
+   * @return array - the current columns this query will select from
    */
   public function get_columns() {
     return $this->columns_to_select;
@@ -73,7 +73,7 @@ class Select_SQL_Query_Builder {
    */
   public function limit( $new_limit ) {
     if ( false === starts_with( $new_limit . '', ':' ) ) {
-      $this->limit = intval( $new_limit );
+      $this->limit = (int) $new_limit;
     } else {
       $this->limit = $new_limit;
     }
@@ -86,7 +86,7 @@ class Select_SQL_Query_Builder {
    */
   public function offset( $offset ) {
     if ( false === starts_with( $offset . '', ':' ) ) {
-      $this->offset = intval( $offset );
+      $this->offset = (int) $offset;
     } else {
       $this->offset = $offset;
     }
@@ -104,7 +104,7 @@ class Select_SQL_Query_Builder {
   /**
    * For setting an group by on the query other than the default.
    *
-   * @param $order : string : eg: "first_name"
+   * @param $group
    */
   public function group_by( $group ) {
     $this->group_by[] = $group;
@@ -143,6 +143,7 @@ class Select_SQL_Query_Builder {
    *
    * @param $name : string
    * @param $value : object
+   * @param bool $data_type
    */
   public function bind_value( $name, $value, $data_type = false ) {
     $this->values_to_bind[ $name ] = array(
@@ -154,7 +155,7 @@ class Select_SQL_Query_Builder {
   /**
    * Uses the current state of the object to build the sql statement
    *
-   * @return the sql select statement as a string
+   * @return string : the sql select statement as a string
    */
   public function get_sql() {
     if ( empty( $this->columns_to_select ) ) {
@@ -192,8 +193,8 @@ class Select_SQL_Query_Builder {
    * Calls get_sql() to generate the sql and then creates the prepared statement
    * and binds its values.
    *
-   * @param $db : a pdo database connection
-   * @return pdo::Statement object with the query and values bound
+   * @param \PDO $db : a pdo database connection
+   * @return \PDOStatement object with the query and values bound
    */
   public function get_statement( $db ) {
     $statement = $db->prepare( $this->get_sql() );

@@ -28,12 +28,11 @@ class Feed_Facade {
    * @param $feeds array<Feed>
    */
   public function merge_feeds( array $feeds ) {
-    $merged_feed = [];
-
+    $merged_feed = [[]]; // inner array covers case when no loops are made
     foreach ( $feeds as $feed ) {
-      $items = $feed->get_items();
-      $merged_feed = array_merge( $merged_feed, $items );
+      $merged_feed[] = $feed->get_items();
     }
+    $merged_feed = array_merge( ...$merged_feed ); // much more efficient than performing array_merge inside loop
 
     $new_feed = $this->service->get_feed( '' );
 
