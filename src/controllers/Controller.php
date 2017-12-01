@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Controllers;
 
 /**
  * Controllers should be used to take in

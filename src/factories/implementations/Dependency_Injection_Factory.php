@@ -1,10 +1,10 @@
 <?php
 
-namespace Nectary\Factories;
+namespace Nectary\Factories\Implementations;
 
-use Nectary\Factory;
-use Nectary\Singleton;
-use Nectary\Request;
+use Nectary\Factories\Factory;
+use Nectary\Singletons\Singleton;
+use Nectary\Requests\Request;
 
 /**
  * Given a class name and method for the class

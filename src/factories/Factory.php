@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Factories;
 
 /**
  * Factories should be used to build an object.

@@ -1,8 +1,8 @@
 <?php
 
-namespace Nectary\Factories;
+namespace Nectary\Factories\Implementations;
 
-use Nectary\Factory;
+use Nectary\Factories\Factory;
 use Nectary\Services\Excerpt_Service;
 
 /**

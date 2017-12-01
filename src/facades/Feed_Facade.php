@@ -2,7 +2,7 @@
 
 namespace Nectary\Facades;
 
-use Nectary\Feed;
+use Nectary\Models\Feed;
 use Nectary\Services\Feed_Service;
 
 /**

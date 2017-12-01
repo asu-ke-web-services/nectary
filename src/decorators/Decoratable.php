@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Decorators;
 
 /**
  * Objects that wish to return a

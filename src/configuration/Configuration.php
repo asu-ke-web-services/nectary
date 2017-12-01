@@ -1,8 +1,8 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Configuration;
 
-use Nectary\Singleton;
+use Nectary\Singletons\Singleton;
 use Nectary\Exceptions\Invalid_Configuration_Exception;
 
 /**

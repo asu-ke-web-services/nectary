@@ -1,8 +1,8 @@
 <?php
 
-namespace Nectary\Views;
+namespace Nectary\Views\Implementations;
 
-use Nectary\Views\Handlebars_View;
+use Nectary\Views\Extensions\Handlebars_View;
 
 /**
  * Simple implementation of the Handlebars_View

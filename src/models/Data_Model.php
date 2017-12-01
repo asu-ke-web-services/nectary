@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Models;
 
 /**
  * Data model

@@ -1,8 +1,8 @@
 <?php
 
-namespace Nectary\Factories;
+namespace Nectary\Factories\Implementations;
 
-use Nectary\Factories\Html_Factory;
+use Nectary\Factories\Implementations\Html_Factory;
 
 /**
  * Lazily create HTML Bootstrap based Carousels

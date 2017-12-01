@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Requests;
 
 /**
  * A request will validate based on a set of rules

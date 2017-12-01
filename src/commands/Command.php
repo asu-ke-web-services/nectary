@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Commands;
 
 /**
  * Commands are used as general task runners, specifically, they differ from

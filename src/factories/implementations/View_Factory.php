@@ -1,12 +1,11 @@
 <?php
 
-namespace Nectary\Factories;
+namespace Nectary\Factories\Implementations;
 
-use Nectary\Factory;
-use Nectary\Configuration;
-use Nectary\Response;
-use Nectary\Models\Presentable_Model;
-use Nectary\Views\Simple_Handlebars_View;
+use Nectary\Factories\Factory;
+use Nectary\Responses\Response;
+use Nectary\Models\Extensions\Presentable_Model;
+use Nectary\Views\Implementations\Simple_Handlebars_View;
 
 /**
  * This factory is slightly different because

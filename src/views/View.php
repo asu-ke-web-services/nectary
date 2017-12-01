@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Views;
 
 /**
  * This abstract view contains functionality for rendering

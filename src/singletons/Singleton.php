@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Singletons;
 
 /**
  * Support singletons in PHP

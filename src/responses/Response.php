@@ -1,8 +1,8 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Responses;
 
-use Nectary\Data_Model;
+use Nectary\Models\Data_Model;
 
 /**
  * View Model for head, content, and footer data

@@ -2,7 +2,7 @@
 
 namespace Nectary\Services;
 
-use Nectary\Models\Json_Feed;
+use Nectary\Models\Implementations\Json_Feed;
 use Nectary\Services\Feed_Service;
 
 /**

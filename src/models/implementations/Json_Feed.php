@@ -1,8 +1,8 @@
 <?php
 
-namespace Nectary\Models;
+namespace Nectary\Models\Implementations;
 
-use Nectary\Feed;
+use Nectary\Models\Feed;
 
 /**
  * Json Feed class for pulling and parsing

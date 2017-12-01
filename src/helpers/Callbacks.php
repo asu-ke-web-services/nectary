@@ -2,7 +2,7 @@
 
 namespace Nectary\Helpers;
 
-use Nectary\Response;
+use Nectary\Responses\Response;
 
 /**
  * Trait Callbacks - Common place for list of all reusable callbacks

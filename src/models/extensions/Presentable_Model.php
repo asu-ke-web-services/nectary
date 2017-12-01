@@ -1,9 +1,9 @@
 <?php
 
-namespace Nectary\Models;
+namespace Nectary\Models\Extensions;
 
-use Nectary\Data_Model;
-use Nectary\Factory;
+use Nectary\Models\Data_Model;
+use Nectary\Factories\Factory;
 
 /**
  * A Viewable model is one that can present itself so that all of its

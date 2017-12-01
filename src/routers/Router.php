@@ -1,8 +1,8 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Routers;
 
-use \Nectary\Factories\Dependency_Injection_Factory;
+use \Nectary\Factories\Implementations\Dependency_Injection_Factory;
 
 /**
  * The base presenter has functionality to route

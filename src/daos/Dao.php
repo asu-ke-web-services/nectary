@@ -1,6 +1,6 @@
 <?php
 
-namespace Nectary;
+namespace Nectary\Daos;
 
 /**
  * Just a common class for all daos to extend
