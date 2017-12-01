@@ -7,9 +7,12 @@
 if ( ! function_exists( 'view' ) ) {
 	/**
 	 * Alias for new View_Factory
+	 *
+	 * @param $template_name
+	 * @return \Nectary\Factories\Implementations\View_Factory
 	 */
 	function view( $template_name ) {
-		return new \Nectary\Factories\View_Factory( $template_name );
+		return new \Nectary\Factories\Implementations\View_Factory( $template_name );
 	}
 }
 
@@ -23,9 +26,9 @@ if ( ! function_exists( 'present' ) ) {
 	 * (which knows how to present itself) or an
 	 * unpresentable object, which is simply returned.
 	 *
-	 * @param $any Mixed Attempts to present this object or array
-	 * @param $options Array Passes these parameters when presenting the objects
-	 * @return Mixed
+	 * @param mixed $any Attempts to present this object or array
+	 * @param array $options Passes these parameters when presenting the objects
+	 * @return mixed
 	 */
 	function present( $any, $options = [] ) {
 		$presented = null;
@@ -36,7 +39,7 @@ if ( ! function_exists( 'present' ) ) {
 			foreach ( $any as $part ) {
 				$presented[] = present( $part, $options );
 			}
-		} elseif ( $any instanceof \Nectary\Models\Presentable_Model ) {
+		} elseif ( $any instanceof \Nectary\Models\Extensions\Presentable_Model ) {
 			$presented = $any->present( $options );
 		} else {
 			$presented = $any;

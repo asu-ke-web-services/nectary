@@ -11,6 +11,9 @@ if ( ! function_exists( 'sanitize_order_by' ) ) {
 	 * Examples:
 	 * - `citations.date DESC`
 	 * - `blah.id ASC, table2.id DESC`
+	 *
+	 * @param $string
+	 * @return string
 	 */
 	function sanitize_order_by( $string ) {
 		if ( strtolower( trim( rtrim( $string ) ) ) === 'rand()' ) {
