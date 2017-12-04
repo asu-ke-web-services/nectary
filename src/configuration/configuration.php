@@ -54,51 +54,25 @@ class Configuration extends Singleton {
   }
 
   /**
-   * Load in the configuration file and parse it
+   * Load the configuration dotenv file
+   *
+   * @param string $path
+   * @throws Invalid_Configuration_Exception
    */
   protected function __construct( $path = '.env' ) {
     $this->attributes = [];
-    $configuration = '';
+    $configuration = [];
 
     if ( file_exists( $path ) ) {
-      $configuration = @file_get_contents( $path );
+      $configuration = ( new \josegonzalez\Dotenv\Loader( $path ) )->parse()->toArray();
+    }
+
+    if ( ! is_array( $configuration ) ) {
+      throw new Invalid_Configuration_Exception( 'The provided configuration is invalid' );
     }
 
     if ( ! empty( $configuration ) ) {
-      $this->attributes = $this->parse( $configuration );
+      $this->attributes = $configuration;
     }
-  }
-
-  /**
-   * Parse the configuration text
-   *
-   * TODO support different parsers
-   *
-   * @throws Invalid_Configuration_Exception
-   */
-  private function parse( $configuration ) {
-    $attributes = [];
-    // Split on new line
-    $lines = preg_split( '/$\R?^/m', $configuration );
-
-    // Split each line by the first equal sign
-    foreach ( $lines as $line ) {
-      $parts = preg_split( '/[=]/', $line, 2 );
-
-      if ( $this->is_valid_line( $parts ) ) {
-        $key   = $parts[0];
-        $value = $parts[1];
-
-        $attributes[ $key ] = $value;
-      } else {
-        throw new Invalid_Configuration_Exception( 'The provided configuration is invalid' );
-      }
-    }
-
-    return $attributes;
-  }
-
-  private function is_valid_line( $parts ) {
-    return count( $parts ) === 2;
   }
 }
