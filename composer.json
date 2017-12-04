@@ -24,7 +24,8 @@
     },
     "require": {
         "xamin/handlebars.php": ">=0.10.3",
-        "coduo/php-humanizer": ">=2.0.0-beta"
+        "coduo/php-humanizer": ">=2.0.0-beta",
+        "josegonzalez/dotenv": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8.0",
