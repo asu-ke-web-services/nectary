@@ -8,19 +8,19 @@ use PHPUnit\Framework\TestCase;
  * Test the ensure default method
  */
 class Ensure_Default_Test extends TestCase {
-  public function test_ensure_default_provides_default() {
-    $data = array();
+	public function test_ensure_default_provides_default() {
+		$data = array();
 
-    \ensure_default( $data, 'key', 'value' );
+		\ensure_default( $data, 'key', 'value' );
 
-    $this->assertEquals( 'value', $data['key'] );
-  }
+		$this->assertEquals( 'value', $data['key'] );
+	}
 
-  public function test_ensure_default_provides_value() {
-    $data = array( 'key' => '???');
+	public function test_ensure_default_provides_value() {
+		$data = array( 'key' => '???');
 
-    \ensure_default( $data, 'key', 'value' );
+		\ensure_default( $data, 'key', 'value' );
 
-    $this->assertEquals( '???', $data['key'] );
-  }
+		$this->assertEquals( '???', $data['key'] );
+	}
 }

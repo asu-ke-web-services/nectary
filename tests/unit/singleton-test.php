@@ -11,19 +11,19 @@ use PHPUnit\Framework\TestCase;
  * @group singleton
  */
 class Singleton_Test extends TestCase {
-  public function test_exists() {
-    $this->assertEquals( 'Nectary\Singleton', Singleton::class );
-  }
+	public function test_exists() {
+		$this->assertEquals( 'Nectary\Singleton', Singleton::class );
+	}
 
-  public function test_cannot_be_constructed() {
-    // TODO
-  }
+	public function test_cannot_be_constructed() {
+		// TODO
+	}
 
-  public function test_there_can_only_be_one() {
-    // TODO
-  }
+	public function test_there_can_only_be_one() {
+		// TODO
+	}
 
-  public function test_not_clonable() {
-    // TODO
-  }
+	public function test_not_clonable() {
+		// TODO
+	}
 }

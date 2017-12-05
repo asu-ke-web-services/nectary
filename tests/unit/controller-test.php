@@ -11,9 +11,9 @@ use PHPUnit\Framework\TestCase;
  * @group controller
  */
 class Controller_Test extends TestCase {
-  public function test_exists() {
-    $this->assertEquals( 'Nectary\Controller', Controller::class );
-  }
+	public function test_exists() {
+		$this->assertEquals( 'Nectary\Controller', Controller::class );
+	}
 
-  // No other tests to run
+	// No other tests to run
 }

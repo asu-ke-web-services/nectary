@@ -9,44 +9,44 @@ use PHPUnit\Framework\TestCase;
  * @group model
  */
 class Response_Test extends TestCase {
-  public function __construct() {
+	public function __construct() {
 
-    parent::__construct( 'View Model Test' );
-  }
+		parent::__construct( 'View Model Test' );
+	}
 
-  protected function teardown() {
+	protected function teardown() {
 
-    parent::tearDown();
-  }
+		parent::tearDown();
+	}
 
-  public function test_constructor() {
+	public function test_constructor() {
 
-    $response = new Response();
-    $this->assertInstanceOf( Response::class, $response );
-  }
+		$response = new Response();
+		$this->assertInstanceOf( Response::class, $response );
+	}
 
-  public function test_attributes() {
+	public function test_attributes() {
 
-    $response = new Response(
-        array(
-          'http_header' => 'http header',
-          'head'        => 'head',
-          'content'     => 'content',
-          'footer'      => 'footer',
-        )
-    );
+		$response = new Response(
+				array(
+					'http_header' => 'http header',
+					'head'        => 'head',
+					'content'     => 'content',
+					'footer'      => 'footer',
+				)
+		);
 
-    $this->assertEquals( $response->http_header, 'http header' );
-    $this->assertEquals( $response->head,        'head' );
-    $this->assertEquals( $response->content,     'content' );
-    $this->assertEquals( $response->footer,      'footer' );
-  }
+		$this->assertEquals( $response->http_header, 'http header' );
+		$this->assertEquals( $response->head,        'head' );
+		$this->assertEquals( $response->content,     'content' );
+		$this->assertEquals( $response->footer,      'footer' );
+	}
 
-  public function test_404() {
+	public function test_404() {
 
-    $four_oh_four = Response::$error_404;
-    $this->assertEquals( array( 'HTTP/1.0 404 Not Found - Archive Empty' ), $four_oh_four->http_header );
-    $this->assertEquals( 'Not Found', $four_oh_four->content );
+		$four_oh_four = Response::$error_404;
+		$this->assertEquals( array( 'HTTP/1.0 404 Not Found - Archive Empty' ), $four_oh_four->http_header );
+		$this->assertEquals( 'Not Found', $four_oh_four->content );
 
-  }
+	}
 }

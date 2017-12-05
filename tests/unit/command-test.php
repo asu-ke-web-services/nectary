@@ -10,14 +10,14 @@ use PHPUnit\Framework\TestCase;
  * @group command
  */
 class Command_Test extends TestCase {
-  public function test_dispatchable() {
-    $command = $this->getMockBuilder( 'Nectary\Command' )
-    ->setMethods( [ 'handle' ] )
-    ->getMockForAbstractClass();
+	public function test_dispatchable() {
+		$command = $this->getMockBuilder( 'Nectary\Command' )
+		->setMethods( [ 'handle' ] )
+		->getMockForAbstractClass();
 
-    $command->expects( $this->once() )
-    ->method( 'handle' );
+		$command->expects( $this->once() )
+		->method( 'handle' );
 
-    \dispatch( $command );
-  }
+		\dispatch( $command );
+	}
 }

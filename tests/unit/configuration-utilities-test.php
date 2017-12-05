@@ -11,31 +11,31 @@ use PHPUnit\Framework\TestCase;
  * @group configuration
  */
 class Configuration_Utilities_Test extends TestCase {
-  protected function setUp() {
-    Configuration::reset();
-  }
+	protected function setUp() {
+		Configuration::reset();
+	}
 
-  public function test_config_returns_corrent_data() {
-    $mock = create_function_mock( $this, 'file_exists', 1 );
-    $mock->will( $this->returnValue( true ) );
+	public function test_config_returns_corrent_data() {
+		$mock = create_function_mock( $this, 'file_exists', 1 );
+		$mock->will( $this->returnValue( true ) );
 
-    $mock = create_function_mock( $this, 'file_get_contents', 1 );
-    $mock->will( $this->returnValue( 'key=1234' ) );
+		$mock = create_function_mock( $this, 'file_get_contents', 1 );
+		$mock->will( $this->returnValue( 'key=1234' ) );
 
-    $value = config( 'key', 'default' );
+		$value = config( 'key', 'default' );
 
-    $this->assertEquals( '1234', $value );
-  }
+		$this->assertEquals( '1234', $value );
+	}
 
-  public function test_config_returns_correct_default() {
-    $mock = create_function_mock( $this, 'file_exists', 1 );
-    $mock->will( $this->returnValue( true ) );
+	public function test_config_returns_correct_default() {
+		$mock = create_function_mock( $this, 'file_exists', 1 );
+		$mock->will( $this->returnValue( true ) );
 
-    $mock = create_function_mock( $this, 'file_get_contents', 1 );
-    $mock->will( $this->returnValue( 'key=1234' ) );
+		$mock = create_function_mock( $this, 'file_get_contents', 1 );
+		$mock->will( $this->returnValue( 'key=1234' ) );
 
-    $value = config( 'wrong_key', 'default' );
+		$value = config( 'wrong_key', 'default' );
 
-    $this->assertEquals( 'default', $value );
-  }
+		$this->assertEquals( 'default', $value );
+	}
 }
