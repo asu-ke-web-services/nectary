@@ -2,10 +2,12 @@
 
 namespace Nectary\Tests;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test the command utilities
  */
-class Command_Utilities_Test extends \PHPUnit_Framework_TestCase {
+class Command_Utilities_Test extends TestCase {
   function test_dispatch_calls_handle() {
     $command = $this->getMockBuilder( 'Nectary\Command' )
     ->setMethods( [ 'handle' ] )

@@ -3,11 +3,12 @@
 namespace Nectary\Tests;
 
 use Nectary\Models\Json_Feed;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @group model
  */
-class Json_Feed_Test extends \PHPUnit_Framework_TestCase {
+class Json_Feed_Test extends TestCase {
   function test_json_feed_parses_json() {
     $obj = $this->getMockBuilder( 'Object' )
     ->setMethods( [ 'get_curl_feed_data' ] )

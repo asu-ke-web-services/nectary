@@ -3,6 +3,7 @@
 namespace Nectary\Tests\Integration;
 
 use Nectary\Services\Twitter_Feed_Service;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the Twitter JSON Facade in the framework
@@ -11,7 +12,7 @@ use Nectary\Services\Twitter_Feed_Service;
  * @group service
  * @group integration
  */
-class Twitter_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
+class Twitter_Feed_Service_Test extends TestCase {
   /**
    * Random Twitter API keys pulled from the Internet
    */
@@ -25,12 +26,12 @@ class Twitter_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
 
     $json_feed = $facade->get_feed(
         array(
-          'query' => '@asugreen',
-          'limit' => '15',
-          'oauth_access_token'        => self::OAUTH_ACCESS_TOKEN,
-          'oauth_access_token_secret' => self::OAUTH_ACCESS_TOKEN_SECRET,
-          'consumer_key'              => self::CONSUMER_KEY,
-          'consumer_secret'           => self::CONSUMER_SECRET,
+            'query' => '@asugreen',
+            'limit' => '15',
+            'oauth_access_token'        => self::OAUTH_ACCESS_TOKEN,
+            'oauth_access_token_secret' => self::OAUTH_ACCESS_TOKEN_SECRET,
+            'consumer_key'              => self::CONSUMER_KEY,
+            'consumer_secret'           => self::CONSUMER_SECRET,
         )
     );
 
@@ -45,13 +46,13 @@ class Twitter_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
 
     $json_feed = $facade->get_feed(
         array(
-          'query' => 'asugreen',
-          'query_type' => 'screenname',
-          'limit' => '15',
-          'oauth_access_token'        => self::OAUTH_ACCESS_TOKEN,
-          'oauth_access_token_secret' => self::OAUTH_ACCESS_TOKEN_SECRET,
-          'consumer_key'              => self::CONSUMER_KEY,
-          'consumer_secret'           => self::CONSUMER_SECRET,
+            'query' => 'asugreen',
+            'query_type' => 'screenname',
+            'limit' => '15',
+            'oauth_access_token'        => self::OAUTH_ACCESS_TOKEN,
+            'oauth_access_token_secret' => self::OAUTH_ACCESS_TOKEN_SECRET,
+            'consumer_key'              => self::CONSUMER_KEY,
+            'consumer_secret'           => self::CONSUMER_SECRET,
         )
     );
 

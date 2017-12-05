@@ -3,13 +3,14 @@
 namespace Nectary\Tests;
 
 use Nectary\Utilities\Json_Utilities;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the json utilities in the framework
  *
  * @group utility
  */
-class Json_Utilities_Test extends \PHPUnit_Framework_TestCase {
+class Json_Utilities_Test extends TestCase {
   function test_will_provide_value() {
     $raw = "
       {

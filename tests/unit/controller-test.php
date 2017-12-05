@@ -3,13 +3,14 @@
 namespace Nectary\Tests;
 
 use Nectary\Controller;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the controller class in the framework
  *
  * @group controller
  */
-class Controller_Test extends \PHPUnit_Framework_TestCase {
+class Controller_Test extends TestCase {
   function test_exists() {
     $this->assertEquals( 'Nectary\Controller', Controller::class );
   }

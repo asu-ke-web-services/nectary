@@ -2,10 +2,12 @@
 
 namespace Nectary\Tests;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * @group utility
  */
-class String_Utilities_Test extends \PHPUnit_Framework_TestCase {
+class String_Utilities_Test extends TestCase {
   function test_starts_with_returns_true() {
     $needle = '@';
     $haystack = '@asugreen';

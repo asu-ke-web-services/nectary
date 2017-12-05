@@ -3,6 +3,7 @@
 namespace Nectary\Tests\Integration;
 
 use Nectary\Services\Json_Feed_Service;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the Generic JSON Service in the framework
@@ -10,20 +11,20 @@ use Nectary\Services\Json_Feed_Service;
  * @group service
  * @group integration
  */
-class Json_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
   function setUp() {
+class Json_Feed_Service_Test extends TestCase {
     $this->yahoo_weather = implode( '', [
-      'http://query.yahooapis.com/v1/public/yql',
-      '?q=select+%2A+from+weather.forecast+where+woeid+in+%28',
-      'select+woeid+from+geo.places%281%29+where+text%3D%22tempe%2C+az',
-      '%22%29&format=json'
+        'http://query.yahooapis.com/v1/public/yql',
+        '?q=select+%2A+from+weather.forecast+where+woeid+in+%28',
+        'select+woeid+from+geo.places%281%29+where+text%3D%22tempe%2C+az',
+        '%22%29&format=json'
     ]);
 
     $this->bad_url = implode( '', [
-      'invalid://yahooapis.com/v0/public/yql',
-      '?q=select+%2A+from+weather.forecast+where+woeid+in+%28',
-      'select+woeid+from+geo.places%281%29+where+text%3D%22tempe%2C+az',
-      '%22%29&format=json'
+        'invalid://yahooapis.com/v0/public/yql',
+        '?q=select+%2A+from+weather.forecast+where+woeid+in+%28',
+        'select+woeid+from+geo.places%281%29+where+text%3D%22tempe%2C+az',
+        '%22%29&format=json'
     ]);
   }
 
@@ -47,7 +48,7 @@ class Json_Feed_Service_Test extends \PHPUnit_Framework_TestCase {
     $this->assertTrue( array_key_exists( 'results', $items['query'] ) );
   }
 
-   /**
+  /**
    * @expectedException \Exception
    */
   function test_throws_error_when_invalid() {

@@ -3,13 +3,14 @@
 namespace Nectary\Tests;
 
 use Nectary\Daos\Select_SQL_Query_Builder;
+use PHPUnit\Framework\TestCase;
 
 /**
  * SQL Query Builder Test
  *
  * @group daos
  */
-class Sql_Query_Builder_Test extends \PHPUnit_Framework_TestCase {
+class Sql_Query_Builder_Test extends TestCase {
   public function test_constructor() {
     $builder = new Select_SQL_Query_Builder();
     $this->assertInstanceOf( 'Nectary\Daos\Select_SQL_Query_Builder', $builder );

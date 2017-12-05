@@ -2,10 +2,12 @@
 
 namespace Nectary\Tests;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * @group utility
  */
-class Date_Utilities_Test extends \PHPUnit_Framework_TestCase {
+class Date_Utilities_Test extends TestCase {
 
   protected function setUp() {
     // Our test cases assume a UTC timezone is defined

@@ -3,6 +3,7 @@
 namespace Nectary\Tests;
 
 use Nectary\Factories\Html_Carousel_Factory;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the html carouel factory
@@ -10,7 +11,7 @@ use Nectary\Factories\Html_Carousel_Factory;
  * @group html
  * @group factory
  */
-class Html_Carousel_Factory_Test extends \PHPUnit_Framework_TestCase {
+class Html_Carousel_Factory_Test extends TestCase {
   function test_basic_carousel() {
     $factory = new Html_Carousel_Factory();
 

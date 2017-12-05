@@ -4,12 +4,13 @@ namespace Nectary\Tests;
 
 use Nectary\Facades\Feed_Facade;
 use Nectary\Models\Json_Feed;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @group facade
  * @group feed
  */
-class Feed_Facade_Test extends \PHPUnit_Framework_TestCase {
+class Feed_Facade_Test extends TestCase {
   private $facade_mock;
 
   function setUp() {

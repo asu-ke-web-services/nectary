@@ -3,6 +3,7 @@
 namespace Nectary\Tests;
 
 use Nectary\Factories\Html_Factory;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the html factory
@@ -10,7 +11,7 @@ use Nectary\Factories\Html_Factory;
  * @group html
  * @group factory
  */
-class Html_Factory_Test extends \PHPUnit_Framework_TestCase {
+class Html_Factory_Test extends TestCase {
   function test_no_html() {
     $factory = new Html_Factory();
     $html = $factory->build();

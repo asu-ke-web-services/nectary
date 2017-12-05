@@ -4,6 +4,7 @@ namespace Nectary;
 
 use Nectary\Factories\View_Factory;
 use Nectary\Configuration;
+use PHPUnit\Framework\TestCase;
 
 /**
  * View Factory Test
@@ -11,12 +12,12 @@ use Nectary\Configuration;
  * @group view_factory
  * @group view
  */
-class View_Factory_Test extends \PHPUnit_Framework_TestCase {
+class View_Factory_Test extends TestCase {
   protected $view_factory;
 
   function setUp() {
     $this->view_factory = new View_Factory( 'na' );
-    // prevent any configuration changes going between tests 
+    // prevent any configuration changes going between tests
     Configuration::get_instance()->reset();
   }
 

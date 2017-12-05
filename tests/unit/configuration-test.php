@@ -3,6 +3,7 @@
 namespace Nectary;
 
 use Nectary\Configuration;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the configuration class in the framework
@@ -10,7 +11,7 @@ use Nectary\Configuration;
  * @group configuration
  * @group singleton
  */
-class Configuration_Test extends \PHPUnit_Framework_TestCase {
+class Configuration_Test extends TestCase {
   function setUp() {
     Configuration::reset();
   }
@@ -130,7 +131,7 @@ class Configuration_Test extends \PHPUnit_Framework_TestCase {
     Configuration::get_instance()->add( 'newkey', 'newvalue' );
     Configuration::get_instance()->add( 'newkey', 'anothervalue' );
     Configuration::get_instance()->add( 'newkey', 'andanother' );
-    $this->assertEquals( array( 'newvalue', 'anothervalue', 'andanother' ), 
+    $this->assertEquals( array( 'newvalue', 'anothervalue', 'andanother' ),
       Configuration::get_instance()->get( 'newkey' ) );
   }
 
