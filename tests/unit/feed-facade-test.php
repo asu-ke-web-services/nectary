@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 class Feed_Facade_Test extends TestCase {
   private $facade_mock;
 
-  function setUp() {
+  protected function setUp() {
     $this->url = 'http://test.url';
     $this->feed = new Json_Feed( '' );
 
@@ -22,7 +22,7 @@ class Feed_Facade_Test extends TestCase {
     ->getMockForAbstractClass();
   }
 
-  function test_get_feed_gets_feed_from_feed_service() {
+  public function test_get_feed_gets_feed_from_feed_service() {
     $this->facade_mock->expects( $this->once() )
     ->method( 'get_feed' )
     ->with( $this->url )
@@ -33,7 +33,7 @@ class Feed_Facade_Test extends TestCase {
     $this->assertEquals( $this->feed, $feed_facade->get_feed( $this->url ) );
   }
 
-  function test_merge_feeds_merges_feeds() {
+  public function test_merge_feeds_merges_feeds() {
     $this->facade_mock->expects( $this->once() )
     ->method( 'get_feed' )
     ->will( $this->returnValue( new Json_Feed( '' ) ) );
@@ -53,7 +53,7 @@ class Feed_Facade_Test extends TestCase {
     $this->assertCount( 6, $new_feed->get_items() );
   }
 
-  function test_unique_feed_returns_a_unique_feed() {
+  public function test_unique_feed_returns_a_unique_feed() {
     $this->facade_mock->expects( $this->once() )
     ->method( 'get_feed' )
     ->will( $this->returnValue( new Json_Feed( '' ) ) );

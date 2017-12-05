@@ -15,13 +15,13 @@ use PHPUnit\Framework\TestCase;
 class View_Factory_Test extends TestCase {
   protected $view_factory;
 
-  function setUp() {
+  protected function setUp() {
     $this->view_factory = new View_Factory( 'na' );
     // prevent any configuration changes going between tests
     Configuration::get_instance()->reset();
   }
 
-  function test_can_add_data_and_calls() {
+  public function test_can_add_data_and_calls() {
     $result = $this->view_factory->add_data(
         array(
           'test' => 'data'
@@ -31,7 +31,7 @@ class View_Factory_Test extends TestCase {
     $this->assertEquals( $this->view_factory, $result );
   }
 
-  function test_can_add_head_chain_calls() {
+  public function test_can_add_head_chain_calls() {
     $result = $this->view_factory->add_head(
         array(
           'test' => 'data'
@@ -41,7 +41,7 @@ class View_Factory_Test extends TestCase {
     $this->assertEquals( $this->view_factory, $result );
   }
 
-  function test_build_uses_given_configuration() {
+  public function test_build_uses_given_configuration() {
     Configuration::get_instance()->set( 'path_to_views', 'test_path' );
 
     $mock = create_function_mock( $this, 'glob', 1 );
@@ -51,7 +51,7 @@ class View_Factory_Test extends TestCase {
     $this->view_factory->build();
   }
 
-  function test_build_uses_overridden_path_configuration() {
+  public function test_build_uses_overridden_path_configuration() {
     Configuration::get_instance()->set( 'path_to_views', 'global_path' );
     $this->view_factory = new View_Factory( 'view.na' , 'overridden_path');
 
@@ -62,7 +62,7 @@ class View_Factory_Test extends TestCase {
     $this->view_factory->build();
   }
 
-  function test_build_uses_dot_notation_for_paths() {
+  public function test_build_uses_dot_notation_for_paths() {
     Configuration::get_instance()->set( 'path_to_views', 'test_path' );
 
     $mock = create_function_mock( $this, 'glob', 2 );
@@ -81,7 +81,7 @@ class View_Factory_Test extends TestCase {
     $view_factory->build();
   }
 
-  function test_build_uses_multiple_paths_given_configuration() {
+  public function test_build_uses_multiple_paths_given_configuration() {
     Configuration::get_instance()->add( 'path_to_views', 'test_path1' );
     Configuration::get_instance()->add( 'path_to_views', 'test_path2' );
 

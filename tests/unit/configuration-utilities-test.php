@@ -11,11 +11,11 @@ use PHPUnit\Framework\TestCase;
  * @group configuration
  */
 class Configuration_Utilities_Test extends TestCase {
-  function setUp() {
+  protected function setUp() {
     Configuration::reset();
   }
 
-  function test_config_returns_corrent_data() {
+  public function test_config_returns_corrent_data() {
     $mock = create_function_mock( $this, 'file_exists', 1 );
     $mock->will( $this->returnValue( true ) );
 
@@ -27,7 +27,7 @@ class Configuration_Utilities_Test extends TestCase {
     $this->assertEquals( '1234', $value );
   }
 
-  function test_config_returns_correct_default() {
+  public function test_config_returns_correct_default() {
     $mock = create_function_mock( $this, 'file_exists', 1 );
     $mock->will( $this->returnValue( true ) );
 

@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  * @group factory
  */
 class Factory_Test extends TestCase {
-  function test_exists() {
+  public function test_exists() {
     $this->assertEquals( 'Nectary\Factory', Factory::class );
   }
 }

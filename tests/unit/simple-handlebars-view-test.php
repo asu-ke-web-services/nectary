@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  * @group view
  */
 class Simple_Handlebars_View_Test extends TestCase {
-  function test_will_render_handlebars() {
+  public function test_will_render_handlebars() {
     $template = '{{test}}';
     $view = new Simple_Handlebars_View(
         false,
@@ -31,7 +31,7 @@ class Simple_Handlebars_View_Test extends TestCase {
     $this->assertEquals( 'sustainability', $output );
   }
 
-  function test_will_render_conditionals_correctly() {
+  public function test_will_render_conditionals_correctly() {
     $template = "
     {{#if_cond value '==' 2}}
       1
@@ -84,7 +84,7 @@ class Simple_Handlebars_View_Test extends TestCase {
     $this->assertContains( '8', $output );
   }
 
-  function test_will_not_render_false_conditionals() {
+  public function test_will_not_render_false_conditionals() {
     $template = "{{#if_cond value '==' 2}}{{test}}{{/if_cond}}";
 
     $view = new Simple_Handlebars_View(
@@ -106,7 +106,7 @@ class Simple_Handlebars_View_Test extends TestCase {
     $this->assertEquals( '', $output );
   }
 
-  function test_will_return_html_special_characters() {
+  public function test_will_return_html_special_characters() {
     $template = "{{#html_special_chars test}}";
 
     $view = new Simple_Handlebars_View(
@@ -127,7 +127,7 @@ class Simple_Handlebars_View_Test extends TestCase {
     $this->assertEquals( '&lt;&gt;', $output );
   }
 
-   function test_html_special_chars_will_silently_fail() {
+   public function test_html_special_chars_will_silently_fail() {
     $template = "{{#html_special_chars test}}";
 
     $view = new Simple_Handlebars_View(
@@ -147,7 +147,7 @@ class Simple_Handlebars_View_Test extends TestCase {
     $this->assertEquals( '', $output );
   }
 
-  function test_will_strip_tags() {
+  public function test_will_strip_tags() {
     $template = "{{#strip_tags test}}";
 
     $view = new Simple_Handlebars_View(
@@ -168,7 +168,7 @@ class Simple_Handlebars_View_Test extends TestCase {
     $this->assertEquals( 'Test', $output );
   }
 
-  function test_strip_tags_will_silently_fail() {
+  public function test_strip_tags_will_silently_fail() {
     $template = "{{#strip_tags test}}";
 
     $view = new Simple_Handlebars_View(
@@ -188,7 +188,7 @@ class Simple_Handlebars_View_Test extends TestCase {
     $this->assertEquals( '', $output );
   }
 
-  function test_config_will_return_configuration_value() {
+  public function test_config_will_return_configuration_value() {
     $template = "{{#config myKey}}";
 
     Configuration::get_instance()->set( 'myKey', 'myValue' );
@@ -210,7 +210,7 @@ class Simple_Handlebars_View_Test extends TestCase {
     $this->assertEquals( 'myValue', $output );
   }
 
-  function test_config_will_return_default() {
+  public function test_config_will_return_default() {
     $template = "{{#config myKeyInvalid myDefault}}";
 
     $view = new Simple_Handlebars_View(

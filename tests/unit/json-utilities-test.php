@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  * @group utility
  */
 class Json_Utilities_Test extends TestCase {
-  function test_will_provide_value() {
+  public function test_will_provide_value() {
     $raw = "
       {
         \"key\" : \"value\"
@@ -25,7 +25,7 @@ class Json_Utilities_Test extends TestCase {
     $this->assertEquals( 'value', $value );
   }
 
-  function test_will_walk_along_json() {
+  public function test_will_walk_along_json() {
     $raw = "
       {
         \"key1\" : {
@@ -42,7 +42,7 @@ class Json_Utilities_Test extends TestCase {
     $this->assertEquals( 'value', $value );
   }
 
-  function test_will_return_null_on_fail() {
+  public function test_will_return_null_on_fail() {
     $raw = "
       {
         \"key1\" : {
@@ -59,7 +59,7 @@ class Json_Utilities_Test extends TestCase {
     $this->assertEquals( null, $value );
   }
 
-  function test_will_return_null_value() {
+  public function test_will_return_null_value() {
     $raw = "
       {
         \"key1\" : {
@@ -76,7 +76,7 @@ class Json_Utilities_Test extends TestCase {
     $this->assertEquals( null, $value );
   }
 
-  function test_will_return_null_value_given_a_default() {
+  public function test_will_return_null_value_given_a_default() {
     $raw = "
       {
         \"key1\" : {
@@ -93,7 +93,7 @@ class Json_Utilities_Test extends TestCase {
     $this->assertEquals( null, $value );
   }
 
-  function test_will_return_real_value_when_providing_a_default() {
+  public function test_will_return_real_value_when_providing_a_default() {
     $raw = "
       {
         \"key1\" : {
@@ -110,7 +110,7 @@ class Json_Utilities_Test extends TestCase {
     $this->assertEquals( 'value', $value );
   }
 
-  function test_will_provide_default_when_key_does_not_exist() {
+  public function test_will_provide_default_when_key_does_not_exist() {
     $raw = "
       {
         \"key1\" : {
@@ -127,7 +127,7 @@ class Json_Utilities_Test extends TestCase {
     $this->assertEquals( '???', $value );
   }
 
-  function test_will_access_arrays() {
+  public function test_will_access_arrays() {
     $raw = "
       {
         \"key1\" : {
@@ -147,7 +147,7 @@ class Json_Utilities_Test extends TestCase {
     $this->assertEquals( 'value2', $value );
   }
 
-  function test_will_return_null_when_accessing_non_existant_array_index() {
+  public function test_will_return_null_when_accessing_non_existant_array_index() {
     $raw = "
       {
         \"key1\" : {
@@ -167,7 +167,7 @@ class Json_Utilities_Test extends TestCase {
     $this->assertEquals( null, $value );
   }
 
-  function test_will_return_array() {
+  public function test_will_return_array() {
     $raw = "
       {
         \"key1\" : {

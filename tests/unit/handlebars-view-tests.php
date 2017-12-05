@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  * @group view
  */
 class Handlebars_View_Test extends TestCase {
-  function test_exists() {
+  public function test_exists() {
     $this->assertEquals( 'Nectary\Views\Handlebars_View', Views\Handlebars_View::class );
   }
 }

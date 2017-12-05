@@ -12,11 +12,11 @@ use PHPUnit\Framework\TestCase;
  * @group decorator
  */
 class Decoratable_Test extends TestCase {
-  function test_exists() {
+  public function test_exists() {
     $this->assertEquals( 'Nectary\Decoratable', Decoratable::class );
   }
 
-  function test_decoratable_classes_can_be_decorated() {
+  public function test_decoratable_classes_can_be_decorated() {
     $base = new Decoratable_Test_Object();
     $decorated = $base->decorate();
 

@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
  * @group model
  */
 class Response_Test extends TestCase {
-  function __construct() {
+  public function __construct() {
 
     parent::__construct( 'View Model Test' );
   }
@@ -19,13 +19,13 @@ class Response_Test extends TestCase {
     parent::tearDown();
   }
 
-  function test_constructor() {
+  public function test_constructor() {
 
     $response = new Response();
     $this->assertInstanceOf( Response::class, $response );
   }
 
-  function test_attributes() {
+  public function test_attributes() {
 
     $response = new Response(
         array(
@@ -42,7 +42,7 @@ class Response_Test extends TestCase {
     $this->assertEquals( $response->footer,      'footer' );
   }
 
-  function test_404() {
+  public function test_404() {
 
     $four_oh_four = Response::$error_404;
     $this->assertEquals( array( 'HTTP/1.0 404 Not Found - Archive Empty' ), $four_oh_four->http_header );

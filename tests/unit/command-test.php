@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
  * @group command
  */
 class Command_Test extends TestCase {
-  function test_dispatchable() {
+  public function test_dispatchable() {
     $command = $this->getMockBuilder( 'Nectary\Command' )
     ->setMethods( [ 'handle' ] )
     ->getMockForAbstractClass();

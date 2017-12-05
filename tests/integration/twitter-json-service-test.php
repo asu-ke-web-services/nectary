@@ -21,7 +21,7 @@ class Twitter_Feed_Service_Test extends TestCase {
   const OAUTH_ACCESS_TOKEN        = '3232926711-kvMvNK5mFJlUFzCdtw3ryuwZfhIbLJtPX9e8E3Y';
   const OAUTH_ACCESS_TOKEN_SECRET = 'EYrFp0lfNajBslYV3WgAGmpHqYZvvNxP5uxxSq8Dbs1wa';
 
-  function test_returns_tweets() {
+  public function test_returns_tweets() {
     $facade = new Twitter_Feed_Service();
 
     $json_feed = $facade->get_feed(
@@ -41,7 +41,7 @@ class Twitter_Feed_Service_Test extends TestCase {
     $this->assertCount( 15, $items['statuses'] );
   }
 
-  function test_returns_user_tweets() {
+  public function test_returns_user_tweets() {
     $facade = new Twitter_Feed_Service();
 
     $json_feed = $facade->get_feed(

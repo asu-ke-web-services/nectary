@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
  * @group factory
  */
 class Html_Carousel_Factory_Test extends TestCase {
-  function test_basic_carousel() {
+  public function test_basic_carousel() {
     $factory = new Html_Carousel_Factory();
 
     $html = $factory->build();
@@ -23,7 +23,7 @@ class Html_Carousel_Factory_Test extends TestCase {
     $this->assertContains( 'carousel-inner', $html );
   }
 
-  function test_carousel_markup_strict() {
+  public function test_carousel_markup_strict() {
     $factory = new Html_Carousel_Factory();
 
     $html = $factory->build();
@@ -36,7 +36,7 @@ class Html_Carousel_Factory_Test extends TestCase {
     $this->assertContains( '</div>', $html );
   }
 
-  function test_carousel_has_custom_classes() {
+  public function test_carousel_has_custom_classes() {
     $factory = new Html_Carousel_Factory();
     $factory->add_class( 'wow' );
     $factory->add_class( 'gios' );
@@ -48,7 +48,7 @@ class Html_Carousel_Factory_Test extends TestCase {
     $this->assertNotContains( 'gioswow', $html );
   }
 
-  function test_carousel_has_custom_inner_classes() {
+  public function test_carousel_has_custom_inner_classes() {
     $factory = new Html_Carousel_Factory();
     $factory->add_inner_class( 'wow' );
     $factory->add_inner_class( 'gios' );
@@ -60,7 +60,7 @@ class Html_Carousel_Factory_Test extends TestCase {
     $this->assertNotContains( 'gioswow', $html );
   }
 
-  function test_carousel_has_custom_data_attributes() {
+  public function test_carousel_has_custom_data_attributes() {
     $factory = new Html_Carousel_Factory();
     $factory->add_data_attributes( 'wow' );
     $factory->add_data_attributes( 'gios' );
@@ -72,7 +72,7 @@ class Html_Carousel_Factory_Test extends TestCase {
     $this->assertNotContains( 'gioswow', $html );
   }
 
-  function test_carousel_can_have_indicators() {
+  public function test_carousel_can_have_indicators() {
     $factory = new Html_Carousel_Factory();
     $factory->turn_on_indicators();
     $html = $factory->build();
@@ -80,7 +80,7 @@ class Html_Carousel_Factory_Test extends TestCase {
     $this->assertContains( "<ol class='carousel-indicators'>", $html );
   }
 
-  function test_carousel_can_have_slides() {
+  public function test_carousel_can_have_slides() {
     $factory = new Html_Carousel_Factory();
     $factory->add_slide( '<span>wow</span>' );
     $html = $factory->build();
@@ -88,7 +88,7 @@ class Html_Carousel_Factory_Test extends TestCase {
     $this->assertContains( '<span>wow</span>', $html );
   }
 
-  function test_carousel_can_have_slides_and_indicators() {
+  public function test_carousel_can_have_slides_and_indicators() {
     $factory = new Html_Carousel_Factory();
     $factory->turn_on_indicators();
     $factory->add_slide( '<span>wow</span>' );

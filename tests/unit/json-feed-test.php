@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
  * @group model
  */
 class Json_Feed_Test extends TestCase {
-  function test_json_feed_parses_json() {
+  public function test_json_feed_parses_json() {
     $obj = $this->getMockBuilder( 'Object' )
     ->setMethods( [ 'get_curl_feed_data' ] )
     ->getMock();
@@ -29,15 +29,15 @@ class Json_Feed_Test extends TestCase {
     $this->assertEquals( [ 'key' => 'value' ], $items );
   }
 
-  function test_json_feed_can_sort_by_date() {
+  public function test_json_feed_can_sort_by_date() {
     // TODO
   }
 
-  function test_json_feed_can_set_items() {
+  public function test_json_feed_can_set_items() {
     // TODO
   }
 
-  function test_json_feed_can_get_unique_items() {
+  public function test_json_feed_can_get_unique_items() {
     // TODO
   }
 }

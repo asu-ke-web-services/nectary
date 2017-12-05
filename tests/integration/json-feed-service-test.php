@@ -11,8 +11,8 @@ use PHPUnit\Framework\TestCase;
  * @group service
  * @group integration
  */
-  function setUp() {
 class Json_Feed_Service_Test extends TestCase {
+  protected function setUp() {
     $this->yahoo_weather = implode( '', [
         'http://query.yahooapis.com/v1/public/yql',
         '?q=select+%2A+from+weather.forecast+where+woeid+in+%28',
@@ -28,7 +28,7 @@ class Json_Feed_Service_Test extends TestCase {
     ]);
   }
 
-  function test_returns_json_feed() {
+  public function test_returns_json_feed() {
     $service = new Json_Feed_Service();
 
     $json_feed = $service->get_feed( $this->yahoo_weather );
@@ -36,7 +36,7 @@ class Json_Feed_Service_Test extends TestCase {
     $this->assertInstanceOf( 'Nectary\Models\Json_Feed', $json_feed );
   }
 
-  function test_returns_json_data() {
+  public function test_returns_json_data() {
     $service = new Json_Feed_Service();
 
     $json_feed = $service->get_feed( $this->yahoo_weather );
@@ -51,7 +51,7 @@ class Json_Feed_Service_Test extends TestCase {
   /**
    * @expectedException \Exception
    */
-  function test_throws_error_when_invalid() {
+  public function test_throws_error_when_invalid() {
 
     $service = new Json_Feed_Service();
     $json_feed = $service->get_feed( $this->bad_url );

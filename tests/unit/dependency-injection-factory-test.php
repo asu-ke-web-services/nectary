@@ -14,11 +14,11 @@ use PHPUnit\Framework\TestCase;
  * @group dependency-injection-factory
  */
 class Dependency_Injection_Factory_Test extends TestCase {
-  function test_exists() {
+  public function test_exists() {
     $this->assertEquals( 'Nectary\Factories\Dependency_Injection_Factory', Dependency_Injection_Factory::class );
   }
 
-  function test_can_construct_class() {
+  public function test_can_construct_class() {
     $factory = new Dependency_Injection_Factory(
         Dif_Test_Object::class,
         '__construct',
@@ -32,7 +32,7 @@ class Dependency_Injection_Factory_Test extends TestCase {
     $this->assertEquals( 'wow', $speak );
   }
 
-  function test_can_construct_nested_dependencies() {
+  public function test_can_construct_nested_dependencies() {
     $factory = new Dependency_Injection_Factory(
         Dif_Nested_Test_Object::class,
         '__construct',
@@ -46,19 +46,19 @@ class Dependency_Injection_Factory_Test extends TestCase {
     $this->assertEquals( 'wow!', $speak );
   }
 
-  function test_can_pass_variables_to_class() {
+  public function test_can_pass_variables_to_class() {
     // TODO
   }
 
-  function test_can_construct_singleton() {
+  public function test_can_construct_singleton() {
     // TODO
   }
 
-  function test_will_return_validators_for_requests() {
+  public function test_will_return_validators_for_requests() {
     // TODO
   }
 
-  function test_will_return_null_for_abstract_class_dependencies() {
+  public function test_will_return_null_for_abstract_class_dependencies() {
     $factory = new Dependency_Injection_Factory(
         Dif_Has_Abstract_Dependency_Test_Object::class,
         '__construct',

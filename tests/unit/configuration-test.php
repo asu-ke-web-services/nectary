@@ -12,18 +12,18 @@ use PHPUnit\Framework\TestCase;
  * @group singleton
  */
 class Configuration_Test extends TestCase {
-  function setUp() {
+  protected function setUp() {
     Configuration::reset();
   }
 
-  function test_is_singleton_instance() {
+  public function test_is_singleton_instance() {
     $instance_1 = Configuration::get_instance();
     $instance_2 = Configuration::get_instance();
 
     $this->assertEquals( $instance_1, $instance_2 );
   }
 
-  function test_loads_in_data_from_file() {
+  public function test_loads_in_data_from_file() {
     $mock = create_function_mock( $this, 'file_exists', 1 );
     $mock->will( $this->returnValue( true ) );
 
@@ -37,7 +37,7 @@ class Configuration_Test extends TestCase {
     $this->assertEquals( 'My Special Value', $value );
   }
 
-  function test_returns_default_value() {
+  public function test_returns_default_value() {
     $mock = create_function_mock( $this, 'file_exists', 1 );
     $mock->will( $this->returnValue( true ) );
 
@@ -51,7 +51,7 @@ class Configuration_Test extends TestCase {
     $this->assertEquals( 'default', $value );
   }
 
-  function test_set_configuration_path_overrides_attributes() {
+  public function test_set_configuration_path_overrides_attributes() {
     $mock = create_function_mock( $this, 'file_exists', 2 );
     $mock->will( $this->onConsecutiveCalls( false, true ) );
 
@@ -68,7 +68,7 @@ class Configuration_Test extends TestCase {
     $this->assertEquals( 'bang', $value );
   }
 
-  function test_empty_values_are_valid() {
+  public function test_empty_values_are_valid() {
     $mock = create_function_mock( $this, 'file_exists', 1 );
     $mock->will( $this->returnValue( true ) );
 
@@ -82,7 +82,7 @@ class Configuration_Test extends TestCase {
     $this->assertEquals( '', $value );
   }
 
-  function test_throws_exception_when_loading_invalid_configuration() {
+  public function test_throws_exception_when_loading_invalid_configuration() {
     $this->setExpectedException( 'Nectary\Exceptions\Invalid_Configuration_Exception' );
 
     $mock = create_function_mock( $this, 'file_exists', 1 );
@@ -102,7 +102,7 @@ class Configuration_Test extends TestCase {
     $this->assertTrue( $thrown, 'Exception should be thrown' );
   }
 
-  function test_multiline_configuration() {
+  public function test_multiline_configuration() {
     $mock = create_function_mock( $this, 'file_exists', 1 );
     $mock->will( $this->returnValue( true ) );
 
@@ -117,17 +117,17 @@ class Configuration_Test extends TestCase {
     $this->assertEquals( '1234', $value );
   }
 
-  function test_configuration_can_set_value() {
+  public function test_configuration_can_set_value() {
     Configuration::get_instance()->set( 'newkey', 'newvalue' );
     $this->assertEquals( 'newvalue', Configuration::get_instance()->get( 'newkey' ) );
   }
 
-  function test_configuration_can_add_single_value() {
+  public function test_configuration_can_add_single_value() {
     Configuration::get_instance()->add( 'newkey', 'newvalue' );
     $this->assertEquals( 'newvalue', Configuration::get_instance()->get( 'newkey' ) );
   }
 
-  function test_configuration_can_add_multiple_values() {
+  public function test_configuration_can_add_multiple_values() {
     Configuration::get_instance()->add( 'newkey', 'newvalue' );
     Configuration::get_instance()->add( 'newkey', 'anothervalue' );
     Configuration::get_instance()->add( 'newkey', 'andanother' );

@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
  * @group request
  */
 class Fail_Fast_Request_Test extends TestCase {
-  function test_error_callback_is_not_called_when_validation_passes() {
+  public function test_error_callback_is_not_called_when_validation_passes() {
     $request = $this->getMockForAbstractClass( Fail_Fast_Request::class );
     $request->expects( $this->once() )
     ->method( 'validation_rules' )
@@ -27,7 +27,7 @@ class Fail_Fast_Request_Test extends TestCase {
     $request->validate( array( $mock_function, 'no_call_function' ) );
   }
 
-  function test_error_callback_is_called_with_failures() {
+  public function test_error_callback_is_called_with_failures() {
     $request = $this->getMockForAbstractClass( Fail_Fast_Request::class );
     $request->expects( $this->once() )
     ->method( 'validation_rules' )
@@ -47,7 +47,7 @@ class Fail_Fast_Request_Test extends TestCase {
     $this->assertEquals( 'my failure object', $result );
   }
 
-  function test_error_callback_is_called_with_many_failures() {
+  public function test_error_callback_is_called_with_many_failures() {
     $request = $this->getMockForAbstractClass( Fail_Fast_Request::class );
     $request->expects( $this->once() )
     ->method( 'validation_rules' )

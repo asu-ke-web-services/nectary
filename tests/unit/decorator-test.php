@@ -12,11 +12,11 @@ use PHPUnit\Framework\TestCase;
  * @group decorator
  */
 class Decorator_Test extends TestCase {
-  function test_exists() {
+  public function test_exists() {
     $this->assertEquals( 'Nectary\Decorator', Decorator::class );
   }
 
-  function test_decorator_provides_access_to_base_class() {
+  public function test_decorator_provides_access_to_base_class() {
     $decoratable = new Decoratable_Test_Object();
 
     $decorated = $decoratable->decorate();
@@ -24,7 +24,7 @@ class Decorator_Test extends TestCase {
     $this->assertEquals( 'first_name', $decorated->first_name );
   }
 
-  function test_decorator_provides_functional_shortcut() {
+  public function test_decorator_provides_functional_shortcut() {
     $decoratable = new Decoratable_Test_Object();
 
     $decorated = $decoratable->decorate();
@@ -32,7 +32,7 @@ class Decorator_Test extends TestCase {
     $this->assertEquals( 'full_name', $decorated->name );
   }
 
-  function test_decorator_provides_isset_functionality() {
+  public function test_decorator_provides_isset_functionality() {
     $decoratable = new Decoratable_Test_Object();
 
     $decorated = $decoratable->decorate();

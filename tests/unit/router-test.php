@@ -11,11 +11,11 @@ use PHPUnit\Framework\TestCase;
  * @group router
  */
 class Router_Test extends TestCase {
-  function test_exists() {
+  public function test_exists() {
     $this->assertEquals( 'Nectary\Router', Router::class );
   }
 
-  function test_routes_data_to_function() {
+  public function test_routes_data_to_function() {
     $router = $this->getMockBuilder( 'Nectary\Router' )
     ->getMockForAbstractClass();
 
@@ -37,7 +37,7 @@ class Router_Test extends TestCase {
     $router->get_view( 1, 2, 3 );
   }
 
-  function test_invalid_route_returns_empty() {
+  public function test_invalid_route_returns_empty() {
     $router = $this->getMockBuilder( 'Nectary\Router' )
     ->getMockForAbstractClass();
 
@@ -60,7 +60,7 @@ class Router_Test extends TestCase {
     $this->assertEmpty( $value );
   }
 
-  function test_routes_not_set_returns_empty() {
+  public function test_routes_not_set_returns_empty() {
     $router = $this->getMockBuilder( 'Nectary\Router' )
     ->getMockForAbstractClass();
 
@@ -80,7 +80,7 @@ class Router_Test extends TestCase {
    * Special case of test_named_arguments_are_mapped where
    * one of the named arguments is itself an array.
    */
-  function test_route_with_array_parameter() {
+  public function test_route_with_array_parameter() {
     // Test function( $a, $b, $options ){}
     // $a String
     // $b String
@@ -89,11 +89,11 @@ class Router_Test extends TestCase {
     // TODO
   }
 
-  function test_builds_dependencies() {
+  public function test_builds_dependencies() {
     // TODO
   }
 
-  function test_route_can_fail_with_invalid_request() {
+  public function test_route_can_fail_with_invalid_request() {
     // TODO
   }
 }

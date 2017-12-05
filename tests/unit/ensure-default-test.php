@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
  * Test the ensure default method
  */
 class Ensure_Default_Test extends TestCase {
-  function test_ensure_default_provides_default() {
+  public function test_ensure_default_provides_default() {
     $data = array();
 
     \ensure_default( $data, 'key', 'value' );
@@ -16,7 +16,7 @@ class Ensure_Default_Test extends TestCase {
     $this->assertEquals( 'value', $data['key'] );
   }
 
-  function test_ensure_default_provides_value() {
+  public function test_ensure_default_provides_value() {
     $data = array( 'key' => '???');
 
     \ensure_default( $data, 'key', 'value' );
