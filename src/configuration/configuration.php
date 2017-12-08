@@ -64,11 +64,12 @@ class Configuration extends Singleton {
 		$configuration    = [];
 
 		if ( file_exists( $path ) ) {
-			$configuration = ( new \josegonzalez\Dotenv\Loader( $path ) )->parse()->toArray();
-		}
+			try {
+				$configuration = ( new \josegonzalez\Dotenv\Loader( $path ) )->parse()->toArray();
+			} catch ( \M1\Env\Exception\ParseException $exception ) {
+				throw new Invalid_Configuration_Exception( 'The provided configuration is invalid' );
+			}
 
-		if ( ! is_array( $configuration ) ) {
-			throw new Invalid_Configuration_Exception( 'The provided configuration is invalid' );
 		}
 
 		if ( ! empty( $configuration ) ) {
