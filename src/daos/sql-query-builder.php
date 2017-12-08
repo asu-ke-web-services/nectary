@@ -146,7 +146,7 @@ class Select_SQL_Query_Builder {
 	 */
 	public function bind_value( $name, $value, $data_type = false ) {
 		$this->values_to_bind[ $name ] = array(
-			'value' => $value,
+			'value'     => $value,
 			'data_type' => $data_type,
 		);
 	}
@@ -162,10 +162,10 @@ class Select_SQL_Query_Builder {
 			$this->columns_to_select = [ '*' ];
 		}
 
-		$from   = ' FROM ' . implode( ', ', $this->from ) . ' ';
+		$from = ' FROM ' . implode( ', ', $this->from ) . ' ';
 
 		if ( ! empty( $this->joins ) ) {
-			$from  .= $this->joins;
+			$from .= $this->joins;
 		}
 
 		$from  .= 'WHERE ' . $this->where_clause;

@@ -31,7 +31,7 @@ class Feed_Facade {
 		$merged_feed = [];
 
 		foreach ( $feeds as $feed ) {
-			$items = $feed->get_items();
+			$items       = $feed->get_items();
 			$merged_feed = array_merge( $merged_feed, $items );
 		}
 

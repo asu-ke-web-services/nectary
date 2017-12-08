@@ -22,8 +22,8 @@ class Excerpt_Service {
 		} else {
 			// We have some trimming to do
 			$content = implode(
-					' ',
-					array_slice( explode( ' ', $content ), 0, $words )
+				' ',
+				array_slice( explode( ' ', $content ), 0, $words )
 			);
 
 			$length = strlen( $content );

@@ -13,7 +13,7 @@ abstract class Singleton {
 	public static function get_instance() {
 		$cls = get_called_class(); // late-static-bound class name
 		if ( ! isset( self::$instances[ $cls ] ) ) {
-			self::$instances[ $cls ] = new static;
+			self::$instances[ $cls ] = new static();
 		}
 
 		return self::$instances[ $cls ];

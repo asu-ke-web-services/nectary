@@ -35,8 +35,8 @@ class Response extends Data_Model {
 }
 
 Response::$error_404 = new Response(
-		array(
-			'http_header' => array( 'HTTP/1.0 404 Not Found - Archive Empty' ),
-			'content' => 'Not Found',
-		)
+	array(
+		'http_header' => array( 'HTTP/1.0 404 Not Found - Archive Empty' ),
+		'content'     => 'Not Found',
+	)
 );

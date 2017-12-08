@@ -16,7 +16,7 @@ class Rss_Feed implements Feed {
 	private $feed_callback;
 
 	public function __construct( $url = '', $feed_callback = null ) {
-		$this->url = $url;
+		$this->url           = $url;
 		$this->feed_callback = $feed_callback;
 	}
 
@@ -39,13 +39,13 @@ class Rss_Feed implements Feed {
 				$b_start_date = strtotime( $b->get_date() );
 
 				if ( $a_start_date == $b_start_date ) {
-					return 0;
+				return 0;
 				}
 
 				if ( $order === 'asc' ) {
-					return ( $a_start_date > $b_start_date ) ? 1 : -1;
+				return ( $a_start_date > $b_start_date ) ? 1 : -1;
 				} else {
-					return ( $a_start_date < $b_start_date ) ? 1 : -1;
+				return ( $a_start_date < $b_start_date ) ? 1 : -1;
 				}
 		} );
 	}

@@ -149,7 +149,7 @@ if ( ! function_exists( 'xssafe' ) ) {
 	 * @see https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#XSS_Cheat_Sheet
 	 */
 	function xssafe( $data, $encoding = 'UTF-8' ) {
-		return htmlspecialchars( $data,ENT_QUOTES | ENT_HTML401, $encoding );
+		return htmlspecialchars( $data, ENT_QUOTES | ENT_HTML401, $encoding );
 	}
 }
 

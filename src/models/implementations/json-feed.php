@@ -16,7 +16,7 @@ class Json_Feed implements Feed {
 	private $feed_callback;
 
 	public function __construct( $url, $feed_callback = null ) {
-		$this->url = $url;
+		$this->url           = $url;
 		$this->feed_callback = $feed_callback;
 	}
 
@@ -90,9 +90,9 @@ class Json_Feed implements Feed {
 	}
 
 	private function get_error( $json ) {
-		$has_error = array_key_exists( 'errors' , $json )
-		&& array_key_exists( 0 , $json['errors'] )
-		&& array_key_exists( 'message' , $json['errors'][0] );
+		$has_error = array_key_exists( 'errors', $json )
+		&& array_key_exists( 0, $json['errors'] )
+		&& array_key_exists( 'message', $json['errors'][0] );
 
 		if ( $has_error ) {
 			return $json['errors'][0]['message'];

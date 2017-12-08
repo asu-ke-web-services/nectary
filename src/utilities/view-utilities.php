@@ -36,7 +36,7 @@ if ( ! function_exists( 'present' ) ) {
 			foreach ( $any as $part ) {
 				$presented[] = present( $part, $options );
 			}
-		} else if ( $any instanceof \Nectary\Models\Presentable_Model ) {
+		} elseif ( $any instanceof \Nectary\Models\Presentable_Model ) {
 			$presented = $any->present( $options );
 		} else {
 			$presented = $any;

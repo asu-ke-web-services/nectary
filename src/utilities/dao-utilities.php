@@ -13,17 +13,28 @@ if ( ! function_exists( 'sanitize_order_by' ) ) {
 	 * - `blah.id ASC, table2.id DESC`
 	 */
 	function sanitize_order_by( $string ) {
-		if ( strtolower( trim( rtrim( $string ) ) ) === 'rand()' ) { return 'RAND()'; }
-		if ( strripos( $string,  ';' ) !== false ) { return ''; }
-		if ( strripos( $string, '\'' ) !== false ) { return ''; }
-		if ( strripos( $string, '\"' ) !== false ) { return ''; }
-		if ( strripos( $string, '\\' ) !== false ) { return ''; }
-		if ( strripos( $string,  '&' ) !== false ) { return ''; }
-		if ( strripos( $string,  '^' ) !== false ) { return ''; }
-		if ( strripos( $string,  '<' ) !== false ) { return ''; }
-		if ( strripos( $string,  '>' ) !== false ) { return ''; }
-		if ( strripos( $string,  '(' ) !== false ) { return ''; }
-		if ( strripos( $string,  ')' ) !== false ) { return ''; }
+		if ( strtolower( trim( rtrim( $string ) ) ) === 'rand()' ) {
+			return 'RAND()'; }
+		if ( strripos( $string, ';' ) !== false ) {
+			return ''; }
+		if ( strripos( $string, '\'' ) !== false ) {
+			return ''; }
+		if ( strripos( $string, '\"' ) !== false ) {
+			return ''; }
+		if ( strripos( $string, '\\' ) !== false ) {
+			return ''; }
+		if ( strripos( $string, '&' ) !== false ) {
+			return ''; }
+		if ( strripos( $string, '^' ) !== false ) {
+			return ''; }
+		if ( strripos( $string, '<' ) !== false ) {
+			return ''; }
+		if ( strripos( $string, '>' ) !== false ) {
+			return ''; }
+		if ( strripos( $string, '(' ) !== false ) {
+			return ''; }
+		if ( strripos( $string, ')' ) !== false ) {
+			return ''; }
 		return $string;
 	}
 }

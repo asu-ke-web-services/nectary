@@ -28,7 +28,7 @@ class Html_Factory extends Factory {
 		ensure_default( $options, 'class', '' );
 
 		$classes = $options['class'];
-		$level = $options['level'];
+		$level   = $options['level'];
 
 		return "<h{$level} class='{$classes}'>{$inner_html}</h{$level}>";
 	}
@@ -42,7 +42,7 @@ class Html_Factory extends Factory {
 		ensure_default( $options, 'class', '' );
 
 		$classes = $options['class'];
-		$href = $options['href'];
+		$href    = $options['href'];
 
 		return "<a class='{$classes}' href='{$href}'>{$inner_html}</a>";
 	}
@@ -68,8 +68,8 @@ class Html_Factory extends Factory {
 
 		$classes = $options['class'];
 		$excerpt = ( new Excerpt_Service() )->excerpt(
-				$inner_html,
-				$options['character_limit']
+			$inner_html,
+			$options['character_limit']
 		);
 
 		return "<p class='{$classes}'>{$excerpt}</p>";

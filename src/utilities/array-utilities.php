@@ -23,7 +23,7 @@ if ( ! function_exists( 'to_array' ) ) {
 	function to_array( $something = array() ) {
 		if ( is_array( $something ) ) {
 			return $something;
-		} else if ( is_null( $something ) ) {
+		} elseif ( is_null( $something ) ) {
 			return array();
 		} else {
 			return array( $something );

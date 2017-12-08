@@ -50,11 +50,11 @@ abstract class Decorator {
 	public function __call( $method, $arguments ) {
 		if ( is_object( $this->object ) ) {
 			$value = call_user_func_array(
-					array(
-						$this->object,
-						$method,
-					),
-					$arguments
+				array(
+					$this->object,
+					$method,
+				),
+				$arguments
 			);
 
 			return $value;

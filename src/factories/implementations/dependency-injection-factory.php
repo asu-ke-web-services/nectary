@@ -44,18 +44,18 @@ class Dependency_Injection_Factory extends Factory {
 	 */
 	public function build() {
 		$reflector = new \ReflectionMethod(
-				$this->class_name,
-				$this->method_name
+			$this->class_name,
+			$this->method_name
 		);
 
 		$dependencies = $this->get_dependencies(
-				$reflector,
-				$this->arguments
+			$reflector,
+			$this->arguments
 		);
 
 		$obj = $this->make(
-				$this->class_name,
-				$this->arguments
+			$this->class_name,
+			$this->arguments
 		);
 
 		return [ $obj, $dependencies, $this->validators ];
@@ -94,9 +94,9 @@ class Dependency_Injection_Factory extends Factory {
 				// be popped. If they should, uncomment out the following
 				// line.
 				// unset( $named_arguments[ $parameters->getName() ] );
-			} else if ( $parameters->getClass() ) {
+			} elseif ( $parameters->getClass() ) {
 				$dependencies[] = $this->make( $parameters->getClass()->name, $named_arguments );
-			} else if ( $parameters->isDefaultValueAvailable() ) {
+			} elseif ( $parameters->isDefaultValueAvailable() ) {
 				$dependencies[] = $parameters->getDefaultValue();
 			} else {
 				$dependencies[] = $named_arguments;
@@ -122,10 +122,10 @@ class Dependency_Injection_Factory extends Factory {
 
 		if ( is_subclass_of( $class_name, Singleton::class ) ) {
 			return $class_name::get_instance();
-		} else if ( $reflector->isAbstract() ) {
+		} elseif ( $reflector->isAbstract() ) {
 			return null;
-		} else if ( is_null( $constructor ) ) {
-			return new $class_name;
+		} elseif ( is_null( $constructor ) ) {
+			return new $class_name();
 		}
 
 		$dependencies = $this->get_dependencies( $constructor, $named_arguments );

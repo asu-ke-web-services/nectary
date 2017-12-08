@@ -38,9 +38,9 @@ class View_Factory extends Factory {
 	 *  the global nectary configuration.
 	 */
 	public function __construct( $view_name, $path_to_views = null ) {
-		$this->view_name = $view_name;
-		$this->view_data = [];
-		$this->head_data = [];
+		$this->view_name     = $view_name;
+		$this->view_data     = [];
+		$this->head_data     = [];
 		$this->path_to_views = $path_to_views;
 	}
 
@@ -85,7 +85,7 @@ class View_Factory extends Factory {
 				$data_to_add = null;
 				if ( $value instanceof Presentable_Model ) {
 					$data_to_add = $value->present();
-				} else if ( is_object( $value ) ) {
+				} elseif ( is_object( $value ) ) {
 					$data_to_add = json_decode( json_encode( $value ), true );
 				} else {
 					$data_to_add = $value;
@@ -136,16 +136,16 @@ class View_Factory extends Factory {
 
 		switch ( $file_extension ) {
 			case 'handlebars':
-				$view          = new Simple_Handlebars_View(
-						$view_root,
-						$template_name,
-						function( $engine ) use ( $template_name, $view_data ) {
+				$view = new Simple_Handlebars_View(
+					$view_root,
+					$template_name,
+					function( $engine ) use ( $template_name, $view_data ) {
 							return $engine->render(
-									$template_name,
-									$view_data
+								$template_name,
+								$view_data
 							);
-						},
-						$this->path_to_views
+					},
+					$this->path_to_views
 				);
 				$content = $view->output();
 				break;
@@ -154,10 +154,10 @@ class View_Factory extends Factory {
 		}
 
 		return new Response(
-				array(
-					'content' => $content,
-					'head' => $this->head_data,
-				)
+			array(
+				'content' => $content,
+				'head'    => $this->head_data,
+			)
 		);
 	}
 
@@ -169,7 +169,7 @@ class View_Factory extends Factory {
 	 *   get_template_name() returns 'blah/foo'
 	 */
 	private function get_template_name() {
-		return str_replace( '.', '/' , $this->view_name );
+		return str_replace( '.', '/', $this->view_name );
 	}
 
 	/**

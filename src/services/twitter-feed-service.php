@@ -31,12 +31,12 @@ class Twitter_Feed_Service extends Feed_Service {
 	public function get_curl_feed_data() {
 		$query_options = $this->create_query_options( $this->options );
 
-		$curl_options             = array(
-			CURLOPT_HTTPHEADER      => $query_options['http_header'],
-			CURLOPT_HEADER          => false,
-			CURLOPT_URL             => $query_options['url'],
-			CURLOPT_RETURNTRANSFER  => true,
-			CURLOPT_SSL_VERIFYPEER  => false,
+		$curl_options = array(
+			CURLOPT_HTTPHEADER     => $query_options['http_header'],
+			CURLOPT_HEADER         => false,
+			CURLOPT_URL            => $query_options['url'],
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_SSL_VERIFYPEER => false,
 		);
 
 		$feed = curl_init();
@@ -46,7 +46,7 @@ class Twitter_Feed_Service extends Feed_Service {
 		$json = curl_exec( $feed );
 
 		if ( curl_error( $feed ) ) {
-			$json   = '';
+			$json = '';
 			error_log( 'Twitter Facade could not curl! ' . curl_strerror( curl_errno( $feed ) ) );
 		}
 
@@ -55,20 +55,19 @@ class Twitter_Feed_Service extends Feed_Service {
 		switch ( $this->options['query_type'] ) {
 			case 'search':
 				return $json;
-			break;
+
 			case 'screenname':
 				return json_encode( array( 'statuses' => json_decode( $json ) ) );
-			break;
 		}
 
 		return $json;
 	}
 
 	private function create_query_options( $options ) {
-		$query = $options['query'];
-		$type  = $options['query_type'];
-		$limit = $options['limit'];
-		$api_url = '';
+		$query      = $options['query'];
+		$type       = $options['query_type'];
+		$limit      = $options['limit'];
+		$api_url    = '';
 		$query_type = '';
 		switch ( $type ) {
 			case 'search':
@@ -124,12 +123,12 @@ class Twitter_Feed_Service extends Feed_Service {
 		$composite_key .= rawurlencode( $options['oauth_access_token_secret'] );
 
 		$oauth_signature = base64_encode(
-				hash_hmac(
-						'sha1',
-						$base_url,
-						$composite_key,
-						true
-				)
+			hash_hmac(
+				'sha1',
+				$base_url,
+				$composite_key,
+				true
+			)
 		);
 
 		return $oauth_signature;
@@ -150,7 +149,7 @@ class Twitter_Feed_Service extends Feed_Service {
 		$encode_params = [];
 
 		foreach ( $oauth as $key => $value ) {
-			$encode_params[]  = "$key=" . rawurlencode( $value );
+			$encode_params[] = "$key=" . rawurlencode( $value );
 		}
 
 		return $encode_params;

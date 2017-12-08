@@ -48,8 +48,7 @@ class Json_Utilities {
 		$current = $json;
 
 		foreach ( $path_parts as $part ) {
-			if ( is_array( $current ) &&
-					 array_key_exists( $part, $current ) ) {
+			if ( is_array( $current ) && array_key_exists( $part, $current ) ) {
 				$current = $current[ $part ];
 			} else {
 				return false;

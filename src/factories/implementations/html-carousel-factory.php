@@ -65,11 +65,11 @@ class Html_Carousel_Factory extends Html_Factory {
 	}
 
 	private function build_indicators() {
-		$number = count( $this->slides );
+		$number           = count( $this->slides );
 		$inner_indicators = '';
 
 		for ( $i = 0; $i < $number; $i++ ) {
-			$classes = ( $i === 0 ) ? 'active' : '';
+			$classes           = ( $i === 0 ) ? 'active' : '';
 			$inner_indicators .= "
 				<li data-target='#{$this->id}' data-slide-to='{$i}' class='{$classes}'></li>
 			";

@@ -58,7 +58,7 @@ class Configuration extends Singleton {
 	 */
 	protected function __construct( $path = '.env' ) {
 		$this->attributes = [];
-		$configuration = '';
+		$configuration    = '';
 
 		if ( file_exists( $path ) ) {
 			$configuration = @file_get_contents( $path );

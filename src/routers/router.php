@@ -101,8 +101,8 @@ abstract class Router {
 		// name the parameters
 		$named_arguments = [];
 
-		if ( array_key_exists( 'expects' , $this->routes[ $this->__method_name ] ) ) {
-			$expects         = $this->routes[ $this->__method_name ]['expects'];
+		if ( array_key_exists( 'expects', $this->routes[ $this->__method_name ] ) ) {
+			$expects = $this->routes[ $this->__method_name ]['expects'];
 
 			foreach ( $expects as $index => $parameter_name ) {
 				if ( array_key_exists( $index, $this->__arguments ) ) {
@@ -123,7 +123,7 @@ abstract class Router {
 		if ( is_array( $to ) ) {
 			$to_parts = $to;
 		} else {
-			$to_parts  = explode( '@', $to );
+			$to_parts = explode( '@', $to );
 		}
 
 		$to_class  = $to_parts[0];
@@ -150,18 +150,18 @@ abstract class Router {
 	private function do_route( $class_name, $method_name, $named_arguments, $on_error ) {
 		if ( is_object( $class_name ) ) {
 			return $this->call(
-					array(
-						$class_name,
-						$method_name,
-					),
-					$named_arguments
+				array(
+					$class_name,
+					$method_name,
+				),
+				$named_arguments
 			);
 		}
 
 		$injector_factory = new Dependency_Injection_Factory(
-				$class_name,
-				$method_name,
-				$named_arguments
+			$class_name,
+			$method_name,
+			$named_arguments
 		);
 
 		list(
@@ -180,11 +180,11 @@ abstract class Router {
 		}
 
 		return $this->call(
-				array(
-					$obj,
-					$method_name,
-				),
-				$dependencies
+			array(
+				$obj,
+				$method_name,
+			),
+			$dependencies
 		);
 	}
 
