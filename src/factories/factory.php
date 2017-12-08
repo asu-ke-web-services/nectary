@@ -10,8 +10,8 @@ namespace Nectary;
  * use cases.
  */
 abstract class Factory {
-  /**
-   * Build an object from the Factory
-   */
-  abstract public function build();
+	/**
+	 * Build an object from the Factory
+	 */
+	abstract public function build();
 }

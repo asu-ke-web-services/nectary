@@ -3,38 +3,39 @@
 namespace Nectary;
 
 use Nectary\Configuration;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the configuration utilities in the framework
  *
  * @group configuration
  */
-class Configuration_Utilities_Test extends \PHPUnit_Framework_TestCase {
-  function setUp() {
-    Configuration::reset();
+class Configuration_Utilities_Test extends TestCase {
+	protected function setUp() {
+		Configuration::reset();
+	}
+
+  protected static function get_mock_configuration() {
+    Configuration::set_configuration_path();
+    $instance = Configuration::get_instance();
+    $instance->attributes = [ 'TEST' => 'Test Value' ];
+
+    return $instance;
   }
 
-  function test_config_returns_corrent_data() {
-    $mock = create_function_mock( $this, 'file_exists', 1 );
-    $mock->will( $this->returnValue( true ) );
+	public function test_config_returns_correct_data() {
+    self::get_mock_configuration();
 
-    $mock = create_function_mock( $this, 'file_get_contents', 1 );
-    $mock->will( $this->returnValue( 'key=1234' ) );
+		$value = config( 'TEST', 'default' );
 
-    $value = config( 'key', 'default' );
+		$this->assertEquals( 'Test Value', $value );
+	}
 
-    $this->assertEquals( '1234', $value );
-  }
+	public function test_config_returns_correct_default() {
+    self::get_mock_configuration();
 
-  function test_config_returns_correct_default() {
-    $mock = create_function_mock( $this, 'file_exists', 1 );
-    $mock->will( $this->returnValue( true ) );
+		$value = config( 'WRONG', 'default' );
 
-    $mock = create_function_mock( $this, 'file_get_contents', 1 );
-    $mock->will( $this->returnValue( 'key=1234' ) );
-
-    $value = config( 'wrong_key', 'default' );
-
-    $this->assertEquals( 'default', $value );
-  }
+		$this->assertEquals( 'default', $value );
+	}
 }

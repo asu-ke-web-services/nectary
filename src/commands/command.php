@@ -15,8 +15,8 @@ namespace Nectary;
  * Commands can be handled in different ways.
  */
 abstract class Command {
-  /**
-   * Handle the given command
-   */
-  abstract public function handle();
+	/**
+	 * Handle the given command
+	 */
+	abstract public function handle();
 }
