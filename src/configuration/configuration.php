@@ -69,7 +69,6 @@ class Configuration extends Singleton {
 			} catch ( \M1\Env\Exception\ParseException $exception ) {
 				throw new Invalid_Configuration_Exception( 'The provided configuration is invalid' );
 			}
-
 		}
 
 		if ( ! empty( $configuration ) ) {
