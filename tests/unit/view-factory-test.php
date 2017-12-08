@@ -18,7 +18,9 @@ class View_Factory_Test extends TestCase {
 	protected function setUp() {
 		$this->view_factory = new View_Factory( 'na' );
 		// prevent any configuration changes going between tests
-		Configuration::get_instance()->reset();
+    Configuration::set_configuration_path();
+    $instance_1 = Configuration::get_instance();
+    $instance_1->attributes = [ 'TEST' => 'Test Value' ];
 	}
 
 	public function test_can_add_data_and_calls() {
