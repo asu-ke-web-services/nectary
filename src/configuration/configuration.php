@@ -17,7 +17,7 @@ use Nectary\Exceptions\Invalid_Configuration_Exception;
 class Configuration extends Singleton {
 	public $attributes;
 
-	public static function set_configuration_path( $path ) {
+	public static function set_configuration_path( $path = null ) {
 		self::set_instance( new self( $path ) );
 	}
 
@@ -59,11 +59,11 @@ class Configuration extends Singleton {
 	 * @param string $path
 	 * @throws Invalid_Configuration_Exception
 	 */
-	protected function __construct( $path = '.env' ) {
+	protected function __construct( $path = null ) {
 		$this->attributes = [];
 		$configuration    = [];
 
-		if ( file_exists( $path ) ) {
+		if ( null !== $path && file_exists( $path ) ) {
 			try {
 				$configuration = ( new \josegonzalez\Dotenv\Loader( $path ) )->parse()->toArray();
 			} catch ( \M1\Env\Exception\ParseException $exception ) {
