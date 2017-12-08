@@ -29,15 +29,15 @@ class Json_Feed_Test extends TestCase {
 		$this->assertEquals( [ 'key' => 'value' ], $items );
 	}
 
-	public function test_json_feed_can_sort_by_date() {
-		// TODO
-	}
+//	public function test_json_feed_can_sort_by_date() {
+//		// TODO
+//	}
 
-	public function test_json_feed_can_set_items() {
-		// TODO
-	}
+//	public function test_json_feed_can_set_items() {
+//		// TODO
+//	}
 
-	public function test_json_feed_can_get_unique_items() {
-		// TODO
-	}
+//	public function test_json_feed_can_get_unique_items() {
+//		// TODO
+//	}
 }

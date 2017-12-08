@@ -46,17 +46,17 @@ class Dependency_Injection_Factory_Test extends TestCase {
 		$this->assertEquals( 'wow!', $speak );
 	}
 
-	public function test_can_pass_variables_to_class() {
+//	public function test_can_pass_variables_to_class() {
 		// TODO
-	}
+//	}
 
-	public function test_can_construct_singleton() {
+//	public function test_can_construct_singleton() {
 		// TODO
-	}
+//	}
 
-	public function test_will_return_validators_for_requests() {
+//	public function test_will_return_validators_for_requests() {
 		// TODO
-	}
+//	}
 
 	public function test_will_return_null_for_abstract_class_dependencies() {
 		$factory = new Dependency_Injection_Factory(

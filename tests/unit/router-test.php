@@ -80,20 +80,20 @@ class Router_Test extends TestCase {
 	 * Special case of test_named_arguments_are_mapped where
 	 * one of the named arguments is itself an array.
 	 */
-	public function test_route_with_array_parameter() {
-		// Test function( $a, $b, $options ){}
-		// $a String
-		// $b String
-		// $options array
+//	public function test_route_with_array_parameter() {
+//		// Test function( $a, $b, $options ){}
+//		// $a String
+//		// $b String
+//		// $options array
+//
+//		// TODO
+//	}
 
-		// TODO
-	}
+//	public function test_builds_dependencies() {
+//		// TODO
+//	}
 
-	public function test_builds_dependencies() {
-		// TODO
-	}
-
-	public function test_route_can_fail_with_invalid_request() {
-		// TODO
-	}
+//	public function test_route_can_fail_with_invalid_request() {
+//		// TODO
+//	}
 }
