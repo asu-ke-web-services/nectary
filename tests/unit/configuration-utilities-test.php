@@ -15,26 +15,26 @@ class Configuration_Utilities_Test extends TestCase {
 		Configuration::reset();
 	}
 
-	public function test_config_returns_corrent_data() {
-		$mock = create_function_mock( $this, 'file_exists', 1 );
-		$mock->will( $this->returnValue( true ) );
+  protected static function get_mock_configuration() {
+    Configuration::set_configuration_path();
+    $instance = Configuration::get_instance();
+    $instance->attributes = [ 'TEST' => 'Test Value' ];
 
-		$mock = create_function_mock( $this, 'file_get_contents', 1 );
-		$mock->will( $this->returnValue( 'key=1234' ) );
+    return $instance;
+  }
 
-		$value = config( 'key', 'default' );
+	public function test_config_returns_correct_data() {
+    self::get_mock_configuration();
 
-		$this->assertEquals( '1234', $value );
+		$value = config( 'TEST', 'default' );
+
+		$this->assertEquals( 'Test Value', $value );
 	}
 
 	public function test_config_returns_correct_default() {
-		$mock = create_function_mock( $this, 'file_exists', 1 );
-		$mock->will( $this->returnValue( true ) );
+    self::get_mock_configuration();
 
-		$mock = create_function_mock( $this, 'file_get_contents', 1 );
-		$mock->will( $this->returnValue( 'key=1234' ) );
-
-		$value = config( 'wrong_key', 'default' );
+		$value = config( 'WRONG', 'default' );
 
 		$this->assertEquals( 'default', $value );
 	}
