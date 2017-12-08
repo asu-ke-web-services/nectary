@@ -53,26 +53,26 @@ class Configuration extends Singleton {
 		}
 	}
 
-  /**
-   * Load the configuration dotenv file
-   *
-   * @param string $path
-   * @throws Invalid_Configuration_Exception
-   */
-  protected function __construct( $path = '.env' ) {
-    $this->attributes = [];
-    $configuration = [];
+	/**
+	 * Load the configuration dotenv file
+	 *
+	 * @param string $path
+	 * @throws Invalid_Configuration_Exception
+	 */
+	protected function __construct( $path = '.env' ) {
+		$this->attributes = [];
+		$configuration    = [];
 
-    if ( file_exists( $path ) ) {
-      $configuration = ( new \josegonzalez\Dotenv\Loader( $path ) )->parse()->toArray();
-    }
+		if ( file_exists( $path ) ) {
+			$configuration = ( new \josegonzalez\Dotenv\Loader( $path ) )->parse()->toArray();
+		}
 
-    if ( ! is_array( $configuration ) ) {
-      throw new Invalid_Configuration_Exception( 'The provided configuration is invalid' );
-    }
+		if ( ! is_array( $configuration ) ) {
+			throw new Invalid_Configuration_Exception( 'The provided configuration is invalid' );
+		}
 
-    if ( ! empty( $configuration ) ) {
-      $this->attributes = $configuration;
-    }
-  }
+		if ( ! empty( $configuration ) ) {
+			$this->attributes = $configuration;
+		}
+	}
 }
