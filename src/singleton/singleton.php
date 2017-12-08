@@ -10,11 +10,11 @@ abstract class Singleton {
 	protected function __construct() {}
 	protected function __clone() {}
 
-	public static function get_instance() {
-		$cls = get_called_class(); // late-static-bound class name
-		if ( ! isset( self::$instances[ $cls ] ) ) {
-			self::$instances[ $cls ] = new static();
-		}
+  public static function get_instance( $options = array() ) {
+    $cls = get_called_class(); // late-static-bound class name
+    if ( ! isset( self::$instances[ $cls ] ) ) {
+      self::$instances[ $cls ] = new static( $options );
+    }
 
 		return self::$instances[ $cls ];
 	}

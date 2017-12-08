@@ -2,6 +2,7 @@ projecthealth-output
 npm_debug.log
 composer.phar
 
+/.idea/
 /node_modules/
 /vendor/
 /coverage/

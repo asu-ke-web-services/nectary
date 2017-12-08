@@ -509,16 +509,16 @@
         },
         {
             "name": "xamin/handlebars.php",
-            "version": "v0.10.3",
+            "version": "v0.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/XaminProject/handlebars.php.git",
-                "reference": "5e1db1d1c7969fae32eab331a3b4d9b93257a709"
+                "reference": "b85cee07eae96db0e1eec224ca90f5ce1e4d857a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/XaminProject/handlebars.php/zipball/5e1db1d1c7969fae32eab331a3b4d9b93257a709",
-                "reference": "5e1db1d1c7969fae32eab331a3b4d9b93257a709",
+                "url": "https://api.github.com/repos/XaminProject/handlebars.php/zipball/b85cee07eae96db0e1eec224ca90f5ce1e4d857a",
+                "reference": "b85cee07eae96db0e1eec224ca90f5ce1e4d857a",
                 "shasum": ""
             },
             "require-dev": {
