@@ -83,7 +83,7 @@ class Configuration_Test extends TestCase {
 	}
 
 	public function test_throws_exception_when_loading_invalid_configuration() {
-		$this->setExpectedException( 'Nectary\Exceptions\Invalid_Configuration_Exception' );
+		$this->expectException( 'Nectary\Exceptions\Invalid_Configuration_Exception' );
 
 		$mock = create_function_mock( $this, 'file_exists', 1 );
 		$mock->will( $this->returnValue( true ) );
