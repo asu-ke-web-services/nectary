@@ -3,7 +3,7 @@
 namespace Nectary\Services;
 
 use Nectary\Models\Json_Feed;
-use Nectary\Services\Feed_Service;
+
 
 /**
  * Feed Service for Twitter. Defaults

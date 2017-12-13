@@ -2,8 +2,6 @@
 
 namespace Nectary;
 
-use Nectary\Request;
-
 /**
  * A request will validate based on a set of rules
  *

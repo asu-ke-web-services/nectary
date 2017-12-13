@@ -2,7 +2,11 @@
 
 namespace Nectary\Views;
 
-use \Handlebars\Handlebars;
+use Handlebars\Arguments;
+use Handlebars\Handlebars;
+use Handlebars\Loader\FilesystemLoader;
+use Handlebars\Loader\StringLoader;
+use Handlebars\StringWrapper;
 use Nectary\Configuration;
 use Nectary\View;
 

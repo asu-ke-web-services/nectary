@@ -2,7 +2,8 @@
 
 namespace Nectary;
 
-use Nectary\Singleton;
+use josegonzalez\Dotenv\Loader;
+
 use Nectary\Exceptions\Invalid_Configuration_Exception;
 
 /**

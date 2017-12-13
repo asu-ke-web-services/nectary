@@ -2,6 +2,8 @@
 
 namespace Nectary;
 
+use PDO;
+
 /**
  * Just a common class for all daos to extend
  *

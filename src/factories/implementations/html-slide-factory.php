@@ -2,8 +2,6 @@
 
 namespace Nectary\Factories;
 
-use Nectary\Factories\Html_Factory;
-
 /**
  * Create Html Slides for Html Carousels
  *
