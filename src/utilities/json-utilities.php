@@ -15,6 +15,10 @@ class Json_Utilities {
 	 *
 	 * This will return the value of however far it was
 	 * able to go
+	 *
+	 * @param  array $json
+	 * @param  string $path
+	 * @return array|null
 	 */
 	public static function get( $json, $path ) {
 		if ( self::check_path( $json, $path ) ) {
@@ -32,6 +36,12 @@ class Json_Utilities {
 		}
 	}
 
+	/**
+	 * @param  array      $json
+	 * @param  string     $path
+	 * @param  null       $default
+	 * @return array|null
+	 */
 	public static function get_or_default( $json, $path, $default = null ) {
 		$ref = self::get( $json, $path );
 

@@ -39,7 +39,10 @@ class Configuration extends Singleton {
 
 	/**
 	 * Add to an new or existing value.
-	 * This will promote scalor values into an array to contain multiple values.
+	 * This will promote scalar values into an array to contain multiple values.
+	 *
+	 * @param string $key
+	 * @param mixed  $value
 	 */
 	public function add( $key, $value ) {
 		if ( ! array_key_exists( $key, $this->attributes ) ) {

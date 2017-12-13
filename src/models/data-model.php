@@ -12,6 +12,8 @@ abstract class Data_Model {
 	/**
 	 * This is a helpful method for constructing objects from an
 	 * associated array of values
+	 *
+	 * @param array $array_of_values
 	 */
 	public function __construct( $array_of_values = array() ) {
 		foreach ( $array_of_values as $fieldname => $value ) {
@@ -23,6 +25,9 @@ abstract class Data_Model {
 
 	/**
 	 * Getter
+	 *
+	 * @param $property
+	 * @return mixed
 	 */
 	public function __get( $property ) {
 		if ( property_exists( $this, $property ) ) {
@@ -32,6 +37,10 @@ abstract class Data_Model {
 
 	/**
 	 * Setter - only allow properties that exist to be set
+	 *
+	 * @param  string $property
+	 * @param  mixed  $value
+	 * @return Data_Model
 	 */
 	public function __set( $property, $value ) {
 		if ( property_exists( $this, $property ) ) {
@@ -42,6 +51,8 @@ abstract class Data_Model {
 
 	/**
 	 * Models should implement get_minimal_columns
+	 *
+	 * @return string
 	 */
 	public static function get_minimal_columns() {
 		return '';
@@ -49,6 +60,8 @@ abstract class Data_Model {
 
 	/**
 	 * Models should implement get_all_columns
+	 *
+	 * @return string
 	 */
 	public static function get_all_columns() {
 		return '';

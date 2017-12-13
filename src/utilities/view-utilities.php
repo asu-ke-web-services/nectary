@@ -19,13 +19,13 @@ if ( ! function_exists( 'present' ) ) {
 	 * the object into a presentable state.
 	 *
 	 * Given an array, we iterate through it and
-	 * resursively check if it is a Viewable_Model
+	 * recursively check if it is a Viewable_Model
 	 * (which knows how to present itself) or an
 	 * unpresentable object, which is simply returned.
 	 *
-	 * @param $any Mixed Attempts to present this object or array
-	 * @param $options Array Passes these parameters when presenting the objects
-	 * @return Mixed
+	 * @param  mixed $any Attempts to present this object or array
+	 * @param  array $options Passes these parameters when presenting the objects
+	 * @return mixed
 	 */
 	function present( $any, $options = [] ) {
 		$presented = null;

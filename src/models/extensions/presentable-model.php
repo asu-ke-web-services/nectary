@@ -7,7 +7,7 @@ use Nectary\Factory;
 
 /**
  * A Viewable model is one that can present itself so that all of its
- * properties and calculated properties are useable within a template
+ * properties and calculated properties are usable within a template
  */
 abstract class Presentable_Model extends Data_Model {
 	/**
@@ -15,7 +15,8 @@ abstract class Presentable_Model extends Data_Model {
 	 * by presents(). Present knows how to build
 	 * factories.
 	 *
-	 * @return array
+	 * @param  array $options
+	 * @return mixed
 	 */
 	public function present( $options = [] ) {
 		$class_reference = $this->get_presenter_class_name();
@@ -35,9 +36,9 @@ abstract class Presentable_Model extends Data_Model {
 
 	/**
 	 * Called to determine which class knows how to present the model.
-	 * Returning the string of a Factory class is prefered.
+	 * Returning the string of a Factory class is preferred.
 	 *
-	 * @return String The name of the class that knows how to present the model
+	 * @return string The name of the class that knows how to present the model
 	 */
 	abstract protected function get_presenter_class_name();
 }

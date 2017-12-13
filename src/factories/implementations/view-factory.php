@@ -76,8 +76,8 @@ class View_Factory extends Factory {
 	 * $view->add_data( $event->present() );
 	 * ```
 	 *
-	 * @param $data Mixed
-	 * @return $this
+	 * @param  mixed        $data
+	 * @return View_Factory
 	 */
 	public function add_data( $data ) {
 		if ( is_array( $data ) ) {
@@ -107,8 +107,8 @@ class View_Factory extends Factory {
 	 *
 	 * Add data that should be in the head (aka add_header).
 	 *
-	 * @param $data Mixed
-	 * @return $this
+	 * @param  mixed $data
+	 * @return View_Factory
 	 */
 	public function add_head( $data ) {
 		if ( is_array( $data ) ) {
@@ -184,7 +184,11 @@ class View_Factory extends Factory {
 	}
 
 	/**
-	 * Find the first file extention that matches the for this view template
+	 * Find the first file extension that matches for this view template
+	 *
+	 * @param  string $view_root
+	 * @param  string $template_name
+	 * @return mixed
 	 */
 	private function get_file_extension( $view_root, $template_name ) {
 		$paths = to_array( $this->get_path_to_views() );

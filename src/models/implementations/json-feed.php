@@ -24,7 +24,8 @@ class Json_Feed implements Feed {
 	 * Pull the items from the web and store them
 	 * in this object
 	 *
-	 * @param $look_at String|Boolean use to grab items from a section of the json
+	 * @param  int|bool   $look_at  use to grab items from a section of the json
+	 * @throws \Exception
 	 */
 	public function retrieve_items( $look_at = false ) {
 		$json = call_user_func( $this->feed_callback, $this->url );

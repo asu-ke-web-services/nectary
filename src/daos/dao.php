@@ -14,6 +14,7 @@ abstract class Dao {
 	 * Set up the PDO
 	 *
 	 * @constructor
+	 * @param PDO $db
 	 */
 	public function __construct( \PDO $db ) {
 		$this->set_pdo( $db );
@@ -36,6 +37,7 @@ abstract class Dao {
 	 * Child classes need to implement get_by_criterion
 	 *
 	 * @abstract
+	 * @param $options
 	 */
 	abstract public function get_by_criterion( $options );
 }

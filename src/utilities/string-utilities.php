@@ -3,6 +3,10 @@
 if ( ! function_exists( 'starts_with' ) ) {
 	/**
 	 * Alias
+	 *
+	 * @param  string $haystack
+	 * @param  string $needle
+	 * @return bool
 	 */
 	function starts_with( $haystack, $needle ) {
 		return ! strncmp( $haystack, $needle, strlen( $needle ) );
@@ -12,6 +16,10 @@ if ( ! function_exists( 'starts_with' ) ) {
 if ( ! function_exists( 'ends_with' ) ) {
 	/**
 	 * Alias
+	 *
+	 * @param  string $haystack
+	 * @param  string $needle
+	 * @return bool
 	 */
 	function ends_with( $haystack, $needle ) {
 		$haystack_length = strlen( $haystack );
@@ -27,6 +35,9 @@ if ( ! function_exists( 'ends_with' ) ) {
 if ( ! function_exists( 'is_json' ) ) {
 	/**
 	 * Check if a string is a valid json object
+	 *
+	 * @param  string $string
+	 * @return bool
 	 */
 	function is_json( $string ) {
 		if ( is_string( $string ) ) {
@@ -69,6 +80,9 @@ if ( ! function_exists( 'slugify' ) ) {
 if ( ! function_exists( 'to_title_case' ) ) {
 	/**
 	 * Converts $title to Title Case, and returns the result.
+	 *
+	 * @param  string $title
+	 * @return string
 	 */
 	function to_title_case( $title ) {
 		$title = strval( $title );
@@ -147,6 +161,9 @@ if ( ! function_exists( 'xssafe' ) ) {
 	 * Xss mitigation functions (this requires php 5.4+)
 	 *
 	 * @see https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#XSS_Cheat_Sheet
+	 * @param  string $data
+	 * @param  string $encoding
+	 * @return string
 	 */
 	function xssafe( $data, $encoding = 'UTF-8' ) {
 		return htmlspecialchars( $data, ENT_QUOTES | ENT_HTML401, $encoding );
@@ -156,6 +173,9 @@ if ( ! function_exists( 'xssafe' ) ) {
 if ( ! function_exists( 'valid_email' ) ) {
 	/**
 	 * Replaced with php's email validator
+	 *
+	 * @param  string $email
+	 * @return mixed
 	 */
 	function valid_email( $email ) {
 		return filter_var( $email, FILTER_VALIDATE_EMAIL );
