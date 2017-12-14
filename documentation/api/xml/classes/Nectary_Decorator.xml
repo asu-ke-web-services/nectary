@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Decorator" namespace="Nectary" name="Decorator" abstract="true" final="false" start="11" end="74">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/decorators" file="decorator.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/decorators/decorator.php" size="1643" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="8879fc0fa73db72f244de8d55376c6785be7bea6" relative="decorators/decorator.php"/>
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/decorators" file="decorator.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/decorators/decorator.php" size="1508" time="2017-12-13T21:34:53+00:00" unixtime="1513200893" sha1="63c46e4be37d8421a6d295f5c43e03c4caa41560" relative="decorators/decorator.php"/>
   <docblock>
     <description compact="Decorators provide a layer between an object that lets you attach properties and methods to that object ar runtime."/>
     <todo value="support nested Decorators!"/>

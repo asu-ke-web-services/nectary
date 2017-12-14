@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Singleton" namespace="Nectary" name="Singleton" abstract="true" final="false" start="8" end="27">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/singleton" file="singleton.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/singleton/singleton.php" size="586" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="45894f73c150e48ff3ab5b8820ab5fe5f842f892" relative="singleton/singleton.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Singleton" namespace="Nectary" name="Singleton" abstract="true" final="false" start="8" end="37">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/singleton" file="singleton.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/singleton/singleton.php" size="752" time="2017-12-14T00:35:54+00:00" unixtime="1513211754" sha1="22dc90f05f60235115b8a1f3ad07abad88075f98" relative="singleton/singleton.php"/>
   <docblock>
     <description compact="Support singletons in PHP"/>
   </docblock>
   <member name="instances" type="array" default="" visibility="protected" static="true" line="9"/>
-  <constructor name="__construct" start="10" end="10" abstract="false" final="false" static="false" visibility="protected"/>
-  <method name="__clone" start="11" end="11" abstract="false" final="false" static="false" visibility="protected"/>
-  <method name="get_instance" start="13" end="20" abstract="false" final="false" static="true" visibility="public">
+  <constructor name="__construct" start="16" end="16" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Singleton constructor."/>
+      <param type="object" variable="$options">
+        <type full="Nectary\array|string|null" namespace="Nectary" name="array|string|null"/>
+      </param>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="__clone" start="17" end="17" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="get_instance" start="23" end="30" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$options">
+        <type full="Nectary\array|string|null" namespace="Nectary" name="array|string|null"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
     <inline>
-      <comment value="late-static-bound class name" line="14"/>
+      <comment value="late-static-bound class name" line="24"/>
     </inline>
   </method>
-  <method name="set_instance" start="22" end="26" abstract="false" final="false" static="true" visibility="public">
+  <method name="set_instance" start="32" end="36" abstract="false" final="false" static="true" visibility="public">
     <parameter name="instance" byreference="false" type="{unknown}"/>
   </method>
   <extenders>
