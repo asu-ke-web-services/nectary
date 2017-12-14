@@ -105,7 +105,7 @@ abstract class Router {
 	 *
 	 * @return array
 	 */
-	private function get_named_arguments() {
+	private function get_named_arguments() : array {
 		// name the parameters
 		$named_arguments = [];
 
@@ -128,7 +128,7 @@ abstract class Router {
 	 *
 	 * @return array
 	 */
-	private function get_route_parts() {
+	private function get_route_parts() : array {
 		$to = $this->routes[ $this->__method_name ]['to'];
 		if ( \is_array( $to ) ) {
 			$to_parts = $to;

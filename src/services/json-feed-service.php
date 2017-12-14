@@ -17,11 +17,16 @@ class Json_Feed_Service extends Feed_Service {
 	 *
 	 * @return Json_Feed
 	 */
-	public function get_feed( $url ) {
+	public function get_feed( $url ) : Json_Feed {
 		return new Json_Feed( $url, array( $this, 'get_curl_feed_data' ) );
 	}
 
-	public function get_curl_feed_data( $url ) {
+	/**
+	 * @param  string $url
+	 * @return string
+	 * @throws \Exception
+	 */
+	public function get_curl_feed_data( $url ) : string {
 		$session = curl_init( $url );
 
 		curl_setopt( $session, CURLOPT_RETURNTRANSFER, true );

@@ -43,7 +43,7 @@ class Dependency_Injection_Factory extends Factory {
 	 * @override
 	 * @throws \ReflectionException
 	 */
-	public function build() {
+	public function build() : array {
 		$reflector = new \ReflectionMethod(
 			$this->class_name,
 			$this->method_name
@@ -70,7 +70,7 @@ class Dependency_Injection_Factory extends Factory {
 	 * @return array
 	 * @throws \ReflectionException
 	 */
-	private function get_dependencies( \ReflectionMethod $reflector, $named_arguments ) {
+	private function get_dependencies( \ReflectionMethod $reflector, $named_arguments ) : array {
 		$reflector_parameters = $reflector->getParameters();
 
 		$dependencies = $this->resolve_dependencies( $reflector_parameters, $named_arguments );
@@ -87,7 +87,7 @@ class Dependency_Injection_Factory extends Factory {
 	 * @return array
 	 * @throws \ReflectionException
 	 */
-	private function resolve_dependencies( $reflector_parameters, $named_arguments = [] ) {
+	private function resolve_dependencies( $reflector_parameters, $named_arguments = [] ) : array {
 		// map the named_arguments to the reflector_parameters
 		$dependencies = [];
 

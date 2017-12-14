@@ -48,7 +48,7 @@ class Html_Carousel_Factory extends Html_Factory {
 		$this->indicators = true;
 	}
 
-	public function build() {
+	public function build() : string {
 		$html       = implode( $this->slides, '' );
 		$indicators = '';
 
@@ -66,7 +66,7 @@ class Html_Carousel_Factory extends Html_Factory {
 		</div>";
 	}
 
-	private function build_indicators() {
+	private function build_indicators() : string {
 		$number           = \count( $this->slides );
 		$inner_indicators = '';
 

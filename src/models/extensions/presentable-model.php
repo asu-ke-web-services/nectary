@@ -18,7 +18,7 @@ abstract class Presentable_Model extends Data_Model {
 	 * @param  array $options
 	 * @return mixed
 	 */
-	public function present( $options = [] ) {
+	public function present( array $options = [] ) {
 		$class_reference = $this->get_presenter_class_name();
 
 		if ( null !== $class_reference ) {
@@ -40,5 +40,5 @@ abstract class Presentable_Model extends Data_Model {
 	 *
 	 * @return string The name of the class that knows how to present the model
 	 */
-	abstract protected function get_presenter_class_name();
+	abstract protected function get_presenter_class_name() : string;
 }

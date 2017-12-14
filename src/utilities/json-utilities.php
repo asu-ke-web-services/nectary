@@ -52,7 +52,12 @@ class Json_Utilities {
 		return $ref;
 	}
 
-	public static function check_path( $json, $path ) {
+	/**
+	 * @param  array  $json
+	 * @param  string $path
+	 * @return bool
+	 */
+	public static function check_path( $json, $path ) : bool {
 		$path_parts = explode( '.', $path );
 
 		$current = $json;

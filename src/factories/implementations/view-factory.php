@@ -79,7 +79,7 @@ class View_Factory extends Factory {
 	 * @param  mixed        $data
 	 * @return View_Factory
 	 */
-	public function add_data( $data ) {
+	public function add_data( $data ) : View_Factory {
 		if ( \is_array( $data ) ) {
 			foreach ( $data as $key => $value ) {
 				$data_to_add = $value;
@@ -108,7 +108,7 @@ class View_Factory extends Factory {
 	 * @param  mixed $data
 	 * @return View_Factory
 	 */
-	public function add_head( $data ) {
+	public function add_head( $data ) : View_Factory {
 		$this->head_data = $data;
 
 		if ( \is_array( $data ) ) {
@@ -125,7 +125,7 @@ class View_Factory extends Factory {
 	 *
 	 * @override
 	 */
-	public function build() {
+	public function build() : Response {
 		$view_root      = '';
 		$template_name  = $this->get_template_name();
 		$file_extension = $this->get_file_extension( $view_root, $template_name );
@@ -162,7 +162,7 @@ class View_Factory extends Factory {
 	 * eg: $this->view_name = 'blah.foo'
 	 *   get_template_name() returns 'blah/foo'
 	 */
-	private function get_template_name() {
+	private function get_template_name() : string {
 		return str_replace( '.', '/', $this->view_name );
 	}
 

@@ -15,7 +15,7 @@ abstract class Data_Model {
 	 *
 	 * @param array $array_of_values
 	 */
-	public function __construct( $array_of_values = array() ) {
+	public function __construct( array $array_of_values = array() ) {
 		foreach ( $array_of_values as $fieldname => $value ) {
 			if ( property_exists( $this, $fieldname ) ) {
 				$this->$fieldname = $value;

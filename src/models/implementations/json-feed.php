@@ -37,19 +37,22 @@ class Json_Feed implements Feed {
 		}
 	}
 
-	public function sort_by_date( $order = 'asc' ) {
+	public function sort_by_date( string $order = 'asc' ) {
 		// TODO
 	}
 
-	public function get_items() {
+	/**
+	 * @return array
+	 */
+	public function get_items() : array {
 		return $this->items;
 	}
 
-	public function set_items( $items ) {
+	public function set_items( array $items ) {
 		$this->items = $items;
 	}
 
-	public function get_unique_items() {
+	public function get_unique_items() : array {
 		$unique = [];
 
 		foreach ( $this->items as $i => $item_a ) {
@@ -75,7 +78,12 @@ class Json_Feed implements Feed {
 		return $unique;
 	}
 
-	private function parse_feed( $json ) {
+	/**
+	 * @param  string $json
+	 * @return mixed
+	 * @throws \Exception
+	 */
+	private function parse_feed( string $json ) {
 		$json = json_decode( $json, true );
 		if ( empty( $json ) ) {
 			error_log( 'Json was empty' );

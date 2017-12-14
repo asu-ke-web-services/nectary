@@ -23,7 +23,7 @@ class Html_Factory extends Factory {
 		$this->html .= $this->with_heading( $inner_html, $options );
 	}
 
-	public function with_heading( $inner_html, $options = [] ) {
+	public function with_heading( $inner_html, $options = [] ) : string {
 		ensure_default( $options, 'level', 2 );
 		ensure_default( $options, 'class', '' );
 
@@ -37,7 +37,7 @@ class Html_Factory extends Factory {
 		$this->html .= $this->with_link( $inner_html, $options );
 	}
 
-	public function with_link( $inner_html, $options = [] ) {
+	public function with_link( $inner_html, $options = [] ) : string {
 		ensure_default( $options, 'href', '#' );
 		ensure_default( $options, 'class', '' );
 
@@ -51,7 +51,7 @@ class Html_Factory extends Factory {
 		$this->html .= $this->with_text( $inner_html, $options );
 	}
 
-	public function with_text( $inner_html, $options = [] ) {
+	public function with_text( $inner_html, $options = [] ) : string {
 		ensure_default( $options, 'class', '' );
 
 		$classes = $options['class'];
@@ -62,7 +62,7 @@ class Html_Factory extends Factory {
 		$this->html .= $this->with_text_excerpt( $inner_html, $options );
 	}
 
-	public function with_text_excerpt( $inner_html, $options = [] ) {
+	public function with_text_excerpt( $inner_html, $options = [] ) : string {
 		ensure_default( $options, 'character_limit', '150' );
 		ensure_default( $options, 'class', '' );
 
@@ -79,7 +79,7 @@ class Html_Factory extends Factory {
 		$this->html .= $this->with_image( $src, $options );
 	}
 
-	public function with_image( $src, $options = [] ) {
+	public function with_image( $src, $options = [] ) : string {
 		ensure_default( $options, 'class', '' );
 
 		$classes = $options['class'];
@@ -91,7 +91,7 @@ class Html_Factory extends Factory {
 		$this->html .= $this->with_div( $inner_html, $options );
 	}
 
-	public function with_div( $inner_html, $options = [] ) {
+	public function with_div( $inner_html, $options = [] ) : string {
 		ensure_default( $options, 'class', '' );
 
 		$classes = $options['class'];
@@ -99,7 +99,7 @@ class Html_Factory extends Factory {
 		return "<div class='{$classes}'>{$inner_html}</div>";
 	}
 
-	public function build() {
+	public function build() : string {
 		return $this->html;
 	}
 }
