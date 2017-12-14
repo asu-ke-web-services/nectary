@@ -3,6 +3,7 @@
 namespace Nectary;
 
 use Nectary\Configuration;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the configuration class in the framework
@@ -10,128 +11,89 @@ use Nectary\Configuration;
  * @group configuration
  * @group singleton
  */
-class Configuration_Test extends \PHPUnit_Framework_TestCase {
-  function setUp() {
-    Configuration::reset();
-  }
+class Configuration_Test extends TestCase {
+	protected function setUp() {
+		Configuration::reset();
+	}
 
-  function test_is_singleton_instance() {
-    $instance_1 = Configuration::get_instance();
-    $instance_2 = Configuration::get_instance();
-
-    $this->assertEquals( $instance_1, $instance_2 );
-  }
-
-  function test_loads_in_data_from_file() {
-    $mock = create_function_mock( $this, 'file_exists', 1 );
-    $mock->will( $this->returnValue( true ) );
-
-    $mock = create_function_mock( $this, 'file_get_contents', 1 );
-    $mock->will( $this->returnValue( 'test=My Special Value' ) );
-
+	protected static function get_mock_configuration() {
+    Configuration::set_configuration_path();
     $instance = Configuration::get_instance();
+    $instance->attributes = [ 'TEST' => 'Test Value' ];
 
-    $value = $instance->get( 'test' );
-
-    $this->assertEquals( 'My Special Value', $value );
+    return $instance;
   }
 
-  function test_returns_default_value() {
-    $mock = create_function_mock( $this, 'file_exists', 1 );
-    $mock->will( $this->returnValue( true ) );
+	public function test_is_singleton_instance() {
+    $instance_1 = self::get_mock_configuration();
+		$instance_2 = Configuration::get_instance();
 
-    $mock = create_function_mock( $this, 'file_get_contents', 1 );
-    $mock->will( $this->returnValue( 'test=My Special Value' ) );
+		$this->assertEquals( $instance_1, $instance_2 );
+	}
 
-    $instance = Configuration::get_instance();
+	public function test_returns_requested_value() {
+    $instance = self::get_mock_configuration();
 
-    $value = $instance->get( 'nope', 'default' );
+		$value = $instance->get( 'TEST' );
 
-    $this->assertEquals( 'default', $value );
-  }
+		$this->assertEquals( 'Test Value', $value );
+	}
 
-  function test_set_configuration_path_overrides_attributes() {
-    $mock = create_function_mock( $this, 'file_exists', 2 );
-    $mock->will( $this->onConsecutiveCalls( false, true ) );
+	public function test_returns_default_value() {
+    $instance = self::get_mock_configuration();
 
-    $mock = create_function_mock( $this, 'file_get_contents', 1 );
-    $mock->with( $this->stringContains( '.newenv' ) )
-    ->will( $this->returnValue( 'test=bang' ) );
+		$value = $instance->get( 'nope', 'default' );
 
-    $instance = Configuration::get_instance();
-    Configuration::set_configuration_path( '.newenv' );
-    $instance = Configuration::get_instance();
+		$this->assertEquals( 'default', $value );
+	}
 
-    $value = $instance->get( 'test', 'default' );
+	public function test_empty_values_are_valid() {
+    $instance = self::get_mock_configuration();
 
-    $this->assertEquals( 'bang', $value );
-  }
+		$value = $instance->get( 'test', '' );
 
-  function test_empty_values_are_valid() {
-    $mock = create_function_mock( $this, 'file_exists', 1 );
-    $mock->will( $this->returnValue( true ) );
+		$this->assertEquals( '', $value );
+	}
 
-    $mock = create_function_mock( $this, 'file_get_contents', 1 );
-    $mock->will( $this->returnValue( 'test=' ) );
+	/**
+	 * DISABLED: Not sure how to test just Nectary, since parsing of the .env file is now
+	 * handled by dotenv plugin.
+	 */
+//	public function test_throws_exception_when_loading_invalid_configuration() {
+//		$this->expectException( 'Nectary\Exceptions\Invalid_Configuration_Exception' );
+//		$thrown = false;
+//
+//		try {
+//      $instance = Configuration::get_instance();
+//		} catch (Exception $e) {
+//			$thrown = true;
+//		}
+//
+//		$this->assertTrue( $thrown, 'Exception should be thrown' );
+//	}
 
-    $instance = Configuration::get_instance();
+	public function test_configuration_can_set_value() {
+    $instance = self::get_mock_configuration();
 
-    $value = $instance->get( 'test', 'default' );
+		$instance->set( 'newkey', 'newvalue' );
+		$this->assertEquals( 'newvalue', $instance->get( 'newkey' ) );
+	}
 
-    $this->assertEquals( '', $value );
-  }
+	public function test_configuration_can_add_single_value() {
+    $instance = self::get_mock_configuration();
 
-  function test_throws_exception_when_loading_invalid_configuration() {
-    $this->setExpectedException( 'Nectary\Exceptions\Invalid_Configuration_Exception' );
+		$instance->add( 'newkey', 'newvalue' );
+		$this->assertEquals( 'newvalue', $instance->get( 'newkey' ) );
+	}
 
-    $mock = create_function_mock( $this, 'file_exists', 1 );
-    $mock->will( $this->returnValue( true ) );
+	public function test_configuration_can_add_multiple_values() {
+    $instance = self::get_mock_configuration();
 
-    $mock = create_function_mock( $this, 'file_get_contents', 1 );
-    $mock->will( $this->returnValue( 'invalid' ) );
-
-    $thrown = false;
-
-    try {
-      $instance = Configuration::get_instance();
-    } catch (Exception $e) {
-      $thrown = true;
-    }
-
-    $this->assertTrue( $thrown, 'Exception should be thrown' );
-  }
-
-  function test_multiline_configuration() {
-    $mock = create_function_mock( $this, 'file_exists', 1 );
-    $mock->will( $this->returnValue( true ) );
-
-    $mock = create_function_mock( $this, 'file_get_contents', 1 );
-    $mock->will( $this->returnValue( "test=My Special Value\nanother=1234" ) );
-
-    $instance = Configuration::get_instance();
-
-    $value = $instance->get( 'test' );
-    $this->assertEquals( 'My Special Value', $value );
-    $value = $instance->get( 'another' );
-    $this->assertEquals( '1234', $value );
-  }
-
-  function test_configuration_can_set_value() {
-    Configuration::get_instance()->set( 'newkey', 'newvalue' );
-    $this->assertEquals( 'newvalue', Configuration::get_instance()->get( 'newkey' ) );
-  }
-
-  function test_configuration_can_add_single_value() {
-    Configuration::get_instance()->add( 'newkey', 'newvalue' );
-    $this->assertEquals( 'newvalue', Configuration::get_instance()->get( 'newkey' ) );
-  }
-
-  function test_configuration_can_add_multiple_values() {
-    Configuration::get_instance()->add( 'newkey', 'newvalue' );
-    Configuration::get_instance()->add( 'newkey', 'anothervalue' );
-    Configuration::get_instance()->add( 'newkey', 'andanother' );
-    $this->assertEquals( array( 'newvalue', 'anothervalue', 'andanother' ), 
-      Configuration::get_instance()->get( 'newkey' ) );
-  }
+		$instance->add( 'newkey', 'newvalue' );
+		$instance->add( 'newkey', 'anothervalue' );
+		$instance->add( 'newkey', 'andanother' );
+		$this->assertEquals( array( 'newvalue', 'anothervalue', 'andanother' ),
+				$instance->get( 'newkey' ) );
+	}
 
 }

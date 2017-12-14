@@ -1,55 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Models\Presentable_Model" namespace="Nectary\Models" name="Presentable_Model" abstract="true" final="false" start="12" end="43">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/extensions" file="presentable-model.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/extensions/presentable-model.php" size="1114" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="440c1274be7b7024a013c59f0dec5dbc29d0467e" relative="models/extensions/presentable-model.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Models\Presentable_Model" namespace="Nectary\Models" name="Presentable_Model" abstract="true" final="false" start="12" end="44">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/models/extensions" file="presentable-model.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/models/extensions/presentable-model.php" size="1082" time="2017-12-13T23:29:19+00:00" unixtime="1513207759" sha1="b0aa1248205d1ee053c6b35aae6fbd028eab74b7" relative="models/extensions/presentable-model.php"/>
   <docblock>
-    <description compact="A Viewable model is one that can present itself so that all of its properties and calculated properties are useable within a template"/>
+    <description compact="A Viewable model is one that can present itself so that all of its properties and calculated properties are usable within a template"/>
   </docblock>
   <extends full="Nectary\Data_Model" namespace="Nectary" name="Data_Model"/>
-  <method name="present" start="20" end="34" abstract="false" final="false" static="false" visibility="public">
+  <method name="present" start="21" end="35" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Present the model using the class provided by presents(). Present knows how to build factories."/>
-      <return type="array"/>
+      <param type="array" variable="$options"/>
+      <return type="mixed"/>
     </docblock>
     <parameter name="options" byreference="false" type="array" default=""/>
   </method>
-  <method name="get_presenter_class_name" start="42" end="42" abstract="true" final="false" static="false" visibility="protected">
+  <method name="get_presenter_class_name" start="43" end="43" abstract="true" final="false" static="false" visibility="protected">
     <docblock>
-      <description compact="Called to determine which class knows how to present the model.">Returning the string of a Factory class is prefered.</description>
-      <return description="The name of the class that knows how to present the model" type="object">
-        <type full="Nectary\Models\String" namespace="Nectary\Models" name="String"/>
-      </return>
+      <description compact="Called to determine which class knows how to present the model.">Returning the string of a Factory class is preferred.</description>
+      <return description="The name of the class that knows how to present the model" type="string"/>
     </docblock>
   </method>
   <parent full="Nectary\Data_Model" namespace="Nectary" name="Data_Model">
     <member name="primary_key" visibility="public" static="true" line="9"/>
     <member name="table_name" visibility="public" static="true" line="10"/>
-    <constructor name="__construct" start="16" end="22" abstract="false" final="false" static="false" visibility="public">
+    <constructor name="__construct" start="18" end="24" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="This is a helpful method for constructing objects from an associated array of values"/>
+        <param type="array" variable="$array_of_values"/>
       </docblock>
       <parameter name="array_of_values" byreference="false" type="array" default=""/>
     </constructor>
-    <method name="__get" start="27" end="31" abstract="false" final="false" static="false" visibility="public">
+    <method name="__get" start="32" end="36" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Getter"/>
+        <param variable="$property"/>
+        <return type="mixed"/>
       </docblock>
       <parameter name="property" byreference="false" type="{unknown}"/>
     </method>
-    <method name="__set" start="36" end="41" abstract="false" final="false" static="false" visibility="public">
+    <method name="__set" start="45" end="50" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Setter - only allow properties that exist to be set"/>
+        <param type="string" variable="$property"/>
+        <param type="mixed" variable="$value"/>
+        <return type="object">
+          <type full="Nectary\Data_Model" namespace="Nectary" name="Data_Model"/>
+        </return>
       </docblock>
       <parameter name="property" byreference="false" type="{unknown}"/>
       <parameter name="value" byreference="false" type="{unknown}"/>
     </method>
-    <method name="get_minimal_columns" start="46" end="48" abstract="false" final="false" static="true" visibility="public">
+    <method name="get_minimal_columns" start="57" end="59" abstract="false" final="false" static="true" visibility="public">
       <docblock>
         <description compact="Models should implement get_minimal_columns"/>
+        <return type="string"/>
       </docblock>
     </method>
-    <method name="get_all_columns" start="53" end="55" abstract="false" final="false" static="true" visibility="public">
+    <method name="get_all_columns" start="66" end="68" abstract="false" final="false" static="true" visibility="public">
       <docblock>
         <description compact="Models should implement get_all_columns"/>
+        <return type="string"/>
       </docblock>
     </method>
   </parent>

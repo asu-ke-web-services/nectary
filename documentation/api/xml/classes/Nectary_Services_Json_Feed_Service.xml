@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Services\Json_Feed_Service" namespace="Nectary\Services" name="Json_Feed_Service" abstract="false" final="false" start="14" end="46">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/services" file="json-feed-service.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/services/json-feed-service.php" size="1005" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="ae9bbc705c2daf77eafc557bf8f680c0e7938603" relative="services/json-feed-service.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Services\Json_Feed_Service" namespace="Nectary\Services" name="Json_Feed_Service" abstract="false" final="false" start="14" end="51">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/services" file="json-feed-service.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/services/json-feed-service.php" size="1021" time="2017-12-13T23:29:19+00:00" unixtime="1513207759" sha1="e884f49e95a06c4b8f4a647a233d10c7aa9c29a7" relative="services/json-feed-service.php"/>
   <docblock>
     <description compact="Service for the Json Feed. Defaults to using get_curl_feed_data"/>
     <extends value="Feed_Service"/>
@@ -15,7 +15,15 @@
     </docblock>
     <parameter name="url" byreference="false" type="{unknown}"/>
   </method>
-  <method name="get_curl_feed_data" start="24" end="45" abstract="false" final="false" static="false" visibility="public">
+  <method name="get_curl_feed_data" start="29" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$url"/>
+      <return type="string"/>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
     <parameter name="url" byreference="false" type="{unknown}"/>
   </method>
   <parent full="Nectary\Services\Feed_Service" namespace="Nectary\Services" name="Feed_Service">

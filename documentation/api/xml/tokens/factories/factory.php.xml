@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories" file="factory.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/factory.php" size="325" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="758f16030bdc353fc28acb3d18ede09577c68d89" relative="factories/factory.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/factories" file="factory.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/factories/factory.php" size="321" time="2017-12-13T00:05:41+00:00" unixtime="1513123541" sha1="a4e1ee59526dcacc8cf59cf19e113a42623973cf" relative="factories/factory.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -43,17 +43,17 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="13">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
   <line no="14">
-    <token name="T_DOC_COMMENT">   * Build an object from the Factory</token>
+    <token name="T_DOC_COMMENT">	 * Build an object from the Factory</token>
   </line>
   <line no="15">
-    <token name="T_DOC_COMMENT">   */</token>
+    <token name="T_DOC_COMMENT">	 */</token>
   </line>
   <line no="16">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_ABSTRACT">abstract</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PUBLIC">public</token>

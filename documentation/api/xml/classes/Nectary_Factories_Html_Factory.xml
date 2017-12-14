@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\Html_Factory" namespace="Nectary\Factories" name="Html_Factory" abstract="false" final="false" start="15" end="105">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations" file="html-factory.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations/html-factory.php" size="2780" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="4a0587dc1d7a46222700d5d6d09afccf43fb15f5" relative="factories/implementations/html-factory.php"/>
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/factories/implementations" file="html-factory.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/factories/implementations/html-factory.php" size="2815" time="2017-12-14T00:25:37+00:00" unixtime="1513211137" sha1="a575209b5b2f030de39f2ecbb73cc21980368855" relative="factories/implementations/html-factory.php"/>
   <docblock>
     <description compact="Factory that provides a programmatic approach to building html. Provides basic building blocks, such as links, headings, text, images, and divs"/>
     <extends value="Factory"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Factory" namespace="Nectary" name="Factory" abstract="true" final="false" start="12" end="17">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories" file="factory.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/factory.php" size="325" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="758f16030bdc353fc28acb3d18ede09577c68d89" relative="factories/factory.php"/>
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/factories" file="factory.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/factories/factory.php" size="321" time="2017-12-13T00:05:41+00:00" unixtime="1513123541" sha1="a4e1ee59526dcacc8cf59cf19e113a42623973cf" relative="factories/factory.php"/>
   <docblock>
     <description compact="Factories should be used to build an object.">Feel free to use factories as Virtual Constructors or
 Builders. The interface behaves similarly to either

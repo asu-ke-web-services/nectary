@@ -18,7 +18,7 @@ Nectary is currently only available through GitHub, to install, add the followin
         }
     ],
     "require": {
-        "gios-asu/nectary": "dev-develop"
+        "gios-asu/nectary": "^1.0.0"
     }
 }
 ```

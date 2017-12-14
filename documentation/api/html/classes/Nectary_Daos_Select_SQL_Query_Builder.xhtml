@@ -62,7 +62,7 @@
             <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="../source/daos/sql-query-builder.php.xhtml#line10">Source</a>
+            <a href="../source/daos/sql-query-builder.php.xhtml#line13">Source</a>
           </li>
         </ul>
       </nav>
@@ -76,9 +76,10 @@
         <h2 id="synopsis">Synopsis</h2>
         <div class="synopsis">class Select_SQL_Query_Builder
             {<br/><ul class="none"><li>// members</li><li>private  <a href="#members">$columns_to_select</a>;
+                    </li><li>private  <a href="#members">$group_by</a>;
                     </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/__construct.xhtml">__construct</a>()
                     </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/add_columns.xhtml">add_columns</a>()
-                    </li><li>public the <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_columns.xhtml">get_columns</a>()
+                    </li><li>public string|array <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_columns.xhtml">get_columns</a>()
                     </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/from.xhtml">from</a>()
                     </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/joins.xhtml">joins</a>()
                     </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/limit.xhtml">limit</a>()
@@ -89,8 +90,8 @@
                     </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/and_where.xhtml">and_where</a>()
                     </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/or_where.xhtml">or_where</a>()
                     </li><li>public void <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/bind_value.xhtml">bind_value</a>()
-                    </li><li>public the <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_sql.xhtml">get_sql</a>()
-                    </li><li>public pdo::Statement <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_statement.xhtml">get_statement</a>()
+                    </li><li>public string <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_sql.xhtml">get_sql</a>()
+                    </li><li>public PDOStatement <a title="Nectary\Daos\Select_SQL_Query_Builder" href="../classes/Nectary_Daos_Select_SQL_Query_Builder/get_statement.xhtml">get_statement</a>()
                     </li></ul>
 
             }<br/></div>
@@ -102,6 +103,9 @@
               <strong>$columns_to_select</strong>
               <br/>
               <span class="indent">Internal state for this object</span>
+            </li>
+            <li id="group_by">
+              <strong>$group_by</strong>
             </li>
           </ul>
         </div>
@@ -144,7 +148,7 @@
       </section>
     </div>
     <footer>
-      <span>Generated using phpDox 0.8.2-dev - Copyright (C) 2010 - 2016 by Arne Blankerts</span>
+      <span>Generated using phpDox 0.8.2-dev - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
     </footer>
   </body>
 </html>

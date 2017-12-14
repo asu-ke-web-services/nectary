@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/daos" file="dao.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/daos/dao.php" size="591" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="17b95fb2bc125c8a24e505eb8c5059b7016b76b2" relative="daos/dao.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/daos" file="dao.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/daos/dao.php" size="609" time="2017-12-13T00:09:58+00:00" unixtime="1513123798" sha1="c7c571e4bd20019a5804242ce117b265ce1c3311" relative="daos/dao.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -13,21 +13,28 @@
   </line>
   <line no="4"/>
   <line no="5">
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">PDO</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="6"/>
+  <line no="7">
     <token name="T_DOC_COMMENT">/**</token>
   </line>
-  <line no="6">
+  <line no="8">
     <token name="T_DOC_COMMENT"> * Just a common class for all daos to extend</token>
   </line>
-  <line no="7">
+  <line no="9">
     <token name="T_DOC_COMMENT"> *</token>
   </line>
-  <line no="8">
+  <line no="10">
     <token name="T_DOC_COMMENT"> * @package Dao</token>
   </line>
-  <line no="9">
+  <line no="11">
     <token name="T_DOC_COMMENT"> */</token>
   </line>
-  <line no="10">
+  <line no="12">
     <token name="T_ABSTRACT">abstract</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_CLASS">class</token>
@@ -36,32 +43,35 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="11">
-    <token name="T_WHITESPACE">  </token>
+  <line no="13">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$db</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="12"/>
-  <line no="13">
-    <token name="T_WHITESPACE">  </token>
+  <line no="14"/>
+  <line no="15">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
-  <line no="14">
-    <token name="T_DOC_COMMENT">   * Set up the PDO</token>
-  </line>
-  <line no="15">
-    <token name="T_DOC_COMMENT">   *</token>
-  </line>
   <line no="16">
-    <token name="T_DOC_COMMENT">   * @constructor</token>
+    <token name="T_DOC_COMMENT">	 * Set up the PDO</token>
   </line>
   <line no="17">
-    <token name="T_DOC_COMMENT">   */</token>
+    <token name="T_DOC_COMMENT">	 *</token>
   </line>
   <line no="18">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_DOC_COMMENT">	 * @constructor</token>
+  </line>
+  <line no="19">
+    <token name="T_DOC_COMMENT">	 * @param PDO $db</token>
+  </line>
+  <line no="20">
+    <token name="T_DOC_COMMENT">	 */</token>
+  </line>
+  <line no="21">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_FUNCTION">function</token>
@@ -69,7 +79,6 @@
     <token name="T_STRING">__construct</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_NS_SEPARATOR">\</token>
     <token name="T_STRING">PDO</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$db</token>
@@ -78,8 +87,8 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="19">
-    <token name="T_WHITESPACE">    </token>
+  <line no="22">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$this</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">set_pdo</token>
@@ -90,29 +99,29 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="20">
-    <token name="T_WHITESPACE">  </token>
+  <line no="23">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="21"/>
-  <line no="22">
-    <token name="T_WHITESPACE">  </token>
+  <line no="24"/>
+  <line no="25">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
-  <line no="23">
-    <token name="T_DOC_COMMENT">   * Clean up</token>
-  </line>
-  <line no="24">
-    <token name="T_DOC_COMMENT">   *</token>
-  </line>
-  <line no="25">
-    <token name="T_DOC_COMMENT">   * @deconstructor</token>
-  </line>
   <line no="26">
-    <token name="T_DOC_COMMENT">   */</token>
+    <token name="T_DOC_COMMENT">	 * Clean up</token>
   </line>
   <line no="27">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_DOC_COMMENT">	 *</token>
+  </line>
+  <line no="28">
+    <token name="T_DOC_COMMENT">	 * @deconstructor</token>
+  </line>
+  <line no="29">
+    <token name="T_DOC_COMMENT">	 */</token>
+  </line>
+  <line no="30">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_FUNCTION">function</token>
@@ -123,8 +132,8 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="28">
-    <token name="T_WHITESPACE">    </token>
+  <line no="31">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_UNSET">unset</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_WHITESPACE"> </token>
@@ -135,13 +144,13 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="29">
-    <token name="T_WHITESPACE">  </token>
+  <line no="32">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="30"/>
-  <line no="31">
-    <token name="T_WHITESPACE">  </token>
+  <line no="33"/>
+  <line no="34">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_FUNCTION">function</token>
@@ -149,7 +158,6 @@
     <token name="T_STRING">set_pdo</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_NS_SEPARATOR">\</token>
     <token name="T_STRING">PDO</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$db</token>
@@ -158,8 +166,8 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="32">
-    <token name="T_WHITESPACE">    </token>
+  <line no="35">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$this</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">db</token>
@@ -169,29 +177,32 @@
     <token name="T_VARIABLE">$db</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="33">
-    <token name="T_WHITESPACE">  </token>
+  <line no="36">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="34"/>
-  <line no="35">
-    <token name="T_WHITESPACE">  </token>
+  <line no="37"/>
+  <line no="38">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
-  <line no="36">
-    <token name="T_DOC_COMMENT">   * Child classes need to implement get_by_criterion</token>
-  </line>
-  <line no="37">
-    <token name="T_DOC_COMMENT">   *</token>
-  </line>
-  <line no="38">
-    <token name="T_DOC_COMMENT">   * @abstract</token>
-  </line>
   <line no="39">
-    <token name="T_DOC_COMMENT">   */</token>
+    <token name="T_DOC_COMMENT">	 * Child classes need to implement get_by_criterion</token>
   </line>
   <line no="40">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_DOC_COMMENT">	 *</token>
+  </line>
+  <line no="41">
+    <token name="T_DOC_COMMENT">	 * @abstract</token>
+  </line>
+  <line no="42">
+    <token name="T_DOC_COMMENT">	 * @param $options</token>
+  </line>
+  <line no="43">
+    <token name="T_DOC_COMMENT">	 */</token>
+  </line>
+  <line no="44">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_ABSTRACT">abstract</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PUBLIC">public</token>
@@ -206,8 +217,8 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="41">
+  <line no="45">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="42"/>
+  <line no="46"/>
 </source>

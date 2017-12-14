@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Configuration" namespace="Nectary" name="Configuration" abstract="false" final="false" start="17" end="104">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/configuration" file="configuration.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/configuration/configuration.php" size="2540" time="2016-11-09T10:36:51-07:00" unixtime="1478713011" sha1="81508a7e08719a980f76892175572886993c9149" relative="configuration/configuration.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Configuration" namespace="Nectary" name="Configuration" abstract="false" final="false" start="18" end="83">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/configuration" file="configuration.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/configuration/configuration.php" size="1989" time="2017-12-13T22:30:49+00:00" unixtime="1513204249" sha1="8fd24bd9d35e2f0103871a9ba079f81b630d8d85" relative="configuration/configuration.php"/>
   <docblock>
     <description compact="Configuration Singleton">House global configuration settings here. The Configuration
 object can load in a configuration .env file, or have
@@ -8,59 +8,65 @@ attributes added to it programmatically.</description>
     <extends value="Singleton"/>
   </docblock>
   <extends full="Nectary\Singleton" namespace="Nectary" name="Singleton"/>
-  <member name="attributes" visibility="public" static="false" line="18"/>
-  <method name="set_configuration_path" start="20" end="22" abstract="false" final="false" static="true" visibility="public">
-    <parameter name="path" byreference="false" type="{unknown}"/>
+  <member name="attributes" visibility="public" static="false" line="19"/>
+  <method name="set_configuration_path" start="21" end="23" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="path" byreference="false" type="{unknown}" default="" constant="null"/>
   </method>
-  <method name="reset" start="24" end="26" abstract="false" final="false" static="true" visibility="public"/>
-  <method name="get" start="28" end="34" abstract="false" final="false" static="false" visibility="public">
+  <method name="reset" start="25" end="27" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="get" start="29" end="35" abstract="false" final="false" static="false" visibility="public">
     <parameter name="key" byreference="false" type="{unknown}"/>
     <parameter name="default" byreference="false" type="{unknown}" default="" constant="null"/>
   </method>
-  <method name="set" start="36" end="38" abstract="false" final="false" static="false" visibility="public">
+  <method name="set" start="37" end="39" abstract="false" final="false" static="false" visibility="public">
     <parameter name="key" byreference="false" type="{unknown}"/>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <method name="add" start="44" end="54" abstract="false" final="false" static="false" visibility="public">
+  <method name="add" start="48" end="58" abstract="false" final="false" static="false" visibility="public">
     <docblock>
-      <description compact="Add to an new or existing value.">This will promote scalor values into an array to contain multiple values.</description>
+      <description compact="Add to an new or existing value.">This will promote scalar values into an array to contain multiple values.</description>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
     </docblock>
     <parameter name="key" byreference="false" type="{unknown}"/>
     <parameter name="value" byreference="false" type="{unknown}"/>
   </method>
-  <constructor name="__construct" start="59" end="70" abstract="false" final="false" static="false" visibility="protected">
+  <constructor name="__construct" start="66" end="82" abstract="false" final="false" static="false" visibility="protected">
     <docblock>
-      <description compact="Load in the configuration file and parse it"/>
-    </docblock>
-    <parameter name="path" byreference="false" type="string" default="'.env'"/>
-  </constructor>
-  <method name="parse" start="79" end="99" abstract="false" final="false" static="false" visibility="private">
-    <docblock>
-      <description compact="Parse the configuration text">TODO support different parsers</description>
+      <description compact="Load the configuration dotenv file"/>
+      <param type="string" variable="$path"/>
       <throws type="object">
         <type full="Nectary\Exceptions\Invalid_Configuration_Exception" namespace="Nectary\Exceptions" name="Invalid_Configuration_Exception"/>
       </throws>
     </docblock>
-    <parameter name="configuration" byreference="false" type="{unknown}"/>
-    <inline>
-      <comment value="Split on new line" line="81"/>
-      <comment value="Split each line by the first equal sign" line="84"/>
-    </inline>
-  </method>
-  <method name="is_valid_line" start="101" end="103" abstract="false" final="false" static="false" visibility="private">
-    <parameter name="parts" byreference="false" type="{unknown}"/>
-  </method>
+    <parameter name="path" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
   <parent full="Nectary\Singleton" namespace="Nectary" name="Singleton">
     <member name="instances" type="array" default="" visibility="protected" static="true" line="9"/>
-    <constructor name="__construct" start="10" end="10" abstract="false" final="false" static="false" visibility="protected"/>
-    <method name="__clone" start="11" end="11" abstract="false" final="false" static="false" visibility="protected"/>
-    <method name="get_instance" start="13" end="20" abstract="false" final="false" static="true" visibility="public">
-    <inline>
-      <comment value="late-static-bound class name" line="14"/>
-    </inline>
-  </method>
-    <method name="set_instance" start="22" end="26" abstract="false" final="false" static="true" visibility="public">
-    <parameter name="instance" byreference="false" type="{unknown}"/>
-  </method>
+    <constructor name="__construct" start="16" end="16" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Singleton constructor."/>
+        <param type="object" variable="$options">
+          <type full="Nectary\array|string|null" namespace="Nectary" name="array|string|null"/>
+        </param>
+      </docblock>
+      <parameter name="options" byreference="false" type="array" default=""/>
+    </constructor>
+    <method name="__clone" start="17" end="17" abstract="false" final="false" static="false" visibility="protected"/>
+    <method name="get_instance" start="23" end="30" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description/>
+        <param type="object" variable="$options">
+          <type full="Nectary\array|string|null" namespace="Nectary" name="array|string|null"/>
+        </param>
+        <return type="mixed"/>
+      </docblock>
+      <parameter name="options" byreference="false" type="array" default=""/>
+      <inline>
+        <comment value="late-static-bound class name" line="24"/>
+      </inline>
+    </method>
+    <method name="set_instance" start="32" end="36" abstract="false" final="false" static="true" visibility="public">
+      <parameter name="instance" byreference="false" type="{unknown}"/>
+    </method>
   </parent>
 </class>

@@ -4,53 +4,54 @@ namespace Nectary\Tests;
 
 use Nectary\Decoratable;
 use Nectary\Decorator;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the decoratable interface in the framework
  *
  * @group decorator
  */
-class Decorator_Test extends \PHPUnit_Framework_TestCase {
-  function test_exists() {
-    $this->assertEquals( 'Nectary\Decorator', Decorator::class );
-  }
+class Decorator_Test extends TestCase {
+	public function test_exists() {
+		$this->assertEquals( 'Nectary\Decorator', Decorator::class );
+	}
 
-  function test_decorator_provides_access_to_base_class() {
-    $decoratable = new Decoratable_Test_Object();
+	public function test_decorator_provides_access_to_base_class() {
+		$decoratable = new Decoratable_Test_Object();
 
-    $decorated = $decoratable->decorate();
+		$decorated = $decoratable->decorate();
 
-    $this->assertEquals( 'first_name', $decorated->first_name );
-  }
+		$this->assertEquals( 'first_name', $decorated->first_name );
+	}
 
-  function test_decorator_provides_functional_shortcut() {
-    $decoratable = new Decoratable_Test_Object();
+	public function test_decorator_provides_functional_shortcut() {
+		$decoratable = new Decoratable_Test_Object();
 
-    $decorated = $decoratable->decorate();
+		$decorated = $decoratable->decorate();
 
-    $this->assertEquals( 'full_name', $decorated->name );
-  }
+		$this->assertEquals( 'full_name', $decorated->name );
+	}
 
-  function test_decorator_provides_isset_functionality() {
-    $decoratable = new Decoratable_Test_Object();
+	public function test_decorator_provides_isset_functionality() {
+		$decoratable = new Decoratable_Test_Object();
 
-    $decorated = $decoratable->decorate();
+		$decorated = $decoratable->decorate();
 
-    $this->assertTrue( isset( $decorated->name ) );
-    $this->assertFalse( isset( $decorated->full_name ) );
-  }
+		$this->assertTrue( isset( $decorated->name ) );
+		$this->assertFalse( isset( $decorated->full_name ) );
+	}
 }
 
 class Decorator_Test_Object extends Decorator {
-  public function get_name() {
-    return 'full_name';
-  }  
+	public function get_name() {
+		return 'full_name';
+	}
 }
 
 class Decoratable_Test_Object implements Decoratable {
-  public $first_name = 'first_name';
+	public $first_name = 'first_name';
 
-  public function decorate() {
-    return new Decorator_Test_Object( $this );
-  }
+	public function decorate() {
+		return new Decorator_Test_Object( $this );
+	}
 }

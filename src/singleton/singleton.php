@@ -6,22 +6,32 @@ namespace Nectary;
  * Support singletons in PHP
  */
 abstract class Singleton {
-  protected static $instances = array();
-  protected function __construct() {}
-  protected function __clone() {}
+	protected static $instances = array();
 
-  public static function get_instance() {
-    $cls = get_called_class(); // late-static-bound class name
-    if ( ! isset( self::$instances[ $cls ] ) ) {
-      self::$instances[ $cls ] = new static;
-    }
+	/**
+	 * Singleton constructor.
+	 *
+	 * @param array|string|null $options
+	 */
+	protected function __construct( $options = array() ) {}
+	protected function __clone() {}
 
-    return self::$instances[ $cls ];
-  }
+	/**
+	 * @param array|string|null $options
+	 * @return mixed
+	 */
+	public static function get_instance( $options = array() ) {
+		$cls = static::class; // late-static-bound class name
+		if ( ! isset( self::$instances[ $cls ] ) ) {
+			self::$instances[ $cls ] = new static( $options );
+		}
 
-  public static function set_instance( $instance ) {
-    $cls = get_called_class();
+		return self::$instances[ $cls ];
+	}
 
-    self::$instances[ $cls ] = $instance;
-  }
+	public static function set_instance( $instance ) {
+		$cls = static::class;
+
+		self::$instances[ $cls ] = $instance;
+	}
 }

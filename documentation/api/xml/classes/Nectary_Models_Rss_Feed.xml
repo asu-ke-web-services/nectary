@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Models\Rss_Feed" namespace="Nectary\Models" name="Rss_Feed" abstract="false" final="false" start="13" end="65">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/implementations" file="rss-feed.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/implementations/rss-feed.php" size="1442" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="6616d3dafaa7d7abecf45d60affcc0b74f374216" relative="models/implementations/rss-feed.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Models\Rss_Feed" namespace="Nectary\Models" name="Rss_Feed" abstract="false" final="false" start="13" end="66">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/models/implementations" file="rss-feed.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/models/implementations/rss-feed.php" size="1408" time="2017-12-14T00:10:26+00:00" unixtime="1513210226" sha1="af283be1508460683ea8f7aee6487c3fa5f93b86" relative="models/implementations/rss-feed.php"/>
   <docblock>
     <description compact="Rss Feed class for pulling and parsing RSS feeds from the web"/>
     <implements value="Feed"/>
@@ -10,26 +10,41 @@
   <member name="items" visibility="private" static="false" line="15"/>
   <member name="feed_callback" visibility="private" static="false" line="16"/>
   <constructor name="__construct" start="18" end="21" abstract="false" final="false" static="false" visibility="public">
-    <parameter name="url" byreference="false" type="string" default="''"/>
-    <parameter name="feed_callback" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="url" byreference="false" type="string" default="''">
+      <type full="Nectary\Models\string" namespace="Nectary\Models" name="string"/>
+    </parameter>
+    <parameter name="feed_callback" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Nectary\Models\string" namespace="Nectary\Models" name="string"/>
+    </parameter>
   </constructor>
-  <method name="retrieve_items" start="23" end="33" abstract="false" final="false" static="false" visibility="public"/>
-  <method name="sort_by_date" start="36" end="51" abstract="false" final="false" static="false" visibility="public">
-    <parameter name="order" byreference="false" type="string" default="'asc'"/>
+  <method name="retrieve_items" start="26" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
   </method>
-  <method name="get_items" start="54" end="56" abstract="false" final="false" static="false" visibility="public"/>
-  <method name="set_items" start="58" end="60" abstract="false" final="false" static="false" visibility="public">
-    <parameter name="items" byreference="false" type="{unknown}"/>
+  <method name="sort_by_date" start="37" end="52" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="order" byreference="false" type="string" default="'asc'">
+      <type full="Nectary\Models\string" namespace="Nectary\Models" name="string"/>
+    </parameter>
   </method>
-  <method name="get_unique_items" start="62" end="64" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="get_items" start="55" end="57" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="set_items" start="59" end="61" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="items" byreference="false" type="array"/>
+  </method>
+  <method name="get_unique_items" start="63" end="65" abstract="false" final="false" static="false" visibility="public"/>
   <interface full="Nectary\Feed" namespace="Nectary" name="Feed">
     <method name="retrieve_items" start="6" end="6" abstract="false" final="false" static="false" visibility="public"/>
     <method name="sort_by_date" start="7" end="7" abstract="false" final="false" static="false" visibility="public">
-      <parameter name="order" byreference="false" type="string" default="'asc'"/>
+      <parameter name="order" byreference="false" type="string" default="'asc'">
+        <type full="Nectary\string" namespace="Nectary" name="string"/>
+      </parameter>
     </method>
     <method name="get_items" start="8" end="8" abstract="false" final="false" static="false" visibility="public"/>
     <method name="set_items" start="9" end="9" abstract="false" final="false" static="false" visibility="public">
-      <parameter name="items" byreference="false" type="{unknown}"/>
+      <parameter name="items" byreference="false" type="array"/>
     </method>
     <method name="get_unique_items" start="10" end="10" abstract="false" final="false" static="false" visibility="public"/>
   </interface>

@@ -1,57 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Response" namespace="Nectary" name="Response" abstract="false" final="false" start="13" end="35">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/responses" file="response.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/responses/response.php" size="826" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="124ffaf9f0f7e1739a41c063ce95fff2d6091f18" relative="responses/response.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Response" namespace="Nectary" name="Response" abstract="false" final="false" start="11" end="33">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/responses" file="response.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/responses/response.php" size="771" time="2017-12-13T23:29:19+00:00" unixtime="1513207759" sha1="0ba6313059127c9266ae32746de13bdc87c275c5" relative="responses/response.php"/>
   <docblock>
     <description compact="View Model for head, content, and footer data">Extends Data_Model for the magic setters and
 getters.</description>
   </docblock>
   <extends full="Nectary\Data_Model" namespace="Nectary" name="Data_Model"/>
-  <member name="error_404" visibility="public" static="true" line="14"/>
-  <member name="http_header" visibility="public" static="false" line="16"/>
-  <member name="head" visibility="public" static="false" line="25">
+  <member name="error_404" visibility="public" static="true" line="12"/>
+  <member name="http_header" visibility="public" static="false" line="14"/>
+  <member name="head" visibility="public" static="false" line="23">
     <docblock>
       <description compact="An array that can contain: - no_cache [Boolean] - title [String] - description [String] - canonical [String] - open_graph_image [String] - a path"/>
     </docblock>
   </member>
-  <member name="content" visibility="public" static="false" line="26"/>
-  <member name="footer" visibility="public" static="false" line="27"/>
-  <member name="extra" visibility="public" static="false" line="32">
+  <member name="content" visibility="public" static="false" line="24"/>
+  <member name="footer" visibility="public" static="false" line="25"/>
+  <member name="extra" visibility="public" static="false" line="30">
     <docblock>
       <description compact="Contains extra data, like: - web_standards_hero_image [String] - a path"/>
     </docblock>
   </member>
-  <member name="error" type="boolean" default="false" visibility="public" static="false" line="33"/>
-  <member name="is_singular" visibility="public" static="false" line="34"/>
+  <member name="error" type="boolean" default="false" visibility="public" static="false" line="31"/>
+  <member name="is_singular" visibility="public" static="false" line="32"/>
   <parent full="Nectary\Data_Model" namespace="Nectary" name="Data_Model">
     <member name="primary_key" visibility="public" static="true" line="9"/>
     <member name="table_name" visibility="public" static="true" line="10"/>
-    <constructor name="__construct" start="16" end="22" abstract="false" final="false" static="false" visibility="public">
+    <constructor name="__construct" start="18" end="24" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="This is a helpful method for constructing objects from an associated array of values"/>
+        <param type="array" variable="$array_of_values"/>
       </docblock>
       <parameter name="array_of_values" byreference="false" type="array" default=""/>
     </constructor>
-    <method name="__get" start="27" end="31" abstract="false" final="false" static="false" visibility="public">
+    <method name="__get" start="32" end="36" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Getter"/>
+        <param variable="$property"/>
+        <return type="mixed"/>
       </docblock>
       <parameter name="property" byreference="false" type="{unknown}"/>
     </method>
-    <method name="__set" start="36" end="41" abstract="false" final="false" static="false" visibility="public">
+    <method name="__set" start="45" end="50" abstract="false" final="false" static="false" visibility="public">
       <docblock>
         <description compact="Setter - only allow properties that exist to be set"/>
+        <param type="string" variable="$property"/>
+        <param type="mixed" variable="$value"/>
+        <return type="object">
+          <type full="Nectary\Data_Model" namespace="Nectary" name="Data_Model"/>
+        </return>
       </docblock>
       <parameter name="property" byreference="false" type="{unknown}"/>
       <parameter name="value" byreference="false" type="{unknown}"/>
     </method>
-    <method name="get_minimal_columns" start="46" end="48" abstract="false" final="false" static="true" visibility="public">
+    <method name="get_minimal_columns" start="57" end="59" abstract="false" final="false" static="true" visibility="public">
       <docblock>
         <description compact="Models should implement get_minimal_columns"/>
+        <return type="string"/>
       </docblock>
     </method>
-    <method name="get_all_columns" start="53" end="55" abstract="false" final="false" static="true" visibility="public">
+    <method name="get_all_columns" start="66" end="68" abstract="false" final="false" static="true" visibility="public">
       <docblock>
         <description compact="Models should implement get_all_columns"/>
+        <return type="string"/>
       </docblock>
     </method>
   </parent>
