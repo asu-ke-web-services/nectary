@@ -28,7 +28,7 @@ class Feed_Facade {
 	 * @param $feeds array<Feed>
 	 */
 	public function merge_feeds( array $feeds ) {
-		$source_feeds = [[]];
+		$source_feeds = [ [] ];
 
 		foreach ( $feeds as $feed ) {
 			$source_feeds[] = $feed->get_items();
