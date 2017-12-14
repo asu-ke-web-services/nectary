@@ -93,7 +93,7 @@ class Twitter_Feed_Service extends Feed_Service {
 	private function create_oauth( $api_url, $query, $query_type, $options ) {
 		$oauth = array(
 			'oauth_consumer_key'     => $options['consumer_key'],
-			'oauth_nonce'            => uniqid(),
+			'oauth_nonce'            => uniqid( '', true ),
 			'oauth_signature_method' => 'HMAC-SHA1',
 			'oauth_token'            => $options['oauth_access_token'],
 			'oauth_timestamp'        => time(),

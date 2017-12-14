@@ -43,9 +43,9 @@ if ( ! function_exists( 'is_json' ) ) {
 		if ( is_string( $string ) ) {
 			json_decode( $string );
 			return ( json_last_error() == JSON_ERROR_NONE );
-		} else {
-			return false;
 		}
+
+		return false;
 	}
 }
 
@@ -85,7 +85,7 @@ if ( ! function_exists( 'to_title_case' ) ) {
 	 * @return string
 	 */
 	function to_title_case( $title ) {
-		$title = strval( $title );
+		$title = (string) $title;
 		// Our array of 'small words' which shouldn't be capitalised if
 		// they aren't the first word. Add your own words to taste.
 		$small_words = array(
@@ -122,15 +122,13 @@ if ( ! function_exists( 'to_title_case' ) ) {
 		foreach ( $words as $key => $word ) {
 			// If this word is the first, or it's not one of our small words, capitalise it
 			// with ucwords().
-			if ( $key == 0 || ! in_array( $word, $small_words ) ) {
+			if ( $key == 0 || ! \in_array( $word, $small_words, false ) ) {
 				$words[ $key ] = ucwords( $word );
 			}
 		}
 
 		// Join the words back into a string
-		$new_title = implode( ' ', $words );
-
-		return $new_title;
+		return implode( ' ', $words );
 	}
 }
 
@@ -149,10 +147,10 @@ if ( ! function_exists( 'br2nl' ) ) {
 
 if ( ! function_exists( 'first_char' ) ) {
 	function first_char( $string ) {
-		if ( strlen( $string ) == 0 ) {
+		if ( '' === $string ) {
 			return '';
 		}
-		return substr( $string, 0, 1 );
+		return $string[0];
 	}
 }
 

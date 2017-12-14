@@ -14,8 +14,8 @@ abstract class Fail_Fast_Request extends Request {
 
 		foreach ( $rules as $name => $check ) {
 			if ( true !== $check ) {
-				if ( is_array( $error_callback ) ) {
-					return call_user_func_array( $error_callback, [ $check, $this ] );
+				if ( \is_array( $error_callback ) ) {
+					return \call_user_func_array( $error_callback, [ $check, $this ] );
 				}
 
 				return $error_callback( $check, $this );

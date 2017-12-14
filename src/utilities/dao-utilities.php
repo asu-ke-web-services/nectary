@@ -18,25 +18,25 @@ if ( ! function_exists( 'sanitize_order_by' ) ) {
 	function sanitize_order_by( $string ) {
 		if ( strtolower( trim( rtrim( $string ) ) ) === 'rand()' ) {
 			return 'RAND()'; }
-		if ( strripos( $string, ';' ) !== false ) {
+		if ( strrpos( $string, ';' ) !== false ) {
 			return ''; }
-		if ( strripos( $string, '\'' ) !== false ) {
+		if ( strrpos( $string, '\'' ) !== false ) {
 			return ''; }
-		if ( strripos( $string, '\"' ) !== false ) {
+		if ( strrpos( $string, '\"' ) !== false ) {
 			return ''; }
-		if ( strripos( $string, '\\' ) !== false ) {
+		if ( strrpos( $string, '\\' ) !== false ) {
 			return ''; }
-		if ( strripos( $string, '&' ) !== false ) {
+		if ( strrpos( $string, '&' ) !== false ) {
 			return ''; }
-		if ( strripos( $string, '^' ) !== false ) {
+		if ( strrpos( $string, '^' ) !== false ) {
 			return ''; }
-		if ( strripos( $string, '<' ) !== false ) {
+		if ( strrpos( $string, '<' ) !== false ) {
 			return ''; }
-		if ( strripos( $string, '>' ) !== false ) {
+		if ( strrpos( $string, '>' ) !== false ) {
 			return ''; }
-		if ( strripos( $string, '(' ) !== false ) {
+		if ( strrpos( $string, '(' ) !== false ) {
 			return ''; }
-		if ( strripos( $string, ')' ) !== false ) {
+		if ( strrpos( $string, ')' ) !== false ) {
 			return ''; }
 		return $string;
 	}

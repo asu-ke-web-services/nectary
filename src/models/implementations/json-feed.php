@@ -28,13 +28,12 @@ class Json_Feed implements Feed {
 	 * @throws \Exception
 	 */
 	public function retrieve_items( $look_at = false ) {
-		$json = call_user_func( $this->feed_callback, $this->url );
+		$json = \call_user_func( $this->feed_callback, $this->url );
 		$raw  = $this->parse_feed( $json );
 
+		$this->items = $raw;
 		if ( $look_at !== false ) {
 			$this->items = $raw[ $look_at ];
-		} else {
-			$this->items = $raw;
 		}
 	}
 

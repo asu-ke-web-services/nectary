@@ -31,7 +31,7 @@ class Json_Feed_Service extends Feed_Service {
 		if ( curl_error( $session ) ) {
 			$error_message = 'JSON Call failed ';
 
-			if ( function_exists( 'curl_strerror' ) ) {
+			if ( \function_exists( 'curl_strerror' ) ) {
 				$error_message .= curl_strerror( curl_errno( $session ) );
 			} else {
 				$error_message .= curl_errno( $session );

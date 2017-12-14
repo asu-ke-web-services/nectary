@@ -33,8 +33,8 @@ abstract class Handlebars_View extends View {
 	protected function __construct( $view_root = '', $path_to_views = null ) {
 		if ( false === $view_root ) {
 			// False means we are not loading from a template!
-			$loader       = new \Handlebars\Loader\StringLoader();
-			$this->engine = new \Handlebars\Handlebars( array( 'loader' => $loader ) );
+			$loader       = new StringLoader();
+			$this->engine = new Handlebars( array( 'loader' => $loader ) );
 		} else {
 			if ( '' !== $view_root ) {
 				$this->view_root = $view_root . '/';
@@ -44,10 +44,10 @@ abstract class Handlebars_View extends View {
 				$path_to_views = Configuration::get_instance()->get( 'path_to_views' );
 			}
 
-			$this->engine = new \Handlebars\Handlebars(
+			$this->engine = new Handlebars(
 				array(
-					'loader'          => new \Handlebars\Loader\FilesystemLoader( $path_to_views ),
-					'partials_loader' => new \Handlebars\Loader\FilesystemLoader( $path_to_views ),
+					'loader'          => new FilesystemLoader( $path_to_views ),
+					'partials_loader' => new FilesystemLoader( $path_to_views ),
 				)
 			);
 		}
@@ -80,12 +80,12 @@ abstract class Handlebars_View extends View {
 		$this->engine->addHelper(
 			'config',
 			function ( $template, $context, $args ) {
-					$handlebars_arguments = new \Handlebars\Arguments( $args );
+					$handlebars_arguments = new Arguments( $args );
 					$arguments            = $handlebars_arguments->getPositionalArguments();
 
 					$key = $arguments[0];
 
-				if ( count( $arguments ) > 1 ) {
+				if ( \count( $arguments ) > 1 ) {
 					$default = $arguments[1];
 					$value   = Configuration::get_instance()->get( $key, $default );
 				} else {
@@ -153,7 +153,7 @@ abstract class Handlebars_View extends View {
 			function ( $template, $context, $args ) {
 					$that = $context->get( 'this' );
 
-					$handlebars_arguments = new \Handlebars\Arguments( $args );
+					$handlebars_arguments = new Arguments( $args );
 					$arguments            = $handlebars_arguments->getPositionalArguments();
 
 					$value_a  = $arguments[0];
@@ -206,19 +206,23 @@ abstract class Handlebars_View extends View {
 	}
 
 	private function get_real_value( $value, $context ) {
-		if ( $value instanceof \Handlebars\StringWrapper ) {
+		if ( $value instanceof StringWrapper ) {
 			return $this->get_real_value( '' . $value, $context );
-		} elseif ( array_key_exists( $value, $context ) ) {
-			return $context[ $value ];
-		} else {
-			// Now string to real type
-			if ( is_numeric( $value ) ) {
-				return $value + 0;
-			} elseif ( in_array( $value, [ 'true', 'false' ] ) ) {
-				return ( 'true' === $value ? true : false );
-			} else {
-				return $value;
-			}
 		}
+
+		if ( array_key_exists( $value, $context ) ) {
+			return $context[ $value ];
+		}
+
+		// string to real type
+		if ( is_numeric( $value ) ) {
+			return $value + 0;
+		}
+
+		if ( \in_array( $value, [ 'true', 'false' ], false ) ) {
+			return ( 'true' === $value );
+		}
+
+		return $value;
 	}
 }

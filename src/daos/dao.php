@@ -18,7 +18,7 @@ abstract class Dao {
 	 * @constructor
 	 * @param PDO $db
 	 */
-	public function __construct( \PDO $db ) {
+	public function __construct( PDO $db ) {
 		$this->set_pdo( $db );
 	}
 
@@ -31,7 +31,7 @@ abstract class Dao {
 		unset( $this->db );
 	}
 
-	public function set_pdo( \PDO $db ) {
+	public function set_pdo( PDO $db ) {
 		$this->db = $db;
 	}
 

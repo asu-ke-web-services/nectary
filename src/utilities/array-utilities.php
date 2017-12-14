@@ -2,10 +2,8 @@
 
 if ( ! function_exists( 'array_peak' ) ) {
 	function array_peak( $array ) {
-		if ( is_array( $array ) ) {
-			foreach ( $array as $value ) {
-				return $value;
-			}
+		if ( \is_array( $array ) ) {
+			return reset( $array );
 		}
 
 		return null;
@@ -20,13 +18,15 @@ if ( ! function_exists( 'to_array' ) ) {
 	 * @param  mixed $something gets wrapped in an array
 	 * @return array always returns an array
 	 */
-	function to_array( $something = array() ) {
-		if ( is_array( $something ) ) {
+	function to_array( $something = array() ) : array {
+		if ( \is_array( $something ) ) {
 			return $something;
-		} elseif ( is_null( $something ) ) {
-			return array();
-		} else {
-			return array( $something );
 		}
+
+		if ( null === $something ) {
+			return array();
+		}
+
+		return array( $something );
 	}
 }

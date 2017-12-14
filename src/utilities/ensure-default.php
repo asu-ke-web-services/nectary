@@ -12,7 +12,7 @@ if ( ! function_exists( 'ensure_default' ) ) {
 	 */
 	function ensure_default( array &$options_array, $index, $default_value ) {
 		// if we're not passed an array, theres not much we can do
-		if ( ! is_array( $options_array ) ) {
+		if ( ! \is_array( $options_array ) ) {
 			return array();
 		}
 

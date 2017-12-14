@@ -31,9 +31,9 @@ class Json_Utilities {
 			}
 
 			return $current;
-		} else {
-			return null;
 		}
+
+		return null;
 	}
 
 	/**
@@ -47,9 +47,9 @@ class Json_Utilities {
 
 		if ( $ref === null && ! self::check_path( $json, $path ) ) {
 			return $default;
-		} else {
-			return $ref;
 		}
+
+		return $ref;
 	}
 
 	public static function check_path( $json, $path ) {
@@ -58,7 +58,7 @@ class Json_Utilities {
 		$current = $json;
 
 		foreach ( $path_parts as $part ) {
-			if ( is_array( $current ) && array_key_exists( $part, $current ) ) {
+			if ( \is_array( $current ) && array_key_exists( $part, $current ) ) {
 				$current = $current[ $part ];
 			} else {
 				return false;

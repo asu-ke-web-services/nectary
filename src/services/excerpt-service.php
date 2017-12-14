@@ -17,24 +17,24 @@ class Excerpt_Service {
 		$content = trim( $content );
 		// If we only have 1 paragraph and less than $words words, reset the content
 		// to the full event content
-		if ( count( explode( ' ', $content ) ) <= $words ) {
+		if ( substr_count( $content, ' ' ) + 1 <= $words ) {
 			return $content;
+		}
+
+		// We have some trimming to do
+		$content = implode(
+			' ',
+			\array_slice( explode( ' ', $content ), 0, $words )
+		);
+
+		$length = \strlen( $content );
+
+		$content = Truncate::truncateHtml( $content_excerpt, $length );
+
+		if ( substr( $content, -1 ) === '.' ) {
+			$content .= '..';
 		} else {
-			// We have some trimming to do
-			$content = implode(
-				' ',
-				array_slice( explode( ' ', $content ), 0, $words )
-			);
-
-			$length = strlen( $content );
-
-			$content = Truncate::truncateHtml( $content_excerpt, $length );
-
-			if ( substr( $content, -1 ) == '.' ) {
-				$content .= '..';
-			} else {
-				$content .= '...';
-			}
+			$content .= '...';
 		}
 
 		return $content;

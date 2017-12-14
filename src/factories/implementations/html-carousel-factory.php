@@ -13,9 +13,14 @@ class Html_Carousel_Factory extends Html_Factory {
 	private $slides;
 	private $indicators;
 	private $id;
+	private $classes;
+	private $inner_classes;
+	private $data_attributes;
 
 	public function __construct() {
-		$this->id              = uniqid( 'carousel-' );
+		Html_Factory::__construct();
+
+		$this->id              = uniqid( 'carousel-', true );
 		$this->indicators      = false;
 		$this->slides          = [];
 		$this->classes         = '';
@@ -44,12 +49,11 @@ class Html_Carousel_Factory extends Html_Factory {
 	}
 
 	public function build() {
-		$html = join( $this->slides, '' );
+		$html       = implode( $this->slides, '' );
+		$indicators = '';
 
 		if ( $this->indicators ) {
 			$indicators = $this->build_indicators();
-		} else {
-			$indicators = '';
 		}
 
 		return
@@ -63,7 +67,7 @@ class Html_Carousel_Factory extends Html_Factory {
 	}
 
 	private function build_indicators() {
-		$number           = count( $this->slides );
+		$number           = \count( $this->slides );
 		$inner_indicators = '';
 
 		for ( $i = 0; $i < $number; $i++ ) {

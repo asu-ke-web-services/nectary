@@ -129,9 +129,13 @@ class Dependency_Injection_Factory extends Factory {
 
 		if ( is_subclass_of( $class_name, Singleton::class ) ) {
 			return $class_name::get_instance();
-		} elseif ( $reflector->isAbstract() ) {
+		}
+
+		if ( $reflector->isAbstract() ) {
 			return null;
-		} elseif ( is_null( $constructor ) ) {
+		}
+
+		if ( null === $constructor ) {
 			return new $class_name();
 		}
 
