@@ -58,7 +58,10 @@ class Configuration extends Singleton {
 	}
 
 	/**
-	 * Load the configuration dotenv file
+	 * Load the configuration dotenv values into the Configuration instance.
+	 * By intention, we are not storing these values in environment variables.
+	 * Instead, they are stored in the Configuration instance and likewise retrieved
+	 * from there.
 	 *
 	 * @param string $path
 	 * @throws Invalid_Configuration_Exception
