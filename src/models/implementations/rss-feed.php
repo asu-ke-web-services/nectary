@@ -15,7 +15,7 @@ class Rss_Feed implements Feed {
 	private $items;
 	private $feed_callback;
 
-	public function __construct( $url = '', $feed_callback = null ) {
+	public function __construct( string $url = '', string $feed_callback = null ) {
 		$this->url           = $url;
 		$this->feed_callback = $feed_callback;
 	}
@@ -34,7 +34,7 @@ class Rss_Feed implements Feed {
 	}
 
 	// @codingStandardsIgnoreStart
-	public function sort_by_date( $order = 'asc' ) {
+	public function sort_by_date( string $order = 'asc' ) {
 		usort( $this->items, function ( $a, $b ) use ( $order ) {
 				$a_start_date = strtotime( $a->get_date() );
 				$b_start_date = strtotime( $b->get_date() );
@@ -52,15 +52,15 @@ class Rss_Feed implements Feed {
 	}
 	// @codingStandardsIgnoreEnd
 
-	public function get_items() {
+	public function get_items() : array {
 		return $this->items;
 	}
 
-	public function set_items( $items ) {
+	public function set_items( array $items ) {
 		$this->items = $items;
 	}
 
-	public function get_unique_items() {
+	public function get_unique_items() : array {
 		// TODO
 	}
 }
