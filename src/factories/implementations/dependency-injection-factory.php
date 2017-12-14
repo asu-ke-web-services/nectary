@@ -87,7 +87,7 @@ class Dependency_Injection_Factory extends Factory {
 	 * @return array
 	 * @throws \ReflectionException
 	 */
-	private function resolve_dependencies( $reflector_parameters, $named_arguments = [] ) : array {
+	private function resolve_dependencies( array $reflector_parameters, array $named_arguments = [] ) : array {
 		// map the named_arguments to the reflector_parameters
 		$dependencies = [];
 

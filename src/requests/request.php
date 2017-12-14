@@ -29,5 +29,5 @@ abstract class Request {
 		}
 	}
 
-	abstract public function validation_rules();
+	abstract public function validation_rules() : array;
 }

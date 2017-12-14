@@ -54,7 +54,7 @@ abstract class Data_Model {
 	 *
 	 * @return string
 	 */
-	public static function get_minimal_columns() {
+	public static function get_minimal_columns() : string {
 		return '';
 	}
 
@@ -63,7 +63,7 @@ abstract class Data_Model {
 	 *
 	 * @return string
 	 */
-	public static function get_all_columns() {
+	public static function get_all_columns() : string {
 		return '';
 	}
 }

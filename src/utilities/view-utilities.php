@@ -27,7 +27,7 @@ if ( ! function_exists( 'present' ) ) {
 	 * @param  array $options Passes these parameters when presenting the objects
 	 * @return mixed
 	 */
-	function present( $any, $options = [] ) {
+	function present( $any, array $options = [] ) {
 		$presented = null;
 
 		if ( is_array( $any ) ) {

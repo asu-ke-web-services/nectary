@@ -52,6 +52,9 @@ class Json_Feed implements Feed {
 		$this->items = $items;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function get_unique_items() : array {
 		$unique = [];
 
