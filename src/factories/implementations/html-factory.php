@@ -19,11 +19,11 @@ class Html_Factory extends Factory {
 		$this->html = '';
 	}
 
-	public function add_heading( $inner_html, $options = [] ) {
+	public function add_heading( $inner_html, array $options = [] ) {
 		$this->html .= $this->with_heading( $inner_html, $options );
 	}
 
-	public function with_heading( $inner_html, $options = [] ) {
+	public function with_heading( $inner_html, array $options = [] ) : string {
 		ensure_default( $options, 'level', 2 );
 		ensure_default( $options, 'class', '' );
 
@@ -33,11 +33,11 @@ class Html_Factory extends Factory {
 		return "<h{$level} class='{$classes}'>{$inner_html}</h{$level}>";
 	}
 
-	public function add_link( $inner_html, $options = [] ) {
+	public function add_link( $inner_html, array $options = [] ) {
 		$this->html .= $this->with_link( $inner_html, $options );
 	}
 
-	public function with_link( $inner_html, $options = [] ) {
+	public function with_link( $inner_html, array $options = [] ) : string {
 		ensure_default( $options, 'href', '#' );
 		ensure_default( $options, 'class', '' );
 
@@ -47,22 +47,22 @@ class Html_Factory extends Factory {
 		return "<a class='{$classes}' href='{$href}'>{$inner_html}</a>";
 	}
 
-	public function add_text( $inner_html, $options = [] ) {
+	public function add_text( $inner_html, array $options = [] ) {
 		$this->html .= $this->with_text( $inner_html, $options );
 	}
 
-	public function with_text( $inner_html, $options = [] ) {
+	public function with_text( $inner_html, array $options = [] ) : string {
 		ensure_default( $options, 'class', '' );
 
 		$classes = $options['class'];
 		return "<p class='{$classes}'>{$inner_html}</p>";
 	}
 
-	public function add_text_excerpt( $inner_html, $options = [] ) {
+	public function add_text_excerpt( $inner_html, array $options = [] ) {
 		$this->html .= $this->with_text_excerpt( $inner_html, $options );
 	}
 
-	public function with_text_excerpt( $inner_html, $options = [] ) {
+	public function with_text_excerpt( $inner_html, array $options = [] ) : string {
 		ensure_default( $options, 'character_limit', '150' );
 		ensure_default( $options, 'class', '' );
 
@@ -75,11 +75,11 @@ class Html_Factory extends Factory {
 		return "<p class='{$classes}'>{$excerpt}</p>";
 	}
 
-	public function add_image( $src, $options = [] ) {
+	public function add_image( $src, array $options = [] ) {
 		$this->html .= $this->with_image( $src, $options );
 	}
 
-	public function with_image( $src, $options = [] ) {
+	public function with_image( $src, array $options = [] ) : string {
 		ensure_default( $options, 'class', '' );
 
 		$classes = $options['class'];
@@ -87,11 +87,11 @@ class Html_Factory extends Factory {
 		return "<img src='{$src}' class='{$classes}' />";
 	}
 
-	public function add_div( $inner_html, $options = [] ) {
+	public function add_div( $inner_html, array $options = [] ) {
 		$this->html .= $this->with_div( $inner_html, $options );
 	}
 
-	public function with_div( $inner_html, $options = [] ) {
+	public function with_div( $inner_html, array $options = [] ) : string {
 		ensure_default( $options, 'class', '' );
 
 		$classes = $options['class'];
@@ -99,7 +99,7 @@ class Html_Factory extends Factory {
 		return "<div class='{$classes}'>{$inner_html}</div>";
 	}
 
-	public function build() {
+	public function build() : string {
 		return $this->html;
 	}
 }

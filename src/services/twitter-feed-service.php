@@ -3,7 +3,7 @@
 namespace Nectary\Services;
 
 use Nectary\Models\Json_Feed;
-use Nectary\Services\Feed_Service;
+
 
 /**
  * Feed Service for Twitter. Defaults
@@ -14,7 +14,7 @@ use Nectary\Services\Feed_Service;
 class Twitter_Feed_Service extends Feed_Service {
 	private $options;
 
-	public function get_feed( $options ) {
+	public function get_feed( $options ) : Json_Feed {
 		ensure_default( $options, 'query_type', 'search' );
 		ensure_default( $options, 'query', '@asugreen' );
 		ensure_default( $options, 'limit', 20 );
@@ -28,7 +28,7 @@ class Twitter_Feed_Service extends Feed_Service {
 		return new Json_Feed( 'https://api.twitter.com/1.1/', array( $this, 'get_curl_feed_data' ) );
 	}
 
-	public function get_curl_feed_data() {
+	public function get_curl_feed_data() : string {
 		$query_options = $this->create_query_options( $this->options );
 
 		$curl_options = array(
@@ -63,7 +63,7 @@ class Twitter_Feed_Service extends Feed_Service {
 		return $json;
 	}
 
-	private function create_query_options( $options ) {
+	private function create_query_options( $options ) : array {
 		$query      = $options['query'];
 		$type       = $options['query_type'];
 		$limit      = $options['limit'];
@@ -90,10 +90,10 @@ class Twitter_Feed_Service extends Feed_Service {
 		return $query_options;
 	}
 
-	private function create_oauth( $api_url, $query, $query_type, $options ) {
+	private function create_oauth( $api_url, $query, $query_type, $options ) : array {
 		$oauth = array(
 			'oauth_consumer_key'     => $options['consumer_key'],
-			'oauth_nonce'            => uniqid(),
+			'oauth_nonce'            => uniqid( '', true ),
 			'oauth_signature_method' => 'HMAC-SHA1',
 			'oauth_token'            => $options['oauth_access_token'],
 			'oauth_timestamp'        => time(),
@@ -109,7 +109,7 @@ class Twitter_Feed_Service extends Feed_Service {
 		return $oauth;
 	}
 
-	private function create_oauth_signature( $oauth, $api_url, $options ) {
+	private function create_oauth_signature( $oauth, $api_url, $options ) : string {
 		ksort( $oauth );
 
 		$base_url  = 'GET';
@@ -134,7 +134,7 @@ class Twitter_Feed_Service extends Feed_Service {
 		return $oauth_signature;
 	}
 
-	private function create_query_http_header( $oauth ) {
+	private function create_query_http_header( $oauth ) : array {
 		$request_header  = 'Authorization: OAuth ';
 		$request_header .= implode( ', ', $this->get_encoded_values( $oauth ) );
 
@@ -145,7 +145,7 @@ class Twitter_Feed_Service extends Feed_Service {
 		);
 	}
 
-	private function get_encoded_values( $oauth ) {
+	private function get_encoded_values( $oauth ) : array {
 		$encode_params = [];
 
 		foreach ( $oauth as $key => $value ) {
@@ -155,7 +155,14 @@ class Twitter_Feed_Service extends Feed_Service {
 		return $encode_params;
 	}
 
-	private function create_query_url( $api_url, $query, $query_type, $limit ) {
+	/**
+	 * @param string     $api_url
+	 * @param string     $query
+	 * @param string     $query_type
+	 * @param int|string $limit
+	 * @return string
+	 */
+	private function create_query_url( $api_url, $query, $query_type, $limit ) : string {
 		$query_url  = $api_url;
 		$query_url .= '?' . $query_type . '=';
 		$query_url .= rawurlencode( $query );

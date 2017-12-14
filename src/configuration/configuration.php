@@ -2,7 +2,8 @@
 
 namespace Nectary;
 
-use Nectary\Singleton;
+use josegonzalez\Dotenv\Loader;
+
 use Nectary\Exceptions\Invalid_Configuration_Exception;
 
 /**
@@ -28,9 +29,9 @@ class Configuration extends Singleton {
 	public function get( $key, $default = null ) {
 		if ( array_key_exists( $key, $this->attributes ) ) {
 			return $this->attributes[ $key ];
-		} else {
-			return $default;
 		}
+
+		return $default;
 	}
 
 	public function set( $key, $value ) {
@@ -39,16 +40,19 @@ class Configuration extends Singleton {
 
 	/**
 	 * Add to an new or existing value.
-	 * This will promote scalor values into an array to contain multiple values.
+	 * This will promote scalar values into an array to contain multiple values.
+	 *
+	 * @param string $key
+	 * @param mixed  $value
 	 */
 	public function add( $key, $value ) {
 		if ( ! array_key_exists( $key, $this->attributes ) ) {
 			$this->attributes[ $key ] = $value;
 		} else {
-			if ( ! is_array( $this->attributes[ $key ] ) ) {
+			if ( ! \is_array( $this->attributes[ $key ] ) ) {
 				$this->attributes[ $key ] = array( $this->attributes[ $key ], $value );
 			} else {
-				array_push( $this->attributes[ $key ], $value );
+				$this->attributes[ $key ][] = $value;
 			}
 		}
 	}
@@ -60,12 +64,13 @@ class Configuration extends Singleton {
 	 * @throws Invalid_Configuration_Exception
 	 */
 	protected function __construct( $path = null ) {
+		Singleton::__construct();
 		$this->attributes = [];
 		$configuration    = [];
 
 		if ( null !== $path && file_exists( $path ) ) {
 			try {
-				$configuration = ( new \josegonzalez\Dotenv\Loader( $path ) )->parse()->toArray();
+				$configuration = ( new Loader( $path ) )->parse()->toArray();
 			} catch ( \M1\Env\Exception\ParseException $exception ) {
 				throw new Invalid_Configuration_Exception( 'The provided configuration is invalid' );
 			}

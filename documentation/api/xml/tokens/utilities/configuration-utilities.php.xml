@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities" file="configuration-utilities.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities/configuration-utilities.php" size="362" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="06e65af6b402d08734230c1fb532acf4ba8cc5ad" relative="utilities/configuration-utilities.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/utilities" file="configuration-utilities.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/utilities/configuration-utilities.php" size="428" time="2017-12-14T00:37:01+00:00" unixtime="1513211821" sha1="ee0cf52ba530105008a4cb37adf222061da1472c" relative="utilities/configuration-utilities.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -49,20 +49,32 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="12">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
   <line no="13">
-    <token name="T_DOC_COMMENT">   * Handle configuration call without knowing about how</token>
+    <token name="T_DOC_COMMENT">	 * Handle configuration call without knowing about how</token>
   </line>
   <line no="14">
-    <token name="T_DOC_COMMENT">   * the Configuration object works</token>
+    <token name="T_DOC_COMMENT">	 * the Configuration object works</token>
   </line>
   <line no="15">
-    <token name="T_DOC_COMMENT">   */</token>
+    <token name="T_DOC_COMMENT">	 *</token>
   </line>
   <line no="16">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_DOC_COMMENT">	 * @param  string $key</token>
+  </line>
+  <line no="17">
+    <token name="T_DOC_COMMENT">	 * @param  mixed  $default</token>
+  </line>
+  <line no="18">
+    <token name="T_DOC_COMMENT">	 * @return mixed</token>
+  </line>
+  <line no="19">
+    <token name="T_DOC_COMMENT">	 */</token>
+  </line>
+  <line no="20">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_FUNCTION">function</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">config</token>
@@ -81,8 +93,8 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="17">
-    <token name="T_WHITESPACE">    </token>
+  <line no="21">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">Configuration</token>
@@ -102,12 +114,12 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="18">
-    <token name="T_WHITESPACE">  </token>
+  <line no="22">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="19">
+  <line no="23">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="20"/>
+  <line no="24"/>
 </source>

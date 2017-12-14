@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Router" namespace="Nectary" name="Router" abstract="true" final="false" start="54" end="200">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/routers" file="router.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/routers/router.php" size="5146" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="abe1a52c4b879ecf12725b325b75bcd59148ae9c" relative="routers/router.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Router" namespace="Nectary" name="Router" abstract="true" final="false" start="54" end="212">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/routers" file="router.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/routers/router.php" size="5135" time="2017-12-13T22:46:03+00:00" unixtime="1513205163" sha1="917c085f17e0dab13e98710b053bd1bfcbde3bc9" relative="routers/router.php"/>
   <docblock>
     <description compact="The base presenter has functionality to route undefined methods to other class methods.">In order to make use of this functionality, simply
 define a `protected $routes` in your class that
@@ -47,78 +47,82 @@ Purposefully not in the Gios_Api namespace.</description>
   </docblock>
   <member name="__method_name" visibility="private" static="false" line="55"/>
   <member name="__arguments" visibility="private" static="false" line="56"/>
-  <method name="__call" start="66" end="73" abstract="false" final="false" static="false" visibility="public">
+  <method name="__call" start="68" end="75" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Route calls to undefined methods if the method has been told to route to a different method"/>
-      <param description="The method that was asked to be called" variable="$method_name" type="object">
-        <type full="Nectary\String" namespace="Nectary" name="String"/>
-      </param>
-      <param description="An array of the arguments passed to the method" variable="$arguments" type="object">
-        <type full="Nectary\Array" namespace="Nectary" name="Array"/>
-      </param>
-      <return description="Can return anything" type="object">
-        <type full="Nectary\Mixed" namespace="Nectary" name="Mixed"/>
-      </return>
+      <param description="The method that was asked to be called" type="string" variable="$method_name"/>
+      <param description="An array of the arguments passed to the method" type="array" variable="$arguments"/>
+      <return description="Can return anything" type="mixed"/>
+      <throws type="object">
+        <type full="\ReflectionException" namespace="" name="ReflectionException"/>
+      </throws>
     </docblock>
     <parameter name="method_name" byreference="false" type="{unknown}"/>
     <parameter name="arguments" byreference="false" type="{unknown}"/>
   </method>
-  <method name="route_exists" start="78" end="83" abstract="false" final="false" static="false" visibility="private">
+  <method name="route_exists" start="82" end="87" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Check if the route has been defined"/>
+      <return type="object">
+        <type full="Nectary\bool" namespace="Nectary" name="bool"/>
+      </return>
     </docblock>
   </method>
-  <method name="route_request" start="88" end="94" abstract="false" final="false" static="false" visibility="private">
+  <method name="route_request" start="94" end="100" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Build and do the route"/>
+      <throws type="object">
+        <type full="\ReflectionException" namespace="" name="ReflectionException"/>
+      </throws>
     </docblock>
   </method>
-  <method name="get_named_arguments" start="100" end="115" abstract="false" final="false" static="false" visibility="private">
+  <method name="get_named_arguments" start="108" end="123" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Map the arguments passed into the method to the expected arguments defined by the route"/>
+      <return type="array"/>
     </docblock>
     <inline>
-      <comment value="name the parameters" line="101"/>
+      <comment value="name the parameters" line="109"/>
     </inline>
   </method>
-  <method name="get_route_parts" start="121" end="139" abstract="false" final="false" static="false" visibility="private">
+  <method name="get_route_parts" start="131" end="148" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Get the individual parts of the route, including the class and method to route to"/>
+      <return type="array"/>
     </docblock>
   </method>
-  <method name="do_route" start="150" end="189" abstract="false" final="false" static="false" visibility="private">
+  <method name="do_route" start="161" end="200" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Resolve dependencies for dependency injection and call the given route"/>
-      <param description="The class to route to" variable="$class_name" type="object">
-        <type full="Nectary\String" namespace="Nectary" name="String"/>
+      <param description="The class to route to" type="string" variable="$class_name"/>
+      <param description="The method name to call in the give class" type="string" variable="$method_name"/>
+      <param description="Associative array of suggested arguments" type="array" variable="$named_arguments"/>
+      <param description="Callback if a validator fails" type="object" variable="$on_error">
+        <type full="Nectary\callback" namespace="Nectary" name="callback"/>
       </param>
-      <param description="The method name to call in the give class" variable="$method_name" type="object">
-        <type full="Nectary\String" namespace="Nectary" name="String"/>
-      </param>
-      <param description="Associative array of suggested arguments" variable="$named_arguments" type="object">
-        <type full="Nectary\Array" namespace="Nectary" name="Array"/>
-      </param>
-      <param description="Callback if a validator fails" variable="$on_error" type="object">
-        <type full="Nectary\Function" namespace="Nectary" name="Function"/>
-      </param>
+      <return type="mixed"/>
+      <throws type="object">
+        <type full="\ReflectionException" namespace="" name="ReflectionException"/>
+      </throws>
     </docblock>
     <parameter name="class_name" byreference="false" type="{unknown}"/>
     <parameter name="method_name" byreference="false" type="{unknown}"/>
     <parameter name="named_arguments" byreference="false" type="{unknown}"/>
     <parameter name="on_error" byreference="false" type="{unknown}"/>
     <inline>
-      <comment value="Check all validators" line="173"/>
+      <comment value="Check all validators" line="184"/>
     </inline>
   </method>
-  <method name="call" start="197" end="199" abstract="false" final="false" static="false" visibility="private">
+  <method name="call" start="209" end="211" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Call the given function with arguments"/>
-      <param description="Function to call" variable="$callback" type="object">
-        <type full="Nectary\Array|String" namespace="Nectary" name="Array|String"/>
+      <param description="Function to call" type="object" variable="$callback">
+        <type full="Nectary\array|string" namespace="Nectary" name="array|string"/>
       </param>
-      <param description="Arguments to pass to the function" variable="$arguments" type="object">
-        <type full="Nectary\Array|Mixed" namespace="Nectary" name="Array|Mixed"/>
+      <param description="Arguments to pass to the function" type="object" variable="$arguments">
+        <type full="Nectary\array|mixed" namespace="Nectary" name="array|mixed"/>
       </param>
+      <return type="mixed"/>
     </docblock>
     <parameter name="callback" byreference="false" type="{unknown}"/>
     <parameter name="arguments" byreference="false" type="{unknown}"/>

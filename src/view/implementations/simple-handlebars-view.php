@@ -2,8 +2,6 @@
 
 namespace Nectary\Views;
 
-use Nectary\Views\Handlebars_View;
-
 /**
  * Simple implementation of the Handlebars_View
  */

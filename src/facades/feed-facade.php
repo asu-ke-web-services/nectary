@@ -28,12 +28,12 @@ class Feed_Facade {
 	 * @param $feeds array<Feed>
 	 */
 	public function merge_feeds( array $feeds ) {
-		$merged_feed = [];
+		$source_feeds = [ [] ];
 
 		foreach ( $feeds as $feed ) {
-			$items       = $feed->get_items();
-			$merged_feed = array_merge( $merged_feed, $items );
+			$source_feeds[] = $feed->get_items();
 		}
+		$merged_feed = array_merge( ...$source_feeds );
 
 		$new_feed = $this->service->get_feed( '' );
 

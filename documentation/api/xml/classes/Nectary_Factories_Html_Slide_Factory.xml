@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\Html_Slide_Factory" namespace="Nectary\Factories" name="Html_Slide_Factory" abstract="false" final="false" start="15" end="41">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations" file="html-slide-factory.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations/html-slide-factory.php" size="761" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="28c2e32d1ca473a9dd4764dbdc34fe790263bfd0" relative="factories/implementations/html-slide-factory.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\Html_Slide_Factory" namespace="Nectary\Factories" name="Html_Slide_Factory" abstract="false" final="false" start="13" end="43">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/factories/implementations" file="html-slide-factory.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/factories/implementations/html-slide-factory.php" size="761" time="2017-12-13T23:29:19+00:00" unixtime="1513207759" sha1="10239e7d45b853be03158245e2d38dbb37259f18" relative="factories/implementations/html-slide-factory.php"/>
   <docblock>
     <description compact="Create Html Slides for Html Carousels">Allows you to set the inner html, classes
 and whether the slide is active or not</description>
     <extends value="Html_Factory"/>
   </docblock>
   <extends full="Nectary\Factories\Html_Factory" namespace="Nectary\Factories" name="Html_Factory"/>
-  <member name="active" visibility="private" static="false" line="16"/>
-  <member name="classes" visibility="private" static="false" line="17"/>
-  <constructor name="__construct" start="19" end="22" abstract="false" final="false" static="false" visibility="public"/>
-  <method name="is_active" start="24" end="26" abstract="false" final="false" static="false" visibility="public"/>
-  <method name="add_class" start="28" end="30" abstract="false" final="false" static="false" visibility="public">
+  <member name="active" visibility="private" static="false" line="14"/>
+  <member name="classes" visibility="private" static="false" line="15"/>
+  <constructor name="__construct" start="17" end="21" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="is_active" start="23" end="25" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="add_class" start="27" end="29" abstract="false" final="false" static="false" visibility="public">
     <parameter name="classes" byreference="false" type="{unknown}"/>
   </method>
-  <method name="build" start="32" end="40" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="build" start="34" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
   <parent full="Nectary\Factories\Html_Factory" namespace="Nectary\Factories" name="Html_Factory">
     <extends full="Nectary\Factory" namespace="Nectary" name="Factory"/>
     <member name="html" visibility="protected" static="false" line="16"/>

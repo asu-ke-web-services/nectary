@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/commands" file="command.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/commands/command.php" size="638" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="735a5b36bd3c74521814e2f2434eb164717f1f31" relative="commands/command.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/commands" file="command.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/commands/command.php" size="636" time="2017-12-13T00:06:28+00:00" unixtime="1513123588" sha1="839d65aa6281ca38c9889467c66b572ce8150c9b" relative="commands/command.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -19,7 +19,7 @@
     <token name="T_DOC_COMMENT"> * Commands are used as general task runners, specifically, they differ from</token>
   </line>
   <line no="7">
-    <token name="T_DOC_COMMENT"> * sevices and other types of actions in that they should not communicate</token>
+    <token name="T_DOC_COMMENT"> * services and other types of actions in that they should not communicate</token>
   </line>
   <line no="8">
     <token name="T_DOC_COMMENT"> * back to the caller.</token>
@@ -40,7 +40,7 @@
     <token name="T_DOC_COMMENT"> *</token>
   </line>
   <line no="14">
-    <token name="T_DOC_COMMENT"> * The `dispatch` call is also prefered to calling `handle` directly since</token>
+    <token name="T_DOC_COMMENT"> * The `dispatch` call is also preferred to calling `handle` directly since</token>
   </line>
   <line no="15">
     <token name="T_DOC_COMMENT"> * Commands can be handled in different ways.</token>
@@ -58,17 +58,17 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="18">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
   <line no="19">
-    <token name="T_DOC_COMMENT">   * Handle the given command</token>
+    <token name="T_DOC_COMMENT">	 * Handle the given command</token>
   </line>
   <line no="20">
-    <token name="T_DOC_COMMENT">   */</token>
+    <token name="T_DOC_COMMENT">	 */</token>
   </line>
   <line no="21">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_ABSTRACT">abstract</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PUBLIC">public</token>

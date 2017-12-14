@@ -2,6 +2,9 @@
 
 namespace Nectary\Daos;
 
+use PDO;
+use PDOStatement;
+
 /**
  * Select_SQL_Query_Builder - Helper class for building PDO select statements
  *
@@ -13,6 +16,7 @@ class Select_SQL_Query_Builder {
 	 * Internal state for this object
 	 */
 	private $columns_to_select, $from, $joins, $where_clause, $values_to_bind, $order_by, $limit, $offset;
+	private $group_by;
 
 	/**
 	 * Sets up default state
@@ -31,9 +35,9 @@ class Select_SQL_Query_Builder {
 
 	/**
 	 * This function takes either a string or an one dimensional array.
-	 * the string can be a single column name or multiple columns comma seperated.
+	 * the string can be a single column name or multiple columns comma separated.
 	 *
-	 * @param $new_columns : string or array of column names to select
+	 * @param string|array $new_columns : string or array of column names to select
 	 */
 	public function add_columns( $new_columns ) {
 		$this->columns_to_select = array_merge( $this->columns_to_select, to_array( $new_columns ) );
@@ -42,7 +46,7 @@ class Select_SQL_Query_Builder {
 	/**
 	 * Mainly for debugging, probably wont need this
 	 *
-	 * @return the current colums this query will select from
+	 * @return string|array : the current columns this query will select from
 	 */
 	public function get_columns() {
 		return $this->columns_to_select;
@@ -51,62 +55,60 @@ class Select_SQL_Query_Builder {
 	/**
 	 * For setting what table to select from, can only be one table. For joins see joins()
 	 *
-	 * @param $table : string - name of table to select
+	 * @param string $table : name of table to select
 	 */
-	public function from( $table ) {
+	public function from( string $table ) {
 		$this->from[] = $table;
 	}
 
 	/**
 	 * For adding a join, can be called multiple times for multiple joins.
 	 *
-	 * @param $join_statement : string - sql fragment of the join statement
+	 * @param string $join_statement : sql fragment of the join statement
 	 */
-	public function joins( $join_statement ) {
+	public function joins( string $join_statement ) {
 		$this->joins .= $join_statement . ' ';
 	}
 
 	/**
 	 * For setting a limit on the query other than the default
 	 *
-	 * @param $new_limit : intger | string
+	 * @param int|string $new_limit
 	 */
 	public function limit( $new_limit ) {
+		$this->limit = $new_limit;
 		if ( false === starts_with( $new_limit . '', ':' ) ) {
-			$this->limit = intval( $new_limit );
-		} else {
-			$this->limit = $new_limit;
+			$this->limit = (int) $new_limit;
 		}
 	}
 
 	/**
 	 * For setting a offset on the query other than the default
 	 *
-	 * @param $offset : intger | string
+	 * @param int|string $offset
 	 */
 	public function offset( $offset ) {
+		$this->offset = $offset;
 		if ( false === starts_with( $offset . '', ':' ) ) {
-			$this->offset = intval( $offset );
-		} else {
-			$this->offset = $offset;
+			$this->offset = (int) $offset;
 		}
 	}
 
 	/**
 	 * For setting an order on the query other than the default. Currently Can't have multiple.
 	 *
-	 * @param $order : string : eg: "first_name ASC"
+	 * @param string $order : eg: "first_name ASC"
 	 */
-	public function order_by( $order ) {
+	public function order_by( string $order ) {
 		$this->order_by = $order;
 	}
 
 	/**
 	 * For setting an group by on the query other than the default.
 	 *
-	 * @param $order : string : eg: "first_name"
+	 * @param string $group
 	 */
-	public function group_by( $group ) {
+	public function group_by( string $group ) {
 		$this->group_by[] = $group;
 	}
 
@@ -114,37 +116,38 @@ class Select_SQL_Query_Builder {
 	 * Adds a string to the where clause, it must start with an 'AND' or 'OR' to chain together
 	 * criteria.
 	 *
-	 * @param $string : eg: "AND blah = foo"
+	 * @param string $string : eg: "AND blah = foo"
 	 */
-	public function where( $string ) {
+	public function where( string $string ) {
 		$this->where_clause .= $string . ' ';
 	}
 
 	/**
 	 * Adds a string to the where clause with an 'AND'
 	 *
-	 * @param $string : eg: "blah = foo"
+	 * @param string $string : eg: "blah = foo"
 	 */
-	public function and_where( $string ) {
+	public function and_where( string $string ) {
 		$this->where( 'AND ' . $string );
 	}
 
 	/**
 	 * Adds a string to the where clause with an 'AND'
 	 *
-	 * @param $string : eg: "blah = foo"
+	 * @param string $string : eg: "blah = foo"
 	 */
-	public function or_where( $string ) {
+	public function or_where( string $string ) {
 		$this->where( 'OR ' . $string );
 	}
 
 	/**
 	 * Adds a variable to be bound to in the prepared statement
 	 *
-	 * @param $name : string
-	 * @param $value : object
+	 * @param string      $name
+	 * @param mixed       $value
+	 * @param bool|string $data_type
 	 */
-	public function bind_value( $name, $value, $data_type = false ) {
+	public function bind_value( string $name, $value, $data_type = false ) {
 		$this->values_to_bind[ $name ] = array(
 			'value'     => $value,
 			'data_type' => $data_type,
@@ -154,11 +157,11 @@ class Select_SQL_Query_Builder {
 	/**
 	 * Uses the current state of the object to build the sql statement
 	 *
-	 * @return the sql select statement as a string
+	 * @return string : the sql select statement as a string
 	 */
-	public function get_sql() {
+	public function get_sql() : string {
 		if ( empty( $this->columns_to_select ) ) {
-			// this should be the default behavor
+			// this should be the default behavior
 			$this->columns_to_select = [ '*' ];
 		}
 
@@ -192,8 +195,8 @@ class Select_SQL_Query_Builder {
 	 * Calls get_sql() to generate the sql and then creates the prepared statement
 	 * and binds its values.
 	 *
-	 * @param $db : a pdo database connection
-	 * @return pdo::Statement object with the query and values bound
+	 * @param  PDO $db : a pdo database connection
+	 * @return PDOStatement
 	 */
 	public function get_statement( $db ) {
 		$statement = $db->prepare( $this->get_sql() );

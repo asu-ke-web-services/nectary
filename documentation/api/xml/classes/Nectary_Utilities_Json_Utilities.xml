@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Utilities\Json_Utilities" namespace="Nectary\Utilities" name="Json_Utilities" abstract="false" final="false" start="8" end="61">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities" file="json-utilities.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities/json-utilities.php" size="1234" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="df1882fcb7f0d672ec6018f05a1e84c2f2c5306b" relative="utilities/json-utilities.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Utilities\Json_Utilities" namespace="Nectary\Utilities" name="Json_Utilities" abstract="false" final="false" start="8" end="75">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/utilities" file="json-utilities.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/utilities/json-utilities.php" size="1400" time="2017-12-13T22:33:38+00:00" unixtime="1513204418" sha1="c943e1d2b2155e239efb8e9c4b3d57a218685658" relative="utilities/json-utilities.php"/>
   <docblock>
     <description compact="Helper utility functions for dealing with JSON"/>
   </docblock>
-  <method name="get" start="19" end="33" abstract="false" final="false" static="true" visibility="public">
+  <method name="get" start="23" end="37" abstract="false" final="false" static="true" visibility="public">
     <docblock>
       <description compact="Provide a path to the given json array:">```
 self::get( $json, 'key1.key2.key3' );
@@ -12,16 +12,38 @@ self::get( $json, 'key1.key2.key3' );
 
 This will return the value of however far it was
 able to go</description>
+      <param type="array" variable="$json"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="Nectary\Utilities\array|null" namespace="Nectary\Utilities" name="array|null"/>
+      </return>
     </docblock>
     <parameter name="json" byreference="false" type="{unknown}"/>
     <parameter name="path" byreference="false" type="{unknown}"/>
   </method>
-  <method name="get_or_default" start="35" end="43" abstract="false" final="false" static="true" visibility="public">
+  <method name="get_or_default" start="45" end="53" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="array" variable="$json"/>
+      <param type="string" variable="$path"/>
+      <param type="null" variable="$default"/>
+      <return type="object">
+        <type full="Nectary\Utilities\array|null" namespace="Nectary\Utilities" name="array|null"/>
+      </return>
+    </docblock>
     <parameter name="json" byreference="false" type="{unknown}"/>
     <parameter name="path" byreference="false" type="{unknown}"/>
     <parameter name="default" byreference="false" type="{unknown}" default="" constant="null"/>
   </method>
-  <method name="check_path" start="45" end="60" abstract="false" final="false" static="true" visibility="public">
+  <method name="check_path" start="60" end="74" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="array" variable="$json"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="Nectary\Utilities\bool" namespace="Nectary\Utilities" name="bool"/>
+      </return>
+    </docblock>
     <parameter name="json" byreference="false" type="{unknown}"/>
     <parameter name="path" byreference="false" type="{unknown}"/>
   </method>

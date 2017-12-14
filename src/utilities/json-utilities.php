@@ -15,6 +15,10 @@ class Json_Utilities {
 	 *
 	 * This will return the value of however far it was
 	 * able to go
+	 *
+	 * @param  array $json
+	 * @param  string $path
+	 * @return array|null
 	 */
 	public static function get( $json, $path ) {
 		if ( self::check_path( $json, $path ) ) {
@@ -27,28 +31,39 @@ class Json_Utilities {
 			}
 
 			return $current;
-		} else {
-			return null;
 		}
+
+		return null;
 	}
 
+	/**
+	 * @param  array      $json
+	 * @param  string     $path
+	 * @param  null       $default
+	 * @return array|null
+	 */
 	public static function get_or_default( $json, $path, $default = null ) {
 		$ref = self::get( $json, $path );
 
 		if ( $ref === null && ! self::check_path( $json, $path ) ) {
 			return $default;
-		} else {
-			return $ref;
 		}
+
+		return $ref;
 	}
 
-	public static function check_path( $json, $path ) {
+	/**
+	 * @param  array  $json
+	 * @param  string $path
+	 * @return bool
+	 */
+	public static function check_path( $json, $path ) : bool {
 		$path_parts = explode( '.', $path );
 
 		$current = $json;
 
 		foreach ( $path_parts as $part ) {
-			if ( is_array( $current ) && array_key_exists( $part, $current ) ) {
+			if ( \is_array( $current ) && array_key_exists( $part, $current ) ) {
 				$current = $current[ $part ];
 			} else {
 				return false;

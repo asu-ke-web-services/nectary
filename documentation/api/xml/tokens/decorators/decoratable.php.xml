@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/decorators" file="decoratable.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/decorators/decoratable.php" size="252" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="160c4a71c6a612f3baa8aba822e0b3fae1ad0424" relative="decorators/decoratable.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/decorators" file="decoratable.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/decorators/decoratable.php" size="246" time="2017-12-13T00:05:41+00:00" unixtime="1513123541" sha1="77afe9bb899909eaa17321f606cc13b7927bbb21" relative="decorators/decoratable.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -35,23 +35,23 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="11">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
   <line no="12">
-    <token name="T_DOC_COMMENT">   * Return a created decorator.</token>
+    <token name="T_DOC_COMMENT">	 * Return a created decorator.</token>
   </line>
   <line no="13">
-    <token name="T_DOC_COMMENT">   *</token>
+    <token name="T_DOC_COMMENT">	 *</token>
   </line>
   <line no="14">
-    <token name="T_DOC_COMMENT">   * @return Decorator</token>
+    <token name="T_DOC_COMMENT">	 * @return Decorator</token>
   </line>
   <line no="15">
-    <token name="T_DOC_COMMENT">   */</token>
+    <token name="T_DOC_COMMENT">	 */</token>
   </line>
   <line no="16">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_FUNCTION">function</token>

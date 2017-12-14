@@ -16,18 +16,18 @@ abstract class Request {
 
 		foreach ( $rules as $name => $check ) {
 			if ( true !== $check ) {
-				if ( is_array( $error_callback ) ) {
-					$results[] = call_user_func_array( $error_callback, [ $check, $this ] );
+				if ( \is_array( $error_callback ) ) {
+					$results[] = \call_user_func_array( $error_callback, [ $check, $this ] );
 				} else {
 					$results[] = $error_callback( $check, $this );
 				}
 			}
 		}
 
-		if ( count( $results ) > 0 ) {
+		if ( \count( $results ) > 0 ) {
 			return $results;
 		}
 	}
 
-	abstract public function validation_rules();
+	abstract public function validation_rules() : array;
 }

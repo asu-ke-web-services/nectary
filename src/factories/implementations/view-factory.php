@@ -76,22 +76,20 @@ class View_Factory extends Factory {
 	 * $view->add_data( $event->present() );
 	 * ```
 	 *
-	 * @param $data Mixed
-	 * @return $this
+	 * @param  mixed        $data
+	 * @return View_Factory
 	 */
-	public function add_data( $data ) {
-		if ( is_array( $data ) ) {
+	public function add_data( $data ) : View_Factory {
+		if ( \is_array( $data ) ) {
 			foreach ( $data as $key => $value ) {
-				$data_to_add = null;
+				$data_to_add = $value;
 				if ( $value instanceof Presentable_Model ) {
 					$data_to_add = $value->present();
-				} elseif ( is_object( $value ) ) {
+				} elseif ( \is_object( $value ) ) {
 					$data_to_add = json_decode( json_encode( $value ), true );
-				} else {
-					$data_to_add = $value;
 				}
 
-				if ( '_' === substr( $key, 0, 1 ) ) {
+				if ( 0 === strpos( $key, '_' ) ) {
 					$this->view_data = array_merge( $this->view_data, $data_to_add );
 				} else {
 					$this->view_data[ $key ] = $value;
@@ -107,14 +105,14 @@ class View_Factory extends Factory {
 	 *
 	 * Add data that should be in the head (aka add_header).
 	 *
-	 * @param $data Mixed
-	 * @return $this
+	 * @param  mixed $data
+	 * @return View_Factory
 	 */
-	public function add_head( $data ) {
-		if ( is_array( $data ) ) {
+	public function add_head( $data ) : View_Factory {
+		$this->head_data = $data;
+
+		if ( \is_array( $data ) ) {
 			$this->head_data = array_merge( $this->head_data, $data );
-		} else {
-			$this->head_data = $data;
 		}
 
 		return $this;
@@ -127,30 +125,26 @@ class View_Factory extends Factory {
 	 *
 	 * @override
 	 */
-	public function build() {
+	public function build() : Response {
 		$view_root      = '';
 		$template_name  = $this->get_template_name();
 		$file_extension = $this->get_file_extension( $view_root, $template_name );
 		$view_data      = $this->view_data;
 		$content        = '';
 
-		switch ( $file_extension ) {
-			case 'handlebars':
-				$view = new Simple_Handlebars_View(
-					$view_root,
-					$template_name,
-					function( $engine ) use ( $template_name, $view_data ) {
-							return $engine->render(
-								$template_name,
-								$view_data
-							);
-					},
-					$this->path_to_views
-				);
-				$content = $view->output();
-				break;
-			default:
-				break;
+		if ( 'handlebars' === $file_extension ) {
+			$view = new Simple_Handlebars_View(
+				$view_root,
+				$template_name,
+				function ( $engine ) use ( $template_name, $view_data ) {
+						return $engine->render(
+							$template_name,
+							$view_data
+						);
+				},
+				$this->path_to_views
+			);
+			$content = $view->output();
 		}
 
 		return new Response(
@@ -168,7 +162,7 @@ class View_Factory extends Factory {
 	 * eg: $this->view_name = 'blah.foo'
 	 *   get_template_name() returns 'blah/foo'
 	 */
-	private function get_template_name() {
+	private function get_template_name() : string {
 		return str_replace( '.', '/', $this->view_name );
 	}
 
@@ -178,30 +172,31 @@ class View_Factory extends Factory {
 	private function get_path_to_views() {
 		if ( null !== $this->path_to_views ) {
 			return $this->path_to_views;
-		} else {
-			return Configuration::get_instance()->get( 'path_to_views' );
 		}
+
+		return Configuration::get_instance()->get( 'path_to_views' );
 	}
 
 	/**
-	 * Find the first file extention that matches the for this view template
+	 * Find the first file extension that matches for this view template
+	 *
+	 * @param  string $view_root
+	 * @param  string $template_name
+	 * @return mixed
 	 */
 	private function get_file_extension( $view_root, $template_name ) {
 		$paths = to_array( $this->get_path_to_views() );
+		// get first element in array
+		$path = reset( $paths );
 
-		foreach ( $paths as $path ) {
-			if ( ! empty( $view_root ) ) {
-				$path .= '/' . $view_root;
-			}
-
-			$path .= '/' . $template_name;
-
-			$files = glob( $path . '.*' );
-			foreach ( $files as $filename ) {
-				return pathinfo( $filename, PATHINFO_EXTENSION );
-			}
+		if ( ! empty( $view_root ) ) {
+			$path .= '/' . $view_root;
 		}
 
-		return '';
+		$path .= '/' . $template_name;
+
+		$files = glob( $path . '.*' );
+		//return pathinfo of first $files element
+		return pathinfo( reset( $files ), PATHINFO_EXTENSION );
 	}
 }

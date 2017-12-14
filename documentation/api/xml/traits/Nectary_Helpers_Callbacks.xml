@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <trait xmlns="http://xml.phpdox.net/src" full="Nectary\Helpers\Callbacks" namespace="Nectary\Helpers" name="Callbacks" abstract="false" final="false" start="10" end="48">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/helpers" file="callbacks.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/helpers/callbacks.php" size="783" time="2016-03-23T07:59:06-07:00" unixtime="1458745146" sha1="451a5fa65f428b1e71e4f6cac1dcc2fbaee71808" relative="helpers/callbacks.php"/>
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/helpers" file="callbacks.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/helpers/callbacks.php" size="781" time="2017-12-13T22:45:01+00:00" unixtime="1513205101" sha1="a0a4bc39b19563158629a8c2934cedb1cbd12a11" relative="helpers/callbacks.php"/>
   <docblock>
     <description compact="Trait Callbacks - Common place for list of all reusable callbacks"/>
   </docblock>

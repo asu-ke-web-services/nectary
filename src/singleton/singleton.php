@@ -7,11 +7,21 @@ namespace Nectary;
  */
 abstract class Singleton {
 	protected static $instances = array();
-	protected function __construct() {}
+
+	/**
+	 * Singleton constructor.
+	 *
+	 * @param array|string|null $options
+	 */
+	protected function __construct( $options = array() ) {}
 	protected function __clone() {}
 
+	/**
+	 * @param array|string|null $options
+	 * @return mixed
+	 */
 	public static function get_instance( $options = array() ) {
-		$cls = get_called_class(); // late-static-bound class name
+		$cls = static::class; // late-static-bound class name
 		if ( ! isset( self::$instances[ $cls ] ) ) {
 			self::$instances[ $cls ] = new static( $options );
 		}
@@ -20,7 +30,7 @@ abstract class Singleton {
 	}
 
 	public static function set_instance( $instance ) {
-		$cls = get_called_class();
+		$cls = static::class;
 
 		self::$instances[ $cls ] = $instance;
 	}

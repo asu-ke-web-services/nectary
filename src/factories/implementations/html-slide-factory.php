@@ -2,8 +2,6 @@
 
 namespace Nectary\Factories;
 
-use Nectary\Factories\Html_Factory;
-
 /**
  * Create Html Slides for Html Carousels
  *
@@ -17,6 +15,7 @@ class Html_Slide_Factory extends Html_Factory {
 	private $classes;
 
 	public function __construct() {
+		Html_Factory::__construct();
 		$this->active  = false;
 		$this->classes = '';
 	}
@@ -29,8 +28,11 @@ class Html_Slide_Factory extends Html_Factory {
 		$this->classes .= $classes;
 	}
 
-	public function build() {
-		$classes = ( $this->active ) ? 'active' : '';
+	/**
+	 * @return string
+	 */
+	public function build() : string {
+		$classes = $this->active ? 'active' : '';
 
 		$classes .= ' ' . $this->classes;
 

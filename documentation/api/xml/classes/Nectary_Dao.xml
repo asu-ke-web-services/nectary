@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Dao" namespace="Nectary" name="Dao" abstract="true" final="false" start="10" end="41">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/daos" file="dao.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/daos/dao.php" size="591" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="17b95fb2bc125c8a24e505eb8c5059b7016b76b2" relative="daos/dao.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Dao" namespace="Nectary" name="Dao" abstract="true" final="false" start="12" end="45">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/daos" file="dao.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/daos/dao.php" size="609" time="2017-12-13T00:09:58+00:00" unixtime="1513123798" sha1="c7c571e4bd20019a5804242ce117b265ce1c3311" relative="daos/dao.php"/>
   <docblock>
     <description compact="Just a common class for all daos to extend"/>
     <package value="Dao"/>
   </docblock>
-  <member name="db" visibility="public" static="false" line="11"/>
-  <constructor name="__construct" start="18" end="20" abstract="false" final="false" static="false" visibility="public">
+  <member name="db" visibility="public" static="false" line="13"/>
+  <constructor name="__construct" start="21" end="23" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Set up the PDO"/>
       <constructor/>
+      <param type="object" variable="$db">
+        <type full="PDO" namespace="" name="PDO"/>
+      </param>
     </docblock>
     <parameter name="db" byreference="false" type="object">
       <type full="PDO" namespace="" name="PDO"/>
     </parameter>
   </constructor>
-  <destructor name="__destruct" start="27" end="29" abstract="false" final="false" static="false" visibility="public">
+  <destructor name="__destruct" start="30" end="32" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Clean up"/>
       <deconstructor/>
     </docblock>
   </destructor>
-  <method name="set_pdo" start="31" end="33" abstract="false" final="false" static="false" visibility="public">
+  <method name="set_pdo" start="34" end="36" abstract="false" final="false" static="false" visibility="public">
     <parameter name="db" byreference="false" type="object">
       <type full="PDO" namespace="" name="PDO"/>
     </parameter>
   </method>
-  <method name="get_by_criterion" start="40" end="40" abstract="true" final="false" static="false" visibility="public">
+  <method name="get_by_criterion" start="44" end="44" abstract="true" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Child classes need to implement get_by_criterion"/>
       <abstract/>
+      <param variable="$options"/>
     </docblock>
     <parameter name="options" byreference="false" type="{unknown}"/>
   </method>

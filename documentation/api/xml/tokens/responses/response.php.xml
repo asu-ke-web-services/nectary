@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/responses" file="response.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/responses/response.php" size="826" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="124ffaf9f0f7e1739a41c063ce95fff2d6091f18" relative="responses/response.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/responses" file="response.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/responses/response.php" size="771" time="2017-12-13T23:29:19+00:00" unixtime="1513207759" sha1="0ba6313059127c9266ae32746de13bdc87c275c5" relative="responses/response.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -13,33 +13,24 @@
   </line>
   <line no="4"/>
   <line no="5">
-    <token name="T_USE">use</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_STRING">Nectary</token>
-    <token name="T_NS_SEPARATOR">\</token>
-    <token name="T_STRING">Data_Model</token>
-    <token name="T_PHPDOX_SEMICOLON">;</token>
-  </line>
-  <line no="6"/>
-  <line no="7">
     <token name="T_DOC_COMMENT">/**</token>
   </line>
-  <line no="8">
+  <line no="6">
     <token name="T_DOC_COMMENT"> * View Model for head, content, and footer data</token>
   </line>
-  <line no="9">
+  <line no="7">
     <token name="T_DOC_COMMENT"> *</token>
   </line>
-  <line no="10">
+  <line no="8">
     <token name="T_DOC_COMMENT"> * Extends Data_Model for the magic setters and</token>
   </line>
-  <line no="11">
+  <line no="9">
     <token name="T_DOC_COMMENT"> * getters.</token>
   </line>
-  <line no="12">
+  <line no="10">
     <token name="T_DOC_COMMENT"> */</token>
   </line>
-  <line no="13">
+  <line no="11">
     <token name="T_CLASS">class</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">Response</token>
@@ -50,8 +41,8 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="14">
-    <token name="T_WHITESPACE">  </token>
+  <line no="12">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STATIC">static</token>
@@ -59,82 +50,82 @@
     <token name="T_VARIABLE">$error_404</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="15"/>
-  <line no="16">
-    <token name="T_WHITESPACE">  </token>
+  <line no="13"/>
+  <line no="14">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$http_header</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="17">
-    <token name="T_WHITESPACE">  </token>
+  <line no="15">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
+  <line no="16">
+    <token name="T_DOC_COMMENT">	 * An array that can contain:</token>
+  </line>
+  <line no="17">
+    <token name="T_DOC_COMMENT">	 * - no_cache [Boolean]</token>
+  </line>
   <line no="18">
-    <token name="T_DOC_COMMENT">   * An array that can contain:</token>
+    <token name="T_DOC_COMMENT">	 * - title [String]</token>
   </line>
   <line no="19">
-    <token name="T_DOC_COMMENT">   * - no_cache [Boolean]</token>
+    <token name="T_DOC_COMMENT">	 * - description [String]</token>
   </line>
   <line no="20">
-    <token name="T_DOC_COMMENT">   * - title [String]</token>
+    <token name="T_DOC_COMMENT">	 * - canonical [String]</token>
   </line>
   <line no="21">
-    <token name="T_DOC_COMMENT">   * - description [String]</token>
+    <token name="T_DOC_COMMENT">	 * - open_graph_image [String] - a path</token>
   </line>
   <line no="22">
-    <token name="T_DOC_COMMENT">   * - canonical [String]</token>
+    <token name="T_DOC_COMMENT">	 */</token>
   </line>
   <line no="23">
-    <token name="T_DOC_COMMENT">   * - open_graph_image [String] - a path</token>
-  </line>
-  <line no="24">
-    <token name="T_DOC_COMMENT">   */</token>
-  </line>
-  <line no="25">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$head</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="26">
-    <token name="T_WHITESPACE">  </token>
+  <line no="24">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$content</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="27">
-    <token name="T_WHITESPACE">  </token>
+  <line no="25">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$footer</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="28">
-    <token name="T_WHITESPACE">  </token>
+  <line no="26">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
+  <line no="27">
+    <token name="T_DOC_COMMENT">	 * Contains extra data, like:</token>
+  </line>
+  <line no="28">
+    <token name="T_DOC_COMMENT">	 * - web_standards_hero_image [String] - a path</token>
+  </line>
   <line no="29">
-    <token name="T_DOC_COMMENT">   * Contains extra data, like:</token>
+    <token name="T_DOC_COMMENT">	 */</token>
   </line>
   <line no="30">
-    <token name="T_DOC_COMMENT">   * - web_standards_hero_image [String] - a path</token>
-  </line>
-  <line no="31">
-    <token name="T_DOC_COMMENT">   */</token>
-  </line>
-  <line no="32">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$extra</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="33">
-    <token name="T_WHITESPACE">  </token>
+  <line no="31">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$error</token>
@@ -144,18 +135,18 @@
     <token name="T_STRING">false</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="34">
-    <token name="T_WHITESPACE">  </token>
+  <line no="32">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$is_singular</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="35">
+  <line no="33">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="36"/>
-  <line no="37">
+  <line no="34"/>
+  <line no="35">
     <token name="T_STRING">Response</token>
     <token name="T_DOUBLE_COLON">::</token>
     <token name="T_VARIABLE">$error_404</token>
@@ -167,13 +158,13 @@
     <token name="T_STRING">Response</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
   </line>
-  <line no="38">
-    <token name="T_WHITESPACE">    </token>
+  <line no="36">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_ARRAY">array</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
   </line>
-  <line no="39">
-    <token name="T_WHITESPACE">      </token>
+  <line no="37">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'http_header'</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_DOUBLE_ARROW">=&gt;</token>
@@ -186,22 +177,22 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_COMMA">,</token>
   </line>
-  <line no="40">
-    <token name="T_WHITESPACE">      </token>
+  <line no="38">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'content'</token>
-    <token name="T_WHITESPACE"> </token>
+    <token name="T_WHITESPACE">     </token>
     <token name="T_DOUBLE_ARROW">=&gt;</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_CONSTANT_ENCAPSED_STRING">'Not Found'</token>
     <token name="T_PHPDOX_COMMA">,</token>
   </line>
-  <line no="41">
-    <token name="T_WHITESPACE">    </token>
+  <line no="39">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
   </line>
-  <line no="42">
+  <line no="40">
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="43"/>
+  <line no="41"/>
 </source>

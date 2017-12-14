@@ -20,11 +20,11 @@ abstract class Decorator {
 			return $method;
 		}
 
-		if ( is_array( $this->object ) ) {
+		if ( \is_array( $this->object ) ) {
 			return $this->object[ $var ];
-		} else {
-			return $this->object->$var;
 		}
+
+		return $this->object->$var;
 	}
 
 	public function __isset( $var ) {
@@ -32,11 +32,11 @@ abstract class Decorator {
 			return true;
 		}
 
-		if ( is_array( $this->object ) ) {
+		if ( \is_array( $this->object ) ) {
 			return isset( $this->object[ $var ] );
-		} else {
-			return isset( $this->object->$var );
 		}
+
+		return isset( $this->object->$var );
 	}
 
 	/**
@@ -48,8 +48,8 @@ abstract class Decorator {
 	 * @return mixed
 	 */
 	public function __call( $method, $arguments ) {
-		if ( is_object( $this->object ) ) {
-			$value = call_user_func_array(
+		if ( \is_object( $this->object ) ) {
+			$value = \call_user_func_array(
 				array(
 					$this->object,
 					$method,

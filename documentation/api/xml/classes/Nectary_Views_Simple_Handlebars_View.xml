@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Views\Simple_Handlebars_View" namespace="Nectary\Views" name="Simple_Handlebars_View" abstract="false" final="false" start="10" end="25">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/implementations" file="simple-handlebars-view.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/view/implementations/simple-handlebars-view.php" size="577" time="2016-11-10T09:50:22-07:00" unixtime="1478796622" sha1="b8e193685149860d8d1af61b5471c667de56c836" relative="view/implementations/simple-handlebars-view.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Views\Simple_Handlebars_View" namespace="Nectary\Views" name="Simple_Handlebars_View" abstract="false" final="false" start="8" end="23">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/view/implementations" file="simple-handlebars-view.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/view/implementations/simple-handlebars-view.php" size="525" time="2017-12-13T23:29:19+00:00" unixtime="1513207759" sha1="156ebccc54e0a3e241391bf65c899ac31f062eae" relative="view/implementations/simple-handlebars-view.php"/>
   <docblock>
     <description compact="Simple implementation of the Handlebars_View"/>
   </docblock>
   <extends full="Nectary\Views\Handlebars_View" namespace="Nectary\Views" name="Handlebars_View"/>
-  <member name="template_name" visibility="protected" static="false" line="11"/>
-  <member name="callback" visibility="protected" static="false" line="12"/>
-  <constructor name="__construct" start="14" end="18" abstract="false" final="false" static="false" visibility="public">
+  <member name="template_name" visibility="protected" static="false" line="9"/>
+  <member name="callback" visibility="protected" static="false" line="10"/>
+  <constructor name="__construct" start="12" end="16" abstract="false" final="false" static="false" visibility="public">
     <parameter name="view_root" byreference="false" type="{unknown}"/>
     <parameter name="template_name" byreference="false" type="{unknown}"/>
     <parameter name="callback" byreference="false" type="{unknown}"/>
     <parameter name="path_to_views" byreference="false" type="{unknown}" default="" constant="null"/>
   </constructor>
-  <method name="output" start="20" end="24" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="output" start="18" end="22" abstract="false" final="false" static="false" visibility="public"/>
   <parent full="Nectary\Views\Handlebars_View" namespace="Nectary\Views" name="Handlebars_View">
     <extends full="Nectary\View" namespace="Nectary" name="View"/>
-    <member name="model" visibility="protected" static="false" line="13"/>
-    <member name="engine" visibility="protected" static="false" line="14"/>
-    <member name="view_root" type="string" default="'/'" visibility="protected" static="false" line="15"/>
-    <constructor name="__construct" start="26" end="49" abstract="false" final="false" static="false" visibility="protected">
+    <member name="model" visibility="protected" static="false" line="17"/>
+    <member name="engine" visibility="protected" static="false" line="18"/>
+    <member name="view_root" type="string" default="'/'" visibility="protected" static="false" line="19"/>
+    <constructor name="__construct" start="33" end="56" abstract="false" final="false" static="false" visibility="protected">
       <docblock>
         <description compact="The constructor will automatically try to determine where the views are. The $view_root is the folder path under the $path_to_views folder path."/>
         <constructor/>
-        <param description="Use false if you are not rendering views from files" variable="$view_root" type="object">
-          <type full="Nectary\Views\String|Boolean" namespace="Nectary\Views" name="String|Boolean"/>
+        <param description=": Use false if you are not rendering views from files" type="object" variable="$view_root">
+          <type full="Nectary\Views\string|bool" namespace="Nectary\Views" name="string|bool"/>
         </param>
-        <param description="Use to override the path to the views" variable="$path_to_view" type="object">
-          <type full="Nectary\Views\String|Array" namespace="Nectary\Views" name="String|Array"/>
+        <param description=": Use to override the path to the views" type="object" variable="$path_to_views">
+          <type full="Nectary\Views\string|array" namespace="Nectary\Views" name="string|array"/>
         </param>
+        <throws type="object">
+          <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+        </throws>
+        <throws type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
       </docblock>
       <parameter name="view_root" byreference="false" type="string" default="''"/>
       <parameter name="path_to_views" byreference="false" type="{unknown}" default="" constant="null"/>
     </constructor>
-    <method name="render" start="51" end="62" abstract="false" final="false" static="false" visibility="protected">
+    <method name="render" start="58" end="69" abstract="false" final="false" static="false" visibility="protected">
       <parameter name="template" byreference="true" type="{unknown}"/>
       <parameter name="context" byreference="true" type="{unknown}"/>
       <parameter name="additional_context" byreference="false" type="array" default=""/>

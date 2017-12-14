@@ -65,7 +65,10 @@
             <a href="#return">Return</a>
           </li>
           <li>
-            <a href="../../source/factories/implementations/dependency-injection-factory.php.xhtml#line119">Source</a>
+            <a href="#throws">Throws</a>
+          </li>
+          <li>
+            <a href="../../source/factories/implementations/dependency-injection-factory.php.xhtml#line126">Source</a>
           </li>
         </ul>
       </nav>
@@ -76,9 +79,9 @@
         <ul/>
         <h2 id="signature">Signature</h2>
         <div class="styled synopsis">
-          <code>private function make(<a title="Nectary\Factories\String" href="../../classes/Nectary_Factories_String.xhtml">String</a>
+          <code>private function make(string
         $class_name,
-            <a title="Nectary\Factories\Array" href="../../classes/Nectary_Factories_Array.xhtml">Array</a>
+            array
         $named_arguments )
             </code>
         </div>
@@ -86,23 +89,31 @@
         <dl class="styled">
           <dt><code>$class_name</code>
                 —
-                object</dt>
-          <dd>The name of the class to make<br/><br/><br/>      </dd>
+                string</dt>
+          <dd>The name of the class to make</dd>
           <dt><code>$named_arguments</code>
                 —
-                object</dt>
-          <dd>The arguments to inject into the class<br/><br/><br/>      </dd>
+                array</dt>
+          <dd>The arguments to inject into the class</dd>
         </dl>
         <h2 id="return">Returns</h2>
         <dl class="styled">
-          <dt>Mixed</dt>
-          <dd>An instance of the class<br/>
-        </dd>
+          <dt>mixed</dt>
+          <dd>An instance of the class</dd>
+        </dl>
+        <h2 id="throws">Errors/Exceptions</h2>
+        <dl class="styled">
+          <dt>
+            <code>
+              <a title="\ReflectionException" href="../../classes/_ReflectionException.xhtml">ReflectionException</a>
+            </code>
+          </dt>
+          <dd/>
         </dl>
       </section>
     </div>
     <footer>
-      <span>Generated using phpDox 0.8.2-dev - Copyright (C) 2010 - 2016 by Arne Blankerts</span>
+      <span>Generated using phpDox 0.8.2-dev - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
     </footer>
   </body>
 </html>

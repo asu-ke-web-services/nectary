@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\Dependency_Injection_Factory" namespace="Nectary\Factories" name="Dependency_Injection_Factory" abstract="false" final="false" start="18" end="141">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations" file="dependency-injection-factory.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/factories/implementations/dependency-injection-factory.php" size="4286" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="27b5966d19ac28192e285ab82e3308fc7c9d222a" relative="factories/implementations/dependency-injection-factory.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Factories\Dependency_Injection_Factory" namespace="Nectary\Factories" name="Dependency_Injection_Factory" abstract="false" final="false" start="18" end="152">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/factories/implementations" file="dependency-injection-factory.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/factories/implementations/dependency-injection-factory.php" size="4315" time="2017-12-14T00:22:37+00:00" unixtime="1513210957" sha1="05dd0cedea9c4cad625c437f8b55f73b121e461e" relative="factories/implementations/dependency-injection-factory.php"/>
   <docblock>
     <description compact="Given a class name and method for the class (the constructor is an allowed method), this factory will automatically build the given object and provide the dependencies for the given method using the given arguments as suggestions."/>
     <extends value="Factory"/>
@@ -14,74 +14,70 @@
     <docblock>
       <description compact="Setup object variables"/>
       <constructor/>
-      <param variable="$class_name" type="object">
-        <type full="Nectary\Factories\String" namespace="Nectary\Factories" name="String"/>
-      </param>
-      <param variable="$method_name" type="object">
-        <type full="Nectary\Factories\String" namespace="Nectary\Factories" name="String"/>
-      </param>
-      <param variable="$arguments" type="object">
-        <type full="Nectary\Factories\Array" namespace="Nectary\Factories" name="Array"/>
-      </param>
+      <param type="string" variable="$class_name"/>
+      <param type="string" variable="$method_name"/>
+      <param type="array" variable="$arguments"/>
     </docblock>
     <parameter name="class_name" byreference="false" type="{unknown}"/>
     <parameter name="method_name" byreference="false" type="{unknown}"/>
     <parameter name="arguments" byreference="false" type="{unknown}"/>
   </constructor>
-  <method name="build" start="45" end="62" abstract="false" final="false" static="false" visibility="public">
+  <method name="build" start="46" end="63" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Build the object, its dependencies, and list any validators that should be checked"/>
       <override/>
+      <throws type="object">
+        <type full="\ReflectionException" namespace="" name="ReflectionException"/>
+      </throws>
     </docblock>
   </method>
-  <method name="get_dependencies" start="70" end="76" abstract="false" final="false" static="false" visibility="private">
+  <method name="get_dependencies" start="73" end="79" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Get the dependencies for a given reflection object"/>
-      <param description="Reflection object to gather dependencies from" variable="$reflector" type="object">
-        <type full="Nectary\Factories\ReflectionMethod" namespace="Nectary\Factories" name="ReflectionMethod"/>
+      <param description="Reflection object to gather dependencies from" type="object" variable="$reflector">
+        <type full="\ReflectionMethod" namespace="" name="ReflectionMethod"/>
       </param>
-      <param description="An associative array of suggested arguments" variable="$named_arguments" type="object">
-        <type full="Nectary\Factories\Array" namespace="Nectary\Factories" name="Array"/>
-      </param>
+      <param description="An associative array of suggested arguments" type="array" variable="$named_arguments"/>
+      <return type="array"/>
+      <throws type="object">
+        <type full="\ReflectionException" namespace="" name="ReflectionException"/>
+      </throws>
     </docblock>
     <parameter name="reflector" byreference="false" type="object">
       <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
     </parameter>
     <parameter name="named_arguments" byreference="false" type="{unknown}"/>
   </method>
-  <method name="resolve_dependencies" start="85" end="107" abstract="false" final="false" static="false" visibility="private">
+  <method name="resolve_dependencies" start="90" end="112" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Resolve all dependencies recursively. Untyped parameters will have the $named_arguments injected into them"/>
-      <param description="Will check these for dependencies" variable="$reflector_parameters" type="object">
-        <type full="Nectary\Factories\Array&lt;ReflectionParameters&gt;" namespace="Nectary\Factories" name="Array&lt;ReflectionParameters&gt;"/>
-      </param>
-      <param description="An associative array of suggested arguments" variable="$named_arguments" type="object">
-        <type full="Nectary\Factories\Array" namespace="Nectary\Factories" name="Array"/>
-      </param>
+      <param description="Will check these for dependencies" type="array" variable="$reflector_parameters"/>
+      <param description="An associative array of suggested arguments" type="array" variable="$named_arguments"/>
+      <return type="array"/>
+      <throws type="object">
+        <type full="\ReflectionException" namespace="" name="ReflectionException"/>
+      </throws>
     </docblock>
-    <parameter name="reflector_parameters" byreference="false" type="{unknown}"/>
+    <parameter name="reflector_parameters" byreference="false" type="array"/>
     <parameter name="named_arguments" byreference="false" type="array" default=""/>
     <inline>
-      <comment value="map the named_arguments to the reflector_parameters" line="86"/>
+      <comment value="map the named_arguments to the reflector_parameters" line="91"/>
     </inline>
   </method>
-  <method name="make" start="119" end="140" abstract="false" final="false" static="false" visibility="private">
+  <method name="make" start="126" end="151" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Given a class and arguments to inject into that class, this will create an instance of the given object.">This will handle special cases as well.</description>
-      <param description="The name of the class to make" variable="$class_name" type="object">
-        <type full="Nectary\Factories\String" namespace="Nectary\Factories" name="String"/>
-      </param>
-      <param description="The arguments to inject into the class" variable="$named_arguments" type="object">
-        <type full="Nectary\Factories\Array" namespace="Nectary\Factories" name="Array"/>
-      </param>
-      <return description="An instance of the class" type="object">
-        <type full="Nectary\Factories\Mixed" namespace="Nectary\Factories" name="Mixed"/>
-      </return>
+      <param description="The name of the class to make" type="string" variable="$class_name"/>
+      <param description="The arguments to inject into the class" type="array" variable="$named_arguments"/>
+      <return description="An instance of the class" type="mixed"/>
+      <throws type="object">
+        <type full="\ReflectionException" namespace="" name="ReflectionException"/>
+      </throws>
     </docblock>
     <parameter name="class_name" byreference="false" type="{unknown}"/>
     <parameter name="named_arguments" byreference="false" type="{unknown}"/>
     <inline>
-      <comment value="Handle special case of registering requests" line="134"/>
+      <comment value="Handle special case of registering requests" line="145"/>
     </inline>
   </method>
   <parent full="Nectary\Factory" namespace="Nectary" name="Factory">

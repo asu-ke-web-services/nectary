@@ -24,32 +24,38 @@ class Json_Feed implements Feed {
 	 * Pull the items from the web and store them
 	 * in this object
 	 *
-	 * @param $look_at String|Boolean use to grab items from a section of the json
+	 * @param  int|bool   $look_at  use to grab items from a section of the json
+	 * @throws \Exception
 	 */
 	public function retrieve_items( $look_at = false ) {
-		$json = call_user_func( $this->feed_callback, $this->url );
+		$json = \call_user_func( $this->feed_callback, $this->url );
 		$raw  = $this->parse_feed( $json );
 
+		$this->items = $raw;
 		if ( $look_at !== false ) {
 			$this->items = $raw[ $look_at ];
-		} else {
-			$this->items = $raw;
 		}
 	}
 
-	public function sort_by_date( $order = 'asc' ) {
+	public function sort_by_date( string $order = 'asc' ) {
 		// TODO
 	}
 
-	public function get_items() {
+	/**
+	 * @return array
+	 */
+	public function get_items() : array {
 		return $this->items;
 	}
 
-	public function set_items( $items ) {
+	public function set_items( array $items ) {
 		$this->items = $items;
 	}
 
-	public function get_unique_items() {
+	/**
+	 * @return array
+	 */
+	public function get_unique_items() : array {
 		$unique = [];
 
 		foreach ( $this->items as $i => $item_a ) {
@@ -75,7 +81,12 @@ class Json_Feed implements Feed {
 		return $unique;
 	}
 
-	private function parse_feed( $json ) {
+	/**
+	 * @param  string $json
+	 * @return mixed
+	 * @throws \Exception
+	 */
+	private function parse_feed( string $json ) {
 		$json = json_decode( $json, true );
 		if ( empty( $json ) ) {
 			error_log( 'Json was empty' );

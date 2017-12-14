@@ -14,7 +14,7 @@ trait Callbacks {
 	 *
 	 * @return Response::$error_404
 	 */
-	public static function not_found_error() {
+	public static function not_found_error() : Response {
 		return Response::$error_404;
 	}
 
@@ -23,7 +23,7 @@ trait Callbacks {
 	 *
 	 * @return false
 	 */
-	public static function false() {
+	public static function false() : bool {
 		return false;
 	}
 
@@ -32,7 +32,7 @@ trait Callbacks {
 	 *
 	 * @return String ''
 	 */
-	public static function rss_error() {
+	public static function rss_error() : string {
 		// TODO rss xml error
 		return '';
 	}
@@ -42,7 +42,7 @@ trait Callbacks {
 	 *
 	 * @return String ''
 	 */
-	public static function empty_string() {
+	public static function empty_string() : string {
 		return '';
 	}
 }
