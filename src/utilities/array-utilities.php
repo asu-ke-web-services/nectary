@@ -1,7 +1,7 @@
 <?php
 
-if ( ! function_exists( 'array_peak' ) ) {
-	function array_peak( $array ) {
+if ( ! function_exists( 'array_peek' ) ) {
+	function array_peek( $array ) {
 		if ( \is_array( $array ) ) {
 			return reset( $array );
 		}

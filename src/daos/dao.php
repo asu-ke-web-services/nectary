@@ -39,7 +39,8 @@ abstract class Dao {
 	 * Child classes need to implement get_by_criterion
 	 *
 	 * @abstract
-	 * @param $options
+	 * @param  array|null $options
+	 * @return mixed
 	 */
 	abstract public function get_by_criterion( $options );
 }
