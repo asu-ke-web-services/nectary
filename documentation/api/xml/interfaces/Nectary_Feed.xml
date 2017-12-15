@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface xmlns="http://xml.phpdox.net/src" full="Nectary\Feed" namespace="Nectary" name="Feed" abstract="false" final="false" start="5" end="11">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models" file="feed.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/models/feed.php" size="240" time="2015-09-18T12:37:13-07:00" unixtime="1442605033" sha1="d0d28691b46a3dbe58cb0e758922aa558f9d90be" relative="models/feed.php"/>
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/models" file="feed.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/models/feed.php" size="264" time="2017-12-13T23:01:52+00:00" unixtime="1513206112" sha1="41615e6ff562174fb19568f310359cf8227eb73a" relative="models/feed.php"/>
   <method name="retrieve_items" start="6" end="6" abstract="false" final="false" static="false" visibility="public"/>
   <method name="sort_by_date" start="7" end="7" abstract="false" final="false" static="false" visibility="public">
-    <parameter name="order" byreference="false" type="string" default="'asc'"/>
+    <parameter name="order" byreference="false" type="string" default="'asc'">
+      <type full="Nectary\string" namespace="Nectary" name="string"/>
+    </parameter>
   </method>
   <method name="get_items" start="8" end="8" abstract="false" final="false" static="false" visibility="public"/>
   <method name="set_items" start="9" end="9" abstract="false" final="false" static="false" visibility="public">
-    <parameter name="items" byreference="false" type="{unknown}"/>
+    <parameter name="items" byreference="false" type="array"/>
   </method>
   <method name="get_unique_items" start="10" end="10" abstract="false" final="false" static="false" visibility="public"/>
   <implementors>

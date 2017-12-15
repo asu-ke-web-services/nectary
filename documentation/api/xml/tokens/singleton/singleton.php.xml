@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/singleton" file="singleton.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/singleton/singleton.php" size="586" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="45894f73c150e48ff3ab5b8820ab5fe5f842f892" relative="singleton/singleton.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/singleton" file="singleton.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/singleton/singleton.php" size="752" time="2017-12-14T00:35:54+00:00" unixtime="1513211754" sha1="22dc90f05f60235115b8a1f3ad07abad88075f98" relative="singleton/singleton.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -31,7 +31,7 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="9">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PROTECTED">protected</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STATIC">static</token>
@@ -45,21 +45,47 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="10">
-    <token name="T_WHITESPACE">  </token>
+  <line no="10"/>
+  <line no="11">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="12">
+    <token name="T_DOC_COMMENT">	 * Singleton constructor.</token>
+  </line>
+  <line no="13">
+    <token name="T_DOC_COMMENT">	 *</token>
+  </line>
+  <line no="14">
+    <token name="T_DOC_COMMENT">	 * @param array|string|null $options</token>
+  </line>
+  <line no="15">
+    <token name="T_DOC_COMMENT">	 */</token>
+  </line>
+  <line no="16">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PROTECTED">protected</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_FUNCTION">function</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">__construct</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$options</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="11">
-    <token name="T_WHITESPACE">  </token>
+  <line no="17">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PROTECTED">protected</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_FUNCTION">function</token>
@@ -71,9 +97,22 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="12"/>
-  <line no="13">
-    <token name="T_WHITESPACE">  </token>
+  <line no="18"/>
+  <line no="19">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="20">
+    <token name="T_DOC_COMMENT">	 * @param array|string|null $options</token>
+  </line>
+  <line no="21">
+    <token name="T_DOC_COMMENT">	 * @return mixed</token>
+  </line>
+  <line no="22">
+    <token name="T_DOC_COMMENT">	 */</token>
+  </line>
+  <line no="23">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STATIC">static</token>
@@ -82,25 +121,34 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">get_instance</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$options</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="14">
-    <token name="T_WHITESPACE">    </token>
+  <line no="24">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$cls</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_EQUAL">=</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_STRING">get_called_class</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_STATIC">static</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_CLASS">class</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_COMMENT">// late-static-bound class name</token>
   </line>
-  <line no="15">
-    <token name="T_WHITESPACE">    </token>
+  <line no="25">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_IF">if</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -125,8 +173,8 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="16">
-    <token name="T_WHITESPACE">      </token>
+  <line no="26">
+    <token name="T_WHITESPACE">			</token>
     <token name="T_STRING">self</token>
     <token name="T_DOUBLE_COLON">::</token>
     <token name="T_VARIABLE">$instances</token>
@@ -141,15 +189,20 @@
     <token name="T_NEW">new</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STATIC">static</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$options</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="17">
-    <token name="T_WHITESPACE">    </token>
+  <line no="27">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="18"/>
-  <line no="19">
-    <token name="T_WHITESPACE">    </token>
+  <line no="28"/>
+  <line no="29">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">self</token>
@@ -162,13 +215,13 @@
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="20">
-    <token name="T_WHITESPACE">  </token>
+  <line no="30">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="21"/>
-  <line no="22">
-    <token name="T_WHITESPACE">  </token>
+  <line no="31"/>
+  <line no="32">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STATIC">static</token>
@@ -184,20 +237,20 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="23">
-    <token name="T_WHITESPACE">    </token>
+  <line no="33">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$cls</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_EQUAL">=</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_STRING">get_called_class</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_STATIC">static</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_CLASS">class</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="24"/>
-  <line no="25">
-    <token name="T_WHITESPACE">    </token>
+  <line no="34"/>
+  <line no="35">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_STRING">self</token>
     <token name="T_DOUBLE_COLON">::</token>
     <token name="T_VARIABLE">$instances</token>
@@ -212,12 +265,12 @@
     <token name="T_VARIABLE">$instance</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="26">
-    <token name="T_WHITESPACE">  </token>
+  <line no="36">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="27">
+  <line no="37">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="28"/>
+  <line no="38"/>
 </source>

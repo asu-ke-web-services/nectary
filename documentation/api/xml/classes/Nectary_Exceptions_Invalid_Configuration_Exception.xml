@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Nectary\Exceptions\Invalid_Configuration_Exception" namespace="Nectary\Exceptions" name="Invalid_Configuration_Exception" abstract="false" final="false" start="11" end="12">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/exceptions" file="invalid-configuration-exception.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/exceptions/invalid-configuration-exception.php" size="234" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="9776257fc241bdcdf0b168b663d277e69f4a8c21" relative="exceptions/invalid-configuration-exception.php"/>
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/exceptions" file="invalid-configuration-exception.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/exceptions/invalid-configuration-exception.php" size="234" time="2017-12-08T22:16:01+00:00" unixtime="1512771361" sha1="9776257fc241bdcdf0b168b663d277e69f4a8c21" relative="exceptions/invalid-configuration-exception.php"/>
   <docblock>
     <description compact="Exception to throw when the configuration file that is loaded is invalid, for whatever reason."/>
     <extends value="\Exception"/>

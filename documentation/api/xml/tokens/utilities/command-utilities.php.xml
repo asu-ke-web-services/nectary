@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities" file="command-utilities.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/utilities/command-utilities.php" size="281" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="4b42fa1b6b16cfc81cbbd2372bab08843ee9d2b8" relative="utilities/command-utilities.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/utilities" file="command-utilities.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/utilities/command-utilities.php" size="326" time="2017-12-13T21:54:16+00:00" unixtime="1513202056" sha1="5e23d3503ff1a8a7328dd7f945904eccb29ee4c2" relative="utilities/command-utilities.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -40,20 +40,29 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="10">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
   <line no="11">
-    <token name="T_DOC_COMMENT">   * Handle a dispatch without knowing about the command's</token>
+    <token name="T_DOC_COMMENT">	 * Handle a dispatch without knowing about the command's</token>
   </line>
   <line no="12">
-    <token name="T_DOC_COMMENT">   * details</token>
+    <token name="T_DOC_COMMENT">	 * details</token>
   </line>
   <line no="13">
-    <token name="T_DOC_COMMENT">   */</token>
+    <token name="T_DOC_COMMENT">	 *</token>
   </line>
   <line no="14">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_DOC_COMMENT">	 * @param \Nectary\Command $command</token>
+  </line>
+  <line no="15">
+    <token name="T_DOC_COMMENT">	 * @return</token>
+  </line>
+  <line no="16">
+    <token name="T_DOC_COMMENT">	 */</token>
+  </line>
+  <line no="17">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_FUNCTION">function</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">dispatch</token>
@@ -70,8 +79,8 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="15">
-    <token name="T_WHITESPACE">    </token>
+  <line no="18">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$command</token>
@@ -81,12 +90,12 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="16">
-    <token name="T_WHITESPACE">  </token>
+  <line no="19">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="17">
+  <line no="20">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="18"/>
+  <line no="21"/>
 </source>

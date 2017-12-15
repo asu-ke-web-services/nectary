@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/facades" file="feed-facade.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/facades/feed-facade.php" size="1068" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="9df59287750ba8ddffe458350f6a659180127d10" relative="facades/feed-facade.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/facades" file="feed-facade.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/facades/feed-facade.php" size="1033" time="2017-12-14T00:05:44+00:00" unixtime="1513209944" sha1="6502f423bbde85c1b5e83fa782261a843af0e3db" relative="facades/feed-facade.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -53,7 +53,7 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="13">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PRIVATE">private</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$service</token>
@@ -61,7 +61,7 @@
   </line>
   <line no="14"/>
   <line no="15">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_FUNCTION">function</token>
@@ -78,7 +78,7 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="16">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$this</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">service</token>
@@ -89,12 +89,12 @@
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="17">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
   <line no="18"/>
   <line no="19">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_FUNCTION">function</token>
@@ -109,7 +109,7 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="20">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">		</token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$this</token>
@@ -125,34 +125,34 @@
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="21">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
   <line no="22"/>
   <line no="23">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_DOC_COMMENT">/**</token>
   </line>
   <line no="24">
-    <token name="T_DOC_COMMENT">   * Merge different Feed_Services together.</token>
+    <token name="T_DOC_COMMENT">	 * Merge different Feed_Services together.</token>
   </line>
   <line no="25">
-    <token name="T_DOC_COMMENT">   * Feeds passed in should have already had</token>
+    <token name="T_DOC_COMMENT">	 * Feeds passed in should have already had</token>
   </line>
   <line no="26">
-    <token name="T_DOC_COMMENT">   * retrieve_items called on them.</token>
+    <token name="T_DOC_COMMENT">	 * retrieve_items called on them.</token>
   </line>
   <line no="27">
-    <token name="T_DOC_COMMENT">   *</token>
+    <token name="T_DOC_COMMENT">	 *</token>
   </line>
   <line no="28">
-    <token name="T_DOC_COMMENT">   * @param $feeds array&lt;Feed&gt;</token>
+    <token name="T_DOC_COMMENT">	 * @param $feeds array&lt;Feed&gt;</token>
   </line>
   <line no="29">
-    <token name="T_DOC_COMMENT">   */</token>
+    <token name="T_DOC_COMMENT">	 */</token>
   </line>
   <line no="30">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_FUNCTION">function</token>
@@ -169,18 +169,22 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="31">
-    <token name="T_WHITESPACE">    </token>
-    <token name="T_VARIABLE">$merged_feed</token>
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_VARIABLE">$source_feeds</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_EQUAL">=</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="32"/>
   <line no="33">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">		</token>
     <token name="T_FOREACH">foreach</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -196,8 +200,10 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="34">
-    <token name="T_WHITESPACE">      </token>
-    <token name="T_VARIABLE">$items</token>
+    <token name="T_WHITESPACE">			</token>
+    <token name="T_VARIABLE">$source_feeds</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_EQUAL">=</token>
     <token name="T_WHITESPACE"> </token>
@@ -209,7 +215,11 @@
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="35">
-    <token name="T_WHITESPACE">      </token>
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="36">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$merged_feed</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_EQUAL">=</token>
@@ -217,21 +227,15 @@
     <token name="T_STRING">array_merge</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$merged_feed</token>
-    <token name="T_PHPDOX_COMMA">,</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$items</token>
+    <token name="T_ELLIPSIS">...</token>
+    <token name="T_VARIABLE">$source_feeds</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="36">
-    <token name="T_WHITESPACE">    </token>
-    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
-  </line>
   <line no="37"/>
   <line no="38">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$new_feed</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_EQUAL">=</token>
@@ -250,7 +254,7 @@
   </line>
   <line no="39"/>
   <line no="40">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$new_feed</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">set_items</token>
@@ -263,19 +267,19 @@
   </line>
   <line no="41"/>
   <line no="42">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">		</token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$new_feed</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="43">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
   <line no="44"/>
   <line no="45">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PUBLIC">public</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_FUNCTION">function</token>
@@ -292,7 +296,7 @@
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
   <line no="46">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$new_feed</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_EQUAL">=</token>
@@ -311,7 +315,7 @@
   </line>
   <line no="47"/>
   <line no="48">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$new_feed</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">set_items</token>
@@ -328,14 +332,14 @@
   </line>
   <line no="49"/>
   <line no="50">
-    <token name="T_WHITESPACE">    </token>
+    <token name="T_WHITESPACE">		</token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$new_feed</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="51">
-    <token name="T_WHITESPACE">  </token>
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
   <line no="52">

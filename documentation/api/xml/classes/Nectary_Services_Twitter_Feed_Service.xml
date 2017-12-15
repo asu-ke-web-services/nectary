@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Nectary\Services\Twitter_Feed_Service" namespace="Nectary\Services" name="Twitter_Feed_Service" abstract="false" final="false" start="14" end="168">
-  <file path="/Users/rraub1/Dropbox-ASU/dev/nectary/src/services" file="twitter-feed-service.php" realpath="/Users/rraub1/Dropbox-ASU/dev/nectary/src/services/twitter-feed-service.php" size="4709" time="2016-03-15T14:58:32-07:00" unixtime="1458079112" sha1="29d8a499ccec42fb6f09fdb74123a5a642decca8" relative="services/twitter-feed-service.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Nectary\Services\Twitter_Feed_Service" namespace="Nectary\Services" name="Twitter_Feed_Service" abstract="false" final="false" start="14" end="174">
+  <file path="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/services" file="twitter-feed-service.php" realpath="/var/www/html/gios-api-php/vendor/gios-asu/nectary/src/services/twitter-feed-service.php" size="4587" time="2017-12-13T23:36:38+00:00" unixtime="1513208198" sha1="378b16b8f8ba0b01f8d799b83f74640d83a16f62" relative="services/twitter-feed-service.php"/>
   <docblock>
     <description compact="Feed Service for Twitter. Defaults to using curl."/>
     <extends value="Feed_Service"/>
@@ -10,28 +10,38 @@
   <method name="get_feed" start="17" end="29" abstract="false" final="false" static="false" visibility="public">
     <parameter name="options" byreference="false" type="{unknown}"/>
   </method>
-  <method name="get_curl_feed_data" start="31" end="65" abstract="false" final="false" static="false" visibility="public"/>
-  <method name="create_query_options" start="67" end="92" abstract="false" final="false" static="false" visibility="private">
+  <method name="get_curl_feed_data" start="31" end="64" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="create_query_options" start="66" end="91" abstract="false" final="false" static="false" visibility="private">
     <parameter name="options" byreference="false" type="{unknown}"/>
   </method>
-  <method name="create_oauth" start="94" end="111" abstract="false" final="false" static="false" visibility="private">
+  <method name="create_oauth" start="93" end="110" abstract="false" final="false" static="false" visibility="private">
     <parameter name="api_url" byreference="false" type="{unknown}"/>
     <parameter name="query" byreference="false" type="{unknown}"/>
     <parameter name="query_type" byreference="false" type="{unknown}"/>
     <parameter name="options" byreference="false" type="{unknown}"/>
   </method>
-  <method name="create_oauth_signature" start="113" end="136" abstract="false" final="false" static="false" visibility="private">
+  <method name="create_oauth_signature" start="112" end="135" abstract="false" final="false" static="false" visibility="private">
     <parameter name="oauth" byreference="false" type="{unknown}"/>
     <parameter name="api_url" byreference="false" type="{unknown}"/>
     <parameter name="options" byreference="false" type="{unknown}"/>
   </method>
-  <method name="create_query_http_header" start="138" end="147" abstract="false" final="false" static="false" visibility="private">
+  <method name="create_query_http_header" start="137" end="146" abstract="false" final="false" static="false" visibility="private">
     <parameter name="oauth" byreference="false" type="{unknown}"/>
   </method>
-  <method name="get_encoded_values" start="149" end="157" abstract="false" final="false" static="false" visibility="private">
+  <method name="get_encoded_values" start="148" end="156" abstract="false" final="false" static="false" visibility="private">
     <parameter name="oauth" byreference="false" type="{unknown}"/>
   </method>
-  <method name="create_query_url" start="159" end="167" abstract="false" final="false" static="false" visibility="private">
+  <method name="create_query_url" start="165" end="173" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$api_url"/>
+      <param type="string" variable="$query"/>
+      <param type="string" variable="$query_type"/>
+      <param type="object" variable="$limit">
+        <type full="Nectary\Services\int|string" namespace="Nectary\Services" name="int|string"/>
+      </param>
+      <return type="string"/>
+    </docblock>
     <parameter name="api_url" byreference="false" type="{unknown}"/>
     <parameter name="query" byreference="false" type="{unknown}"/>
     <parameter name="query_type" byreference="false" type="{unknown}"/>
