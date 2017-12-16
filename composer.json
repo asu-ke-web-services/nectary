@@ -2,7 +2,7 @@
     "name": "gios-asu/nectary",
     "description": "A simple PHP framework that is not tied to a web interface",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "The Julie Ann Wrigley Global Institute of Sustainability at Arizona State University",
@@ -27,7 +27,7 @@
         "xamin/handlebars.php": "0.10.3",
         "coduo/php-humanizer": ">=2.0.0-beta",
         "roave/security-advisories": "dev-master",
-        "josegonzalez/dotenv": "dev-master"
+        "josegonzalez/dotenv": "~3.2.0"
     },
     "require-dev": {
     	"squizlabs/php_codesniffer": "^2.0",
