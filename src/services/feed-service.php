@@ -8,5 +8,5 @@ namespace Nectary\Services;
  * particular feed is retreived.
  */
 abstract class Feed_Service {
-	abstract public function get_feed( $url );
+	abstract public function get_feed( string $url );
 }
